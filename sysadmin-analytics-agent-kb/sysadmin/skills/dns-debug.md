@@ -4,59 +4,54 @@
 
 Diagnose DNS resolution issues safely and systematically.
 
+## Reference links
+
+Authority references:
+
+- [Internal DNS Source of Truth](../../references/sysadmin/internal-dns-source-of-truth.md)
+- [NetBox](../../references/sysadmin/netbox.md)
+
 ## When to use
 
-Use when:
-
-- service name does not resolve;
-- wrong IP is returned;
-- DNS propagation is suspected;
-- internal/external DNS differs;
-- TLS/cert issue may be caused by DNS misrouting;
-- Kubernetes Service discovery behaves unexpectedly.
+Use for DNS resolution mismatch, unexpected record values, propagation checks, or service discovery questions.
 
 ## Required context
 
-- Domain or service name.
-- Expected record type: A, AAAA, CNAME, MX, TXT, SRV, NS, SOA.
-- Expected environment: internal, public, staging, prod.
-- Source of truth for DNS: Terraform, Route53/Cloudflare, NetBox/IPAM, Kubernetes, etc.
-- Resolver path: local resolver, corporate DNS, cluster DNS, public resolver.
+- Name being resolved.
+- Expected record type.
+- Expected environment.
+- DNS source of truth.
+- Resolver path.
 
 ## Authority chain
 
-1. Internal DNS/IaC source of truth.
-2. Authoritative DNS provider records.
-3. Kubernetes DNS docs if cluster-local.
-4. Public resolver checks only as observation.
+1. [Internal DNS source of truth](../../references/sysadmin/internal-dns-source-of-truth.md).
+2. Authoritative provider records.
+3. Cluster-local DNS docs if relevant.
+4. Resolver checks as observation.
 
 ## Allowed read-only actions
 
 - `dig`
 - `nslookup`
 - `host`
-- `resolvectl query`
-- read Terraform DNS records
-- read cloud DNS zone records
-- read Kubernetes Service/EndpointSlice/CoreDNS config in read-only mode
+- read DNS records from approved sources
+- read cluster DNS state in read-only mode
 
 ## Forbidden actions
 
-- Modifying DNS records.
-- Flushing caches on production nodes without approval.
-- Restarting CoreDNS without approval.
+- Changing DNS records.
+- Restarting DNS services without approval.
 - Changing TTLs without approval.
 
 ## Workflow
 
-1. Identify expected record and authoritative source.
-2. Query authoritative nameserver directly.
-3. Query internal resolver.
-4. Query public resolver if relevant.
-5. Compare answers, TTLs, and CNAME chains.
-6. Check recent DNS/IaC changes.
-7. For Kubernetes: check Service, Endpoints/EndpointSlices, namespace, CoreDNS health.
-8. Produce diagnosis and next safe action.
+1. Identify expected record and source of truth.
+2. Query authoritative source.
+3. Query relevant resolvers.
+4. Compare answers and TTLs.
+5. Check recent changes.
+6. Produce diagnosis and safe next action.
 
 ## Output format
 
@@ -70,8 +65,6 @@ Use when:
 ## Observed answers
 
 ## Resolver comparison
-
-## TTL / propagation notes
 
 ## Suspected cause
 
