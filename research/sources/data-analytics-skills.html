@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Source Review: data-analytics-skills</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,41 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="source-review-data-analytics-skills">Source Review: data-analytics-skills</h1>
+<h2 id="claimed-purpose">Claimed purpose</h2>
+<p>A collection of portable data analytics skills for LLM agents: EDA, data quality, SQL validation, metric reconciliation, cohorts, funnels, A/B tests, dashboards, and narrative generation.</p>
+<h2 id="authority-level">Authority level</h2>
+<p>Useful after audit.</p>
+<h2 id="strengths">Strengths</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>Domain decomposition is sensible.</li>
+<li>Covers common analytics workflows.</li>
+<li>Encourages reusable procedural skills instead of one giant prompt.</li>
+<li>Good inspiration for skill taxonomy.</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="weaknesses-caveats">Weaknesses / caveats</h2>
+<ul>
+<li>Community repository, not an official statistical or vendor reference.</li>
+<li>Skill text may not match your internal metric definitions.</li>
+<li>Cannot be trusted for statistical correctness without review.</li>
+<li>Needs adaptation to your semantic layer and event taxonomy.</li>
+</ul>
+<h2 id="what-can-be-reused">What can be reused</h2>
+<ul>
+<li>Skill categories.</li>
+<li>Workflow structure.</li>
+<li>Output formats.</li>
+<li>Idea of assumptions log, metric reconciliation, query validation.</li>
+</ul>
+<h2 id="what-must-not-be-reused-blindly">What must not be reused blindly</h2>
+<ul>
+<li>Metric formulas.</li>
+<li>SQL examples.</li>
+<li>Experiment analysis claims.</li>
+<li>Any business assumptions.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<p>Use as a scaffold source. Rewrite every skill against internal definitions and authoritative docs before using it in an agent.</p></main>
 </div>
 </body>
 </html>

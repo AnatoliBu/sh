@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Sysadmin / SRE / Network Sources</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,69 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="sysadmin-sre-network-sources">Sysadmin / SRE / Network Sources</h1>
+<p>This file ranks source-of-truth references by authority for building reliable agent skills.</p>
+<h2 id="tier-a-foundation-sources">Tier A — foundation sources</h2>
+<h3 id="google-sre">Google SRE</h3>
+<p>Use Google SRE books and the Incident Management Guide as foundation references for:</p>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>incident response;</li>
+<li>alerting philosophy;</li>
+<li>on-call preparation;</li>
+<li>blameless postmortems;</li>
+<li>SLO/error budget thinking.</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<p>Operational rule: agent output must separate symptoms, impact, mitigation, suspected root cause, and confirmed root cause.</p>
+<h3 id="kubernetes-official-documentation">Kubernetes official documentation</h3>
+<p>Use upstream Kubernetes docs as the source of truth for:</p>
+<ul>
+<li>API versions;</li>
+<li>workloads;</li>
+<li>RBAC;</li>
+<li>NetworkPolicy;</li>
+<li>Pod Security Standards;</li>
+<li>probes;</li>
+<li>resource requests/limits.</li>
+</ul>
+<p>Operational rule: agent must not rely on memory for Kubernetes API details. Validate manifests through schema/dry-run tools.</p>
+<h3 id="netbox-nautobot-docs">NetBox / Nautobot docs</h3>
+<p>Use these as source-of-truth references for network inventory, IPAM, DCIM, intended topology, ownership, and automation inputs.</p>
+<p>Operational rule: agent must not invent network topology. It reads intended state from SoT and compares with observed state.</p>
+<h3 id="hashicorp-terraform-docs-and-terraform-mcp">HashiCorp Terraform docs and Terraform MCP</h3>
+<p>Use HashiCorp docs for Terraform syntax, providers, modules, policies, and current registry metadata.</p>
+<p>Operational rule: Terraform MCP is context, not trusted execution. Agent proposes config, runs validation/plan, then requires approval.</p>
+<h3 id="prometheus-grafana-docs">Prometheus / Grafana docs</h3>
+<p>Use official docs for PromQL, alerting rules, recording rules, and dashboard semantics.</p>
+<p>Operational rule: agent must not make up alert semantics. It must link alert expression to user impact or explicitly label it as preventive/internal.</p>
+<h2 id="tier-b-useful-after-audit">Tier B — useful after audit</h2>
+<ul>
+<li>cc-devops-skills: good scaffold pattern for generate → validate → dry-run workflows, but audit before reuse.</li>
+<li>Kubernetes community skills: useful prompt structure, but not authority.</li>
+<li>Incident runbook templates: useful as form, not content.</li>
+</ul>
+<h2 id="tier-c-cheat-sheets-only">Tier C — cheat sheets only</h2>
+<ul>
+<li>terminal-skills and command collections: use as command discovery only; not as expertise.</li>
+</ul>
+<h2 id="tier-d-quarantine-inspiration-only">Tier D — quarantine / inspiration only</h2>
+<ul>
+<li>NetClaw / OpenClaw: too much scope, weak trust model, broad blast radius. Use only as a feature taxonomy or moodboard, not as runtime, implementation model, or foundation.</li>
+</ul>
+<h2 id="source-admission-checklist">Source admission checklist</h2>
+<p>A source may enter Tier A only if it is one of:</p>
+<p>1. official vendor/project documentation;</p>
+<p>2. standards/security benchmark;</p>
+<p>3. mature, widely deployed open-source project documentation;</p>
+<p>4. internal company source of truth.</p>
+<p>Every source entry should include:</p>
+<ul>
+<li>owner;</li>
+<li>URL;</li>
+<li>last checked date;</li>
+<li>authority tier;</li>
+<li>what skills can consume it;</li>
+<li>known caveats.</li>
+</ul></main>
 </div>
 </body>
 </html>

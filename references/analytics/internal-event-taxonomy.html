@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Reference: Internal Event Taxonomy</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,55 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="reference-internal-event-taxonomy">Reference: Internal Event Taxonomy</h1>
+<h2 id="authority-tier">Authority tier</h2>
+<p>Tier A</p>
+<h2 id="status">Status</h2>
+<p>foundation / internal-placeholder</p>
+<h2 id="owner-maintainer">Owner / maintainer</h2>
+<p>Internal product analytics / data platform / instrumentation owners.</p>
+<h2 id="url">URL</h2>
+<p>TODO: link to internal tracking plan, event taxonomy, Segment/Amplitude/Mixpanel/PostHog tracking spec, or data contract registry.</p>
+<h2 id="last-checked">Last checked</h2>
+<p>TODO</p>
+<h2 id="scope">Scope</h2>
+<p>Highest authority for event names, event properties, identity stitching, session rules, product surfaces, and instrumentation caveats.</p>
+<h2 id="why-trusted">Why trusted</h2>
+<p>Product analytics depends on precise event semantics. Generic event names are not enough; the agent must use the approved tracking plan.</p>
+<h2 id="caveats">Caveats</h2>
+<p>This is a placeholder until connected to the real event taxonomy.</p>
+<h2 id="skills-that-may-consume-this-reference">Skills that may consume this reference</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/analytics/skills/funnel-analysis.html">Funnel Analysis</a></li>
+<li><a href="/analytics/skills/metric-reconciliation.html">Metric Reconciliation</a></li>
+<li><a href="/analytics/skills/sql-review.html">SQL Review</a></li>
+<li>future: cohort-analysis</li>
+<li>future: retention-analysis</li>
+<li>future: instrumentation-review</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="agents-that-may-consume-this-reference">Agents that may consume this reference</h2>
+<ul>
+<li><a href="/agents/analytics-agent.html">Data / Product Analytics Assistant</a></li>
+</ul>
+<h2 id="extracted-rules">Extracted rules</h2>
+<ul>
+<li>Do not infer event meaning from event name alone.</li>
+<li>Every funnel step must map to an official event/property definition.</li>
+<li>Identity model must be explicit.</li>
+<li>Instrumentation breaks must be checked before interpreting product behavior.</li>
+</ul>
+<h2 id="do-not-use-this-source-for">Do not use this source for</h2>
+<ul>
+<li>Business KPI ownership unless it also includes metric catalog entries.</li>
+<li>Statistical methodology.</li>
+<li>Warehouse performance guidance.</li>
+</ul>
+<h2 id="related-references">Related references</h2>
+<ul>
+<li><a href="/references/analytics/internal-metric-catalog.html">Internal Metric Catalog</a></li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>Every product analytics skill should link here when it uses product events.</p></main>
 </div>
 </body>
 </html>

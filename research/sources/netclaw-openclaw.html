@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Source Review: NetClaw / OpenClaw</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,35 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="source-review-netclaw-openclaw">Source Review: NetClaw / OpenClaw</h1>
+<h2 id="claimed-purpose">Claimed purpose</h2>
+<p>Network automation / autonomous network engineering agent with broad integrations and skill coverage.</p>
+<h2 id="authority-level">Authority level</h2>
+<p>Moodboard only / quarantine.</p>
+<h2 id="red-flags">Red flags</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>Excessive scope: many skills and integrations across network, observability, ITSM, cloud, security, collaboration tools.</li>
+<li>Broad blast radius if connected to real infrastructure.</li>
+<li>Dependency on an agent runtime model not designed as a narrow, audited production control plane.</li>
+<li>Marketing/README scope is much larger than what should be trusted without deep code audit.</li>
+<li>Risk of autonomous infrastructure mutation.</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="what-can-be-reused">What can be reused</h2>
+<ul>
+<li>List of possible domains for future skills.</li>
+<li>Integration taxonomy: SoT, ITSM, observability, config validation, lab simulation, telemetry.</li>
+<li>Idea of reconciling intended state and observed state.</li>
+</ul>
+<h2 id="what-must-not-be-reused">What must not be reused</h2>
+<ul>
+<li>Runtime as production foundation.</li>
+<li>Trust model.</li>
+<li>Direct tool execution model.</li>
+<li>Any broad autonomous network mutation pattern.</li>
+<li>Code or install scripts without audit.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<p>Do not build on NetClaw/OpenClaw. Use only as a brainstorming artifact when designing a safer, narrower system.</p></main>
 </div>
 </body>
 </html>

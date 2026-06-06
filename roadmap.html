@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Roadmap</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,95 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="roadmap">Roadmap</h1>
+<h2 id="phase-1-repository-skeleton">Phase 1 — Repository skeleton</h2>
+<p>Status: started.</p>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>[x] Create top-level structure.</li>
+<li>[x] Add source hierarchy for sysadmin/SRE/network.</li>
+<li>[x] Add source hierarchy for analytics/product analytics.</li>
+<li>[x] Add global skill template.</li>
+<li>[x] Add global agent rules.</li>
+<li>[x] Add bullshit-check mode.</li>
+<li>[x] Add initial sysadmin skills.</li>
+<li>[x] Add initial analytics skills.</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="phase-2-source-of-truth-cards">Phase 2 — Source-of-truth cards</h2>
+<p>Create source cards for:</p>
+<ul>
+<li>Google SRE</li>
+<li>Kubernetes official docs</li>
+<li>Kubernetes Pod Security Standards</li>
+<li>OWASP Kubernetes Top 10</li>
+<li>CIS Kubernetes Benchmark</li>
+<li>NetBox</li>
+<li>Nautobot</li>
+<li>Batfish</li>
+<li>Terraform docs / Terraform MCP</li>
+<li>Prometheus</li>
+<li>Grafana</li>
+<li>Ansible</li>
+<li>PagerDuty</li>
+<li>BigQuery</li>
+<li>Snowflake</li>
+<li>Databricks</li>
+<li>dbt semantic layer</li>
+<li>Mixpanel</li>
+<li>Amplitude</li>
+<li>PostHog</li>
+</ul>
+<h2 id="phase-3-skills">Phase 3 — Skills</h2>
+<h3 id="sysadmin">Sysadmin</h3>
+<ul>
+<li>linux-readonly-triage</li>
+<li>systemd-service-triage</li>
+<li>disk-memory-cpu-triage</li>
+<li>network-path-debug</li>
+<li>dns-debug</li>
+<li>tls-cert-debug</li>
+<li>k8s-manifest-review</li>
+<li>k8s-rbac-review</li>
+<li>k8s-service-ingress-debug</li>
+<li>terraform-plan-review</li>
+<li>ansible-playbook-review</li>
+<li>netbox-drift-analysis</li>
+<li>incident-triage</li>
+<li>postmortem-generator</li>
+</ul>
+<h3 id="analytics">Analytics</h3>
+<ul>
+<li>sql-review</li>
+<li>metric-reconciliation</li>
+<li>funnel-analysis</li>
+<li>cohort-analysis</li>
+<li>retention-analysis</li>
+<li>ab-test-review</li>
+<li>dashboard-specification</li>
+<li>executive-summary</li>
+<li>assumptions-log</li>
+</ul>
+<h2 id="phase-4-agent-packaging">Phase 4 — Agent packaging</h2>
+<ul>
+<li>Sysadmin/SRE agent definition.</li>
+<li>Analytics/Product analytics agent definition.</li>
+<li>Shared guardrails.</li>
+<li>Approval protocol.</li>
+<li>Output schemas.</li>
+<li>Evaluation cases.</li>
+</ul>
+<h2 id="phase-5-evaluation">Phase 5 — Evaluation</h2>
+<p>Build small benchmark cases:</p>
+<ul>
+<li>bad Kubernetes manifest;</li>
+<li>dangerous Terraform plan;</li>
+<li>noisy alert triage;</li>
+<li>DNS mismatch;</li>
+<li>TLS wrong certificate;</li>
+<li>metric discrepancy;</li>
+<li>funnel drop-off;</li>
+<li>SQL fanout bug;</li>
+<li>invalid A/B test conclusion.</li>
+</ul></main>
 </div>
 </body>
 </html>

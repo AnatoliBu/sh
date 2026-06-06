@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Reference: Internal DNS Source of Truth</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,46 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="reference-internal-dns-source-of-truth">Reference: Internal DNS Source of Truth</h1>
+<h2 id="authority-tier">Authority tier</h2>
+<p>Tier A</p>
+<h2 id="status">Status</h2>
+<p>foundation / internal-placeholder</p>
+<h2 id="owner-maintainer">Owner / maintainer</h2>
+<p>Internal platform, network, or infrastructure team.</p>
+<h2 id="url">URL</h2>
+<p>TODO: link to the real DNS source of truth.</p>
+<h2 id="last-checked">Last checked</h2>
+<p>TODO</p>
+<h2 id="scope">Scope</h2>
+<p>Expected DNS zones, records, ownership, environments, TTL expectations, and change process.</p>
+<h2 id="why-trusted">Why trusted</h2>
+<p>DNS debugging must compare observed resolver answers against intended records.</p>
+<h2 id="caveats">Caveats</h2>
+<p>This is a placeholder until the real internal source is linked.</p>
+<h2 id="skills-that-may-consume-this-reference">Skills that may consume this reference</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/sysadmin/skills/dns-debug.html">DNS Debug</a></li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="agents-that-may-consume-this-reference">Agents that may consume this reference</h2>
+<ul>
+<li><a href="/agents/sysadmin-agent.html">Sysadmin / SRE / Network Assistant</a></li>
+</ul>
+<h2 id="extracted-rules">Extracted rules</h2>
+<ul>
+<li>Identify the authoritative DNS source before diagnosing mismatch.</li>
+<li>Resolver results are observations, not authority.</li>
+<li>DNS changes require explicit approval and audit trail.</li>
+</ul>
+<h2 id="do-not-use-this-source-for">Do not use this source for</h2>
+<ul>
+<li>Certificate ownership.</li>
+<li>Full network path analysis.</li>
+</ul>
+<h2 id="related-references">Related references</h2>
+<ul>
+<li><a href="/references/sysadmin/netbox.html">NetBox</a></li>
+</ul></main>
 </div>
 </body>
 </html>

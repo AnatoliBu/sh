@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Research Queue</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,18 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
-<ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
-</ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<main><h1 id="research-queue">Research Queue</h1>
+<p>This folder tracks sources that need evaluation before they are allowed into the skills base.</p>
+<h2 id="workflow">Workflow</h2>
+<p>1. Add source to `queue.md`.</p>
+<p>2. Run `rules/bullshit-check.md`.</p>
+<p>3. Create a source card under `sources/`.</p>
+<p>4. Assign authority tier.</p>
+<p>5. Extract reusable workflow ideas.</p>
+<p>6. Rewrite into a narrow skill only if it passes review.</p>
+<h2 id="do-not-skip-evaluation">Do not skip evaluation</h2>
+<p>A repository with stars is not automatically trustworthy. A polished README is not proof. An MCP server is not automatically safe. A skill pack is not automatically expertise.</p>
+<p>The base must be boring, explicit, and grounded.</p></main>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Reference: Google SRE Incident Management Guide</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,57 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="reference-google-sre-incident-management-guide">Reference: Google SRE Incident Management Guide</h1>
+<h2 id="authority-tier">Authority tier</h2>
+<p>Tier A</p>
+<h2 id="status">Status</h2>
+<p>foundation</p>
+<h2 id="owner-maintainer">Owner / maintainer</h2>
+<p>Google SRE / sre.google</p>
+<h2 id="url">URL</h2>
+<p>https://sre.google/resources/practices-and-processes/incident-management-guide/</p>
+<h2 id="last-checked">Last checked</h2>
+<p>2026-06-06</p>
+<h2 id="scope">Scope</h2>
+<p>Authoritative guidance for incident preparation, alerting philosophy, incident roles, stakeholder communication, mitigation, learning, and blameless postmortems.</p>
+<h2 id="why-trusted">Why trusted</h2>
+<p>Google SRE is one of the most influential sources for modern reliability engineering. The incident guide is published by Google SRE and aligns with the broader SRE books and Site Reliability Workbook.</p>
+<h2 id="caveats">Caveats</h2>
+<p>Google-scale practices must be adapted to smaller organizations. The guide provides principles and process, not environment-specific runbooks.</p>
+<h2 id="skills-that-may-consume-this-reference">Skills that may consume this reference</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/sysadmin/skills/incident-triage.html">Incident Triage</a></li>
+<li>future: postmortem-generator</li>
+<li>future: alert-quality-review</li>
+<li>future: severity-classification</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="agents-that-may-consume-this-reference">Agents that may consume this reference</h2>
+<ul>
+<li><a href="/agents/sysadmin-agent.html">Sysadmin / SRE / Network Assistant</a></li>
+</ul>
+<h2 id="extracted-rules">Extracted rules</h2>
+<ul>
+<li>Alerts should focus on user-visible symptoms, not only internal causes.</li>
+<li>Alerts must be timely and actionable.</li>
+<li>On-call teams need up-to-date playbooks and training.</li>
+<li>Major incidents benefit from explicit roles such as Incident Commander, Communications Lead, and Operations Lead.</li>
+<li>Incident communications are as important as technical mitigation.</li>
+<li>Postmortems should be blameless and focus on improving systems, procedures, and training.</li>
+</ul>
+<h2 id="do-not-use-this-source-for">Do not use this source for</h2>
+<ul>
+<li>Exact commands for your infrastructure.</li>
+<li>Your organization’s severity matrix.</li>
+<li>Legal/compliance incident obligations.</li>
+<li>Product-specific customer communication language.</li>
+</ul>
+<h2 id="related-references">Related references</h2>
+<ul>
+<li>future: Google SRE Book</li>
+<li>future: Site Reliability Workbook</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>Skills should link here instead of linking directly to the external Google SRE URL.</p></main>
 </div>
 </body>
 </html>

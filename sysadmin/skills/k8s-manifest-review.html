@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Skill: Kubernetes Manifest Review</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,124 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="skill-kubernetes-manifest-review">Skill: Kubernetes Manifest Review</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Review Kubernetes manifests for correctness, security, operability, and policy compliance before they are applied.</p>
+<h2 id="reference-links">Reference links</h2>
+<p>Authority references:</p>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/references/sysadmin/kubernetes-pod-security-standards.html">Kubernetes Pod Security Standards</a></li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="when-to-use">When to use</h2>
+<p>Use for any proposed change to:</p>
+<ul>
+<li>Deployment / StatefulSet / DaemonSet / Job / CronJob;</li>
+<li>Service / Ingress / Gateway;</li>
+<li>ConfigMap / Secret reference;</li>
+<li>Role / ClusterRole / RoleBinding / ClusterRoleBinding;</li>
+<li>NetworkPolicy;</li>
+<li>Helm chart values or rendered manifests.</li>
+</ul>
+<h2 id="required-context">Required context</h2>
+<ul>
+<li>Manifest YAML/JSON.</li>
+<li>Target cluster version.</li>
+<li>Target namespace.</li>
+<li>Pod Security admission level.</li>
+<li>ResourceQuota and LimitRange.</li>
+<li>Organization security policy.</li>
+<li>Intended service owner and environment.</li>
+</ul>
+<h2 id="authority-chain">Authority chain</h2>
+<p>1. Internal platform standards.</p>
+<p>2. Kubernetes official docs.</p>
+<p>3. <a href="/references/sysadmin/kubernetes-pod-security-standards.html">Kubernetes Pod Security Standards</a>.</p>
+<p>4. OPA/Gatekeeper/Kyverno policies if used.</p>
+<p>5. Audited community checklists.</p>
+<h2 id="allowed-read-only-actions">Allowed read-only actions</h2>
+<ul>
+<li>Parse YAML.</li>
+<li>Run `kubectl diff` / `kubectl apply --dry-run=server` where safe.</li>
+<li>Run schema validation: `kubeconform`, `kubeval`.</li>
+<li>Run security/config scanners: `polaris`, `kube-score`, `trivy config`, `checkov`.</li>
+<li>Query cluster state read-only: API versions, namespace labels, quotas, existing resources.</li>
+</ul>
+<h2 id="forbidden-actions">Forbidden actions</h2>
+<ul>
+<li>`kubectl apply`</li>
+<li>`kubectl delete`</li>
+<li>`kubectl patch`</li>
+<li>`kubectl scale`</li>
+<li>`kubectl rollout restart`</li>
+<li>`kubectl drain` / `cordon` / `uncordon`</li>
+<li>creating wildcard RBAC without security approval</li>
+<li>deploying privileged pods without explicit exception</li>
+</ul>
+<h2 id="review-checklist">Review checklist</h2>
+<h3 id="api-and-schema">API and schema</h3>
+<ul>
+<li>API versions valid for target cluster.</li>
+<li>No deprecated APIs.</li>
+<li>Namespaces exist.</li>
+<li>Required labels/annotations present.</li>
+</ul>
+<h3 id="runtime-safety">Runtime safety</h3>
+<ul>
+<li>Requests and limits set.</li>
+<li>Readiness/liveness/startup probes make sense.</li>
+<li>Graceful termination configured where relevant.</li>
+<li>Rolling update strategy does not exceed capacity.</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>No privileged container unless approved.</li>
+<li>No hostPID/hostIPC/hostNetwork unless approved.</li>
+<li>No hostPath unless approved.</li>
+<li>SecurityContext present.</li>
+<li>`runAsNonRoot` where possible.</li>
+<li>Image tag pinned; avoid `latest`.</li>
+<li>Pull from trusted registry.</li>
+</ul>
+<h3 id="rbac">RBAC</h3>
+<ul>
+<li>No wildcard `verbs`, `resources`, or `apiGroups` unless approved.</li>
+<li>Scope namespace-local unless cluster-scope is necessary.</li>
+<li>ServiceAccount explicitly named.</li>
+</ul>
+<h3 id="network">Network</h3>
+<ul>
+<li>Service ports match container ports.</li>
+<li>Ingress/Gateway has TLS policy.</li>
+<li>NetworkPolicy present for restricted namespaces.</li>
+</ul>
+<h2 id="validation-steps">Validation steps</h2>
+<p>1. Render manifests if Helm/Kustomize is used.</p>
+<p>2. Validate schema.</p>
+<p>3. Run policy scanners.</p>
+<p>4. Run server-side dry-run.</p>
+<p>5. Produce diff.</p>
+<p>6. Classify risk.</p>
+<p>7. Request human approval before apply.</p>
+<h2 id="output-format">Output format</h2>
+<pre><code>
+# Kubernetes Manifest Review
+
+## Verdict
+approve / request changes / reject
+
+## Risk level
+low / medium / high
+
+## Findings
+
+## Required changes
+
+## Optional improvements
+
+## Validation output
+
+## Approval notes
+</code></pre></main>
 </div>
 </body>
 </html>

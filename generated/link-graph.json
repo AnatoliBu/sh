@@ -1,45 +1,373 @@
 {
   "nodes": [
+    "README.md",
+    "agents/analytics-agent.md",
+    "agents/sysadmin-agent.md",
+    "analytics/skills/funnel-analysis.md",
+    "analytics/skills/metric-reconciliation.md",
+    "analytics/skills/sql-review.md",
+    "analytics/sources.md",
+    "notes/next-actions.md",
     "references/README.md",
+    "references/TEMPLATE.md",
+    "references/analytics/internal-event-taxonomy.md",
+    "references/analytics/internal-metric-catalog.md",
     "references/sysadmin/google-sre-incident-management.md",
+    "references/sysadmin/internal-certificate-management.md",
+    "references/sysadmin/internal-dns-source-of-truth.md",
     "references/sysadmin/kubernetes-pod-security-standards.md",
     "references/sysadmin/netbox.md",
     "references/sysadmin/terraform-mcp.md",
-    "references/sysadmin/internal-dns-source-of-truth.md",
-    "references/sysadmin/internal-certificate-management.md",
-    "references/analytics/internal-metric-catalog.md",
-    "references/analytics/internal-event-taxonomy.md",
-    "references/tooling/quartz.md",
     "references/tooling/github-pages.md",
-    "agents/sysadmin-agent.md",
-    "agents/analytics-agent.md",
+    "references/tooling/quartz.md",
+    "research/README.md",
+    "research/queue.md",
+    "research/sources/cc-devops-skills.md",
+    "research/sources/data-analytics-skills.md",
+    "research/sources/netclaw-openclaw.md",
+    "research/sources/terminal-skills.md",
+    "roadmap.md",
+    "rules/bullshit-check.md",
     "rules/global-rules.md",
-    "rules/source-quality-check.md",
+    "site/quartz-deploy.md",
+    "skills/TEMPLATE.md",
+    "sysadmin/skills/dns-debug.md",
     "sysadmin/skills/incident-triage.md",
     "sysadmin/skills/k8s-manifest-review.md",
     "sysadmin/skills/terraform-plan-review.md",
-    "sysadmin/skills/dns-debug.md",
     "sysadmin/skills/tls-cert-debug.md",
-    "analytics/skills/metric-reconciliation.md",
-    "analytics/skills/funnel-analysis.md",
-    "analytics/skills/sql-review.md"
+    "sysadmin/sources.md"
   ],
   "edges": [
-    {"source": "agents/sysadmin-agent.md", "target": "references/sysadmin/google-sre-incident-management.md"},
-    {"source": "agents/sysadmin-agent.md", "target": "references/sysadmin/kubernetes-pod-security-standards.md"},
-    {"source": "agents/sysadmin-agent.md", "target": "references/sysadmin/netbox.md"},
-    {"source": "agents/sysadmin-agent.md", "target": "references/sysadmin/terraform-mcp.md"},
-    {"source": "agents/analytics-agent.md", "target": "references/analytics/internal-metric-catalog.md"},
-    {"source": "agents/analytics-agent.md", "target": "references/analytics/internal-event-taxonomy.md"},
-    {"source": "sysadmin/skills/incident-triage.md", "target": "references/sysadmin/google-sre-incident-management.md"},
-    {"source": "sysadmin/skills/k8s-manifest-review.md", "target": "references/sysadmin/kubernetes-pod-security-standards.md"},
-    {"source": "sysadmin/skills/terraform-plan-review.md", "target": "references/sysadmin/terraform-mcp.md"},
-    {"source": "sysadmin/skills/dns-debug.md", "target": "references/sysadmin/internal-dns-source-of-truth.md"},
-    {"source": "sysadmin/skills/tls-cert-debug.md", "target": "references/sysadmin/internal-certificate-management.md"},
-    {"source": "analytics/skills/metric-reconciliation.md", "target": "references/analytics/internal-metric-catalog.md"},
-    {"source": "analytics/skills/funnel-analysis.md", "target": "references/analytics/internal-event-taxonomy.md"},
-    {"source": "analytics/skills/sql-review.md", "target": "references/analytics/internal-metric-catalog.md"},
-    {"source": "site/quartz-deploy.md", "target": "references/tooling/quartz.md"},
-    {"source": "site/quartz-deploy.md", "target": "references/tooling/github-pages.md"}
+    {
+      "source": "agents/analytics-agent.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal Metric Catalog"
+    },
+    {
+      "source": "agents/analytics-agent.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal Event Taxonomy"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/google-sre-incident-management.md",
+      "label": "Google SRE Incident Management Guide"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/kubernetes-pod-security-standards.md",
+      "label": "Kubernetes Pod Security Standards"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/netbox.md",
+      "label": "NetBox"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/terraform-mcp.md",
+      "label": "Terraform MCP Server"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/internal-dns-source-of-truth.md",
+      "label": "Internal DNS Source of Truth"
+    },
+    {
+      "source": "agents/sysadmin-agent.md",
+      "target": "references/sysadmin/internal-certificate-management.md",
+      "label": "Internal Certificate Management"
+    },
+    {
+      "source": "analytics/skills/funnel-analysis.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal Event Taxonomy"
+    },
+    {
+      "source": "analytics/skills/funnel-analysis.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal Metric Catalog"
+    },
+    {
+      "source": "analytics/skills/funnel-analysis.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal tracking plan / event taxonomy"
+    },
+    {
+      "source": "analytics/skills/funnel-analysis.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal metric catalog"
+    },
+    {
+      "source": "analytics/skills/metric-reconciliation.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal Metric Catalog"
+    },
+    {
+      "source": "analytics/skills/metric-reconciliation.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal Event Taxonomy"
+    },
+    {
+      "source": "analytics/skills/metric-reconciliation.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal metric catalog / semantic layer"
+    },
+    {
+      "source": "analytics/skills/metric-reconciliation.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal event taxonomy / tracking plan"
+    },
+    {
+      "source": "analytics/skills/sql-review.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal Metric Catalog"
+    },
+    {
+      "source": "analytics/skills/sql-review.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal Event Taxonomy"
+    },
+    {
+      "source": "analytics/skills/sql-review.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Metric catalog"
+    },
+    {
+      "source": "analytics/skills/sql-review.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Event taxonomy"
+    },
+    {
+      "source": "references/README.md",
+      "target": "references/TEMPLATE.md",
+      "label": "`TEMPLATE.md`"
+    },
+    {
+      "source": "references/analytics/internal-event-taxonomy.md",
+      "target": "analytics/skills/funnel-analysis.md",
+      "label": "Funnel Analysis"
+    },
+    {
+      "source": "references/analytics/internal-event-taxonomy.md",
+      "target": "analytics/skills/metric-reconciliation.md",
+      "label": "Metric Reconciliation"
+    },
+    {
+      "source": "references/analytics/internal-event-taxonomy.md",
+      "target": "analytics/skills/sql-review.md",
+      "label": "SQL Review"
+    },
+    {
+      "source": "references/analytics/internal-event-taxonomy.md",
+      "target": "agents/analytics-agent.md",
+      "label": "Data / Product Analytics Assistant"
+    },
+    {
+      "source": "references/analytics/internal-event-taxonomy.md",
+      "target": "references/analytics/internal-metric-catalog.md",
+      "label": "Internal Metric Catalog"
+    },
+    {
+      "source": "references/analytics/internal-metric-catalog.md",
+      "target": "analytics/skills/metric-reconciliation.md",
+      "label": "Metric Reconciliation"
+    },
+    {
+      "source": "references/analytics/internal-metric-catalog.md",
+      "target": "analytics/skills/sql-review.md",
+      "label": "SQL Review"
+    },
+    {
+      "source": "references/analytics/internal-metric-catalog.md",
+      "target": "analytics/skills/funnel-analysis.md",
+      "label": "Funnel Analysis"
+    },
+    {
+      "source": "references/analytics/internal-metric-catalog.md",
+      "target": "agents/analytics-agent.md",
+      "label": "Data / Product Analytics Assistant"
+    },
+    {
+      "source": "references/analytics/internal-metric-catalog.md",
+      "target": "references/analytics/internal-event-taxonomy.md",
+      "label": "Internal Event Taxonomy"
+    },
+    {
+      "source": "references/sysadmin/google-sre-incident-management.md",
+      "target": "sysadmin/skills/incident-triage.md",
+      "label": "Incident Triage"
+    },
+    {
+      "source": "references/sysadmin/google-sre-incident-management.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/sysadmin/internal-certificate-management.md",
+      "target": "sysadmin/skills/tls-cert-debug.md",
+      "label": "TLS Certificate Debug"
+    },
+    {
+      "source": "references/sysadmin/internal-certificate-management.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/sysadmin/internal-certificate-management.md",
+      "target": "references/sysadmin/internal-dns-source-of-truth.md",
+      "label": "Internal DNS Source of Truth"
+    },
+    {
+      "source": "references/sysadmin/internal-dns-source-of-truth.md",
+      "target": "sysadmin/skills/dns-debug.md",
+      "label": "DNS Debug"
+    },
+    {
+      "source": "references/sysadmin/internal-dns-source-of-truth.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/sysadmin/internal-dns-source-of-truth.md",
+      "target": "references/sysadmin/netbox.md",
+      "label": "NetBox"
+    },
+    {
+      "source": "references/sysadmin/kubernetes-pod-security-standards.md",
+      "target": "sysadmin/skills/k8s-manifest-review.md",
+      "label": "Kubernetes Manifest Review"
+    },
+    {
+      "source": "references/sysadmin/kubernetes-pod-security-standards.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/sysadmin/netbox.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/sysadmin/terraform-mcp.md",
+      "target": "sysadmin/skills/terraform-plan-review.md",
+      "label": "Terraform Plan Review"
+    },
+    {
+      "source": "references/sysadmin/terraform-mcp.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/tooling/github-pages.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/tooling/github-pages.md",
+      "target": "agents/analytics-agent.md",
+      "label": "Data / Product Analytics Assistant"
+    },
+    {
+      "source": "references/tooling/github-pages.md",
+      "target": "references/tooling/quartz.md",
+      "label": "Quartz"
+    },
+    {
+      "source": "references/tooling/quartz.md",
+      "target": "agents/sysadmin-agent.md",
+      "label": "Sysadmin / SRE / Network Assistant"
+    },
+    {
+      "source": "references/tooling/quartz.md",
+      "target": "agents/analytics-agent.md",
+      "label": "Data / Product Analytics Assistant"
+    },
+    {
+      "source": "references/tooling/quartz.md",
+      "target": "references/tooling/github-pages.md",
+      "label": "GitHub Pages"
+    },
+    {
+      "source": "rules/bullshit-check.md",
+      "target": "references/README.md",
+      "label": "References"
+    },
+    {
+      "source": "rules/global-rules.md",
+      "target": "references/README.md",
+      "label": "`../references/`"
+    },
+    {
+      "source": "site/quartz-deploy.md",
+      "target": "references/tooling/quartz.md",
+      "label": "Quartz"
+    },
+    {
+      "source": "site/quartz-deploy.md",
+      "target": "references/tooling/github-pages.md",
+      "label": "GitHub Pages"
+    },
+    {
+      "source": "sysadmin/skills/dns-debug.md",
+      "target": "references/sysadmin/internal-dns-source-of-truth.md",
+      "label": "Internal DNS Source of Truth"
+    },
+    {
+      "source": "sysadmin/skills/dns-debug.md",
+      "target": "references/sysadmin/netbox.md",
+      "label": "NetBox"
+    },
+    {
+      "source": "sysadmin/skills/dns-debug.md",
+      "target": "references/sysadmin/internal-dns-source-of-truth.md",
+      "label": "Internal DNS source of truth"
+    },
+    {
+      "source": "sysadmin/skills/incident-triage.md",
+      "target": "references/sysadmin/google-sre-incident-management.md",
+      "label": "Google SRE Incident Management Guide"
+    },
+    {
+      "source": "sysadmin/skills/incident-triage.md",
+      "target": "references/sysadmin/google-sre-incident-management.md",
+      "label": "Google SRE incident management principles"
+    },
+    {
+      "source": "sysadmin/skills/k8s-manifest-review.md",
+      "target": "references/sysadmin/kubernetes-pod-security-standards.md",
+      "label": "Kubernetes Pod Security Standards"
+    },
+    {
+      "source": "sysadmin/skills/k8s-manifest-review.md",
+      "target": "references/sysadmin/kubernetes-pod-security-standards.md",
+      "label": "Kubernetes Pod Security Standards"
+    },
+    {
+      "source": "sysadmin/skills/terraform-plan-review.md",
+      "target": "references/sysadmin/terraform-mcp.md",
+      "label": "Terraform MCP Server"
+    },
+    {
+      "source": "sysadmin/skills/terraform-plan-review.md",
+      "target": "references/sysadmin/terraform-mcp.md",
+      "label": "HashiCorp Terraform docs / provider docs / Terraform Registry"
+    },
+    {
+      "source": "sysadmin/skills/tls-cert-debug.md",
+      "target": "references/sysadmin/internal-certificate-management.md",
+      "label": "Internal Certificate Management"
+    },
+    {
+      "source": "sysadmin/skills/tls-cert-debug.md",
+      "target": "references/sysadmin/internal-dns-source-of-truth.md",
+      "label": "Internal DNS Source of Truth"
+    },
+    {
+      "source": "sysadmin/skills/tls-cert-debug.md",
+      "target": "references/sysadmin/internal-certificate-management.md",
+      "label": "Internal certificate management"
+    }
   ]
 }

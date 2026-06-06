@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Reference: Terraform MCP Server</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,54 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="reference-terraform-mcp-server">Reference: Terraform MCP Server</h1>
+<h2 id="authority-tier">Authority tier</h2>
+<p>Tier A for documentation context, not execution</p>
+<h2 id="status">Status</h2>
+<p>foundation-context / beta-caveat</p>
+<h2 id="owner-maintainer">Owner / maintainer</h2>
+<p>HashiCorp</p>
+<h2 id="url">URL</h2>
+<p>https://developer.hashicorp.com/terraform/mcp-server</p>
+<h2 id="last-checked">Last checked</h2>
+<p>2026-06-06</p>
+<h2 id="scope">Scope</h2>
+<p>Authoritative context source for current Terraform provider documentation, Registry modules, policies, and Terraform/HCP Terraform metadata exposed through MCP.</p>
+<h2 id="why-trusted">Why trusted</h2>
+<p>This is official HashiCorp documentation. It exists specifically to give AI tools current Terraform documentation and registry context rather than relying on stale model training data.</p>
+<h2 id="caveats">Caveats</h2>
+<p>The Terraform MCP Server documentation marks the feature as beta. Treat it as a context/documentation source unless a separate security review approves any workspace operations. Do not use it as a trusted production execution plane by default.</p>
+<h2 id="skills-that-may-consume-this-reference">Skills that may consume this reference</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/sysadmin/skills/terraform-plan-review.html">Terraform Plan Review</a></li>
+<li>future: terraform-module-review</li>
+<li>future: terraform-drift-analysis</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="agents-that-may-consume-this-reference">Agents that may consume this reference</h2>
+<ul>
+<li><a href="/agents/sysadmin-agent.html">Sysadmin / SRE / Network Assistant</a></li>
+</ul>
+<h2 id="extracted-rules">Extracted rules</h2>
+<ul>
+<li>Prefer current provider docs over model memory.</li>
+<li>Generated Terraform must pass fmt, validate, lint, security checks, plan review, and approval.</li>
+<li>Terraform apply/destroy/import/state operations require explicit approval.</li>
+<li>MCP context does not remove the need for policy-as-code and human review.</li>
+</ul>
+<h2 id="do-not-use-this-source-for">Do not use this source for</h2>
+<ul>
+<li>Production apply approval.</li>
+<li>General cloud architecture authority outside Terraform provider docs.</li>
+<li>Secret handling policy.</li>
+</ul>
+<h2 id="related-references">Related references</h2>
+<ul>
+<li>future: Terraform CLI docs</li>
+<li>future: Terraform Registry</li>
+<li>future: Open Policy Agent / Sentinel</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>Skills should link here when they rely on Terraform MCP as a current-docs source.</p></main>
 </div>
 </body>
 </html>

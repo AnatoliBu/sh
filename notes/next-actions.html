@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Next Actions</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,68 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="next-actions">Next Actions</h1>
+<h2 id="immediate">Immediate</h2>
+<p>1. Move this folder into a dedicated private repository when repo creation is available.</p>
+<p>2. Convert `sources.md` into individual source cards.</p>
+<p>3. Add citations/links to each source card.</p>
+<p>4. Add evaluation cases for skills.</p>
+<p>5. Add CI checks for markdown structure.</p>
+<h2 id="source-card-template">Source card template</h2>
+<pre><code>
+# Source: &lt;name&gt;
+
+## Authority tier
+
+## Owner / maintainer
+
+## URL
+
+## Last checked
+
+## Why trusted
+
+## Caveats
+
+## Skills that can consume it
+
+## Extracted rules
+
+## Rejected / not reusable parts
+</code></pre>
+<h2 id="priority-skills-to-add-next">Priority skills to add next</h2>
+<h3 id="sysadmin">Sysadmin</h3>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>linux-readonly-triage</li>
+<li>systemd-service-triage</li>
+<li>network-path-debug</li>
+<li>k8s-rbac-review</li>
+<li>k8s-service-ingress-debug</li>
+<li>ansible-playbook-review</li>
+<li>netbox-drift-analysis</li>
+<li>postmortem-generator</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h3 id="analytics">Analytics</h3>
+<ul>
+<li>cohort-analysis</li>
+<li>retention-analysis</li>
+<li>ab-test-review</li>
+<li>dashboard-specification</li>
+<li>executive-summary</li>
+<li>assumptions-log</li>
+</ul>
+<h2 id="evaluation-cases">Evaluation cases</h2>
+<ul>
+<li>broken Kubernetes manifest</li>
+<li>wildcard RBAC manifest</li>
+<li>Terraform plan with destructive replacement</li>
+<li>DNS split-horizon mismatch</li>
+<li>wrong TLS certificate via SNI</li>
+<li>metric discrepancy caused by timezone</li>
+<li>SQL fanout bug</li>
+<li>funnel drop caused by instrumentation change</li>
+<li>A/B test with underpowered sample</li>
+</ul></main>
 </div>
 </body>
 </html>

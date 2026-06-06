@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Analytics / Product Analytics Sources</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,86 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="analytics-product-analytics-sources">Analytics / Product Analytics Sources</h1>
+<p>This file ranks source-of-truth references for analytics agents.</p>
+<h2 id="tier-a-foundation-sources">Tier A — foundation sources</h2>
+<h3 id="internal-metric-catalog-semantic-layer">Internal metric catalog / semantic layer</h3>
+<p>This is the highest authority. It should include:</p>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li>metric name;</li>
+<li>business definition;</li>
+<li>SQL / semantic model definition;</li>
+<li>owner;</li>
+<li>grain;</li>
+<li>timezone;</li>
+<li>filters;</li>
+<li>freshness expectations;</li>
+<li>known caveats;</li>
+<li>dashboard references;</li>
+<li>validation tests.</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<p>Operational rule: if internal definitions disagree with vendor/blog examples, internal definitions win.</p>
+<h3 id="internal-event-taxonomy">Internal event taxonomy</h3>
+<p>This defines product analytics events, properties, identity stitching, session logic, and instrumentation contracts.</p>
+<p>Operational rule: agent must not infer event meaning from names alone. It must read event definitions and known caveats.</p>
+<h3 id="data-warehouse-semantic-layer-docs">Data warehouse / semantic layer docs</h3>
+<p>Use BigQuery, Snowflake, Databricks, dbt, LookML, Cube, WrenAI, or other semantic layer documentation depending on the actual stack.</p>
+<p>Operational rule: the agent should prefer semantic models and certified datasets over raw table spelunking.</p>
+<h3 id="product-analytics-vendor-documentation">Product analytics vendor documentation</h3>
+<p>Use Amplitude, Mixpanel, PostHog, GA4 docs for platform-specific concepts:</p>
+<ul>
+<li>funnels;</li>
+<li>cohorts;</li>
+<li>retention;</li>
+<li>user identity;</li>
+<li>experiments;</li>
+<li>dashboards;</li>
+<li>event tracking.</li>
+</ul>
+<p>Operational rule: vendor docs explain tool semantics, but not the business definition of your metric.</p>
+<h3 id="statistical-references">Statistical references</h3>
+<p>Use established statistics and experimentation references for:</p>
+<ul>
+<li>hypothesis testing;</li>
+<li>confidence intervals;</li>
+<li>power analysis;</li>
+<li>multiple testing;</li>
+<li>causal inference;</li>
+<li>experiment guardrails.</li>
+</ul>
+<p>Operational rule: agent must explicitly state assumptions and avoid causal claims from observational data unless causal design supports them.</p>
+<h2 id="tier-b-useful-after-audit">Tier B — useful after audit</h2>
+<ul>
+<li>data-analytics-skills: useful workflow taxonomy for EDA, metric reconciliation, SQL review, cohort/funnel analysis, documentation, narrative generation.</li>
+<li>AI Analyst style repos: useful architecture ideas, not trusted analytical truth.</li>
+<li>product analytics skills from community repos: useful patterns, must be rewritten against internal metrics and event taxonomy.</li>
+</ul>
+<h2 id="tier-c-snippets-only">Tier C — snippets only</h2>
+<ul>
+<li>SQL gists;</li>
+<li>dashboard examples;</li>
+<li>blog recipes;</li>
+<li>growth-hacking frameworks.</li>
+</ul>
+<p>Use as examples only. Never treat as authoritative.</p>
+<h2 id="tier-d-reject-as-foundation">Tier D — reject as foundation</h2>
+<ul>
+<li>autonomous analytics agents without explicit evaluation;</li>
+<li>repos that generate SQL without semantic layer or query validation;</li>
+<li>projects that skip metric ownership and assumption logs.</li>
+</ul>
+<h2 id="source-admission-checklist">Source admission checklist</h2>
+<p>Every analytics source entry should include:</p>
+<ul>
+<li>owner;</li>
+<li>authority tier;</li>
+<li>URL or internal location;</li>
+<li>scope;</li>
+<li>what metrics/skills can use it;</li>
+<li>caveats;</li>
+<li>last checked date;</li>
+<li>whether it is normative or illustrative.</li>
+</ul></main>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Reference: Kubernetes Pod Security Standards</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,57 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="reference-kubernetes-pod-security-standards">Reference: Kubernetes Pod Security Standards</h1>
+<h2 id="authority-tier">Authority tier</h2>
+<p>Tier A</p>
+<h2 id="status">Status</h2>
+<p>foundation</p>
+<h2 id="owner-maintainer">Owner / maintainer</h2>
+<p>Kubernetes project</p>
+<h2 id="url">URL</h2>
+<p>https://kubernetes.io/docs/concepts/security/pod-security-standards/</p>
+<h2 id="last-checked">Last checked</h2>
+<p>2026-06-06</p>
+<h2 id="scope">Scope</h2>
+<p>Authoritative reference for Kubernetes Pod Security Standards: Privileged, Baseline, and Restricted profiles.</p>
+<h2 id="why-trusted">Why trusted</h2>
+<p>This is upstream Kubernetes documentation maintained by the Kubernetes project. It defines the security profiles used by Pod Security Admission and gives concrete restrictions for pod specs.</p>
+<h2 id="caveats">Caveats</h2>
+<p>Pod Security Standards are broad built-in profiles, not a complete security program. Organizations may need stricter policies through Kyverno, Gatekeeper/OPA, custom admission controls, runtime security, and supply-chain scanning.</p>
+<h2 id="skills-that-may-consume-this-reference">Skills that may consume this reference</h2>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/sysadmin/skills/k8s-manifest-review.html">Kubernetes Manifest Review</a></li>
+<li>future: k8s-rbac-review</li>
+<li>future: k8s-networkpolicy-review</li>
+<li>future: k8s-service-ingress-debug</li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="agents-that-may-consume-this-reference">Agents that may consume this reference</h2>
+<ul>
+<li><a href="/agents/sysadmin-agent.html">Sysadmin / SRE / Network Assistant</a></li>
+</ul>
+<h2 id="extracted-rules">Extracted rules</h2>
+<ul>
+<li>Default application workloads should not use the Privileged profile.</li>
+<li>Baseline prevents known privilege escalations while remaining broadly adoptable.</li>
+<li>Restricted follows current pod hardening best practices.</li>
+<li>Privileged containers, host namespaces, hostPath volumes, and broad capabilities require explicit exception review.</li>
+</ul>
+<h2 id="do-not-use-this-source-for">Do not use this source for</h2>
+<ul>
+<li>General Kubernetes troubleshooting.</li>
+<li>Full cluster hardening.</li>
+<li>Cloud-provider-specific managed Kubernetes controls.</li>
+<li>Container image vulnerability policy.</li>
+</ul>
+<h2 id="related-references">Related references</h2>
+<ul>
+<li>future: Kubernetes RBAC docs</li>
+<li>future: Kubernetes NetworkPolicy docs</li>
+<li>future: OWASP Kubernetes Top 10</li>
+<li>future: CIS Kubernetes Benchmark</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>Use this reference from manifest/security review skills rather than linking directly to the upstream page.</p></main>
 </div>
 </body>
 </html>

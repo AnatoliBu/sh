@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sysadmin &amp; Analytics Agent Knowledge Base</title>
+<title>Quartz Deploy Plan</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; }
 .layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
@@ -55,14 +55,83 @@ small { color: #6e7781; display: block; }
 <li><a href="/sysadmin/skills/terraform-plan-review.html">Skill: Terraform Plan Review</a> <small>sysadmin/skills/terraform-plan-review.md</small></li>
 <li><a href="/sysadmin/skills/tls-cert-debug.html">Skill: TLS Certificate Debug</a> <small>sysadmin/skills/tls-cert-debug.md</small></li>
 <li><a href="/sysadmin/sources.html">Sysadmin / SRE / Network Sources</a> <small>sysadmin/sources.md</small></li></ul></nav>
-<main><h1 id="sysadmin-analytics-agent-knowledge-base">Sysadmin & Analytics Agent Knowledge Base</h1>
-<p>This directory is a temporary fallback because the currently exposed GitHub connector can write to `AnatoliBu/sh`, but does not expose a repository-creation endpoint.</p>
-<p>The intended target is a separate private repository for authoritative source-of-truth references, agent skills, rules, and workflow templates for:</p>
+<main><h1 id="quartz-deploy-plan">Quartz Deploy Plan</h1>
+<h2 id="reference-links">Reference links</h2>
+<p>Authority references:</p>
 <ul>
-<li>system administration / SRE / DevOps / network operations;</li>
-<li>data analytics / product analytics / BI.</li>
+<li><a href="/references/tooling/quartz.html">Quartz</a></li>
+<li><a href="/references/tooling/github-pages.html">GitHub Pages</a></li>
 </ul>
-<p>Once a private repository is created or exposed through the connector, this directory should be moved there.</p></main>
+<h2 id="decision">Decision</h2>
+<p>Use Quartz as the human-readable documentation frontend for the agent knowledge base.</p>
+<p>Quartz is a good fit because this repo is a linked knowledge graph:</p>
+<ul>
+<li>references point to skills;</li>
+<li>skills point to references;</li>
+<li>agents compose skills;</li>
+<li>rules constrain agents;</li>
+<li>research notes evaluate sources.</li>
+</ul>
+<p>Quartz gives backlinks and graph navigation, while CI remains responsible for validation.</p>
+<h2 id="important-safety-note">Important safety note</h2>
+<p>Do not publish sensitive material to a public Pages site.</p>
+<p>Before enabling deployment, check whether the target GitHub account/repository supports private Pages. If not, use one of these safer options:</p>
+<p>1. local Quartz preview only;</p>
+<p>2. Cloudflare Pages or another static host with access control;</p>
+<p>3. private GitHub Pages if available;</p>
+<p>4. separate sanitized public docs site.</p>
+<h2 id="architecture">Architecture</h2>
+<p>Recommended structure:</p>
+<pre><code>
+sysadmin-analytics-agent-kb/
+  references/
+  agents/
+  rules/
+  sysadmin/
+  analytics/
+  research/
+  site/
+  tools/
+</code></pre>
+<p>Quartz build should treat `sysadmin-analytics-agent-kb/` as content, excluding generated/cache/build folders.</p>
+<h2 id="deployment-pipeline">Deployment pipeline</h2>
+<p>1. Run docs validation:</p>
+<p>   - local links;</p>
+<p>   - reference-card requirement;</p>
+<p>   - line anchors;</p>
+<p>   - wiki links;</p>
+<p>   - markdown lint.</p>
+<p>2. Generate link graph artifacts.</p>
+<p>3. Build Quartz site.</p>
+<p>4. Deploy static output only after validation passes.</p>
+<h2 id="quartz-setup-approach">Quartz setup approach</h2>
+<p>Preferred approach:</p>
+<ul>
+<li>keep source docs in `sysadmin-analytics-agent-kb/`;</li>
+<li>add Quartz config under `quartz/` or a separate branch/subtree;</li>
+<li>copy or symlink docs into Quartz `content/` during CI;</li>
+<li>build Quartz;</li>
+<li>deploy built `public/` output.</li>
+</ul>
+<p>Avoid making Quartz the source of truth. Markdown source remains the source.</p>
+<h2 id="graph-strategy">Graph strategy</h2>
+<p>Use two graph layers:</p>
+<p>1. **Quartz graph** for human exploration.</p>
+<p>2. **CI generated graph** for deterministic validation and review artifacts.</p>
+<p>The CI graph should be generated from the same Markdown links that validators check.</p>
+<h2 id="alternative-tools-considered">Alternative tools considered</h2>
+<h3 id="mkdocs-material">MkDocs Material</h3>
+<p>Excellent documentation UI, navigation, search, and plugins. Better for polished manuals, worse for backlink-heavy graph exploration.</p>
+<h3 id="docusaurus">Docusaurus</h3>
+<p>Good for product documentation and versioning. Heavier than needed and not graph-first.</p>
+<h3 id="obsidian">Obsidian</h3>
+<p>Excellent local graph and editing experience. Not a deployment target by itself.</p>
+<h3 id="graphviz">Graphviz</h3>
+<p>Great for deterministic CI-generated graphs. Not a docs UI. Use it alongside Quartz.</p>
+<h3 id="graphite">Graphite</h3>
+<p>Graphite is mostly associated with stacked PR/code review workflows, not this kind of documentation graph. It is not the primary fit here.</p>
+<h2 id="verdict">Verdict</h2>
+<p>Use Quartz for the docs website and Graphviz/DOT-style generated graph artifacts for CI and reviews.</p></main>
 </div>
 </body>
 </html>
