@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation
+domain: sysadmin
+owner: Kubernetes project
+last_checked: 2026-06-06
+source_url: https://kubernetes.io/docs/concepts/security/pod-security-standards/
+---
+
 # Reference: Kubernetes Pod Security Standards
 
 ## Authority tier
