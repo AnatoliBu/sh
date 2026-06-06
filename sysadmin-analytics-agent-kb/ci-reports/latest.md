@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:10:15Z`
-Git SHA: `27b8472b67d44550aff8e9a3fa6b01b3735e231f`
+Generated at: `2026-06-06T17:10:38Z`
+Git SHA: `4adb06e703e786ee3b7e7d8148dc89e3b0c3896d`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -59,14 +59,9 @@ Output:
 
 ```text
 Frontmatter validation failed:
-- references/google-sre-incident-management.md: missing frontmatter keys: domain
-- references/internal-certificate-management.md: missing frontmatter keys: domain
-- references/internal-dns-source-of-truth.md: missing frontmatter keys: domain
-- references/internal-event-taxonomy.md: missing frontmatter keys: domain
-- references/internal-metric-catalog.md: missing frontmatter keys: domain
-- references/kubernetes-pod-security-standards.md: missing frontmatter keys: domain
-- references/netbox.md: missing frontmatter keys: domain
-- references/terraform-mcp.md: missing frontmatter keys: domain
+- analytics/sources.md: missing YAML frontmatter
+- references/README.md: missing YAML frontmatter
+- sysadmin/sources.md: missing YAML frontmatter
 
 ```
 
