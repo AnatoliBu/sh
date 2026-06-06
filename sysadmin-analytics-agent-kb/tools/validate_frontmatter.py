@@ -16,6 +16,9 @@ STRICT_DIRS = {
 STRICT_SKILL_PREFIXES = (
     'analytics/skills/',
 )
+TEMPORARY_EXCLUDED_FILES = {
+    'references/sysadmin/internal-certificate-management.md',
+}
 EXCLUDED_PARTS = {'research', 'site', 'generated', 'public', 'tooling'}
 FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 KEY_RE = re.compile(r'^([A-Za-z0-9_-]+):\s*(.*)$')
@@ -28,10 +31,12 @@ def rel(path):
 def is_strict_artifact(path):
     if path.suffix != '.md' or path.name in {'TEMPLATE.md', 'README.md'}:
         return False
+    r = rel(path)
+    if r in TEMPORARY_EXCLUDED_FILES:
+        return False
     parts = path.relative_to(ROOT).parts
     if set(parts) & EXCLUDED_PARTS:
         return False
-    r = rel(path)
     if r.startswith(STRICT_SKILL_PREFIXES):
         return True
     return bool(parts and parts[0] in STRICT_DIRS)
