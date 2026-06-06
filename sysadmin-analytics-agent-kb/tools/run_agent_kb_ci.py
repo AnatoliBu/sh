@@ -5,7 +5,6 @@ import datetime as dt
 import os
 import shlex
 import subprocess
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -33,7 +32,6 @@ CHECKS = [
     {
         "name": "Build Quartz site",
         "cmd": ["bash", "sysadmin-analytics-agent-kb/tools/build_quartz_site.sh"],
-        "requires_quartz_token": True,
     },
     {
         "name": "Markdown lint",
@@ -55,16 +53,18 @@ def run_check(cmd: list[str], env: dict[str, str]) -> tuple[int, str]:
 
 
 def redact(text: str) -> str:
-    token = os.environ.get("QUARTZ_REPO_TOKEN", "")
-    if token:
-        text = text.replace(token, "***REDACTED_QUARTZ_REPO_TOKEN***")
+    for key in ("QUARTZ_REPO_TOKEN", "GITHUB_TOKEN"):
+        token = os.environ.get(key, "")
+        if token:
+            text = text.replace(token, f"***REDACTED_{key}***")
     return text
 
 
 def main() -> int:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
-    env.setdefault("QUARTZ_BRANCH", "agent-kb-v5")
+    env.setdefault("QUARTZ_REPO_URL", "https://github.com/jackyzha0/quartz.git")
+    env.setdefault("QUARTZ_BRANCH", "v4")
 
     started = dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     sections: list[str] = [
@@ -72,7 +72,8 @@ def main() -> int:
         "",
         f"Generated at: `{started}`",
         f"Git SHA: `{env.get('GITHUB_SHA', 'local')}`",
-        f"Quartz branch: `{env.get('QUARTZ_BRANCH', 'agent-kb-v5')}`",
+        f"Quartz engine: `{env.get('QUARTZ_REPO_URL')}`",
+        f"Quartz branch: `{env.get('QUARTZ_BRANCH')}`",
         "",
         "## Summary",
         "",
@@ -84,12 +85,7 @@ def main() -> int:
     for check in CHECKS:
         name = check["name"]
         cmd = check["cmd"]
-        missing_token = check.get("requires_quartz_token") and not env.get("QUARTZ_REPO_TOKEN")
-        if missing_token:
-            code = 1
-            output = "QUARTZ_REPO_TOKEN is missing. Add it as a repository secret with read access to AnatoliBu/quartz.\n"
-        else:
-            code, output = run_check(cmd, env)
+        code, output = run_check(cmd, env)
         output = redact(output)
         if code != 0:
             failures += 1
