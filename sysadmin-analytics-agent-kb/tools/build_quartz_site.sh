@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 KB="$ROOT/sysadmin-analytics-agent-kb"
 WORK="$ROOT/quartz-work"
 OUT="$KB/public"
+QUARTZ_BRANCH="${QUARTZ_BRANCH:-agent-kb-v5}"
 
 rm -rf "$WORK"
 
@@ -14,7 +15,7 @@ if [ -z "${QUARTZ_REPO_TOKEN:-}" ]; then
   exit 1
 fi
 
-git clone --depth 1 --branch v4 "https://x-access-token:${QUARTZ_REPO_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
+git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${QUARTZ_REPO_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
 
 rm -rf "$WORK/content"
 mkdir -p "$WORK/content"
@@ -62,18 +63,42 @@ fi
 python - <<'PY'
 from pathlib import Path
 
-config = Path('quartz-work/quartz.config.ts')
-text = config.read_text(encoding='utf-8')
-text = text.replace('pageTitle: "apps-api-tests"', 'pageTitle: "Agent KB"')
-text = text.replace('pageTitleSuffix: " | QA Notes"', 'pageTitleSuffix: " | Source of Truth"')
-text = text.replace('locale: "ru-RU"', 'locale: "en-US"')
-text = text.replace('baseUrl: "localhost:8080"', 'baseUrl: "anatolibu.github.io/sh"')
-text = text.replace('ignorePatterns: ["private", "templates", ".obsidian", "archive"]', 'ignorePatterns: ["private", "templates", ".obsidian", "archive", "research", "site", "references/tooling"]')
-config.write_text(text, encoding='utf-8')
+root = Path('quartz-work')
+agent_ignore = '["private", "templates", ".obsidian", "archive", "research", "site", "references/tooling"]'
+
+ts_config = root / 'quartz.config.ts'
+yaml_config = root / 'quartz.config.default.yaml'
+
+if ts_config.exists():
+    text = ts_config.read_text(encoding='utf-8')
+    text = text.replace('pageTitle: "apps-api-tests"', 'pageTitle: "Agent KB"')
+    text = text.replace('pageTitle: "Quartz 4"', 'pageTitle: "Agent KB"')
+    text = text.replace('pageTitleSuffix: " | QA Notes"', 'pageTitleSuffix: " | Source of Truth"')
+    text = text.replace('pageTitleSuffix: ""', 'pageTitleSuffix: " | Source of Truth"')
+    text = text.replace('locale: "ru-RU"', 'locale: "en-US"')
+    text = text.replace('baseUrl: "localhost:8080"', 'baseUrl: "anatolibu.github.io/sh"')
+    text = text.replace('baseUrl: "quartz.jzhao.xyz"', 'baseUrl: "anatolibu.github.io/sh"')
+    text = text.replace('ignorePatterns: ["private", "templates", ".obsidian", "archive"]', f'ignorePatterns: {agent_ignore}')
+    text = text.replace('ignorePatterns: ["private", "templates", ".obsidian"]', f'ignorePatterns: {agent_ignore}')
+    ts_config.write_text(text, encoding='utf-8')
+elif yaml_config.exists():
+    text = yaml_config.read_text(encoding='utf-8')
+    text = text.replace('pageTitle: Quartz 5', 'pageTitle: Agent KB')
+    text = text.replace('pageTitleSuffix: ""', 'pageTitleSuffix: " | Source of Truth"')
+    text = text.replace('baseUrl: quartz.jzhao.xyz', 'baseUrl: anatolibu.github.io/sh')
+    text = text.replace('locale: en-US', 'locale: en-US')
+    text = text.replace('analytics:\n    provider: plausible', 'analytics: null')
+    text = text.replace('ignorePatterns:\n    - private\n    - templates\n    - .obsidian', 'ignorePatterns:\n    - private\n    - templates\n    - .obsidian\n    - archive\n    - research\n    - site\n    - references/tooling')
+    (root / 'quartz.config.yaml').write_text(text, encoding='utf-8')
+else:
+    raise SystemExit('No supported Quartz config found: expected quartz.config.ts or quartz.config.default.yaml')
 PY
 
 cd "$WORK"
 npm ci
+if npm run | grep -q "install-plugins"; then
+  npm run install-plugins
+fi
 npx quartz build
 
 rm -rf "$OUT"
