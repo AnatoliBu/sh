@@ -1,7 +1,8 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T16:47:59Z`
-Git SHA: `5b235382e085c80661676a20fdf64c5319c23aa2`
+Generated at: `2026-06-06T16:48:14Z`
+Git SHA: `2072304b01a6f3f916fa2c2f53fb868c3d70d665`
+Quartz engine: `https://github.com/jackyzha0/quartz.git`
 Quartz branch: `agent-kb-v5`
 
 ## Summary
@@ -86,7 +87,9 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-QUARTZ_REPO_TOKEN is missing. Add it as a repository secret with read access to AnatoliBu/quartz.
+Using Quartz engine: https://github.com/jackyzha0/quartz.git@agent-kb-v5
+Cloning into '/home/runner/work/sh/sh/quartz-work'...
+fatal: Remote branch agent-kb-v5 not found in upstream origin
 
 ```
 
