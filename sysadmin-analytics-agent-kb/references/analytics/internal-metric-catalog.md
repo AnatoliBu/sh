@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation
+domain: analytics
+owner: Internal analytics/product/data owners
+last_checked: TODO
+source_url: TODO
+---
+
 # Reference: Internal Metric Catalog
 
 ## Authority tier
