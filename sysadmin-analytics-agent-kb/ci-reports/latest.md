@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:06:16Z`
-Git SHA: `f926ae1e4c8e9102945a82224176660e7e641b3e`
+Generated at: `2026-06-06T17:07:43Z`
+Git SHA: `9e05b1dfe753d9cf540281b4ca299d6a36b7cea5`
 Quartz engine: `https://github.com/jackyzha0/quartz.git`
 Quartz branch: `v4`
 
@@ -80,7 +80,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 40 nodes and 104 edges
+Generated curated graph: 40 nodes and 105 edges
 
 ```
 
