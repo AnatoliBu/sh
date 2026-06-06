@@ -1,7 +1,10 @@
-name: test
+name: Agent KB docs
 on: push
 jobs:
-  test:
+  validate-docs:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ok
+      - name: Check workspace
+        run: pwd
+      - name: Validate docs
+        run: python sysadmin-analytics-agent-kb/tools/validate_docs.py
