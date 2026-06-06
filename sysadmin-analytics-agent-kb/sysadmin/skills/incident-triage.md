@@ -4,6 +4,12 @@
 
 Classify an incident, separate symptoms from suspected causes, assess impact, and produce a safe initial mitigation plan.
 
+## Reference links
+
+Authority references:
+
+- [Google SRE Incident Management Guide](../../references/sysadmin/google-sre-incident-management.md)
+
 ## When to use
 
 Use when:
@@ -27,7 +33,7 @@ Use when:
 
 1. Internal incident management policy and severity matrix.
 2. Service-specific runbooks.
-3. Google SRE incident management principles.
+3. [Google SRE incident management principles](../../references/sysadmin/google-sre-incident-management.md).
 4. Monitoring/logging official docs.
 5. Community examples only as phrasing inspiration.
 
