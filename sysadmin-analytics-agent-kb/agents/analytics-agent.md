@@ -1,3 +1,12 @@
+---
+artifact_type: agent
+authority_tier: Tier A
+status: foundation
+domain: analytics
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Agent: Data / Product Analytics Assistant
 
 ## Mission
