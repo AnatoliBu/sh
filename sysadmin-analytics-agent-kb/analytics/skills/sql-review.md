@@ -11,18 +11,18 @@ last_checked: 2026-06-06
 
 ## Purpose
 
-Review SQL for correctness, performance, reproducibility, and alignment with metric definitions.
+Review SQL for correctness, reproducibility, cost, and alignment with metric definitions.
 
 ## Reference links
 
 Authority references:
 
-- [Internal Metric Catalog](../../references/analytics/internal-metric-catalog.md)
-- [Internal Event Taxonomy](../../references/analytics/internal-event-taxonomy.md)
+- [Internal Metric Catalog](../../references/internal-metric-catalog.md)
+- [Internal Event Taxonomy](../../references/internal-event-taxonomy.md)
 
 ## When to use
 
-Use when an agent generates SQL, a metric query changes, a dashboard query changes, cost/performance is suspected, or a metric discrepancy is being investigated.
+Use when a query is created or changed, a dashboard number is challenged, cost is suspected, or a metric discrepancy is being investigated.
 
 ## Required context
 
@@ -37,8 +37,8 @@ Use when an agent generates SQL, a metric query changes, a dashboard query chang
 ## Authority chain
 
 1. Internal semantic layer / certified model.
-2. [Metric catalog](../../references/analytics/internal-metric-catalog.md).
-3. [Event taxonomy](../../references/analytics/internal-event-taxonomy.md).
+2. [Metric catalog](../../references/internal-metric-catalog.md).
+3. [Event taxonomy](../../references/internal-event-taxonomy.md).
 4. Warehouse official docs.
 5. Internal SQL style guide.
 
@@ -69,12 +69,6 @@ Use when an agent generates SQL, a metric query changes, a dashboard query chang
 - Assumptions are listed.
 - Results can be rerun.
 
-## Forbidden actions
-
-- Running write queries in production.
-- Querying sensitive fields unless explicitly required and approved.
-- Publishing results without assumptions.
-
 ## Output format
 
 ```markdown
@@ -87,7 +81,7 @@ approve / request changes / reject
 
 ## Performance findings
 
-## Data governance findings
+## Governance findings
 
 ## Suggested rewrite
 
