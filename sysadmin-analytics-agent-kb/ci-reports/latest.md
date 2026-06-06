@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:09:47Z`
-Git SHA: `1710bef521ad90794b0a9b8d5727d4855fdc83b1`
+Generated at: `2026-06-06T17:10:15Z`
+Git SHA: `27b8472b67d44550aff8e9a3fa6b01b3735e231f`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -10,7 +10,7 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate docs links and reference-card contract
 - **PASS** — Validate wiki links
 - **FAIL** — Validate frontmatter
-- **FAIL** — Validate agent artifact references
+- **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **FAIL** — Build Quartz site
 - **PASS** — Markdown lint
@@ -70,7 +70,7 @@ Frontmatter validation failed:
 
 ```
 
-### FAIL: Validate agent artifact references
+### PASS: Validate agent artifact references
 
 Command:
 
@@ -81,7 +81,7 @@ python sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py
 Output:
 
 ```text
-python: can't open file '/home/runner/work/sh/sh/sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py': [Errno 2] No such file or directory
+Agent artifact reference validation passed
 
 ```
 
