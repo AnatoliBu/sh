@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T16:40:07Z`
-Git SHA: `6172be0953531c796f084838aab22e9a86a4127d`
+Generated at: `2026-06-06T16:47:59Z`
+Git SHA: `5b235382e085c80661676a20fdf64c5319c23aa2`
 Quartz branch: `agent-kb-v5`
 
 ## Summary
@@ -71,7 +71,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 27 nodes and 58 edges
+Generated curated graph: 28 nodes and 58 edges
 
 ```
 
@@ -103,7 +103,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 37 file(s)
+Linting: 38 file(s)
 Summary: 0 error(s)
 
 ```
