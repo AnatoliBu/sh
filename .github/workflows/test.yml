@@ -29,8 +29,8 @@ jobs:
         continue-on-error: true
         run: python sysadmin-analytics-agent-kb/tools/run_agent_kb_ci.py
         env:
-          QUARTZ_REPO_TOKEN: ${{ secrets.QUARTZ_REPO_TOKEN }}
-          QUARTZ_BRANCH: agent-kb-v5
+          QUARTZ_REPO_URL: https://github.com/jackyzha0/quartz.git
+          QUARTZ_BRANCH: v4
 
       - name: Commit CI report
         if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
