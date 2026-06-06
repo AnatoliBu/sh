@@ -4,6 +4,12 @@
 
 Review Kubernetes manifests for correctness, security, operability, and policy compliance before they are applied.
 
+## Reference links
+
+Authority references:
+
+- [Kubernetes Pod Security Standards](../../references/sysadmin/kubernetes-pod-security-standards.md)
+
 ## When to use
 
 Use for any proposed change to:
@@ -29,7 +35,7 @@ Use for any proposed change to:
 
 1. Internal platform standards.
 2. Kubernetes official docs.
-3. Kubernetes Pod Security Standards.
+3. [Kubernetes Pod Security Standards](../../references/sysadmin/kubernetes-pod-security-standards.md).
 4. OPA/Gatekeeper/Kyverno policies if used.
 5. Audited community checklists.
 
