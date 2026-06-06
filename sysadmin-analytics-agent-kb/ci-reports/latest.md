@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:08:02Z`
-Git SHA: `33834a7fefb9937632a9230d9bfdb5c10a08ad9c`
+Generated at: `2026-06-06T17:09:10Z`
+Git SHA: `6413efe4241c70d97cab2653445467d7be7df597`
 Quartz engine: `https://github.com/jackyzha0/quartz.git`
 Quartz branch: `v4`
 
@@ -95,9 +95,7 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-Using Quartz engine: https://github.com/jackyzha0/quartz.git@v4
-Cloning into '/home/runner/work/sh/sh/quartz-work'...
-sysadmin-analytics-agent-kb/tools/build_quartz_site.sh: line 82: syntax error near unexpected token `)'
+QUARTZ_REPO_TOKEN is required to clone private repo AnatoliBu/quartz.git
 
 ```
 
