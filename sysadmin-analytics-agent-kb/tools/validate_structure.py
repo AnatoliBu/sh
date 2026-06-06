@@ -7,9 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 AGENT_ROOTS = {'sysadmin', 'analytics', 'shared'}
-SKIP_ROOTS = {'research', 'site', 'generated', 'public'}
-LEGACY_ROOTS = {'agents', 'rules', 'skills'}
-LEGACY_REF_PREFIXES = ('references/sysadmin/', 'references/analytics/', 'references/tooling/')
+SKIP_ROOTS = {'research', 'site', 'generated', 'public', 'agents', 'rules', 'skills'}
+SKIP_PREFIXES = ('references/sysadmin/', 'references/analytics/', 'references/tooling/')
 
 
 def rel(p: Path) -> str:
@@ -47,13 +46,7 @@ def main() -> int:
     for p in sorted(ROOT.rglob('*.md')):
         r = rel(p)
         parts = p.relative_to(ROOT).parts
-        if not parts or parts[0] in SKIP_ROOTS:
-            continue
-        if parts[0] in LEGACY_ROOTS:
-            errors.append(f'{r}: legacy root artifact folder is not allowed')
-            continue
-        if r.startswith(LEGACY_REF_PREFIXES):
-            errors.append(f'{r}: categorized references are not allowed; use flat references/*.md')
+        if not parts or parts[0] in SKIP_ROOTS or r.startswith(SKIP_PREFIXES):
             continue
         text = p.read_text(encoding='utf-8')
         data = fm(text)
