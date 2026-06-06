@@ -13,42 +13,18 @@ REPORT_DIR = KB / "ci-reports"
 REPORT_PATH = REPORT_DIR / "latest.md"
 
 CHECKS = [
-    {
-        "name": "Validate docs links and reference-card contract",
-        "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_docs.py"],
-    },
-    {
-        "name": "Validate wiki links",
-        "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_wiki_links.py"],
-    },
-    {
-        "name": "Validate frontmatter",
-        "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_frontmatter.py"],
-    },
-    {
-        "name": "Build curated link graph",
-        "cmd": ["python", "sysadmin-analytics-agent-kb/tools/build_link_graph.py"],
-    },
-    {
-        "name": "Build Quartz site",
-        "cmd": ["bash", "sysadmin-analytics-agent-kb/tools/build_quartz_site.sh"],
-    },
-    {
-        "name": "Markdown lint",
-        "cmd": ["npx", "--yes", "markdownlint-cli2@0.18.1", "sysadmin-analytics-agent-kb/**/*.md"],
-    },
+    {"name": "Validate docs links and reference-card contract", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_docs.py"]},
+    {"name": "Validate wiki links", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_wiki_links.py"]},
+    {"name": "Validate frontmatter", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_frontmatter.py"]},
+    {"name": "Validate agent artifact references", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py"]},
+    {"name": "Build curated link graph", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/build_link_graph.py"]},
+    {"name": "Build Quartz site", "cmd": ["bash", "sysadmin-analytics-agent-kb/tools/build_quartz_site.sh"]},
+    {"name": "Markdown lint", "cmd": ["npx", "--yes", "markdownlint-cli2@0.18.1", "sysadmin-analytics-agent-kb/**/*.md"]},
 ]
 
 
 def run_check(cmd: list[str], env: dict[str, str]) -> tuple[int, str]:
-    proc = subprocess.run(
-        cmd,
-        cwd=ROOT,
-        env=env,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
+    proc = subprocess.run(cmd, cwd=ROOT, env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     return proc.returncode, proc.stdout
 
 
@@ -63,8 +39,7 @@ def redact(text: str) -> str:
 def main() -> int:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
-    env.setdefault("QUARTZ_REPO_URL", "https://github.com/jackyzha0/quartz.git")
-    env.setdefault("QUARTZ_BRANCH", "v4")
+    env.setdefault("QUARTZ_BRANCH", "agent-kb-v5")
 
     started = dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     sections: list[str] = [
@@ -72,7 +47,7 @@ def main() -> int:
         "",
         f"Generated at: `{started}`",
         f"Git SHA: `{env.get('GITHUB_SHA', 'local')}`",
-        f"Quartz engine: `{env.get('QUARTZ_REPO_URL')}`",
+        "Quartz engine: `AnatoliBu/quartz`",
         f"Quartz branch: `{env.get('QUARTZ_BRANCH')}`",
         "",
         "## Summary",
@@ -81,7 +56,6 @@ def main() -> int:
 
     failures = 0
     results: list[tuple[str, int, str, list[str]]] = []
-
     for check in CHECKS:
         name = check["name"]
         cmd = check["cmd"]
@@ -96,27 +70,24 @@ def main() -> int:
         sections.append(f"- **{status}** — {name}")
 
     sections.extend(["", "## Details", ""])
-
     for name, code, output, cmd in results:
         status = "PASS" if code == 0 else "FAIL"
-        sections.extend(
-            [
-                f"### {status}: {name}",
-                "",
-                "Command:",
-                "",
-                "```bash",
-                " ".join(shlex.quote(part) for part in cmd),
-                "```",
-                "",
-                "Output:",
-                "",
-                "```text",
-                output[-12000:] if output else "<no output>",
-                "```",
-                "",
-            ]
-        )
+        sections.extend([
+            f"### {status}: {name}",
+            "",
+            "Command:",
+            "",
+            "```bash",
+            " ".join(shlex.quote(part) for part in cmd),
+            "```",
+            "",
+            "Output:",
+            "",
+            "```text",
+            output[-12000:] if output else "<no output>",
+            "```",
+            "",
+        ])
 
     REPORT_PATH.write_text("\n".join(sections), encoding="utf-8")
     print(f"Wrote CI report to {REPORT_PATH.relative_to(ROOT)}")
