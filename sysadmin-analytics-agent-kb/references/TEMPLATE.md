@@ -52,7 +52,7 @@ Explicitly list what this source does not prove or should not be used for.
 
 ## Related references
 
-- [Other reference](./other-reference.md)
+Add relative links to real reference cards here.
 
 ## Notes
 
