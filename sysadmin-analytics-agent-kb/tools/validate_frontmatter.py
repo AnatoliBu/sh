@@ -12,6 +12,7 @@ REQUIRED_KEYS = {
 STRICT_DIRS = {
     'agents',
     'references',
+    'rules',
 }
 STRICT_SKILL_PREFIXES = (
     'analytics/skills/',
