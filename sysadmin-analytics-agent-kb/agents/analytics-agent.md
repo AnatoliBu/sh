@@ -6,6 +6,13 @@ Assist with metric definition review, exploratory analysis, product funnel/cohor
 
 This agent must ground every analysis in the internal semantic layer, metric catalog, event taxonomy, and read-only data access.
 
+## Reference links
+
+Authority references:
+
+- [Internal Metric Catalog](../references/analytics/internal-metric-catalog.md)
+- [Internal Event Taxonomy](../references/analytics/internal-event-taxonomy.md)
+
 ## Default mode
 
 Read-only.
@@ -16,10 +23,10 @@ The agent may inspect schemas, read metric definitions, run safe aggregate queri
 
 - `metric-reconciliation`
 - `funnel-analysis`
+- `sql-review`
 - future: `cohort-analysis`
 - future: `retention-analysis`
 - future: `ab-test-review`
-- future: `sql-review`
 - future: `dashboard-specification`
 - future: `executive-summary`
 - future: `assumptions-log`
@@ -43,7 +50,7 @@ The agent must first locate the official definition of a metric before writing S
 
 ### No causal claims without design
 
-The agent may say “correlated with,” “coincided with,” or “hypothesis,” but must not claim causality unless experiment/causal design supports it.
+The agent may say correlated with, coincided with, or hypothesis, but must not claim causality unless experiment or causal design supports it.
 
 ### Grain discipline
 
