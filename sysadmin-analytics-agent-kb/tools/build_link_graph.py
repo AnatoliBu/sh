@@ -8,8 +8,9 @@ LINK_RE = re.compile(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)')
 FENCE_RE = re.compile(r'```.*?```', re.DOTALL)
 
 EXCLUDED_DIRS = {'generated', 'public', 'research', 'site', 'tooling'}
+EXCLUDED_TOP_LEVEL = {'agents', 'rules', 'skills'}
 EXCLUDED_FILES = {'README.md'}
-EXCLUDED_PREFIXES = ('references/tooling/',)
+EXCLUDED_PREFIXES = ('references/tooling/', 'references/sysadmin/', 'references/analytics/')
 
 
 def clean(text):
@@ -24,12 +25,14 @@ def is_curated_markdown(path):
     if path.suffix != '.md':
         return False
     r = rel(path)
+    parts = path.relative_to(ROOT).parts
     if path.name in EXCLUDED_FILES and path.parent == ROOT:
+        return False
+    if not parts or parts[0] in EXCLUDED_TOP_LEVEL:
         return False
     if r.startswith(EXCLUDED_PREFIXES):
         return False
-    parts = set(path.relative_to(ROOT).parts)
-    return not bool(parts & EXCLUDED_DIRS)
+    return not bool(set(parts) & EXCLUDED_DIRS)
 
 
 def split_target(raw):
