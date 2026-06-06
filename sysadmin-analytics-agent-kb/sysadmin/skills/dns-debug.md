@@ -1,3 +1,12 @@
+---
+artifact_type: skill
+authority_tier: Tier A
+status: foundation
+domain: network
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Skill: DNS Debug
 
 ## Purpose
@@ -8,8 +17,8 @@ Diagnose DNS resolution issues safely and systematically.
 
 Authority references:
 
-- [Internal DNS Source of Truth](../../references/sysadmin/internal-dns-source-of-truth.md)
-- [NetBox](../../references/sysadmin/netbox.md)
+- [Internal DNS Source of Truth](../../references/internal-dns-source-of-truth.md)
+- [NetBox](../../references/netbox.md)
 
 ## When to use
 
@@ -18,57 +27,45 @@ Use for DNS resolution mismatch, unexpected record values, propagation checks, o
 ## Required context
 
 - Name being resolved.
-- Expected record type.
-- Expected environment.
-- DNS source of truth.
-- Resolver path.
+- Expected record and owner.
+- Client location and resolver.
+- Environment.
+- Relevant zone/source-of-truth entry.
 
 ## Authority chain
 
-1. [Internal DNS source of truth](../../references/sysadmin/internal-dns-source-of-truth.md).
-2. Authoritative provider records.
-3. Cluster-local DNS docs if relevant.
-4. Resolver checks as observation.
-
-## Allowed read-only actions
-
-- `dig`
-- `nslookup`
-- `host`
-- read DNS records from approved sources
-- read cluster DNS state in read-only mode
-
-## Forbidden actions
-
-- Changing DNS records.
-- Restarting DNS services without approval.
-- Changing TTLs without approval.
+1. [Internal DNS Source of Truth](../../references/internal-dns-source-of-truth.md).
+2. [NetBox](../../references/netbox.md) or approved inventory.
+3. Authoritative DNS response.
+4. Recursive resolver observation.
+5. Client-side cache observation.
 
 ## Workflow
 
-1. Identify expected record and source of truth.
-2. Query authoritative source.
-3. Query relevant resolvers.
-4. Compare answers and TTLs.
-5. Check recent changes.
-6. Produce diagnosis and safe next action.
+1. Identify expected record from source of truth.
+2. Query authoritative nameservers.
+3. Query recursive resolvers.
+4. Compare TTL, value, and record type.
+5. Check split-horizon or environment-specific zones.
+6. Check recent changes and propagation window.
+7. Classify mismatch and owner.
 
 ## Output format
 
 ```markdown
 # DNS Debug Report
 
-## Query target
+## Question
 
-## Expected answer
+## Expected source-of-truth record
 
-## Observed answers
+## Observed resolver results
 
-## Resolver comparison
+## Difference
 
-## Suspected cause
+## Likely cause
 
-## Safe next steps
+## Recommended next step
 
-## Approval needed
+## Assumptions
 ```
