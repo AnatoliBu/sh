@@ -17,8 +17,8 @@ Analyze conversion through a product funnel while respecting the official event 
 
 Authority references:
 
-- [Internal Event Taxonomy](../../references/analytics/internal-event-taxonomy.md)
-- [Internal Metric Catalog](../../references/analytics/internal-metric-catalog.md)
+- [Internal Event Taxonomy](../../references/internal-event-taxonomy.md)
+- [Internal Metric Catalog](../../references/internal-metric-catalog.md)
 
 ## When to use
 
@@ -37,8 +37,8 @@ Use when conversion drops, onboarding or activation flows are investigated, a st
 
 ## Authority chain
 
-1. [Internal tracking plan / event taxonomy](../../references/analytics/internal-event-taxonomy.md).
-2. [Internal metric catalog](../../references/analytics/internal-metric-catalog.md).
+1. [Internal tracking plan / event taxonomy](../../references/internal-event-taxonomy.md).
+2. [Internal metric catalog](../../references/internal-metric-catalog.md).
 3. Certified warehouse or semantic model.
 4. Product analytics vendor docs for funnel semantics.
 5. External blog/framework examples only as inspiration.
@@ -47,7 +47,7 @@ Use when conversion drops, onboarding or activation flows are investigated, a st
 
 - Read tracking plan.
 - Read event schemas.
-- Run read-only aggregate queries.
+- Run safe aggregate checks.
 - Compare vendor funnel with warehouse reconstruction.
 - Produce charts and tables.
 
