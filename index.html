@@ -4,10 +4,138 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent KB</title>
+<style>
+:root { color-scheme: light dark; }
+body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0; line-height: 1.55; color: #1f2328; background: #fff; }
+header { padding: 40px 32px; background: linear-gradient(135deg, #f6f8fa, #eef4ff); border-bottom: 1px solid #d0d7de; }
+main { max-width: 1180px; margin: 0 auto; padding: 32px; }
+h1 { margin: 0 0 8px; font-size: 42px; }
+h2 { margin-top: 42px; border-bottom: 1px solid #d0d7de; padding-bottom: 8px; }
+h3 { margin-top: 24px; }
+a { color: #0969da; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { border: 1px solid #d0d7de; border-radius: 12px; padding: 18px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.card h3 { margin-top: 0; }
+.badge { display: inline-block; padding: 2px 8px; border: 1px solid #d0d7de; border-radius: 999px; font-size: 12px; color: #57606a; background: #f6f8fa; }
+pre { background: #f6f8fa; padding: 16px; border-radius: 8px; overflow: auto; }
+.graph { border: 1px solid #d0d7de; border-radius: 12px; background: #fbfbfd; padding: 16px; overflow: auto; }
+.node { fill: #fff; stroke: #57606a; stroke-width: 1.2; }
+.ref { fill: #eaf5ff; }
+.skill { fill: #fff8c5; }
+.agent { fill: #dafbe1; }
+.rule { fill: #ffebe9; }
+.edge { stroke: #8c959f; stroke-width: 1.4; marker-end: url(#arrow); }
+text { font-size: 12px; fill: #24292f; }
+footer { color: #57606a; padding: 32px; border-top: 1px solid #d0d7de; margin-top: 40px; }
+@media (prefers-color-scheme: dark) {
+  body { background: #0d1117; color: #e6edf3; }
+  header { background: #161b22; border-color: #30363d; }
+  .card, .graph { background: #161b22; border-color: #30363d; }
+  a { color: #58a6ff; }
+  .badge, pre { background: #21262d; border-color: #30363d; color: #8b949e; }
+  text { fill: #e6edf3; }
+  .node { fill: #161b22; stroke: #8b949e; }
+  .ref { fill: #0b2d45; }
+  .skill { fill: #3b3200; }
+  .agent { fill: #15351f; }
+  .rule { fill: #3d1515; }
+}
+</style>
 </head>
 <body>
-<h1>Agent KB</h1>
-<p>The GitHub Actions workflow on <code>main</code> will replace this placeholder with the generated documentation site.</p>
-<p>Enable GitHub Pages from the <code>gh-pages</code> branch, root folder.</p>
+<header>
+  <h1>Agent KB</h1>
+  <p>Knowledge base for reliable sysadmin/SRE/network and analytics/product-analytics agents.</p>
+  <p><span class="badge">references → skills → agents → rules</span> <span class="badge">CI validated links</span> <span class="badge">gh-pages preview</span></p>
+</header>
+<main>
+  <section>
+    <h2>Start here</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Source of truth references</h3>
+        <p>Authoritative cards for official docs, internal placeholders, and audited tooling.</p>
+        <ul>
+          <li><a href="https://github.com/AnatoliBu/sh/tree/main/sysadmin-analytics-agent-kb/references">Browse references in GitHub</a></li>
+          <li><a href="generated/link-graph.json">Graph JSON</a></li>
+          <li><a href="generated/link-graph.dot">Graph DOT</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Agents</h3>
+        <p>Agent definitions grounded in local reference cards.</p>
+        <ul>
+          <li><a href="https://github.com/AnatoliBu/sh/blob/main/sysadmin-analytics-agent-kb/agents/sysadmin-agent.md">Sysadmin / SRE / Network Assistant</a></li>
+          <li><a href="https://github.com/AnatoliBu/sh/blob/main/sysadmin-analytics-agent-kb/agents/analytics-agent.md">Data / Product Analytics Assistant</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rules and validation</h3>
+        <p>Global rules, source-quality checks, docs validators, and CI publishing.</p>
+        <ul>
+          <li><a href="https://github.com/AnatoliBu/sh/blob/main/sysadmin-analytics-agent-kb/rules/global-rules.md">Global rules</a></li>
+          <li><a href="https://github.com/AnatoliBu/sh/blob/main/sysadmin-analytics-agent-kb/tools/validate_docs.py">Docs validator</a></li>
+          <li><a href="https://github.com/AnatoliBu/sh/blob/main/.github/workflows/test.yml">GitHub Actions workflow</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Current graph</h2>
+    <p>This is the initial hand-published graph. The workflow on <code>main</code> also generates machine-readable graph artifacts.</p>
+    <div class="graph">
+      <svg width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-label="Agent KB reference graph">
+        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8c959f" /></marker></defs>
+        <line class="edge" x1="200" y1="110" x2="500" y2="80" />
+        <line class="edge" x1="200" y1="110" x2="500" y2="135" />
+        <line class="edge" x1="200" y1="110" x2="500" y2="190" />
+        <line class="edge" x1="200" y1="110" x2="500" y2="245" />
+        <line class="edge" x1="200" y1="325" x2="500" y2="325" />
+        <line class="edge" x1="200" y1="325" x2="500" y2="380" />
+        <line class="edge" x1="790" y1="80" x2="500" y2="80" />
+        <line class="edge" x1="790" y1="135" x2="500" y2="135" />
+        <line class="edge" x1="790" y1="190" x2="500" y2="245" />
+        <line class="edge" x1="790" y1="325" x2="500" y2="325" />
+        <line class="edge" x1="790" y1="380" x2="500" y2="380" />
+
+        <rect class="node agent" x="40" y="80" width="210" height="60" rx="10" /><text x="60" y="116">sysadmin-agent</text>
+        <rect class="node agent" x="40" y="295" width="210" height="60" rx="10" /><text x="60" y="331">analytics-agent</text>
+
+        <rect class="node ref" x="500" y="50" width="230" height="46" rx="10" /><text x="520" y="79">Google SRE</text>
+        <rect class="node ref" x="500" y="105" width="230" height="46" rx="10" /><text x="520" y="134">Kubernetes PSS</text>
+        <rect class="node ref" x="500" y="160" width="230" height="46" rx="10" /><text x="520" y="189">NetBox</text>
+        <rect class="node ref" x="500" y="215" width="230" height="46" rx="10" /><text x="520" y="244">Terraform MCP</text>
+        <rect class="node ref" x="500" y="295" width="230" height="46" rx="10" /><text x="520" y="324">Metric Catalog</text>
+        <rect class="node ref" x="500" y="350" width="230" height="46" rx="10" /><text x="520" y="379">Event Taxonomy</text>
+
+        <rect class="node skill" x="790" y="50" width="250" height="46" rx="10" /><text x="810" y="79">incident-triage</text>
+        <rect class="node skill" x="790" y="105" width="250" height="46" rx="10" /><text x="810" y="134">k8s-manifest-review</text>
+        <rect class="node skill" x="790" y="160" width="250" height="46" rx="10" /><text x="810" y="189">terraform-plan-review</text>
+        <rect class="node skill" x="790" y="295" width="250" height="46" rx="10" /><text x="810" y="324">metric-reconciliation</text>
+        <rect class="node skill" x="790" y="350" width="250" height="46" rx="10" /><text x="810" y="379">funnel-analysis</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>Published folders</h2>
+    <div class="grid">
+      <div class="card"><h3>Sysadmin skills</h3><a href="https://github.com/AnatoliBu/sh/tree/main/sysadmin-analytics-agent-kb/sysadmin/skills">Open in GitHub</a></div>
+      <div class="card"><h3>Analytics skills</h3><a href="https://github.com/AnatoliBu/sh/tree/main/sysadmin-analytics-agent-kb/analytics/skills">Open in GitHub</a></div>
+      <div class="card"><h3>Research queue</h3><a href="https://github.com/AnatoliBu/sh/tree/main/sysadmin-analytics-agent-kb/research">Open in GitHub</a></div>
+      <div class="card"><h3>Quartz plan</h3><a href="https://github.com/AnatoliBu/sh/blob/main/sysadmin-analytics-agent-kb/site/quartz-deploy.md">Open in GitHub</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Next</h2>
+    <p>This page is a direct gh-pages fallback. The main branch contains the automated builder, validators, and workflow. Next step is to replace this fallback with the generated site output or Quartz.</p>
+  </section>
+</main>
+<footer>
+  Published from <code>gh-pages</code>. Source: <a href="https://github.com/AnatoliBu/sh/tree/main/sysadmin-analytics-agent-kb">AnatoliBu/sh/sysadmin-analytics-agent-kb</a>.
+</footer>
 </body>
 </html>
