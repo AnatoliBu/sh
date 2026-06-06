@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation
+domain: sre
+owner: Google SRE
+last_checked: 2026-06-06
+source_url: https://sre.google/resources/practices-and-processes/incident-management-guide/
+---
+
 # Reference: Google SRE Incident Management Guide
 
 ## Authority tier
