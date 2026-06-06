@@ -5,17 +5,13 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 KB="$ROOT/sysadmin-analytics-agent-kb"
 WORK="$ROOT/quartz-work"
 OUT="$KB/public"
-QUARTZ_BRANCH="${QUARTZ_BRANCH:-agent-kb-v5}"
+QUARTZ_REPO_URL="${QUARTZ_REPO_URL:-https://github.com/jackyzha0/quartz.git}"
+QUARTZ_BRANCH="${QUARTZ_BRANCH:-v4}"
 
 rm -rf "$WORK"
 
-if [ -z "${QUARTZ_REPO_TOKEN:-}" ]; then
-  echo "QUARTZ_REPO_TOKEN is required to clone private repo AnatoliBu/quartz.git" >&2
-  echo "Create a fine-grained GitHub token with read access to AnatoliBu/quartz and add it as a repository secret." >&2
-  exit 1
-fi
-
-git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${QUARTZ_REPO_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
+echo "Using Quartz engine: $QUARTZ_REPO_URL@$QUARTZ_BRANCH"
+git clone --depth 1 --branch "$QUARTZ_BRANCH" "$QUARTZ_REPO_URL" "$WORK"
 
 rm -rf "$WORK/content"
 mkdir -p "$WORK/content"
