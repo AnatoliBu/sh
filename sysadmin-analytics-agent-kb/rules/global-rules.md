@@ -1,3 +1,11 @@
+---
+artifact_type: rule
+status: foundation
+domain: tooling
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Global Agent Rules
 
 These rules apply to all agents in this repository.
