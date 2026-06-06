@@ -54,6 +54,8 @@ def anchors(text):
 
 def split_target(raw):
     raw = raw.strip().split('?', 1)[0]
+    if raw.startswith('#'):
+        return '', raw[1:]
     if '#' in raw:
         return raw.split('#', 1)
     return raw, None
@@ -86,7 +88,7 @@ def check_links(path, text, errors):
             if is_artifact(path):
                 errors.append(f'{rel(path)}: direct external link in artifact; link to references instead')
             continue
-        target_path, fragment = split_target(raw[1:] if raw.startswith('#') else raw)
+        target_path, fragment = split_target(raw)
         dst = local_target(path, target_path)
         try:
             dst.relative_to(ROOT)
