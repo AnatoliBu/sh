@@ -16,9 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
       - run: python sysadmin-analytics-agent-kb/tools/validate_docs.py && python sysadmin-analytics-agent-kb/tools/validate_wiki_links.py
       - run: python sysadmin-analytics-agent-kb/tools/build_link_graph.py
-      - run: python sysadmin-analytics-agent-kb/tools/build_site.py
+      - run: bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
       - run: npx --yes markdownlint-cli2@0.18.1 'sysadmin-analytics-agent-kb/**/*.md'
       - uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/main'
