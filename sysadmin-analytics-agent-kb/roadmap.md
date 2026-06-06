@@ -1,3 +1,11 @@
+---
+artifact_type: index
+status: foundation
+domain: tooling
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Roadmap
 
 ## Phase 1 — Repository skeleton
@@ -91,3 +99,30 @@ Build small benchmark cases:
 - funnel drop-off;
 - SQL fanout bug;
 - invalid A/B test conclusion.
+
+## Phase 6 — Quartz publishing and UX
+
+### Current deployment mode
+
+- [x] Build public GitHub Pages from this repository without cross-repo tokens.
+- [x] Use public Quartz engine as build dependency.
+- [x] Copy only curated Agent KB content into Quartz `content/`.
+- [x] Exclude `research/`, `site/`, `references/tooling/`, and root `README.md` from published Quartz content.
+- [x] Write aggregated CI logs to `ci-reports/latest.md` so failures can be read from the repository.
+
+### Later option: private Quartz engine repo
+
+- [ ] Decide whether a private Quartz engine repo is still useful.
+- [ ] If using a private engine repo, document that public GitHub Pages exposes compiled JS/CSS assets even when source repo stays private.
+- [ ] Treat private repo as protection for source history, development workflow, and non-published tooling — not as strong secrecy for browser-executed UI logic.
+- [ ] For genuinely private UX or operational logic, use a private/restricted hosting target instead of public GitHub Pages.
+- [ ] If private engine repo is adopted, add `QUARTZ_REPO_TOKEN` or a deploy key and restore cross-repo checkout intentionally.
+
+### UX backlog
+
+- [ ] Evaluate stock Quartz graph/search/backlinks after public deploy.
+- [ ] Port only missing Agent KB-specific UX:
+  - graph folder semantics;
+  - backlinks grouping by artifact type/domain;
+  - frontmatter badges/filters;
+  - lightweight reference previews if stock popovers are insufficient.
