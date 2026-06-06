@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T16:48:52Z`
-Git SHA: `6b1c456a049bbcf2c9bb8269edd555574aac1b2d`
+Generated at: `2026-06-06T17:04:12Z`
+Git SHA: `56ece6d4f8438daf4df8dc0c2dd4f6cefccbe297`
 Quartz engine: `https://github.com/jackyzha0/quartz.git`
 Quartz branch: `v4`
 
@@ -9,7 +9,7 @@ Quartz branch: `v4`
 
 - **PASS** — Validate docs links and reference-card contract
 - **PASS** — Validate wiki links
-- **PASS** — Validate frontmatter
+- **FAIL** — Validate frontmatter
 - **PASS** — Build curated link graph
 - **FAIL** — Build Quartz site
 - **PASS** — Markdown lint
@@ -46,7 +46,7 @@ Wiki link validation passed
 
 ```
 
-### PASS: Validate frontmatter
+### FAIL: Validate frontmatter
 
 Command:
 
@@ -57,7 +57,15 @@ python sysadmin-analytics-agent-kb/tools/validate_frontmatter.py
 Output:
 
 ```text
-Frontmatter validation passed
+Frontmatter validation failed:
+- references/google-sre-incident-management.md: missing frontmatter keys: domain
+- references/internal-certificate-management.md: missing frontmatter keys: domain
+- references/internal-dns-source-of-truth.md: missing frontmatter keys: domain
+- references/internal-event-taxonomy.md: missing frontmatter keys: domain
+- references/internal-metric-catalog.md: missing frontmatter keys: domain
+- references/kubernetes-pod-security-standards.md: missing frontmatter keys: domain
+- references/netbox.md: missing frontmatter keys: domain
+- references/terraform-mcp.md: missing frontmatter keys: domain
 
 ```
 
@@ -72,7 +80,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 28 nodes and 58 edges
+Generated curated graph: 40 nodes and 104 edges
 
 ```
 
@@ -106,7 +114,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 38 file(s)
+Linting: 50 file(s)
 Summary: 0 error(s)
 
 ```
