@@ -1,3 +1,12 @@
+---
+artifact_type: skill
+authority_tier: Tier A
+status: foundation
+domain: sysadmin
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Skill: TLS Certificate Debug
 
 ## Purpose
@@ -8,8 +17,8 @@ Diagnose TLS certificate, chain, hostname, expiration, and routing problems with
 
 Authority references:
 
-- [Internal Certificate Management](../../references/sysadmin/internal-certificate-management.md)
-- [Internal DNS Source of Truth](../../references/sysadmin/internal-dns-source-of-truth.md)
+- [Internal Certificate Management](../../references/internal-certificate-management.md)
+- [Internal DNS Source of Truth](../../references/internal-dns-source-of-truth.md)
 
 ## When to use
 
@@ -18,60 +27,45 @@ Use when a client reports certificate errors, TLS handshake failures, expiration
 ## Required context
 
 - Hostname and port.
-- Expected certificate owner and issuer.
-- Environment and network path.
-- TLS termination point.
-- Certificate source of truth.
+- Expected certificate owner.
+- Expected TLS termination point.
+- DNS source-of-truth entry.
+- Client error text.
+- Environment and route.
 
 ## Authority chain
 
-1. [Internal certificate management](../../references/sysadmin/internal-certificate-management.md).
-2. Certificate manager or cloud provider docs.
-3. Ingress, load balancer, or proxy docs.
-4. External checks as observation.
-
-## Allowed read-only actions
-
-- inspect presented certificate
-- check hostname resolution
-- read ingress or load balancer configuration
-- read certificate manager status
-
-## Forbidden actions
-
-- Changing certificate configuration without approval.
-- Restarting ingress or proxy without approval.
-- Changing DNS or TLS termination settings without approval.
+1. [Internal Certificate Management](../../references/internal-certificate-management.md).
+2. [Internal DNS Source of Truth](../../references/internal-dns-source-of-truth.md).
+3. Observed server certificate and chain.
+4. Load balancer / ingress / gateway configuration.
+5. Client-side observation.
 
 ## Workflow
 
-1. Resolve hostname and identify target.
-2. Inspect presented certificate with SNI.
-3. Verify SANs, expiry, issuer, and chain.
-4. Compare presented certificate to expected source of truth.
-5. Check routing if the wrong certificate is served.
-6. Propose safe remediation.
+1. Identify expected certificate and termination point.
+2. Inspect observed certificate chain.
+3. Compare SAN/CN, issuer, validity, and chain.
+4. Check DNS target and route.
+5. Check whether multiple edges serve different certs.
+6. Identify owner and required approval.
 
 ## Output format
 
 ```markdown
 # TLS Certificate Debug Report
 
-## Host
+## Question
 
-## Presented certificate
+## Expected certificate/source
 
-## Expected certificate
+## Observed certificate
 
-## Chain / issuer / SANs
+## Difference
 
-## Expiration
+## Likely cause
 
-## Routing / SNI findings
+## Recommended next step
 
-## Suspected cause
-
-## Safe next steps
-
-## Approval needed
+## Assumptions
 ```
