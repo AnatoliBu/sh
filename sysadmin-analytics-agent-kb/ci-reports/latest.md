@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:15:37Z`
-Git SHA: `053f03c6709ce7114ede13f53a92bf7ab042b534`
+Generated at: `2026-06-06T17:16:11Z`
+Git SHA: `b67280131575d35a8e59b768b2d8d6e5b92d6ddc`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -60,7 +60,6 @@ Output:
 ```text
 Frontmatter validation failed:
 - analytics/sources.md: missing YAML frontmatter
-- references/README.md: missing YAML frontmatter
 - sysadmin/sources.md: missing YAML frontmatter
 
 ```
