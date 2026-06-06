@@ -4,15 +4,16 @@
 
 Review SQL for correctness, performance, reproducibility, and alignment with metric definitions.
 
+## Reference links
+
+Authority references:
+
+- [Internal Metric Catalog](../../references/analytics/internal-metric-catalog.md)
+- [Internal Event Taxonomy](../../references/analytics/internal-event-taxonomy.md)
+
 ## When to use
 
-Use when:
-
-- an agent generates SQL;
-- an analyst edits a metric query;
-- a dashboard query is changed;
-- a warehouse cost/performance issue is suspected;
-- a metric discrepancy is being investigated.
+Use when an agent generates SQL, a metric query changes, a dashboard query changes, cost/performance is suspected, or a metric discrepancy is being investigated.
 
 ## Required context
 
@@ -22,15 +23,15 @@ Use when:
 - Table schemas and certified datasets.
 - Expected grain.
 - Date range and timezone.
-- Row-level access constraints.
+- Access constraints.
 
 ## Authority chain
 
 1. Internal semantic layer / certified model.
-2. Metric catalog.
-3. Warehouse official docs.
-4. Internal SQL style guide.
-5. Community examples only as syntax inspiration.
+2. [Metric catalog](../../references/analytics/internal-metric-catalog.md).
+3. [Event taxonomy](../../references/analytics/internal-event-taxonomy.md).
+4. Warehouse official docs.
+5. Internal SQL style guide.
 
 ## Review checklist
 
@@ -47,7 +48,7 @@ Use when:
 ### Performance
 
 - Partition filters present.
-- Avoids unnecessary `SELECT *`.
+- Avoids unnecessary wide reads.
 - Joins use appropriate keys.
 - Aggregations happen at the right level.
 - Query cost is estimated when possible.
@@ -61,8 +62,8 @@ Use when:
 
 ## Forbidden actions
 
-- Running write queries: INSERT, UPDATE, DELETE, MERGE, TRUNCATE, DROP, CREATE in production.
-- Querying raw PII unless explicitly required and approved.
+- Running write queries in production.
+- Querying sensitive fields unless explicitly required and approved.
 - Publishing results without assumptions.
 
 ## Output format
