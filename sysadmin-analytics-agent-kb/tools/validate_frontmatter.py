@@ -29,7 +29,7 @@ def rel(path):
 
 
 def is_strict_artifact(path):
-    if path.suffix != '.md' or path.name in {'TEMPLATE.md'}:
+    if path.suffix != '.md' or path.name in {'TEMPLATE.md', 'README.md'}:
         return False
     r = rel(path)
     if r in TEMPORARY_EXCLUDED:
@@ -57,7 +57,7 @@ def parse_frontmatter(text):
 
 
 def required_for(path, data):
-    if path.parent == ROOT / 'references' and path.name != 'README.md':
+    if path.parent == ROOT / 'references':
         return REFERENCE_REQUIRED
     artifact_type = data.get('artifact_type') if data else None
     if artifact_type in {'agent', 'skill', 'rule', 'workflow', 'eval'}:
