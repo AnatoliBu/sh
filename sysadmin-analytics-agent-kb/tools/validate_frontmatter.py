@@ -4,23 +4,22 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_KEYS = {
+BASE_REQUIRED = {'artifact_type', 'status'}
+REFERENCE_REQUIRED = {
     'artifact_type',
+    'authority_tier',
     'status',
-    'domain',
+    'source_type',
+    'topics',
+    'domains',
+    'owner',
+    'last_checked',
+    'source_url',
 }
-STRICT_DIRS = {
-    'agents',
-    'references',
-    'rules',
-}
-STRICT_SKILL_PREFIXES = (
-    'analytics/skills/',
-)
-TEMPORARY_EXCLUDED_FILES = {
-    'references/sysadmin/internal-certificate-management.md',
-}
+AGENT_REQUIRED = {'artifact_type', 'status', 'domain'}
+STRICT_ROOTS = {'sysadmin', 'analytics', 'shared', 'references'}
 EXCLUDED_PARTS = {'research', 'site', 'generated', 'public', 'tooling'}
+TEMPORARY_EXCLUDED = {'sysadmin/skills/incident-triage.md'}
 FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 KEY_RE = re.compile(r'^([A-Za-z0-9_-]+):\s*(.*)$')
 
@@ -30,17 +29,19 @@ def rel(path):
 
 
 def is_strict_artifact(path):
-    if path.suffix != '.md' or path.name in {'TEMPLATE.md', 'README.md'}:
+    if path.suffix != '.md' or path.name in {'TEMPLATE.md'}:
         return False
     r = rel(path)
-    if r in TEMPORARY_EXCLUDED_FILES:
+    if r in TEMPORARY_EXCLUDED:
         return False
     parts = path.relative_to(ROOT).parts
+    if not parts or parts[0] not in STRICT_ROOTS:
+        return False
     if set(parts) & EXCLUDED_PARTS:
         return False
-    if r.startswith(STRICT_SKILL_PREFIXES):
-        return True
-    return bool(parts and parts[0] in STRICT_DIRS)
+    if parts[0] == 'references' and len(parts) != 2:
+        return False
+    return True
 
 
 def parse_frontmatter(text):
@@ -55,6 +56,15 @@ def parse_frontmatter(text):
     return data
 
 
+def required_for(path, data):
+    if path.parent == ROOT / 'references' and path.name != 'README.md':
+        return REFERENCE_REQUIRED
+    artifact_type = data.get('artifact_type') if data else None
+    if artifact_type in {'agent', 'skill', 'rule', 'workflow', 'eval'}:
+        return AGENT_REQUIRED
+    return BASE_REQUIRED
+
+
 def main():
     errors = []
     for path in sorted(ROOT.rglob('*.md')):
@@ -65,10 +75,10 @@ def main():
         if data is None:
             errors.append(f'{rel(path)}: missing YAML frontmatter')
             continue
-        missing = sorted(REQUIRED_KEYS - set(data.keys()))
+        missing = sorted(required_for(path, data) - set(data.keys()))
         if missing:
             errors.append(f'{rel(path)}: missing frontmatter keys: {", ".join(missing)}')
-        if data.get('artifact_type') not in {'reference', 'skill', 'agent', 'rule', 'index'}:
+        if data.get('artifact_type') not in {'reference', 'skill', 'agent', 'rule', 'workflow', 'eval', 'index'}:
             errors.append(f'{rel(path)}: invalid artifact_type: {data.get("artifact_type")}')
 
     if errors:
