@@ -1,13 +1,13 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:12:31Z`
-Git SHA: `431dbd39dd1cc261a813efe62fb5f6502b5ef0cc`
+Generated at: `2026-06-06T17:15:37Z`
+Git SHA: `053f03c6709ce7114ede13f53a92bf7ab042b534`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
 ## Summary
 
-- **FAIL** — Validate domain package structure
+- **PASS** — Validate domain package structure
 - **PASS** — Validate wiki links
 - **FAIL** — Validate frontmatter
 - **PASS** — Validate agent artifact references
@@ -17,7 +17,7 @@ Quartz branch: `agent-kb-v5`
 
 ## Details
 
-### FAIL: Validate domain package structure
+### PASS: Validate domain package structure
 
 Command:
 
@@ -28,22 +28,7 @@ python sysadmin-analytics-agent-kb/tools/validate_structure.py
 Output:
 
 ```text
-Structure validation failed:
-- agents/analytics-agent.md: legacy root artifact folder is not allowed
-- agents/sysadmin-agent.md: legacy root artifact folder is not allowed
-- references/analytics/internal-event-taxonomy.md: categorized references are not allowed; use flat references/*.md
-- references/analytics/internal-metric-catalog.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/google-sre-incident-management.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/internal-certificate-management.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/internal-dns-source-of-truth.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/kubernetes-pod-security-standards.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/netbox.md: categorized references are not allowed; use flat references/*.md
-- references/sysadmin/terraform-mcp.md: categorized references are not allowed; use flat references/*.md
-- references/tooling/github-pages.md: categorized references are not allowed; use flat references/*.md
-- references/tooling/quartz.md: categorized references are not allowed; use flat references/*.md
-- rules/bullshit-check.md: legacy root artifact folder is not allowed
-- rules/global-rules.md: legacy root artifact folder is not allowed
-- skills/TEMPLATE.md: legacy root artifact folder is not allowed
+Structure validation passed
 
 ```
 
