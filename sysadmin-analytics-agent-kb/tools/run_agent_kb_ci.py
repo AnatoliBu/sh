@@ -13,7 +13,7 @@ REPORT_DIR = KB / "ci-reports"
 REPORT_PATH = REPORT_DIR / "latest.md"
 
 CHECKS = [
-    {"name": "Validate docs links and reference-card contract", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_docs.py"]},
+    {"name": "Validate domain package structure", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_structure.py"]},
     {"name": "Validate wiki links", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_wiki_links.py"]},
     {"name": "Validate frontmatter", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_frontmatter.py"]},
     {"name": "Validate agent artifact references", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py"]},
