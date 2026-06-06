@@ -1,7 +1,16 @@
 name: Agent KB docs
-on: push
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 permissions:
   contents: write
+
 jobs:
   validate-and-deploy:
     runs-on: ubuntu-latest
@@ -12,6 +21,7 @@ jobs:
       - run: python sysadmin-analytics-agent-kb/tools/build_site.py
       - run: npx --yes markdownlint-cli2@0.18.1 'sysadmin-analytics-agent-kb/**/*.md'
       - uses: JamesIves/github-pages-deploy-action@v4
+        if: github.ref == 'refs/heads/main'
         with:
           branch: gh-pages
           folder: sysadmin-analytics-agent-kb/public
