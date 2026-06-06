@@ -17,8 +17,8 @@ Verify that the same business metric is defined and computed consistently across
 
 Authority references:
 
-- [Internal Metric Catalog](../../references/analytics/internal-metric-catalog.md)
-- [Internal Event Taxonomy](../../references/analytics/internal-event-taxonomy.md)
+- [Internal Metric Catalog](../../references/internal-metric-catalog.md)
+- [Internal Event Taxonomy](../../references/internal-event-taxonomy.md)
 
 ## When to use
 
@@ -37,9 +37,9 @@ Use when dashboards disagree, a new metric is introduced, a stakeholder challeng
 
 ## Authority chain
 
-1. [Internal metric catalog / semantic layer](../../references/analytics/internal-metric-catalog.md).
-2. [Internal event taxonomy / tracking plan](../../references/analytics/internal-event-taxonomy.md).
-3. Certified dbt / LookML / Cube / WrenAI models.
+1. [Internal metric catalog / semantic layer](../../references/internal-metric-catalog.md).
+2. [Internal event taxonomy / tracking plan](../../references/internal-event-taxonomy.md).
+3. Certified semantic models.
 4. Vendor docs for tool-specific semantics.
 5. Community examples only as illustration.
 
@@ -48,7 +48,7 @@ Use when dashboards disagree, a new metric is introduced, a stakeholder challeng
 1. Locate official definition.
 2. Identify all implementations.
 3. Normalize time range, timezone, grain, and filters.
-4. Run comparable read-only queries.
+4. Compare equivalent aggregates.
 5. Diff results by period and segment.
 6. Identify divergence source.
 7. Recommend canonical implementation.
@@ -60,8 +60,8 @@ Use when dashboards disagree, a new metric is introduced, a stakeholder challeng
 - Inclusive vs exclusive date boundary.
 - Different identity stitching.
 - Missing exclusion filters.
-- Event name renamed without backfill.
-- One source uses created_at, another uses occurred_at.
+- Event rename without backfill.
+- Different timestamp fields.
 - Late-arriving events.
 - Refund or cancellation handling differs.
 
