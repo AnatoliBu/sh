@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation
+domain: network
+owner: Internal platform, network, or infrastructure team
+last_checked: TODO
+source_url: TODO
+---
+
 # Reference: Internal DNS Source of Truth
 
 ## Authority tier
