@@ -14,6 +14,21 @@ Trigger conditions and examples.
 
 List the facts, files, tools, credentials, environment data, and source-of-truth references required before execution.
 
+## Reference links
+
+Every skill must link to local reference cards from `../references/` or `../../references/`, not directly to random external pages.
+
+Example:
+
+```markdown
+Authority references:
+
+- [Google SRE Incident Management Guide](../../references/sysadmin/google-sre-incident-management.md)
+- [Kubernetes Pod Security Standards](../../references/sysadmin/kubernetes-pod-security-standards.md)
+```
+
+If a skill has no references, it is not ready for use.
+
 ## Authority chain
 
 Rank sources the agent must consult, for example:
@@ -23,6 +38,8 @@ Rank sources the agent must consult, for example:
 3. validated internal runbooks;
 4. audited community references;
 5. unaudited examples only.
+
+The authority chain must be backed by concrete links in the Reference links section.
 
 ## Allowed read-only actions
 
