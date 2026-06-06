@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation-context
+domain: sysadmin
+owner: HashiCorp
+last_checked: 2026-06-06
+source_url: https://developer.hashicorp.com/terraform/mcp-server
+---
+
 # Reference: Terraform MCP Server
 
 ## Authority tier
