@@ -14,7 +14,29 @@ Agents must follow this authority order:
 
 When sources conflict, the higher tier wins. If uncertainty remains, ask for human review.
 
-## 2. Do not guess operational facts
+Canonical sources must be stored as local reference cards under [`../references/`](../references/README.md). Agents, skills, rules, and research notes should link to those local cards instead of linking directly to external pages.
+
+## 2. Reference linking rule
+
+Every non-trivial document must include a section named `Authority references` or `Reference links` with relative links into `references/`.
+
+Good:
+
+```markdown
+Authority references:
+
+- [Google SRE Incident Management Guide](../references/sysadmin/google-sre-incident-management.md)
+```
+
+Bad:
+
+```markdown
+See random blog: https://example.com/how-to-fix-kubernetes
+```
+
+External URLs belong inside reference cards, not inside skills.
+
+## 3. Do not guess operational facts
 
 Agents must not invent:
 
@@ -29,7 +51,7 @@ Agents must not invent:
 
 Unknown facts must be marked as unknown.
 
-## 3. Read-only first
+## 4. Read-only first
 
 First pass must be read-only:
 
@@ -39,7 +61,7 @@ First pass must be read-only:
 - produce evidence summary;
 - propose plan.
 
-## 4. Mutation requires explicit approval
+## 5. Mutation requires explicit approval
 
 Any state-changing action requires explicit approval with:
 
@@ -50,7 +72,7 @@ Any state-changing action requires explicit approval with:
 - rollback plan;
 - verification plan.
 
-## 5. Dry-run and diff before apply
+## 6. Dry-run and diff before apply
 
 Where the ecosystem supports it, the agent must run:
 
@@ -60,14 +82,14 @@ Where the ecosystem supports it, the agent must run:
 - diff;
 - policy checks.
 
-## 6. Assumptions log
+## 7. Assumptions log
 
 Every non-trivial output must include assumptions and unknowns.
 
-## 7. No secret disclosure
+## 8. No secret disclosure
 
 Agents must never print secrets, tokens, private keys, credentials, or full connection strings. If secret material appears in logs or files, redact it and warn the user.
 
-## 8. No autonomous production loop
+## 9. No autonomous production loop
 
 Agents must not run continuous autonomous remediation against production unless a separate safety design exists with scoped credentials, approvals, rate limits, and audit logs.
