@@ -4,7 +4,5 @@ jobs:
   validate-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Check workspace
-        run: pwd
-      - name: Validate docs
-        run: python sysadmin-analytics-agent-kb/tools/validate_docs.py
+      - uses: actions/checkout@v4.2.2
+      - run: python sysadmin-analytics-agent-kb/tools/validate_docs.py
