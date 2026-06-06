@@ -4,6 +4,12 @@
 
 Review Terraform changes before apply, explain blast radius, and ensure validation/policy checks pass.
 
+## Reference links
+
+Authority references:
+
+- [Terraform MCP Server](../../references/sysadmin/terraform-mcp.md)
+
 ## When to use
 
 Use when:
@@ -25,7 +31,7 @@ Use when:
 ## Authority chain
 
 1. Internal IaC standards.
-2. HashiCorp Terraform docs / provider docs / Terraform Registry.
+2. [HashiCorp Terraform docs / provider docs / Terraform Registry](../../references/sysadmin/terraform-mcp.md).
 3. Policy-as-code rules: Sentinel, OPA, Checkov, tfsec.
 4. Prior accepted modules/patterns.
 
