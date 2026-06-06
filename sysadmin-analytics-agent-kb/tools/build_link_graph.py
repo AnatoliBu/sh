@@ -7,6 +7,10 @@ ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)')
 FENCE_RE = re.compile(r'```.*?```', re.DOTALL)
 
+EXCLUDED_DIRS = {'generated', 'public', 'research', 'site', 'tooling'}
+EXCLUDED_FILES = {'README.md'}
+EXCLUDED_PREFIXES = ('references/tooling/',)
+
 
 def clean(text):
     return FENCE_RE.sub('', text)
@@ -14,6 +18,18 @@ def clean(text):
 
 def rel(path):
     return path.relative_to(ROOT).as_posix()
+
+
+def is_curated_markdown(path):
+    if path.suffix != '.md':
+        return False
+    r = rel(path)
+    if path.name in EXCLUDED_FILES and path.parent == ROOT:
+        return False
+    if r.startswith(EXCLUDED_PREFIXES):
+        return False
+    parts = set(path.relative_to(ROOT).parts)
+    return not bool(parts & EXCLUDED_DIRS)
 
 
 def split_target(raw):
@@ -40,7 +56,7 @@ def local_target(src, raw):
         return None
     if dst.is_dir():
         dst = dst / 'README.md'
-    if not dst.exists() or dst.suffix != '.md':
+    if not dst.exists() or not is_curated_markdown(dst):
         return None
     return dst
 
@@ -49,6 +65,8 @@ def main():
     edges = []
     nodes = set()
     for src in sorted(ROOT.rglob('*.md')):
+        if not is_curated_markdown(src):
+            continue
         src_rel = rel(src)
         nodes.add(src_rel)
         text = clean(src.read_text(encoding='utf-8'))
@@ -74,7 +92,7 @@ def main():
     lines.append('}')
     (out_dir / 'link-graph.dot').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-    print(f'Generated {len(nodes)} nodes and {len(edges)} edges')
+    print(f'Generated curated graph: {len(nodes)} nodes and {len(edges)} edges')
 
 
 if __name__ == '__main__':
