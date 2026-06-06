@@ -1,76 +1,54 @@
+---
+artifact_type: skill
+authority_tier: Tier A
+status: foundation
+domain: sysadmin
+owner: Agent KB
+last_checked: 2026-06-06
+---
+
 # Skill: Terraform Plan Review
 
 ## Purpose
 
-Review Terraform changes before apply, explain blast radius, and ensure validation/policy checks pass.
+Review Terraform changes, explain blast radius, and ensure validation/policy checks pass.
 
 ## Reference links
 
 Authority references:
 
-- [Terraform MCP Server](../../references/sysadmin/terraform-mcp.md)
+- [Terraform MCP Server](../../references/terraform-mcp.md)
 
 ## When to use
 
-Use when:
-
-- Terraform code is generated or edited;
-- a plan is created;
-- drift is suspected;
-- infrastructure changes need human-readable review.
+Use when Terraform code is generated or edited, a plan is created, drift is suspected, or infrastructure changes need human-readable review.
 
 ## Required context
 
-- Terraform module path.
+- Terraform plan output.
 - Target workspace/environment.
+- Module path.
 - Provider versions.
-- Current plan output.
-- State backend and workspace metadata, if readable.
-- Internal platform standards.
+- Relevant policies.
+- Expected owner and service.
 
 ## Authority chain
 
 1. Internal IaC standards.
-2. [HashiCorp Terraform docs / provider docs / Terraform Registry](../../references/sysadmin/terraform-mcp.md).
-3. Policy-as-code rules: Sentinel, OPA, Checkov, tfsec.
-4. Prior accepted modules/patterns.
-
-## Allowed read-only actions
-
-- `terraform fmt -check`
-- `terraform validate`
-- `terraform plan`
-- `terraform show -json plan.out`
-- `tflint`
-- `checkov`
-- `tfsec`
-- read provider docs via Terraform MCP or official Registry
-
-## Forbidden actions
-
-- `terraform apply`
-- `terraform destroy`
-- editing remote state
-- changing backend config in production without explicit approval
-- rotating or exposing secrets
-- importing resources without a written plan
+2. Terraform state and plan output.
+3. [Terraform MCP Server](../../references/terraform-mcp.md) for current docs context.
+4. Provider official docs.
+5. Policy-as-code rules.
 
 ## Review checklist
 
-- What resources are created/updated/deleted/replaced?
-- Is any replacement destructive?
-- Does the change affect public exposure, IAM, network paths, storage, DNS, or data retention?
-- Are provider/module versions pinned?
-- Are variables and outputs sane?
-- Are secrets avoided in state and outputs?
-- Do policy checks pass?
-- Is rollback possible?
-
-## Risk classification
-
-- Low: additive non-production changes with no IAM/network/public exposure.
-- Medium: production changes without deletion/replacement and with clean policy checks.
-- High: deletions, replacements, IAM widening, public ingress, DB/storage changes, state/backend edits.
+- Identify creates, updates, replacements, and destroys.
+- Flag high-risk resources.
+- Check provider and module versions.
+- Check security-sensitive changes.
+- Confirm tags/labels/ownership.
+- Confirm rollback or recovery path.
+- Confirm required approval.
 
 ## Output format
 
@@ -80,21 +58,17 @@ Use when:
 ## Verdict
 approve / request changes / reject
 
+## Summary
+
 ## Blast radius
 
-## Resource changes
+## High-risk changes
 
-## Security concerns
-
-## Cost concerns
-
-## Data loss risk
-
-## Validation output
+## Policy findings
 
 ## Required approvals
 
-## Rollback plan
+## Rollback / recovery
 
 ## Assumptions
 ```
