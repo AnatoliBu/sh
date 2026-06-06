@@ -1,15 +1,16 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T17:09:10Z`
-Git SHA: `6413efe4241c70d97cab2653445467d7be7df597`
-Quartz engine: `https://github.com/jackyzha0/quartz.git`
-Quartz branch: `v4`
+Generated at: `2026-06-06T17:09:47Z`
+Git SHA: `1710bef521ad90794b0a9b8d5727d4855fdc83b1`
+Quartz engine: `AnatoliBu/quartz`
+Quartz branch: `agent-kb-v5`
 
 ## Summary
 
 - **PASS** — Validate docs links and reference-card contract
 - **PASS** — Validate wiki links
 - **FAIL** — Validate frontmatter
+- **FAIL** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **FAIL** — Build Quartz site
 - **PASS** — Markdown lint
@@ -66,6 +67,21 @@ Frontmatter validation failed:
 - references/kubernetes-pod-security-standards.md: missing frontmatter keys: domain
 - references/netbox.md: missing frontmatter keys: domain
 - references/terraform-mcp.md: missing frontmatter keys: domain
+
+```
+
+### FAIL: Validate agent artifact references
+
+Command:
+
+```bash
+python sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py
+```
+
+Output:
+
+```text
+python: can't open file '/home/runner/work/sh/sh/sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py': [Errno 2] No such file or directory
 
 ```
 
