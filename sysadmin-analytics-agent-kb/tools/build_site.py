@@ -7,11 +7,16 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'public'
+BASE_PATH = '/sh/'
 LINK_RE = re.compile(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)')
 
 
 def rel(path):
     return path.relative_to(ROOT).as_posix()
+
+
+def site_href(path):
+    return BASE_PATH + path.lstrip('/')
 
 
 def page_path(md_path):
@@ -36,9 +41,9 @@ def markdown_links_to_html(line, current_md):
         if target.endswith('.md'):
             dst = (current_md.parent / target).resolve()
             try:
-                html_target = page_path(dst.relative_to(ROOT) and dst)
-                href = Path('/' + html_target).as_posix() + anchor
-            except Exception:
+                dst.relative_to(ROOT)
+                href = site_href(page_path(dst)) + anchor
+            except ValueError:
                 href = target + anchor
         elif target == '' and anchor:
             href = anchor
@@ -113,11 +118,14 @@ def title_for(md_path, text):
 def build_nav(pages):
     rows = []
     for md_path, title, href in pages:
-        rows.append(f'<li><a href="/{html.escape(href)}">{html.escape(title)}</a> <small>{html.escape(rel(md_path))}</small></li>')
+        rows.append(f'<li><a href="{site_href(html.escape(href))}">{html.escape(title)}</a> <small>{html.escape(rel(md_path))}</small></li>')
     return '<ul>' + '\n'.join(rows) + '</ul>'
 
 
 def wrap(title, body, nav):
+    home = site_href('index.html')
+    graph_json = site_href('generated/link-graph.json')
+    graph_dot = site_href('generated/link-graph.dot')
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -138,7 +146,7 @@ small {{ color: #6e7781; display: block; }}
 </head>
 <body>
 <div class="layout">
-<nav><h2>Agent KB</h2><p><a href="/index.html">Home</a> · <a href="/generated/link-graph.json">Graph JSON</a> · <a href="/generated/link-graph.dot">Graph DOT</a></p>{nav}</nav>
+<nav><h2>Agent KB</h2><p><a href="{home}">Home</a> · <a href="{graph_json}">Graph JSON</a> · <a href="{graph_dot}">Graph DOT</a></p>{nav}</nav>
 <main>{body}</main>
 </div>
 </body>
