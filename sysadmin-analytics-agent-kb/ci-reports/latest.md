@@ -1,9 +1,9 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-06T16:48:14Z`
-Git SHA: `2072304b01a6f3f916fa2c2f53fb868c3d70d665`
+Generated at: `2026-06-06T16:48:52Z`
+Git SHA: `6b1c456a049bbcf2c9bb8269edd555574aac1b2d`
 Quartz engine: `https://github.com/jackyzha0/quartz.git`
-Quartz branch: `agent-kb-v5`
+Quartz branch: `v4`
 
 ## Summary
 
@@ -87,9 +87,9 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-Using Quartz engine: https://github.com/jackyzha0/quartz.git@agent-kb-v5
+Using Quartz engine: https://github.com/jackyzha0/quartz.git@v4
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
-fatal: Remote branch agent-kb-v5 not found in upstream origin
+sysadmin-analytics-agent-kb/tools/build_quartz_site.sh: line 82: syntax error near unexpected token `)'
 
 ```
 
