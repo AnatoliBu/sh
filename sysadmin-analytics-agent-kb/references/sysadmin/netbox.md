@@ -1,3 +1,13 @@
+---
+artifact_type: reference
+authority_tier: Tier A
+status: foundation
+domain: network
+owner: NetBox Labs / NetBox open-source community
+last_checked: 2026-06-06
+source_url: https://netboxlabs.com/docs/netbox/
+---
+
 # Reference: NetBox
 
 ## Authority tier
