@@ -24,6 +24,7 @@ jobs:
       - run: bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
         env:
           QUARTZ_REPO_TOKEN: ${{ secrets.QUARTZ_REPO_TOKEN }}
+          QUARTZ_BRANCH: agent-kb-v5
       - run: npx --yes markdownlint-cli2@0.18.1 'sysadmin-analytics-agent-kb/**/*.md'
       - uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/main'
