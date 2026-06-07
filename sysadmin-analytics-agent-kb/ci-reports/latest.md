@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T10:41:15Z`
-Git SHA: `72c78fdc50a86b388a28bea85b4542b45b72d32b`
+Generated at: `2026-06-07T10:58:22Z`
+Git SHA: `2eed2db488c3caf56596a7c2baab02650fcd5820`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -13,7 +13,7 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **FAIL** — Build Quartz site
-- **FAIL** — Markdown lint
+- **PASS** — Markdown lint
 
 ## Details
 
@@ -109,7 +109,7 @@ fatal: repository 'https://github.com/AnatoliBu/quartz.git/' not found
 
 ```
 
-### FAIL: Markdown lint
+### PASS: Markdown lint
 
 Command:
 
@@ -123,8 +123,6 @@ Output:
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
 Linting: 40 file(s)
-Summary: 2 error(s)
-sysadmin-analytics-agent-kb/analytics/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Analytics / Product Analytics ..."]
-sysadmin-analytics-agent-kb/sysadmin/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Sysadmin / SRE / Network Sourc..."]
+Summary: 0 error(s)
 
 ```
