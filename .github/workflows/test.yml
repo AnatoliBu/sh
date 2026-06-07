@@ -30,6 +30,7 @@ jobs:
         run: python sysadmin-analytics-agent-kb/tools/run_agent_kb_ci.py
         env:
           QUARTZ_REPO_TOKEN: ${{ secrets.QUARTZ_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           QUARTZ_BRANCH: agent-kb-v5
 
       - name: Commit CI report
