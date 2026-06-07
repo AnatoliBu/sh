@@ -53,7 +53,7 @@ It runs `sysadmin-analytics-agent-kb/tools/run_agent_kb_ci.py`, which validates:
 - Quartz site build;
 - markdown lint.
 
-Quartz is cloned from the private `AnatoliBu/quartz` repository using `QUARTZ_REPO_TOKEN` when present, or `GITHUB_TOKEN` as fallback.
+Quartz is cloned from `AnatoliBu/quartz`. If `QUARTZ_REPO_TOKEN` or `GITHUB_TOKEN` is available, CI uses token-based clone. If the Quartz repository is public and no token is available, the build script falls back to a plain public clone URL.
 
 ## Status
 
