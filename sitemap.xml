@@ -1,79 +1,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://anatolibu.github.io/sh/analytics/agent</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.508Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/analytics/skills/funnel-analysis</loc>
-    <lastmod>2026-06-07T11:02:11.489Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.509Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/analytics/skills/metric-reconciliation</loc>
-    <lastmod>2026-06-07T11:02:11.489Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.509Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/analytics/skills/sql-review</loc>
-    <lastmod>2026-06-07T11:02:11.489Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.509Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/analytics/sources</loc>
-    <lastmod>2026-06-07T11:02:11.489Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.509Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/</loc>
-    <lastmod>2026-06-07T11:02:11.483Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.501Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/README</loc>
-    <lastmod>2026-06-07T11:02:11.484Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.503Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/TEMPLATE</loc>
-    <lastmod>2026-06-07T11:02:11.485Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/google-sre-incident-management</loc>
-    <lastmod>2026-06-07T11:02:11.485Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/internal-certificate-management</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/internal-dns-source-of-truth</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/internal-event-taxonomy</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/internal-metric-catalog</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/kubernetes-pod-security-standards</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/netbox</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/references/terraform-mcp</loc>
-    <lastmod>2026-06-07T11:02:11.486Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.504Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/roadmap</loc>
-    <lastmod>2026-06-07T11:02:11.489Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.509Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/shared/rules/bullshit-check</loc>
-    <lastmod>2026-06-07T11:02:11.487Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.505Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/shared/rules/global-rules</loc>
-    <lastmod>2026-06-07T11:02:11.487Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.506Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/agent</loc>
-    <lastmod>2026-06-07T11:02:11.487Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.506Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/skills/dns-debug</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/skills/incident-triage</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/skills/k8s-manifest-review</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/skills/terraform-plan-review</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/skills/tls-cert-debug</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url><url>
     <loc>https://anatolibu.github.io/sh/sysadmin/sources</loc>
-    <lastmod>2026-06-07T11:02:11.488Z</lastmod>
+    <lastmod>2026-06-07T11:11:41.507Z</lastmod>
   </url></urlset>
