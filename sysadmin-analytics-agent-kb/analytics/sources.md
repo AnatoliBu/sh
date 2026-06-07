@@ -1,5 +1,4 @@
 ---
-title: Analytics / Product Analytics Sources
 artifact_type: reference
 status: foundation
 domain: analytics
