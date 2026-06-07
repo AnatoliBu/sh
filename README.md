@@ -1,59 +1,60 @@
 # sh
 
-`sh` is a compact sysadmin / infrastructure handbook for agent-assisted work.
+`sh` is a documentation and agent-harness repository for operational knowledge.
 
-The goal is not to collect random tutorials. The goal is to keep a **source-of-truth map**, practical agent rules, and small reusable skills for Linux, networking, services, security, observability, and incident response.
+The content model is split into two different concerns:
 
-## Current scope
+1. `references/` — source-of-truth material and reference catalogs.
+2. domain folders such as `sysadmin/` and `analytics/` — reusable agent artifacts: skills, rules, agents, harnesses, and backlog.
 
-This repository is for:
+For Quartz, the documentation content lives under `docs/`.
 
-- Linux server administration
-- networking and protocol basics
-- SSH, systemd, logs, packages, firewalls
-- web/service operations such as NGINX and PostgreSQL
-- safe troubleshooting workflows
-- agent rules for checking claims before acting
-
-This repository is **not** for secrets, private infrastructure dumps, customer data, credentials, production configs, or one-off notes that cannot be generalized.
-
-## Structure
+## Documentation structure
 
 ```text
-.
-├── README.md
-├── docs/
-│   ├── agent-rules.md
-│   ├── source-of-truth.md
-│   └── backlog.md
-├── skills/
-│   └── sysadmin-core.md
-└── sources/
-    └── sysadmin.yml
+docs/
+├── index.md
+├── references/
+│   ├── index.md
+│   ├── source-quality.md
+│   ├── sysadmin.md
+│   └── analytics.md
+├── sysadmin/
+│   ├── index.md
+│   ├── backlog.md
+│   ├── agents/
+│   │   └── operator.md
+│   ├── harnesses/
+│   │   └── default.md
+│   ├── rules/
+│   │   └── command-safety.md
+│   └── skills/
+│       └── core-troubleshooting.md
+└── analytics/
+    ├── index.md
+    ├── backlog.md
+    ├── agents/
+    │   └── product-analyst.md
+    ├── harnesses/
+    │   └── default.md
+    ├── rules/
+    │   └── evidence-discipline.md
+    └── skills/
+        └── core-analysis.md
 ```
 
-## Operating principle
+## Design rules
 
-Use this order when building or reviewing material:
+- Keep `references/` mostly flat. It is a catalog, not a nested knowledge base.
+- Keep domain folders organized by agent-harness artifact type: `skills`, `rules`, `agents`, `harnesses`.
+- Do not mix source catalogs with executable agent behavior.
+- Do not store secrets, credentials, private infrastructure dumps, customer data, or production configs.
+- Treat blogs, snippets, Reddit, and LLM output as leads, not source of truth.
 
-1. Protocol specs and upstream manuals.
-2. Official vendor/project documentation.
-3. Distribution documentation for distro-specific behavior.
-4. High-quality community references only as secondary context.
-5. Blogs, LLM output, Reddit, snippets, and Stack Overflow are leads, not source of truth.
+## CI note
 
-If sources disagree, prefer the source closest to the implementation or standard, and record the disagreement instead of smoothing it over.
-
-## Agent workflow
-
-When an agent uses this repo:
-
-1. Identify the domain: Linux, network, service, database, observability, security, or incident triage.
-2. Open `docs/source-of-truth.md` and choose sources by authority tier.
-3. Apply `docs/agent-rules.md` before suggesting commands.
-4. Use the relevant skill file as the response/checklist shape.
-5. For dangerous operations, produce a plan, validation command, backup/rollback path, and explicit assumptions.
+Quartz builds documentation from `docs/`. If CI pulls Quartz from the private `AnatoliBu/quartz` repository, this repository must also be private or the GitHub Actions access policy must allow the caller repository. GitHub's private Actions component access is not available to public caller repositories under the current setting.
 
 ## Status
 
-Initial scaffold created on 2026-06-07. The repository previously contained only the MIT license. The next useful step is to fill the first real skill: `systemd + journald troubleshooting` or `SSH hardening and access recovery`.
+Initial documentation structure was corrected on 2026-06-07 to match the agreed `references / sysadmin / analytics` model.
