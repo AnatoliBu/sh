@@ -28,10 +28,10 @@ Authority references:
 Use fenced Mermaid blocks:
 
 ```mermaid
-flowchart TD
-  A[Reference card] --> B[Rule]
-  B --> C[Skill]
-  C --> D[Agent]
+graph TD
+  ReferenceCard --> Rule
+  Rule --> Skill
+  Skill --> Agent
 ```
 
 ## Review questions
