@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T10:35:02Z`
-Git SHA: `96d7b5a1aa601898c6622705ea8ce88f17c52b23`
+Generated at: `2026-06-07T10:35:14Z`
+Git SHA: `62375ebef6ca6b7e768867c217db9a97a4897530`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -103,7 +103,9 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-QUARTZ_REPO_TOKEN or GITHUB_TOKEN is required to clone private repo AnatoliBu/quartz.git
+Cloning into '/home/runner/work/sh/sh/quartz-work'...
+remote: Repository not found.
+fatal: repository 'https://github.com/AnatoliBu/quartz.git/' not found
 
 ```
 
