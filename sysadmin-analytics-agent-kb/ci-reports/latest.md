@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T11:00:57Z`
-Git SHA: `9790798e8831fac0dc095e398ce52a10b7df2b02`
+Generated at: `2026-06-07T11:02:09Z`
+Git SHA: `40387ad8b14aebd3a972bd104aa85d54595f8356`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,7 +12,7 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
-- **FAIL** — Build Quartz site
+- **PASS** — Build Quartz site
 - **PASS** — Markdown lint
 
 ## Details
@@ -92,7 +92,7 @@ Generated curated graph: 27 nodes and 71 edges
 
 ```
 
-### FAIL: Build Quartz site
+### PASS: Build Quartz site
 
 Command:
 
@@ -104,7 +104,81 @@ Output:
 
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
-Non-curated docs leaked into Quartz content
+
+added 492 packages, and audited 493 packages in 9s
+
+182 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 moderate, 1 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+ Quartz v4.5.2  
+
+Cleaned output directory `public` in 5ms
+Found 26 input files from `content` in 21ms
+Parsing input files using 1 threads
+
+Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/analytics/skills/funnel-analysis.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/analytics/skills/metric-reconciliation.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/analytics/skills/sql-review.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/analytics/sources.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/index.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/README.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/TEMPLATE.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/google-sre-incident-management.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/internal-certificate-management.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/internal-dns-source-of-truth.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/internal-event-taxonomy.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/internal-metric-catalog.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/kubernetes-pod-security-standards.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/terraform-mcp.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/roadmap.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/shared/rules/bullshit-check.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/shared/rules/global-rules.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/skills/dns-debug.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/skills/incident-triage.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/skills/k8s-manifest-review.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
+Parsed 26 Markdown files in 633ms
+Filtered out 0 files in 88μs
+Emitting files
+Emitted 48 files to `public` in 252ms
+Done processing 26 files in 913ms
 
 ```
 
