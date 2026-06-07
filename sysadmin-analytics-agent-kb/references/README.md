@@ -8,6 +8,23 @@ Every document that relies on external or internal authority must link to one or
 
 Do not link directly to random blog posts from skills. Skills should link to local reference cards. Reference cards may link to official documentation, standards, vendor docs, internal docs, or audited community sources.
 
+## Layout
+
+Keep reference cards almost flat:
+
+```text
+references/
+├── README.md
+├── TEMPLATE.md
+├── google-sre-incident-management.md
+├── internal-metric-catalog.md
+├── internal-event-taxonomy.md
+├── kubernetes-pod-security-standards.md
+└── terraform-mcp.md
+```
+
+Do not add domain subfolders such as `references/sysadmin/` or `references/analytics/` unless the CI structure rules are explicitly changed.
+
 ## Why
 
 This keeps authority centralized:
@@ -23,7 +40,7 @@ This keeps authority centralized:
 Prefer relative links:
 
 ```markdown
-See [Google SRE Incident Management Guide](./sysadmin/google-sre-incident-management.md).
+See [Google SRE Incident Management Guide](./google-sre-incident-management.md).
 ```
 
 From a skill file, link back to references like this:
@@ -31,8 +48,8 @@ From a skill file, link back to references like this:
 ```markdown
 Authority references:
 
-- [Google SRE Incident Management Guide](../../references/sysadmin/google-sre-incident-management.md)
-- [Kubernetes Pod Security Standards](../../references/sysadmin/kubernetes-pod-security-standards.md)
+- [Google SRE Incident Management Guide](../../references/google-sre-incident-management.md)
+- [Kubernetes Pod Security Standards](../../references/kubernetes-pod-security-standards.md)
 ```
 
 ## Reference tiers
