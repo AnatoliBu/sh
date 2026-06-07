@@ -6,15 +6,16 @@ KB="$ROOT/sysadmin-analytics-agent-kb"
 WORK="$ROOT/quartz-work"
 OUT="$KB/public"
 QUARTZ_BRANCH="${QUARTZ_BRANCH:-agent-kb-v5}"
+AUTH_TOKEN="${QUARTZ_REPO_TOKEN:-${GITHUB_TOKEN:-}}"
 
 rm -rf "$WORK"
 
-if [ -z "${QUARTZ_REPO_TOKEN:-}" ]; then
-  echo "QUARTZ_REPO_TOKEN is required to clone private repo AnatoliBu/quartz.git" >&2
+if [ -z "$AUTH_TOKEN" ]; then
+  echo "QUARTZ_REPO_TOKEN or GITHUB_TOKEN is required to clone private repo AnatoliBu/quartz.git" >&2
   exit 1
 fi
 
-git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${QUARTZ_REPO_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
+git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${AUTH_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
 
 rm -rf "$WORK/content"
 mkdir -p "$WORK/content"
