@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T10:35:49Z`
-Git SHA: `70b99bd9f945171052d405161e34cf280c460ed8`
+Generated at: `2026-06-07T10:37:34Z`
+Git SHA: `070fd7ae4526a16335a5ac537bdf2569704cb573`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -122,7 +122,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 50 file(s)
+Linting: 40 file(s)
 Summary: 2 error(s)
 sysadmin-analytics-agent-kb/analytics/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Analytics / Product Analytics ..."]
 sysadmin-analytics-agent-kb/sysadmin/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Sysadmin / SRE / Network Sourc..."]
