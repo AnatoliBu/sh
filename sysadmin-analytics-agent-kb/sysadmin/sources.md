@@ -1,3 +1,10 @@
+---
+title: Sysadmin / SRE / Network Sources
+artifact_type: reference
+status: foundation
+domain: sysadmin
+---
+
 # Sysadmin / SRE / Network Sources
 
 This file ranks source-of-truth references by authority for building reliable agent skills.
