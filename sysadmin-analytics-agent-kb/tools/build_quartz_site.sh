@@ -10,12 +10,11 @@ AUTH_TOKEN="${QUARTZ_REPO_TOKEN:-${GITHUB_TOKEN:-}}"
 
 rm -rf "$WORK"
 
-if [ -z "$AUTH_TOKEN" ]; then
-  echo "QUARTZ_REPO_TOKEN or GITHUB_TOKEN is required to clone private repo AnatoliBu/quartz.git" >&2
-  exit 1
+if [ -n "$AUTH_TOKEN" ]; then
+  git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${AUTH_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
+else
+  git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://github.com/AnatoliBu/quartz.git" "$WORK"
 fi
-
-git clone --depth 1 --branch "$QUARTZ_BRANCH" "https://x-access-token:${AUTH_TOKEN}@github.com/AnatoliBu/quartz.git" "$WORK"
 
 rm -rf "$WORK/content"
 mkdir -p "$WORK/content"
