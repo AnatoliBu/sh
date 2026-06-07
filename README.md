@@ -2,59 +2,59 @@
 
 `sh` is a documentation and agent-harness repository for operational knowledge.
 
-The content model is split into two different concerns:
+The active knowledge base lives in `sysadmin-analytics-agent-kb/`.
 
-1. `references/` — source-of-truth material and reference catalogs.
-2. domain folders such as `sysadmin/` and `analytics/` — reusable agent artifacts: skills, rules, agents, harnesses, and backlog.
-
-For Quartz, the documentation content lives under `docs/`.
-
-## Documentation structure
+## Active structure
 
 ```text
-docs/
-├── index.md
+sysadmin-analytics-agent-kb/
 ├── references/
-│   ├── index.md
-│   ├── source-quality.md
-│   ├── sysadmin.md
-│   └── analytics.md
+│   ├── README.md
+│   ├── TEMPLATE.md
+│   ├── google-sre-incident-management.md
+│   ├── internal-event-taxonomy.md
+│   ├── internal-metric-catalog.md
+│   ├── kubernetes-pod-security-standards.md
+│   └── ...
 ├── sysadmin/
-│   ├── index.md
-│   ├── backlog.md
-│   ├── agents/
-│   │   └── operator.md
-│   ├── harnesses/
-│   │   └── default.md
-│   ├── rules/
-│   │   └── command-safety.md
+│   ├── agent.md
+│   ├── sources.md
 │   └── skills/
-│       └── core-troubleshooting.md
-└── analytics/
-    ├── index.md
-    ├── backlog.md
-    ├── agents/
-    │   └── product-analyst.md
-    ├── harnesses/
-    │   └── default.md
-    ├── rules/
-    │   └── evidence-discipline.md
-    └── skills/
-        └── core-analysis.md
+├── analytics/
+│   ├── agent.md
+│   ├── sources.md
+│   └── skills/
+├── shared/
+│   └── rules/
+├── tools/
+├── ci-reports/
+└── roadmap.md
 ```
 
 ## Design rules
 
-- Keep `references/` mostly flat. It is a catalog, not a nested knowledge base.
-- Keep domain folders organized by agent-harness artifact type: `skills`, `rules`, `agents`, `harnesses`.
+- Keep `references/` mostly flat. It is a catalog of source-of-truth cards, not a deeply nested knowledge base.
+- Keep domain folders organized by agent-harness concern: agent definitions, sources, skills, rules, workflows, evals.
 - Do not mix source catalogs with executable agent behavior.
 - Do not store secrets, credentials, private infrastructure dumps, customer data, or production configs.
 - Treat blogs, snippets, Reddit, and LLM output as leads, not source of truth.
 
-## CI note
+## CI
 
-Quartz builds documentation from `docs/`. If CI pulls Quartz from the private `AnatoliBu/quartz` repository, this repository must also be private or the GitHub Actions access policy must allow the caller repository. GitHub's private Actions component access is not available to public caller repositories under the current setting.
+The CI entry point is `.github/workflows/test.yml`.
+
+It runs `sysadmin-analytics-agent-kb/tools/run_agent_kb_ci.py`, which validates:
+
+- domain package structure;
+- wiki links;
+- frontmatter;
+- agent artifact references;
+- curated link graph;
+- Quartz site build;
+- markdown lint.
+
+Quartz is cloned from the private `AnatoliBu/quartz` repository using `QUARTZ_REPO_TOKEN` when present, or `GITHUB_TOKEN` as fallback.
 
 ## Status
 
-Initial documentation structure was corrected on 2026-06-07 to match the agreed `references / sysadmin / analytics` model.
+On 2026-06-07 the repository was corrected back to the agreed model: first-level `references`, `sysadmin`, and `analytics` inside `sysadmin-analytics-agent-kb/`, with references kept mostly flat and agent domains holding skills/rules/agents/harness-style artifacts.
