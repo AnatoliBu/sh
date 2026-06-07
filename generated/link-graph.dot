@@ -15,9 +15,12 @@ digraph docs {
   "references/internal-dns-source-of-truth.md";
   "references/internal-event-taxonomy.md";
   "references/internal-metric-catalog.md";
+  "references/junit-user-guide.md";
   "references/kubernetes-pod-security-standards.md";
   "references/netbox.md";
+  "references/selenium-webdriver-docs.md";
   "references/terraform-mcp.md";
+  "references/testcontainers-java-docs.md";
   "roadmap.md";
   "shared/rules/bullshit-check.md";
   "shared/rules/global-rules.md";
@@ -71,6 +74,7 @@ digraph docs {
   "references/netbox.md" -> "sysadmin/agent.md";
   "references/terraform-mcp.md" -> "sysadmin/agent.md";
   "references/terraform-mcp.md" -> "sysadmin/skills/terraform-plan-review.md";
+  "references/testcontainers-java-docs.md" -> "references/junit-user-guide.md";
   "shared/rules/bullshit-check.md" -> "references/README.md";
   "shared/rules/global-rules.md" -> "references/README.md";
   "shared/rules/global-rules.md" -> "references/README.md";

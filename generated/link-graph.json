@@ -14,9 +14,12 @@
     "references/internal-dns-source-of-truth.md",
     "references/internal-event-taxonomy.md",
     "references/internal-metric-catalog.md",
+    "references/junit-user-guide.md",
     "references/kubernetes-pod-security-standards.md",
     "references/netbox.md",
+    "references/selenium-webdriver-docs.md",
     "references/terraform-mcp.md",
+    "references/testcontainers-java-docs.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
     "shared/rules/global-rules.md",
@@ -243,6 +246,11 @@
       "source": "references/terraform-mcp.md",
       "target": "sysadmin/skills/terraform-plan-review.md",
       "label": "Terraform Plan Review"
+    },
+    {
+      "source": "references/testcontainers-java-docs.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
     },
     {
       "source": "shared/rules/bullshit-check.md",
