@@ -51,11 +51,11 @@ for item in references shared sysadmin analytics roadmap.md; do
   fi
 done
 
-rm -rf "$WORK/content/research" "$WORK/content/site" "$WORK/content/agents" "$WORK/content/rules" "$WORK/content/skills"
+rm -rf "$WORK/content/research" "$WORK/content/site"
 rm -rf "$WORK/content/references/tooling" "$WORK/content/references/sysadmin" "$WORK/content/references/analytics"
 rm -f "$WORK/content/README.md"
 
-if find "$WORK/content" \( -path '*/research/*' -o -path '*/site/*' -o -path '*/agents/*' -o -path '*/rules/*' -o -path '*/skills/*' -o -path '*/references/sysadmin/*' -o -path '*/references/analytics/*' -o -path '*/references/tooling/*' -o -name 'quartz-deploy.md' -o -name 'github-pages.md' -o -name 'quartz.md' \) | grep -q .; then
+if find "$WORK/content" \( -path '*/research/*' -o -path '*/site/*' -o -path '*/references/sysadmin/*' -o -path '*/references/analytics/*' -o -path '*/references/tooling/*' -o -name 'quartz-deploy.md' -o -name 'github-pages.md' -o -name 'quartz.md' \) | grep -q .; then
   echo "Non-curated docs leaked into Quartz content" >&2
   exit 1
 fi
