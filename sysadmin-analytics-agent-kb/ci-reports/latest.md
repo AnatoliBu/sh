@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T11:02:09Z`
-Git SHA: `40387ad8b14aebd3a972bd104aa85d54595f8356`
+Generated at: `2026-06-07T11:11:40Z`
+Git SHA: `63b8d75c62deb53fb3dfab3f0d7692bcdf3e6a9d`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -105,7 +105,7 @@ Output:
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 
-added 492 packages, and audited 493 packages in 9s
+added 492 packages, and audited 493 packages in 11s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -119,8 +119,8 @@ Run `npm audit` for details.
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 5ms
-Found 26 input files from `content` in 21ms
+Cleaned output directory `public` in 992μs
+Found 26 input files from `content` in 41ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -174,11 +174,11 @@ Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by g
 Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
-Parsed 26 Markdown files in 633ms
-Filtered out 0 files in 88μs
+Parsed 26 Markdown files in 568ms
+Filtered out 0 files in 78μs
 Emitting files
-Emitted 48 files to `public` in 252ms
-Done processing 26 files in 913ms
+Emitted 48 files to `public` in 180ms
+Done processing 26 files in 793ms
 
 ```
 
