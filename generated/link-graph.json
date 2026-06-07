@@ -28,6 +28,7 @@
     "references/istqb-testing-foundation.md",
     "references/junit-user-guide.md",
     "references/kubernetes-pod-security-standards.md",
+    "references/mermaid-docs.md",
     "references/mockito-docs.md",
     "references/netbox.md",
     "references/pact-docs.md",
@@ -40,6 +41,7 @@
     "references/wiremock-java-docs.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
+    "shared/rules/diagram-usage.md",
     "shared/rules/global-rules.md",
     "sysadmin/agent.md",
     "sysadmin/skills/dns-debug.md",
@@ -651,6 +653,16 @@
       "label": "Kubernetes Manifest Review"
     },
     {
+      "source": "references/mermaid-docs.md",
+      "target": "shared/rules/diagram-usage.md",
+      "label": "Diagram Usage"
+    },
+    {
+      "source": "references/mermaid-docs.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
       "source": "references/mockito-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -859,6 +871,11 @@
       "source": "shared/rules/bullshit-check.md",
       "target": "references/README.md",
       "label": "References"
+    },
+    {
+      "source": "shared/rules/diagram-usage.md",
+      "target": "references/mermaid-docs.md",
+      "label": "Mermaid Documentation"
     },
     {
       "source": "shared/rules/global-rules.md",
