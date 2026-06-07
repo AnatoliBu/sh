@@ -1,23 +1,24 @@
 ---
-title: Sysadmin Handbook
+title: SH Knowledge Base
 ---
 
-# Sysadmin Handbook
+# SH Knowledge Base
 
-This is the entry point for the sysadmin and infrastructure handbook.
+This repository is organized around two layers:
 
-## Start here
+- [[references/index|References]] — source-of-truth catalogs and source quality rules.
+- [[sysadmin/index|Sysadmin]] and [[analytics/index|Analytics]] — agent-harness artifacts such as skills, rules, agents, and harnesses.
 
-- [[agent-rules|Agent rules]] — how an assistant should reason before suggesting commands.
-- [[source-of-truth|Source of truth]] — which references are trusted and how to rank them.
-- [[backlog|Backlog]] — next skills and references to add.
-- [[../skills/sysadmin-core|Sysadmin core skill]] — baseline troubleshooting shape.
+## First-level map
 
-## Purpose
+| Area | Purpose |
+|---|---|
+| [[references/index|references]] | Mostly flat reference docs and authority ranking. |
+| [[sysadmin/index|sysadmin]] | Skills, rules, agents, and harnesses for system administration. |
+| [[analytics/index|analytics]] | Skills, rules, agents, and harnesses for product/data analytics. |
 
-The handbook is built for practical operations work:
+## Repository rule
 
-- understand the system before changing it;
-- prefer authoritative documentation over random snippets;
-- separate diagnosis, mitigation, permanent fix, and rollback;
-- keep commands small, observable, and reversible when possible.
+References explain **what sources are trusted**.
+
+Domain artifacts explain **how an agent should act**.
