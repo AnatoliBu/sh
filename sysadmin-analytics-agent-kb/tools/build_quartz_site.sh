@@ -29,13 +29,14 @@ domain: shared
 
 # Agent KB
 
-Curated knowledge base for reliable sysadmin/SRE/network and analytics/product-analytics agents.
+Curated knowledge base for reliable sysadmin/SRE/network, analytics/product-analytics, and Java QA agents.
 
 ## Start here
 
 - [References](references/README.md)
 - [Sysadmin Agent](sysadmin/agent.md)
 - [Analytics Agent](analytics/agent.md)
+- [Java QA Agent](java-qa/agent.md)
 - [Global Rules](shared/rules/global-rules.md)
 - [Roadmap](roadmap.md)
 
@@ -45,7 +46,7 @@ Curated knowledge base for reliable sysadmin/SRE/network and analytics/product-a
 - [Link Graph DOT](generated/link-graph.dot)
 EOF
 
-for item in references shared sysadmin analytics roadmap.md; do
+for item in references shared sysadmin analytics java-qa roadmap.md; do
   if [ -e "$KB/$item" ]; then
     cp -R "$KB/$item" "$WORK/content/"
   fi
