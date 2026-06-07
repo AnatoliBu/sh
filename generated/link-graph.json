@@ -6,20 +6,38 @@
     "analytics/skills/sql-review.md",
     "analytics/sources.md",
     "ci-reports/latest.md",
+    "java-qa/agent.md",
+    "java-qa/rules/flaky-test-control.md",
+    "java-qa/rules/test-code-quality.md",
+    "java-qa/skills/api-and-contract-testing.md",
+    "java-qa/skills/junit-java-test-design.md",
+    "java-qa/skills/test-suite-architecture.md",
+    "java-qa/skills/ui-automation-selenium.md",
+    "java-qa/sources.md",
+    "java-qa/workflows/automation-review.md",
     "notes/next-actions.md",
     "references/README.md",
     "references/TEMPLATE.md",
+    "references/assertj-docs.md",
     "references/google-sre-incident-management.md",
+    "references/gradle-java-testing.md",
     "references/internal-certificate-management.md",
     "references/internal-dns-source-of-truth.md",
     "references/internal-event-taxonomy.md",
     "references/internal-metric-catalog.md",
+    "references/istqb-testing-foundation.md",
     "references/junit-user-guide.md",
     "references/kubernetes-pod-security-standards.md",
+    "references/mockito-docs.md",
     "references/netbox.md",
+    "references/pact-docs.md",
+    "references/practical-test-pyramid.md",
+    "references/rest-assured-docs.md",
     "references/selenium-webdriver-docs.md",
+    "references/spring-framework-testing.md",
     "references/terraform-mcp.md",
     "references/testcontainers-java-docs.md",
+    "references/wiremock-java-docs.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
     "shared/rules/global-rules.md",
@@ -128,9 +146,339 @@
       "label": "Event taxonomy"
     },
     {
+      "source": "java-qa/agent.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "shared/rules/global-rules.md",
+      "label": "Global Agent Rules"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "shared/rules/bullshit-check.md",
+      "label": "Source Quality Check Mode"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/skills/junit-java-test-design.md",
+      "label": "JUnit Java Test Design"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/skills/ui-automation-selenium.md",
+      "label": "Selenium UI Automation"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/rules/test-code-quality.md",
+      "label": "Test Code Quality"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/rules/flaky-test-control.md",
+      "label": "Flaky Test Control"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/workflows/automation-review.md",
+      "label": "Automation Review Workflow"
+    },
+    {
+      "source": "java-qa/rules/flaky-test-control.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/rules/flaky-test-control.md",
+      "target": "references/gradle-java-testing.md",
+      "label": "Gradle Java Testing"
+    },
+    {
+      "source": "java-qa/rules/flaky-test-control.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/rules/flaky-test-control.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/rules/test-code-quality.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/rules/test-code-quality.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
+      "source": "java-qa/rules/test-code-quality.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
+    },
+    {
+      "source": "java-qa/rules/test-code-quality.md",
+      "target": "references/istqb-testing-foundation.md",
+      "label": "ISTQB Testing Foundation Materials"
+    },
+    {
+      "source": "java-qa/skills/api-and-contract-testing.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/skills/api-and-contract-testing.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/api-and-contract-testing.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/skills/api-and-contract-testing.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/api-and-contract-testing.md",
+      "target": "references/spring-framework-testing.md",
+      "label": "Spring Framework Testing Documentation"
+    },
+    {
+      "source": "java-qa/skills/junit-java-test-design.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/skills/junit-java-test-design.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
+      "source": "java-qa/skills/junit-java-test-design.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
+    },
+    {
+      "source": "java-qa/skills/junit-java-test-design.md",
+      "target": "references/istqb-testing-foundation.md",
+      "label": "ISTQB Testing Foundation Materials"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/gradle-java-testing.md",
+      "label": "Gradle Java Testing"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/spring-framework-testing.md",
+      "label": "Spring Framework Testing Documentation"
+    },
+    {
+      "source": "java-qa/skills/test-suite-architecture.md",
+      "target": "references/istqb-testing-foundation.md",
+      "label": "ISTQB Testing Foundation Materials"
+    },
+    {
+      "source": "java-qa/skills/ui-automation-selenium.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/skills/ui-automation-selenium.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/skills/ui-automation-selenium.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/spring-framework-testing.md",
+      "label": "Spring Framework Testing Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/gradle-java-testing.md",
+      "label": "Gradle Java Testing"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/istqb-testing-foundation.md",
+      "label": "ISTQB Testing Foundation Materials"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/workflows/automation-review.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/workflows/automation-review.md",
+      "target": "references/gradle-java-testing.md",
+      "label": "Gradle Java Testing"
+    },
+    {
+      "source": "java-qa/workflows/automation-review.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/workflows/automation-review.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/workflows/automation-review.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
       "source": "references/README.md",
       "target": "references/TEMPLATE.md",
       "label": "`TEMPLATE.md`"
+    },
+    {
+      "source": "references/assertj-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/assertj-docs.md",
+      "target": "java-qa/skills/junit-java-test-design.md",
+      "label": "JUnit Java Test Design"
+    },
+    {
+      "source": "references/assertj-docs.md",
+      "target": "java-qa/rules/test-code-quality.md",
+      "label": "Test Code Quality"
+    },
+    {
+      "source": "references/assertj-docs.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/assertj-docs.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
     },
     {
       "source": "references/google-sre-incident-management.md",
@@ -141,6 +489,26 @@
       "source": "references/google-sre-incident-management.md",
       "target": "sysadmin/skills/incident-triage.md",
       "label": "Incident Triage"
+    },
+    {
+      "source": "references/gradle-java-testing.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/gradle-java-testing.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/gradle-java-testing.md",
+      "target": "java-qa/workflows/automation-review.md",
+      "label": "Automation Review Workflow"
+    },
+    {
+      "source": "references/gradle-java-testing.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
     },
     {
       "source": "references/internal-certificate-management.md",
@@ -223,6 +591,56 @@
       "label": "Internal Event Taxonomy"
     },
     {
+      "source": "references/istqb-testing-foundation.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/istqb-testing-foundation.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/istqb-testing-foundation.md",
+      "target": "java-qa/rules/test-code-quality.md",
+      "label": "Test Code Quality"
+    },
+    {
+      "source": "references/istqb-testing-foundation.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "java-qa/skills/junit-java-test-design.md",
+      "label": "JUnit Java Test Design"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "references/mockito-docs.md",
+      "label": "Mockito Documentation"
+    },
+    {
+      "source": "references/junit-user-guide.md",
+      "target": "references/gradle-java-testing.md",
+      "label": "Gradle Java Testing"
+    },
+    {
       "source": "references/kubernetes-pod-security-standards.md",
       "target": "sysadmin/agent.md",
       "label": "Sysadmin Agent"
@@ -233,9 +651,154 @@
       "label": "Kubernetes Manifest Review"
     },
     {
+      "source": "references/mockito-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/mockito-docs.md",
+      "target": "java-qa/skills/junit-java-test-design.md",
+      "label": "JUnit Java Test Design"
+    },
+    {
+      "source": "references/mockito-docs.md",
+      "target": "java-qa/rules/test-code-quality.md",
+      "label": "Test Code Quality"
+    },
+    {
+      "source": "references/mockito-docs.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/mockito-docs.md",
+      "target": "references/assertj-docs.md",
+      "label": "AssertJ Documentation"
+    },
+    {
       "source": "references/netbox.md",
       "target": "sysadmin/agent.md",
       "label": "Sysadmin Agent"
+    },
+    {
+      "source": "references/pact-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/pact-docs.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/pact-docs.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/pact-docs.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "references/pact-docs.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "java-qa/skills/ui-automation-selenium.md",
+      "label": "Selenium UI Automation"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "references/practical-test-pyramid.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "references/rest-assured-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/rest-assured-docs.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/rest-assured-docs.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "references/rest-assured-docs.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/selenium-webdriver-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/selenium-webdriver-docs.md",
+      "target": "java-qa/skills/ui-automation-selenium.md",
+      "label": "Selenium UI Automation"
+    },
+    {
+      "source": "references/selenium-webdriver-docs.md",
+      "target": "java-qa/rules/flaky-test-control.md",
+      "label": "Flaky Test Control"
+    },
+    {
+      "source": "references/selenium-webdriver-docs.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "references/spring-framework-testing.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/spring-framework-testing.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/spring-framework-testing.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/spring-framework-testing.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/spring-framework-testing.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
     },
     {
       "source": "references/terraform-mcp.md",
@@ -249,8 +812,48 @@
     },
     {
       "source": "references/testcontainers-java-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/testcontainers-java-docs.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/testcontainers-java-docs.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/testcontainers-java-docs.md",
       "target": "references/junit-user-guide.md",
       "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/testcontainers-java-docs.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/wiremock-java-docs.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/wiremock-java-docs.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/wiremock-java-docs.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "references/wiremock-java-docs.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
     },
     {
       "source": "shared/rules/bullshit-check.md",
