@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T11:11:40Z`
-Git SHA: `63b8d75c62deb53fb3dfab3f0d7692bcdf3e6a9d`
+Generated at: `2026-06-07T11:12:37Z`
+Git SHA: `39f25dfd4830a0e6447d735cc992855fe07709e8`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -88,7 +88,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 27 nodes and 71 edges
+Generated curated graph: 30 nodes and 72 edges
 
 ```
 
@@ -105,7 +105,7 @@ Output:
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 
-added 492 packages, and audited 493 packages in 11s
+added 492 packages, and audited 493 packages in 6s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -119,8 +119,8 @@ Run `npm audit` for details.
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 992μs
-Found 26 input files from `content` in 41ms
+Cleaned output directory `public` in 634μs
+Found 29 input files from `content` in 33ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -149,11 +149,17 @@ Warning: content/references/internal-event-taxonomy.md isn't yet tracked by git,
 
 Warning: content/references/internal-metric-catalog.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/junit-user-guide.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/kubernetes-pod-security-standards.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/selenium-webdriver-docs.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/terraform-mcp.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/testcontainers-java-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/roadmap.md isn't yet tracked by git, dates will be inaccurate
 
@@ -174,11 +180,11 @@ Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by g
 Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
-Parsed 26 Markdown files in 568ms
-Filtered out 0 files in 78μs
+Parsed 29 Markdown files in 340ms
+Filtered out 0 files in 74μs
 Emitting files
-Emitted 48 files to `public` in 180ms
-Done processing 26 files in 793ms
+Emitted 51 files to `public` in 137ms
+Done processing 29 files in 512ms
 
 ```
 
@@ -195,7 +201,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 40 file(s)
+Linting: 43 file(s)
 Summary: 0 error(s)
 
 ```
