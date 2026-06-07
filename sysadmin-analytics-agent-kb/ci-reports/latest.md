@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T10:32:23Z`
-Git SHA: `a7d64d47e04fbf21ff575ce436d01553fa4352a7`
+Generated at: `2026-06-07T10:35:02Z`
+Git SHA: `96d7b5a1aa601898c6622705ea8ce88f17c52b23`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -9,11 +9,11 @@ Quartz branch: `agent-kb-v5`
 
 - **PASS** — Validate domain package structure
 - **PASS** — Validate wiki links
-- **FAIL** — Validate frontmatter
+- **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **FAIL** — Build Quartz site
-- **PASS** — Markdown lint
+- **FAIL** — Markdown lint
 
 ## Details
 
@@ -47,7 +47,7 @@ Wiki link validation passed
 
 ```
 
-### FAIL: Validate frontmatter
+### PASS: Validate frontmatter
 
 Command:
 
@@ -58,9 +58,7 @@ python sysadmin-analytics-agent-kb/tools/validate_frontmatter.py
 Output:
 
 ```text
-Frontmatter validation failed:
-- analytics/sources.md: missing YAML frontmatter
-- sysadmin/sources.md: missing YAML frontmatter
+Frontmatter validation passed
 
 ```
 
@@ -105,11 +103,11 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-QUARTZ_REPO_TOKEN is required to clone private repo AnatoliBu/quartz.git
+QUARTZ_REPO_TOKEN or GITHUB_TOKEN is required to clone private repo AnatoliBu/quartz.git
 
 ```
 
-### PASS: Markdown lint
+### FAIL: Markdown lint
 
 Command:
 
@@ -123,6 +121,8 @@ Output:
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
 Linting: 50 file(s)
-Summary: 0 error(s)
+Summary: 2 error(s)
+sysadmin-analytics-agent-kb/analytics/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Analytics / Product Analytics ..."]
+sysadmin-analytics-agent-kb/sysadmin/sources.md:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "Sysadmin / SRE / Network Sourc..."]
 
 ```
