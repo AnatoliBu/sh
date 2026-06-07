@@ -1,3 +1,10 @@
+---
+title: Analytics / Product Analytics Sources
+artifact_type: reference
+status: foundation
+domain: analytics
+---
+
 # Analytics / Product Analytics Sources
 
 This file ranks source-of-truth references for analytics agents.
