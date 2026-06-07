@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T10:58:22Z`
-Git SHA: `2eed2db488c3caf56596a7c2baab02650fcd5820`
+Generated at: `2026-06-07T11:00:57Z`
+Git SHA: `9790798e8831fac0dc095e398ce52a10b7df2b02`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -104,8 +104,7 @@ Output:
 
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
-remote: Repository not found.
-fatal: repository 'https://github.com/AnatoliBu/quartz.git/' not found
+Non-curated docs leaked into Quartz content
 
 ```
 
