@@ -6,7 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
-AGENT_ROOTS = {'sysadmin', 'analytics', 'shared'}
+AGENT_ROOTS = {'sysadmin', 'analytics', 'java-qa', 'shared'}
 SKIP_ROOTS = {'research', 'site', 'generated', 'public', 'agents', 'rules', 'skills'}
 SKIP_PREFIXES = ('references/sysadmin/', 'references/analytics/', 'references/tooling/')
 
