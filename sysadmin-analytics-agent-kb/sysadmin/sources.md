@@ -1,5 +1,4 @@
 ---
-title: Sysadmin / SRE / Network Sources
 artifact_type: reference
 status: foundation
 domain: sysadmin
