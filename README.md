@@ -14,7 +14,9 @@ sysadmin-analytics-agent-kb/
 │   ├── google-sre-incident-management.md
 │   ├── internal-event-taxonomy.md
 │   ├── internal-metric-catalog.md
-│   ├── kubernetes-pod-security-standards.md
+│   ├── junit-user-guide.md
+│   ├── selenium-webdriver-docs.md
+│   ├── testcontainers-java-docs.md
 │   └── ...
 ├── sysadmin/
 │   ├── agent.md
@@ -24,6 +26,12 @@ sysadmin-analytics-agent-kb/
 │   ├── agent.md
 │   ├── sources.md
 │   └── skills/
+├── java-qa/
+│   ├── agent.md
+│   ├── sources.md
+│   ├── skills/
+│   ├── rules/
+│   └── workflows/
 ├── shared/
 │   └── rules/
 ├── tools/
@@ -57,4 +65,4 @@ Quartz is cloned from `AnatoliBu/quartz`. If `QUARTZ_REPO_TOKEN` or `GITHUB_TOKE
 
 ## Status
 
-On 2026-06-07 the repository was corrected back to the agreed model: first-level `references`, `sysadmin`, and `analytics` inside `sysadmin-analytics-agent-kb/`, with references kept mostly flat and agent domains holding skills/rules/agents/harness-style artifacts.
+On 2026-06-07 the repository was extended from the original `references / sysadmin / analytics` model to include a `java-qa` domain for Java QA automation references, skills, rules, and agent workflow artifacts.
