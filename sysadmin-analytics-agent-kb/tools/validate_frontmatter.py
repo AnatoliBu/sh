@@ -17,7 +17,7 @@ REFERENCE_REQUIRED = {
     'source_url',
 }
 AGENT_REQUIRED = {'artifact_type', 'status', 'domain'}
-STRICT_ROOTS = {'sysadmin', 'analytics', 'shared', 'references'}
+STRICT_ROOTS = {'sysadmin', 'analytics', 'java-qa', 'shared', 'references'}
 EXCLUDED_PARTS = {'research', 'site', 'generated', 'public', 'tooling'}
 TEMPORARY_EXCLUDED = {'sysadmin/skills/incident-triage.md'}
 FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
