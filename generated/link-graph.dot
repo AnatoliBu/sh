@@ -8,6 +8,7 @@ digraph docs {
   "analytics/sources.md";
   "ci-reports/latest.md";
   "java-qa/agent.md";
+  "java-qa/rules/automation-decision-quality-gates.md";
   "java-qa/rules/flaky-test-control.md";
   "java-qa/rules/test-code-quality.md";
   "java-qa/skills/agentic-qa-tooling-design.md";
@@ -93,6 +94,11 @@ digraph docs {
   "java-qa/agent.md" -> "java-qa/rules/test-code-quality.md";
   "java-qa/agent.md" -> "java-qa/rules/flaky-test-control.md";
   "java-qa/agent.md" -> "java-qa/workflows/automation-review.md";
+  "java-qa/rules/automation-decision-quality-gates.md" -> "references/practical-test-pyramid.md";
+  "java-qa/rules/automation-decision-quality-gates.md" -> "references/selenium-webdriver-docs.md";
+  "java-qa/rules/automation-decision-quality-gates.md" -> "references/junit-user-guide.md";
+  "java-qa/rules/automation-decision-quality-gates.md" -> "references/qa-skills-agent-catalog.md";
+  "java-qa/rules/automation-decision-quality-gates.md" -> "references/agentic-qa-boilerplate.md";
   "java-qa/rules/flaky-test-control.md" -> "references/selenium-webdriver-docs.md";
   "java-qa/rules/flaky-test-control.md" -> "references/gradle-java-testing.md";
   "java-qa/rules/flaky-test-control.md" -> "references/testcontainers-java-docs.md";
@@ -214,6 +220,7 @@ digraph docs {
   "references/pact-docs.md" -> "references/wiremock-java-docs.md";
   "references/playwright-best-practices.md" -> "java-qa/agent.md";
   "references/playwright-best-practices.md" -> "java-qa/skills/qa-automation-decision-flow.md";
+  "references/playwright-best-practices.md" -> "java-qa/rules/automation-decision-quality-gates.md";
   "references/playwright-best-practices.md" -> "references/selenium-webdriver-docs.md";
   "references/playwright-best-practices.md" -> "references/practical-test-pyramid.md";
   "references/playwright-best-practices.md" -> "references/junit-user-guide.md";

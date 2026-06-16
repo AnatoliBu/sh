@@ -7,6 +7,7 @@
     "analytics/sources.md",
     "ci-reports/latest.md",
     "java-qa/agent.md",
+    "java-qa/rules/automation-decision-quality-gates.md",
     "java-qa/rules/flaky-test-control.md",
     "java-qa/rules/test-code-quality.md",
     "java-qa/skills/agentic-qa-tooling-design.md",
@@ -241,6 +242,31 @@
       "source": "java-qa/agent.md",
       "target": "java-qa/workflows/automation-review.md",
       "label": "Automation Review Workflow"
+    },
+    {
+      "source": "java-qa/rules/automation-decision-quality-gates.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/rules/automation-decision-quality-gates.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/rules/automation-decision-quality-gates.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/rules/automation-decision-quality-gates.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/rules/automation-decision-quality-gates.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
     },
     {
       "source": "java-qa/rules/flaky-test-control.md",
@@ -846,6 +872,11 @@
       "source": "references/playwright-best-practices.md",
       "target": "java-qa/skills/qa-automation-decision-flow.md",
       "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/playwright-best-practices.md",
+      "target": "java-qa/rules/automation-decision-quality-gates.md",
+      "label": "Automation Decision Quality Gates"
     },
     {
       "source": "references/playwright-best-practices.md",
