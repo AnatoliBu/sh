@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-07T15:17:28Z`
-Git SHA: `202f169f62f518c9d6134b646118a8a39ef10afb`
+Generated at: `2026-06-16T08:14:18Z`
+Git SHA: `daf5d62befdef56593ebe9548dcc96c69040df0d`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -88,7 +88,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 50 nodes and 192 edges
+Generated curated graph: 57 nodes and 252 edges
 
 ```
 
@@ -105,22 +105,25 @@ Output:
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 
-added 492 packages, and audited 493 packages in 11s
+added 492 packages, and audited 493 packages in 10s
 
 182 packages are looking for funding
   run `npm fund` for details
 
-4 vulnerabilities (3 moderate, 1 high)
+6 vulnerabilities (2 moderate, 4 high)
 
-To address all issues, run:
+To address issues that do not require attention, run:
   npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
 
 Run `npm audit` for details.
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 2ms
-Found 49 input files from `content` in 49ms
+Cleaned output directory `public` in 1ms
+Found 56 input files from `content` in 47ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -137,13 +140,19 @@ Warning: content/index.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/java-qa/agent.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/java-qa/rules/automation-decision-quality-gates.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/java-qa/rules/flaky-test-control.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/java-qa/rules/test-code-quality.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/java-qa/skills/agentic-qa-tooling-design.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/java-qa/skills/api-and-contract-testing.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/java-qa/skills/junit-java-test-design.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/java-qa/skills/qa-automation-decision-flow.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/java-qa/skills/test-suite-architecture.md isn't yet tracked by git, dates will be inaccurate
 
@@ -153,9 +162,13 @@ Warning: content/java-qa/sources.md isn't yet tracked by git, dates will be inac
 
 Warning: content/java-qa/workflows/automation-review.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/java-qa/workflows/qa-automation-architecture-decision.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/README.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/TEMPLATE.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/agentic-qa-boilerplate.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/assertj-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -185,7 +198,11 @@ Warning: content/references/netbox.md isn't yet tracked by git, dates will be in
 
 Warning: content/references/pact-docs.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/playwright-best-practices.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/practical-test-pyramid.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/qa-skills-agent-catalog.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/rest-assured-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -220,11 +237,11 @@ Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by g
 Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
-Parsed 49 Markdown files in 705ms
-Filtered out 0 files in 104μs
+Parsed 56 Markdown files in 917ms
+Filtered out 0 files in 148μs
 Emitting files
-Emitted 75 files to `public` in 250ms
-Done processing 49 files in 1s
+Emitted 82 files to `public` in 265ms
+Done processing 56 files in 1s
 
 ```
 
@@ -241,7 +258,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 63 file(s)
+Linting: 70 file(s)
 Summary: 0 error(s)
 
 ```
