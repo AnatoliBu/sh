@@ -11,6 +11,7 @@
     "java-qa/rules/test-code-quality.md",
     "java-qa/skills/api-and-contract-testing.md",
     "java-qa/skills/junit-java-test-design.md",
+    "java-qa/skills/qa-automation-decision-flow.md",
     "java-qa/skills/test-suite-architecture.md",
     "java-qa/skills/ui-automation-selenium.md",
     "java-qa/sources.md",
@@ -326,6 +327,56 @@
       "label": "ISTQB Testing Foundation Materials"
     },
     {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/playwright-best-practices.md",
+      "label": "Playwright Best Practices"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/skills/qa-automation-decision-flow.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
       "source": "java-qa/skills/test-suite-architecture.md",
       "target": "references/practical-test-pyramid.md",
       "label": "Practical Test Pyramid"
@@ -464,6 +515,11 @@
       "source": "references/agentic-qa-boilerplate.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
     },
     {
       "source": "references/agentic-qa-boilerplate.md",
@@ -747,6 +803,11 @@
     },
     {
       "source": "references/playwright-best-practices.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/playwright-best-practices.md",
       "target": "references/selenium-webdriver-docs.md",
       "label": "Selenium WebDriver Documentation"
     },
@@ -794,6 +855,11 @@
       "source": "references/qa-skills-agent-catalog.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
     },
     {
       "source": "references/qa-skills-agent-catalog.md",
