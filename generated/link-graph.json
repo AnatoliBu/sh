@@ -18,6 +18,7 @@
     "notes/next-actions.md",
     "references/README.md",
     "references/TEMPLATE.md",
+    "references/agentic-qa-boilerplate.md",
     "references/assertj-docs.md",
     "references/google-sre-incident-management.md",
     "references/gradle-java-testing.md",
@@ -32,7 +33,9 @@
     "references/mockito-docs.md",
     "references/netbox.md",
     "references/pact-docs.md",
+    "references/playwright-best-practices.md",
     "references/practical-test-pyramid.md",
+    "references/qa-skills-agent-catalog.md",
     "references/rest-assured-docs.md",
     "references/selenium-webdriver-docs.md",
     "references/spring-framework-testing.md",
@@ -458,6 +461,26 @@
       "label": "`TEMPLATE.md`"
     },
     {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
       "source": "references/assertj-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -718,6 +741,26 @@
       "label": "WireMock Java Documentation"
     },
     {
+      "source": "references/playwright-best-practices.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/playwright-best-practices.md",
+      "target": "references/selenium-webdriver-docs.md",
+      "label": "Selenium WebDriver Documentation"
+    },
+    {
+      "source": "references/playwright-best-practices.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "references/playwright-best-practices.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
       "source": "references/practical-test-pyramid.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -746,6 +789,36 @@
       "source": "references/practical-test-pyramid.md",
       "target": "references/pact-docs.md",
       "label": "Pact Documentation"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
     },
     {
       "source": "references/rest-assured-docs.md",
