@@ -22,9 +22,11 @@ This file ranks source-of-truth references for Java QA automation agents.
 - [Pact Documentation](../references/pact-docs.md)
 - [ISTQB Testing Foundation Materials](../references/istqb-testing-foundation.md)
 
-## Tier B — strategy sources
+## Tier B — strategy and agent-workflow sources
 
 - [Practical Test Pyramid](../references/practical-test-pyramid.md)
+- [QA Skills Agent Catalog](../references/qa-skills-agent-catalog.md)
+- [Agentic QA Boilerplate](../references/agentic-qa-boilerplate.md)
 
 ## Admission rule
 
@@ -38,3 +40,5 @@ A Java QA source may become foundation only if it is one of:
 ## Source usage rule
 
 Tool docs define tool behavior. Product requirements and internal API contracts define expected system behavior.
+
+Open-source agent repositories may define useful skill taxonomy, workflow shape, and prompt packaging patterns, but they do not override official framework documentation or internal product contracts.

@@ -8,7 +8,7 @@ domain: java-qa
 
 ## Mission
 
-Assist with Java QA automation design, test review, test suite architecture, API/UI automation, and CI test reliability.
+Assist with Java QA automation design, test review, test suite architecture, API/UI automation, agentic QA tooling, and CI test reliability.
 
 ## Reference links
 
@@ -23,6 +23,8 @@ Authority references:
 - [WireMock Java Documentation](../references/wiremock-java-docs.md)
 - [Pact Documentation](../references/pact-docs.md)
 - [Practical Test Pyramid](../references/practical-test-pyramid.md)
+- [QA Skills Agent Catalog](../references/qa-skills-agent-catalog.md)
+- [Agentic QA Boilerplate](../references/agentic-qa-boilerplate.md)
 
 ## Shared rules
 
@@ -35,19 +37,25 @@ Authority references:
 - [JUnit Java Test Design](./skills/junit-java-test-design.md)
 - [API and Contract Testing](./skills/api-and-contract-testing.md)
 - [Selenium UI Automation](./skills/ui-automation-selenium.md)
+- [QA Automation Decision Flow](./skills/qa-automation-decision-flow.md)
+- [Agentic QA Tooling Design](./skills/agentic-qa-tooling-design.md)
 
 ## Domain rules
 
 - [Test Code Quality](./rules/test-code-quality.md)
 - [Flaky Test Control](./rules/flaky-test-control.md)
+- [Automation Decision Quality Gates](./rules/automation-decision-quality-gates.md)
 
 ## Workflow
 
 - [Automation Review Workflow](./workflows/automation-review.md)
+- [QA Automation Architecture Decision Workflow](./workflows/qa-automation-architecture-decision.md)
 
 ## Default behavior
 
-The agent separates product behavior, test level, test data, test oracle, tooling fit, and CI impact.
+The agent separates product behavior, test level, test data, test oracle, tooling fit, CI impact, and agent-readiness.
+
+For architecture decisions, the agent should run the QA Automation Decision Flow before recommending implementation.
 
 ## Required inputs
 
@@ -55,6 +63,8 @@ The agent separates product behavior, test level, test data, test oracle, toolin
 - Test framework and application framework.
 - Target behavior and source of expected result.
 - CI or local execution context.
+- Current pain: flakiness, slowness, duplication, framework lock-in, unclear oracle, or poor diagnostics.
+- Agent/CLI/MCP consumer expectations when automation capabilities are exposed as tools.
 
 ## Guardrails
 
@@ -62,3 +72,5 @@ The agent separates product behavior, test level, test data, test oracle, toolin
 - Link tool claims to local reference cards.
 - Treat flaky tests as diagnostic signals.
 - Keep generated test code readable and maintainable.
+- Do not automate unclear behavior.
+- Do not expose unsafe prompt-only QA tools when stable structured CLI/MCP tools are needed.
