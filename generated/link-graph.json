@@ -18,6 +18,7 @@
     "java-qa/skills/ui-automation-selenium.md",
     "java-qa/sources.md",
     "java-qa/workflows/automation-review.md",
+    "java-qa/workflows/qa-automation-architecture-decision.md",
     "notes/next-actions.md",
     "references/README.md",
     "references/TEMPLATE.md",
@@ -200,6 +201,16 @@
     },
     {
       "source": "java-qa/agent.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
+      "source": "java-qa/agent.md",
       "target": "shared/rules/global-rules.md",
       "label": "Global Agent Rules"
     },
@@ -230,6 +241,16 @@
     },
     {
       "source": "java-qa/agent.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/skills/agentic-qa-tooling-design.md",
+      "label": "Agentic QA Tooling Design"
+    },
+    {
+      "source": "java-qa/agent.md",
       "target": "java-qa/rules/test-code-quality.md",
       "label": "Test Code Quality"
     },
@@ -240,8 +261,18 @@
     },
     {
       "source": "java-qa/agent.md",
+      "target": "java-qa/rules/automation-decision-quality-gates.md",
+      "label": "Automation Decision Quality Gates"
+    },
+    {
+      "source": "java-qa/agent.md",
       "target": "java-qa/workflows/automation-review.md",
       "label": "Automation Review Workflow"
+    },
+    {
+      "source": "java-qa/agent.md",
+      "target": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "label": "QA Automation Architecture Decision Workflow"
     },
     {
       "source": "java-qa/rules/automation-decision-quality-gates.md",
@@ -544,6 +575,16 @@
       "label": "Practical Test Pyramid"
     },
     {
+      "source": "java-qa/sources.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
       "source": "java-qa/workflows/automation-review.md",
       "target": "references/junit-user-guide.md",
       "label": "JUnit User Guide"
@@ -569,6 +610,46 @@
       "label": "REST Assured Documentation"
     },
     {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/junit-user-guide.md",
+      "label": "JUnit User Guide"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
       "source": "references/README.md",
       "target": "references/TEMPLATE.md",
       "label": "`TEMPLATE.md`"
@@ -587,6 +668,11 @@
       "source": "references/agentic-qa-boilerplate.md",
       "target": "java-qa/skills/agentic-qa-tooling-design.md",
       "label": "Agentic QA Tooling Design"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "label": "QA Automation Architecture Decision Workflow"
     },
     {
       "source": "references/agentic-qa-boilerplate.md",
@@ -937,6 +1023,11 @@
       "source": "references/qa-skills-agent-catalog.md",
       "target": "java-qa/skills/agentic-qa-tooling-design.md",
       "label": "Agentic QA Tooling Design"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "java-qa/workflows/qa-automation-architecture-decision.md",
+      "label": "QA Automation Architecture Decision Workflow"
     },
     {
       "source": "references/qa-skills-agent-catalog.md",
