@@ -10,6 +10,7 @@ digraph docs {
   "java-qa/agent.md";
   "java-qa/rules/flaky-test-control.md";
   "java-qa/rules/test-code-quality.md";
+  "java-qa/skills/agentic-qa-tooling-design.md";
   "java-qa/skills/api-and-contract-testing.md";
   "java-qa/skills/junit-java-test-design.md";
   "java-qa/skills/qa-automation-decision-flow.md";
@@ -100,6 +101,13 @@ digraph docs {
   "java-qa/rules/test-code-quality.md" -> "references/assertj-docs.md";
   "java-qa/rules/test-code-quality.md" -> "references/mockito-docs.md";
   "java-qa/rules/test-code-quality.md" -> "references/istqb-testing-foundation.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/qa-skills-agent-catalog.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/agentic-qa-boilerplate.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/rest-assured-docs.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/pact-docs.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/wiremock-java-docs.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/testcontainers-java-docs.md";
+  "java-qa/skills/agentic-qa-tooling-design.md" -> "references/practical-test-pyramid.md";
   "java-qa/skills/api-and-contract-testing.md" -> "references/rest-assured-docs.md";
   "java-qa/skills/api-and-contract-testing.md" -> "references/wiremock-java-docs.md";
   "java-qa/skills/api-and-contract-testing.md" -> "references/pact-docs.md";
@@ -148,6 +156,7 @@ digraph docs {
   "references/README.md" -> "references/TEMPLATE.md";
   "references/agentic-qa-boilerplate.md" -> "java-qa/agent.md";
   "references/agentic-qa-boilerplate.md" -> "java-qa/skills/qa-automation-decision-flow.md";
+  "references/agentic-qa-boilerplate.md" -> "java-qa/skills/agentic-qa-tooling-design.md";
   "references/agentic-qa-boilerplate.md" -> "references/qa-skills-agent-catalog.md";
   "references/agentic-qa-boilerplate.md" -> "references/practical-test-pyramid.md";
   "references/agentic-qa-boilerplate.md" -> "references/selenium-webdriver-docs.md";
@@ -216,6 +225,7 @@ digraph docs {
   "references/practical-test-pyramid.md" -> "references/pact-docs.md";
   "references/qa-skills-agent-catalog.md" -> "java-qa/agent.md";
   "references/qa-skills-agent-catalog.md" -> "java-qa/skills/qa-automation-decision-flow.md";
+  "references/qa-skills-agent-catalog.md" -> "java-qa/skills/agentic-qa-tooling-design.md";
   "references/qa-skills-agent-catalog.md" -> "references/practical-test-pyramid.md";
   "references/qa-skills-agent-catalog.md" -> "references/junit-user-guide.md";
   "references/qa-skills-agent-catalog.md" -> "references/rest-assured-docs.md";

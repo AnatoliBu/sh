@@ -9,6 +9,7 @@
     "java-qa/agent.md",
     "java-qa/rules/flaky-test-control.md",
     "java-qa/rules/test-code-quality.md",
+    "java-qa/skills/agentic-qa-tooling-design.md",
     "java-qa/skills/api-and-contract-testing.md",
     "java-qa/skills/junit-java-test-design.md",
     "java-qa/skills/qa-automation-decision-flow.md",
@@ -282,6 +283,41 @@
       "label": "ISTQB Testing Foundation Materials"
     },
     {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/rest-assured-docs.md",
+      "label": "REST Assured Documentation"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/pact-docs.md",
+      "label": "Pact Documentation"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/wiremock-java-docs.md",
+      "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/testcontainers-java-docs.md",
+      "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "java-qa/skills/agentic-qa-tooling-design.md",
+      "target": "references/practical-test-pyramid.md",
+      "label": "Practical Test Pyramid"
+    },
+    {
       "source": "java-qa/skills/api-and-contract-testing.md",
       "target": "references/rest-assured-docs.md",
       "label": "REST Assured Documentation"
@@ -520,6 +556,11 @@
       "source": "references/agentic-qa-boilerplate.md",
       "target": "java-qa/skills/qa-automation-decision-flow.md",
       "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/agentic-qa-boilerplate.md",
+      "target": "java-qa/skills/agentic-qa-tooling-design.md",
+      "label": "Agentic QA Tooling Design"
     },
     {
       "source": "references/agentic-qa-boilerplate.md",
@@ -860,6 +901,11 @@
       "source": "references/qa-skills-agent-catalog.md",
       "target": "java-qa/skills/qa-automation-decision-flow.md",
       "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/qa-skills-agent-catalog.md",
+      "target": "java-qa/skills/agentic-qa-tooling-design.md",
+      "label": "Agentic QA Tooling Design"
     },
     {
       "source": "references/qa-skills-agent-catalog.md",
