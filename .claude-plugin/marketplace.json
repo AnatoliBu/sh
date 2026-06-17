@@ -1,0 +1,17 @@
+{
+  "name": "sh-tools",
+  "owner": {
+    "name": "AnatoliBu"
+  },
+  "metadata": {
+    "description": "Agent-harness knowledge base as installable Claude Code plugins",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "java-qa",
+      "source": "./plugins/java-qa",
+      "description": "Java QA automation methodology skill + subagent: test design, contract testing (Pact/SCC), Testcontainers, schema evolution, test-pyramid & CI-lane decisions."
+    }
+  ]
+}

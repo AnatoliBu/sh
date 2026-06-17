@@ -1,0 +1,11 @@
+{
+  "name": "java-qa",
+  "description": "Java QA automation methodology — skill (test design, contract testing, Testcontainers, schema evolution, test-pyramid/CI decisions) + java-qa-automation subagent.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["qa", "testing", "java", "contract-testing", "pact", "testcontainers", "junit", "automation"]
+}
