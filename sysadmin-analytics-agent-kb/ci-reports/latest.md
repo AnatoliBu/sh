@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-06-29T14:03:17Z`
-Git SHA: `80c4e22e4667a172ef86241a94c108058893c130`
+Generated at: `2026-08-16T19:50:07Z`
+Git SHA: `4d9312e37bef6c99cce7b457560dea81c973d1a6`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -88,7 +88,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 57 nodes and 252 edges
+Generated curated graph: 75 nodes and 348 edges
 
 ```
 
@@ -105,22 +105,31 @@ Output:
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 
-added 492 packages, and audited 493 packages in 11s
+added 492 packages, and audited 493 packages in 12s
 
 182 packages are looking for funding
   run `npm fund` for details
 
-5 vulnerabilities (1 low, 2 moderate, 2 high)
+7 vulnerabilities (1 low, 6 high)
 
-To address all issues, run:
+To address issues that do not require attention, run:
   npm audit fix
 
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
 Run `npm audit` for details.
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   @parcel/watcher@2.5.6 (install: node scripts/build-from-source.js)
+npm warn allow-scripts   esbuild@0.27.7 (postinstall: node install.js)
+npm warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
 
  Quartz v4.5.2  
 
 Cleaned output directory `public` in 1ms
-Found 56 input files from `content` in 45ms
+Found 66 input files from `content` in 46ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -165,9 +174,21 @@ Warning: content/references/README.md isn't yet tracked by git, dates will be in
 
 Warning: content/references/TEMPLATE.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/aces-2-color-management.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/aces-idt-capture-guide.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/agentic-qa-boilerplate.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/asc-color-decision-list.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/assertj-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/claude-mods-ffmpeg-ops.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/dcamprof-camera-profiling.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/ffmpeg-video-filters.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/google-sre-incident-management.md isn't yet tracked by git, dates will be inaccurate
 
@@ -193,6 +214,8 @@ Warning: content/references/mockito-docs.md isn't yet tracked by git, dates will
 
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/opencolorio-docs.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/pact-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/playwright-best-practices.md isn't yet tracked by git, dates will be inaccurate
@@ -210,6 +233,12 @@ Warning: content/references/spring-framework-testing.md isn't yet tracked by git
 Warning: content/references/terraform-mcp.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/testcontainers-java-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/veac-video-editing-as-code.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/vex-video-editing-agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/video-use-agent-skill.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/wiremock-java-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -234,11 +263,11 @@ Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by g
 Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
-Parsed 56 Markdown files in 864ms
-Filtered out 0 files in 127μs
+Parsed 66 Markdown files in 957ms
+Filtered out 0 files in 143μs
 Emitting files
-Emitted 82 files to `public` in 248ms
-Done processing 56 files in 1s
+Emitted 92 files to `public` in 229ms
+Done processing 66 files in 1s
 
 ```
 
@@ -255,7 +284,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 70 file(s)
+Linting: 88 file(s)
 Summary: 0 error(s)
 
 ```
