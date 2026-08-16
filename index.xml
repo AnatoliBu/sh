@@ -6,65 +6,65 @@
       <description>Last 10 notes on Agent KB</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>automation-review</title>
-    <link>https://anatolibu.github.io/sh/java-qa/workflows/automation-review</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/workflows/automation-review</guid>
-    <description><![CDATA[ Workflow: Automation Review Purpose Review a Java QA automation change before it becomes part of the long-term regression suite. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>color-pipeline-safety</title>
+    <link>https://anatolibu.github.io/sh/video-color/rules/color-pipeline-safety</link>
+    <guid>https://anatolibu.github.io/sh/video-color/rules/color-pipeline-safety</guid>
+    <description><![CDATA[ Rule: Color Pipeline Safety Reference links Authority references: ACES 2 Color Management OpenColorIO Documentation FFmpeg Video Filters ASC Color Decision List claude-mods FFmpeg Operations Rules Never guess a source transform silently If primaries, transfer function, matrix/range, log encoding, or... ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>qa-automation-architecture-decision</title>
-    <link>https://anatolibu.github.io/sh/java-qa/workflows/qa-automation-architecture-decision</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/workflows/qa-automation-architecture-decision</guid>
-    <description><![CDATA[ Workflow: QA Automation Architecture Decision Purpose Run a structured decision review before making a Java QA automation architecture change. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>camera-profiling</title>
+    <link>https://anatolibu.github.io/sh/video-color/skills/camera-profiling</link>
+    <guid>https://anatolibu.github.io/sh/video-color/skills/camera-profiling</guid>
+    <description><![CDATA[ Skill: Camera Profiling Purpose Create or evaluate a defensible camera color transform/profile for a repeatable camera recording mode. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>roadmap</title>
-    <link>https://anatolibu.github.io/sh/roadmap</link>
-    <guid>https://anatolibu.github.io/sh/roadmap</guid>
-    <description><![CDATA[ Roadmap Phase 1 — Repository skeleton Status: started. Create top-level structure. Add source hierarchy for sysadmin/SRE/network. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>color-correction-shot-matching</title>
+    <link>https://anatolibu.github.io/sh/video-color/skills/color-correction-shot-matching</link>
+    <guid>https://anatolibu.github.io/sh/video-color/skills/color-correction-shot-matching</guid>
+    <description><![CDATA[ Skill: Color Correction and Shot Matching Purpose Correct exposure, white balance, levels, contrast, curves, and saturation while preserving shot continuity and a reproducible color-managed pipeline. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>automation-decision-quality-gates</title>
-    <link>https://anatolibu.github.io/sh/java-qa/rules/automation-decision-quality-gates</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/rules/automation-decision-quality-gates</guid>
-    <description><![CDATA[ Rule: Automation Decision Quality Gates Purpose Prevent low-value, brittle, or misleading automation from entering the long-term Java QA suite or agent toolchain. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>mask-assisted-grading</title>
+    <link>https://anatolibu.github.io/sh/video-color/skills/mask-assisted-grading</link>
+    <guid>https://anatolibu.github.io/sh/video-color/skills/mask-assisted-grading</guid>
+    <description><![CDATA[ Skill: Mask-Assisted Grading Purpose Use spatial masks only when a global correction cannot preserve the desired foreground, background, skin, sky, product, or local lighting relationship. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>flaky-test-control</title>
-    <link>https://anatolibu.github.io/sh/java-qa/rules/flaky-test-control</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/rules/flaky-test-control</guid>
-    <description><![CDATA[ Rule: Flaky Test Control Purpose Make flaky Java tests observable, diagnosable, and fixable instead of normalizing unstable CI. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>sources</title>
+    <link>https://anatolibu.github.io/sh/video-color/sources</link>
+    <guid>https://anatolibu.github.io/sh/video-color/sources</guid>
+    <description><![CDATA[ Video Color Sources This domain intentionally separates authority from implementation leads. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>test-code-quality</title>
-    <link>https://anatolibu.github.io/sh/java-qa/rules/test-code-quality</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/rules/test-code-quality</guid>
-    <description><![CDATA[ Rule: Test Code Quality Purpose Keep Java test code readable, diagnostic, and resilient to safe production refactoring. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>tooling</title>
+    <link>https://anatolibu.github.io/sh/video-color/tooling</link>
+    <guid>https://anatolibu.github.io/sh/video-color/tooling</guid>
+    <description><![CDATA[ Video Color Tooling Recommended stack LayerToolRoleDefaultProbeffprobecodec, pixel format, tags, duration, stream metadatarequiredRenderffmpegcorrection, LUTs, masks, scopes, stabilization, encoderequiredColor managementOpenColorIOexplicit source/working/output transformsrequired for managed workflo... ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>agentic-qa-tooling-design</title>
-    <link>https://anatolibu.github.io/sh/java-qa/skills/agentic-qa-tooling-design</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/skills/agentic-qa-tooling-design</guid>
-    <description><![CDATA[ Skill: Agentic QA Tooling Design Purpose Design QA automation capabilities so AI agents can safely use them through stable tools instead of relying on prompt-only knowledge. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>end-to-end-color-pipeline</title>
+    <link>https://anatolibu.github.io/sh/video-color/workflows/end-to-end-color-pipeline</link>
+    <guid>https://anatolibu.github.io/sh/video-color/workflows/end-to-end-color-pipeline</guid>
+    <description><![CDATA[ Workflow: End-to-End Video Color Pipeline Reference links Authority references: ACES 2 Color Management ACES IDT Capture Guide OpenColorIO Documentation FFmpeg Video Filters ASC Color Decision List video-use Agent Skill Vex Video Editing Agent VEAC Video Editing as Code Goal Turn source footage plus... ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>api-and-contract-testing</title>
-    <link>https://anatolibu.github.io/sh/java-qa/skills/api-and-contract-testing</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/skills/api-and-contract-testing</guid>
-    <description><![CDATA[ Skill: API and Contract Testing Purpose Design and review Java API tests, service mocks, container-backed integration tests, and consumer-driven contract tests. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>agent</title>
+    <link>https://anatolibu.github.io/sh/video-color/agent</link>
+    <guid>https://anatolibu.github.io/sh/video-color/agent</guid>
+    <description><![CDATA[ Agent: Video Color and Finishing Purpose Plan and execute reproducible, CLI-first video color correction, camera normalization, shot matching, mask-assisted grading, profiling, stabilization, and technical QC for a desktop coding agent. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>junit-java-test-design</title>
-    <link>https://anatolibu.github.io/sh/java-qa/skills/junit-java-test-design</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/skills/junit-java-test-design</guid>
-    <description><![CDATA[ Skill: JUnit Java Test Design Purpose Design and review Java unit and component tests built around JUnit, AssertJ, and Mockito. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>dns-debug</title>
+    <link>https://anatolibu.github.io/sh/sysadmin/skills/dns-debug</link>
+    <guid>https://anatolibu.github.io/sh/sysadmin/skills/dns-debug</guid>
+    <description><![CDATA[ Skill: DNS Debug Purpose Diagnose DNS resolution issues safely and systematically. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item><item>
-    <title>qa-automation-decision-flow</title>
-    <link>https://anatolibu.github.io/sh/java-qa/skills/qa-automation-decision-flow</link>
-    <guid>https://anatolibu.github.io/sh/java-qa/skills/qa-automation-decision-flow</guid>
-    <description><![CDATA[ Skill: QA Automation Decision Flow Purpose Guide an automation QA decision before implementation, refactoring, migration, or framework/tooling adoption. ]]></description>
-    <pubDate>Sun, 16 Aug 2026 19:50:08 GMT</pubDate>
+    <title>incident-triage</title>
+    <link>https://anatolibu.github.io/sh/sysadmin/skills/incident-triage</link>
+    <guid>https://anatolibu.github.io/sh/sysadmin/skills/incident-triage</guid>
+    <description><![CDATA[ Skill: Incident Triage Purpose Classify an incident, separate symptoms from suspected causes, assess impact, and produce a safe initial mitigation plan. ]]></description>
+    <pubDate>Sun, 16 Aug 2026 19:53:44 GMT</pubDate>
   </item>
     </channel>
   </rss>
