@@ -22,8 +22,14 @@
     "notes/next-actions.md",
     "references/README.md",
     "references/TEMPLATE.md",
+    "references/aces-2-color-management.md",
+    "references/aces-idt-capture-guide.md",
     "references/agentic-qa-boilerplate.md",
+    "references/asc-color-decision-list.md",
     "references/assertj-docs.md",
+    "references/claude-mods-ffmpeg-ops.md",
+    "references/dcamprof-camera-profiling.md",
+    "references/ffmpeg-video-filters.md",
     "references/google-sre-incident-management.md",
     "references/gradle-java-testing.md",
     "references/internal-certificate-management.md",
@@ -36,6 +42,7 @@
     "references/mermaid-docs.md",
     "references/mockito-docs.md",
     "references/netbox.md",
+    "references/opencolorio-docs.md",
     "references/pact-docs.md",
     "references/playwright-best-practices.md",
     "references/practical-test-pyramid.md",
@@ -45,6 +52,9 @@
     "references/spring-framework-testing.md",
     "references/terraform-mcp.md",
     "references/testcontainers-java-docs.md",
+    "references/veac-video-editing-as-code.md",
+    "references/vex-video-editing-agent.md",
+    "references/video-use-agent-skill.md",
     "references/wiremock-java-docs.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
@@ -56,7 +66,15 @@
     "sysadmin/skills/k8s-manifest-review.md",
     "sysadmin/skills/terraform-plan-review.md",
     "sysadmin/skills/tls-cert-debug.md",
-    "sysadmin/sources.md"
+    "sysadmin/sources.md",
+    "video-color/agent.md",
+    "video-color/rules/color-pipeline-safety.md",
+    "video-color/skills/camera-profiling.md",
+    "video-color/skills/color-correction-shot-matching.md",
+    "video-color/skills/mask-assisted-grading.md",
+    "video-color/sources.md",
+    "video-color/tooling.md",
+    "video-color/workflows/end-to-end-color-pipeline.md"
   ],
   "edges": [
     {
@@ -655,6 +673,51 @@
       "label": "`TEMPLATE.md`"
     },
     {
+      "source": "references/aces-2-color-management.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/aces-2-color-management.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "references/aces-2-color-management.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/aces-2-color-management.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "references/aces-2-color-management.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "references/aces-idt-capture-guide.md",
+      "target": "video-color/skills/camera-profiling.md",
+      "label": "Camera Profiling"
+    },
+    {
+      "source": "references/aces-idt-capture-guide.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/aces-idt-capture-guide.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "references/aces-idt-capture-guide.md",
+      "target": "references/dcamprof-camera-profiling.md",
+      "label": "DCamProf Camera Profiling"
+    },
+    {
       "source": "references/agentic-qa-boilerplate.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -690,6 +753,26 @@
       "label": "Selenium WebDriver Documentation"
     },
     {
+      "source": "references/asc-color-decision-list.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "references/asc-color-decision-list.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/asc-color-decision-list.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "references/asc-color-decision-list.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
       "source": "references/assertj-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -713,6 +796,71 @@
       "source": "references/assertj-docs.md",
       "target": "references/mockito-docs.md",
       "label": "Mockito Documentation"
+    },
+    {
+      "source": "references/claude-mods-ffmpeg-ops.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/claude-mods-ffmpeg-ops.md",
+      "target": "video-color/rules/color-pipeline-safety.md",
+      "label": "Color Pipeline Safety"
+    },
+    {
+      "source": "references/claude-mods-ffmpeg-ops.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "references/claude-mods-ffmpeg-ops.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "references/dcamprof-camera-profiling.md",
+      "target": "video-color/skills/camera-profiling.md",
+      "label": "Camera Profiling"
+    },
+    {
+      "source": "references/dcamprof-camera-profiling.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "video-color/rules/color-pipeline-safety.md",
+      "label": "Color Pipeline Safety"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "video-color/skills/mask-assisted-grading.md",
+      "label": "Mask-Assisted Grading"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "references/ffmpeg-video-filters.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
     },
     {
       "source": "references/google-sre-incident-management.md",
@@ -923,6 +1071,36 @@
       "source": "references/netbox.md",
       "target": "sysadmin/agent.md",
       "label": "Sysadmin Agent"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "video-color/rules/color-pipeline-safety.md",
+      "label": "Color Pipeline Safety"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "references/opencolorio-docs.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
     },
     {
       "source": "references/pact-docs.md",
@@ -1155,6 +1333,76 @@
       "label": "WireMock Java Documentation"
     },
     {
+      "source": "references/veac-video-editing-as-code.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/veac-video-editing-as-code.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/veac-video-editing-as-code.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "references/veac-video-editing-as-code.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "references/vex-video-editing-agent.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "references/vex-video-editing-agent.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/vex-video-editing-agent.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "references/vex-video-editing-agent.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "references/vex-video-editing-agent.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "references/video-use-agent-skill.md",
+      "target": "video-color/agent.md",
+      "label": "Video Color Agent"
+    },
+    {
+      "source": "references/video-use-agent-skill.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "references/video-use-agent-skill.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "references/video-use-agent-skill.md",
+      "target": "references/vex-video-editing-agent.md",
+      "label": "Vex Video Editing Agent"
+    },
+    {
+      "source": "references/video-use-agent-skill.md",
+      "target": "references/veac-video-editing-as-code.md",
+      "label": "VEAC Video Editing as Code"
+    },
+    {
       "source": "references/wiremock-java-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -1318,6 +1566,256 @@
       "source": "sysadmin/skills/tls-cert-debug.md",
       "target": "references/internal-dns-source-of-truth.md",
       "label": "Internal DNS Source of Truth"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/vex-video-editing-agent.md",
+      "label": "Vex Video Editing Agent"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "references/veac-video-editing-as-code.md",
+      "label": "VEAC Video Editing as Code"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/skills/color-correction-shot-matching.md",
+      "label": "Color Correction and Shot Matching"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/skills/camera-profiling.md",
+      "label": "Camera Profiling"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/skills/mask-assisted-grading.md",
+      "label": "Mask-Assisted Grading"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/workflows/end-to-end-color-pipeline.md",
+      "label": "End-to-End Color Pipeline"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/rules/color-pipeline-safety.md",
+      "label": "Color Pipeline Safety"
+    },
+    {
+      "source": "video-color/agent.md",
+      "target": "video-color/tooling.md",
+      "label": "Video Color Tooling"
+    },
+    {
+      "source": "video-color/rules/color-pipeline-safety.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/rules/color-pipeline-safety.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/rules/color-pipeline-safety.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/rules/color-pipeline-safety.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
+    },
+    {
+      "source": "video-color/rules/color-pipeline-safety.md",
+      "target": "references/claude-mods-ffmpeg-ops.md",
+      "label": "claude-mods FFmpeg Operations"
+    },
+    {
+      "source": "video-color/skills/camera-profiling.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "video-color/skills/camera-profiling.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/skills/camera-profiling.md",
+      "target": "references/dcamprof-camera-profiling.md",
+      "label": "DCamProf Camera Profiling"
+    },
+    {
+      "source": "video-color/skills/camera-profiling.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/skills/color-correction-shot-matching.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/skills/color-correction-shot-matching.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/skills/color-correction-shot-matching.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/skills/color-correction-shot-matching.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
+    },
+    {
+      "source": "video-color/skills/color-correction-shot-matching.md",
+      "target": "references/vex-video-editing-agent.md",
+      "label": "Vex Video Editing Agent"
+    },
+    {
+      "source": "video-color/skills/mask-assisted-grading.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/skills/mask-assisted-grading.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/skills/mask-assisted-grading.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/skills/mask-assisted-grading.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/dcamprof-camera-profiling.md",
+      "label": "DCamProf Camera Profiling"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/claude-mods-ffmpeg-ops.md",
+      "label": "claude-mods FFmpeg Operations"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/vex-video-editing-agent.md",
+      "label": "Vex"
+    },
+    {
+      "source": "video-color/sources.md",
+      "target": "references/veac-video-editing-as-code.md",
+      "label": "VEAC"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/aces-2-color-management.md",
+      "label": "ACES 2 Color Management"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/aces-idt-capture-guide.md",
+      "label": "ACES IDT Capture Guide"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/opencolorio-docs.md",
+      "label": "OpenColorIO Documentation"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/ffmpeg-video-filters.md",
+      "label": "FFmpeg Video Filters"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/asc-color-decision-list.md",
+      "label": "ASC Color Decision List"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/video-use-agent-skill.md",
+      "label": "browser-use/video-use Agent Skill"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/vex-video-editing-agent.md",
+      "label": "Vex Video Editing Agent"
+    },
+    {
+      "source": "video-color/workflows/end-to-end-color-pipeline.md",
+      "target": "references/veac-video-editing-as-code.md",
+      "label": "VEAC Video Editing as Code"
     }
   ]
 }
