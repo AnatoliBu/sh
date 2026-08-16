@@ -32,6 +32,13 @@ sysadmin-analytics-agent-kb/
 │   ├── skills/
 │   ├── rules/
 │   └── workflows/
+├── video-color/
+│   ├── agent.md
+│   ├── sources.md
+│   ├── tooling.md
+│   ├── skills/
+│   ├── rules/
+│   └── workflows/
 ├── shared/
 │   └── rules/
 ├── tools/
@@ -66,3 +73,5 @@ Quartz is cloned from `AnatoliBu/quartz`. If `QUARTZ_REPO_TOKEN` or `GITHUB_TOKE
 ## Status
 
 On 2026-06-07 the repository was extended from the original `references / sysadmin / analytics` model to include a `java-qa` domain for Java QA automation references, skills, rules, and agent workflow artifacts.
+
+On 2026-08-17 the repository added the `video-color` domain for CLI-first video color management, correction, shot matching, camera profiling, mask-assisted grading, and agent workflow research.

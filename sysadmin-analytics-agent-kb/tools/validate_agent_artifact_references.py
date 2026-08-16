@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 LINK_RE = re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 SECTION_RE = re.compile(r'^## (Reference links|Authority references)\s*$', re.MULTILINE)
-ROOTS = {'sysadmin', 'analytics', 'java-qa', 'shared'}
+ROOTS = {'sysadmin', 'analytics', 'java-qa', 'video-color', 'shared'}
 TYPES = {'agent', 'skill', 'rule', 'workflow', 'eval'}
 SKIP = {'sysadmin/skills/incident-triage.md'}
 
