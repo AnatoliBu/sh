@@ -7,6 +7,7 @@ WORK="$ROOT/quartz-work"
 OUT="$KB/public"
 QUARTZ_BRANCH="${QUARTZ_BRANCH:-agent-kb-v5}"
 AUTH_TOKEN="${QUARTZ_REPO_TOKEN:-${GITHUB_TOKEN:-}}"
+DOMAIN_MANIFEST="$WORK/.agent-kb-domains"
 
 rm -rf "$WORK"
 
@@ -19,57 +20,18 @@ fi
 rm -rf "$WORK/content"
 mkdir -p "$WORK/content"
 
-# A publishable domain is any first-level KB directory that contains agent.md.
-# This deliberately avoids a hard-coded domain list: adding foo/agent.md is enough
-# for the domain to appear in Quartz on the next successful main build.
-mapfile -t DOMAIN_DIRS < <(
-  find "$KB" -mindepth 2 -maxdepth 2 -type f -name agent.md -printf '%h\n' \
-    | sort -u
-)
+# Domain discovery, landing-page metadata, and counts have one source of truth.
+# A publishable domain is any first-level KB directory containing agent.md.
+python "$KB/tools/generate_quartz_index.py" \
+  --kb "$KB" \
+  --output "$WORK/content/index.md" \
+  --manifest "$DOMAIN_MANIFEST"
 
-if [ "${#DOMAIN_DIRS[@]}" -eq 0 ]; then
+mapfile -t DOMAINS < "$DOMAIN_MANIFEST"
+if [ "${#DOMAINS[@]}" -eq 0 ]; then
   echo "No publishable domains found (expected */agent.md)" >&2
   exit 1
 fi
-
-cat > "$WORK/content/index.md" <<'EOF'
----
-title: Agent KB
-artifact_type: index
-status: foundation
-domain: shared
----
-
-# Agent KB
-
-Curated source-of-truth references and agent harnesses.
-
-## Domains
-
-EOF
-
-for domain_path in "${DOMAIN_DIRS[@]}"; do
-  domain="$(basename "$domain_path")"
-  title="$(awk '/^# / {sub(/^# /, ""); print; exit}' "$domain_path/agent.md")"
-  if [ -z "$title" ]; then
-    title="$domain"
-  fi
-  printf -- '- [%s](%s/agent.md)\n' "$title" "$domain" >> "$WORK/content/index.md"
-done
-
-cat >> "$WORK/content/index.md" <<'EOF'
-
-## Knowledge base
-
-- [References](references/README.md)
-- [Global Rules](shared/rules/global-rules.md)
-- [Roadmap](roadmap.md)
-
-## Graph artifacts
-
-- [Link Graph JSON](generated/link-graph.json)
-- [Link Graph DOT](generated/link-graph.dot)
-EOF
 
 # Shared cross-domain content is explicit; domains themselves are discovered.
 for item in references shared roadmap.md; do
@@ -78,8 +40,8 @@ for item in references shared roadmap.md; do
   fi
 done
 
-for domain_path in "${DOMAIN_DIRS[@]}"; do
-  cp -R "$domain_path" "$WORK/content/"
+for domain in "${DOMAINS[@]}"; do
+  cp -R "$KB/$domain" "$WORK/content/"
 done
 
 rm -rf "$WORK/content/research" "$WORK/content/site"
@@ -92,8 +54,7 @@ if find "$WORK/content" \( -path '*/research/*' -o -path '*/site/*' -o -path '*/
 fi
 
 # Guard against a silent publish regression: every discovered domain must be present.
-for domain_path in "${DOMAIN_DIRS[@]}"; do
-  domain="$(basename "$domain_path")"
+for domain in "${DOMAINS[@]}"; do
   if [ ! -f "$WORK/content/$domain/agent.md" ]; then
     echo "Publishable domain missing from Quartz content: $domain" >&2
     exit 1
