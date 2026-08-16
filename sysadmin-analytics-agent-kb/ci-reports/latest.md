@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-16T19:50:07Z`
-Git SHA: `4d9312e37bef6c99cce7b457560dea81c973d1a6`
+Generated at: `2026-08-16T19:53:43Z`
+Git SHA: `974319be28169081005a865e9ec6f86148023323`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -105,7 +105,7 @@ Output:
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 
-added 492 packages, and audited 493 packages in 12s
+added 492 packages, and audited 493 packages in 9s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -128,8 +128,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 1ms
-Found 66 input files from `content` in 46ms
+Cleaned output directory `public` in 2ms
+Found 74 input files from `content` in 50ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -263,11 +263,27 @@ Warning: content/sysadmin/skills/terraform-plan-review.md isn't yet tracked by g
 Warning: content/sysadmin/skills/tls-cert-debug.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/sources.md isn't yet tracked by git, dates will be inaccurate
-Parsed 66 Markdown files in 957ms
-Filtered out 0 files in 143μs
+
+Warning: content/video-color/agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/rules/color-pipeline-safety.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/skills/camera-profiling.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/skills/color-correction-shot-matching.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/skills/mask-assisted-grading.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/sources.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
+Parsed 74 Markdown files in 1s
+Filtered out 0 files in 106μs
 Emitting files
-Emitted 92 files to `public` in 229ms
-Done processing 66 files in 1s
+Emitted 104 files to `public` in 486ms
+Done processing 74 files in 2s
 
 ```
 
