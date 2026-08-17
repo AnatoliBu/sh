@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T07:15:10Z`
-Git SHA: `ec475b3ea073afb09a20de29771373e6459386ba`
+Generated at: `2026-08-17T07:49:12Z`
+Git SHA: `3449c1297973859e2886398268deea3cef2773dc`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,6 +12,8 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
+- **PASS** — Validate plugin packages are in sync with domains
+- **PASS** — Validate plugin links resolve
 - **PASS** — Build Quartz site
 - **PASS** — Markdown lint
 
@@ -92,6 +94,36 @@ Generated curated graph: 75 nodes and 348 edges
 
 ```
 
+### PASS: Validate plugin packages are in sync with domains
+
+Command:
+
+```bash
+python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
+```
+
+Output:
+
+```text
+Plugin sync passed (2 package(s))
+
+```
+
+### PASS: Validate plugin links resolve
+
+Command:
+
+```bash
+python sysadmin-analytics-agent-kb/tools/validate_plugin_links.py
+```
+
+Output:
+
+```text
+Plugin validation passed (2 package(s))
+
+```
+
 ### PASS: Build Quartz site
 
 Command:
@@ -106,7 +138,7 @@ Output:
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 Generated Quartz index for 4 domain(s): analytics, java-qa, sysadmin, video-color
 
-added 492 packages, and audited 493 packages in 10s
+added 492 packages, and audited 493 packages in 11s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -129,8 +161,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 2ms
-Found 74 input files from `content` in 36ms
+Cleaned output directory `public` in 1ms
+Found 74 input files from `content` in 49ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -281,10 +313,10 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 74 Markdown files in 1s
-Filtered out 0 files in 115μs
+Filtered out 0 files in 128μs
 Emitting files
-Emitted 104 files to `public` in 283ms
-Done processing 74 files in 2s
+Emitted 104 files to `public` in 253ms
+Done processing 74 files in 1s
 
 ```
 
@@ -293,15 +325,15 @@ Done processing 74 files in 2s
 Command:
 
 ```bash
-npx --yes markdownlint-cli2@0.18.1 'sysadmin-analytics-agent-kb/**/*.md'
+npx --yes markdownlint-cli2@0.18.1 'sysadmin-analytics-agent-kb/**/*.md' 'plugins/**/*.md'
 ```
 
 Output:
 
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
-Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 94 file(s)
+Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
+Linting: 137 file(s)
 Summary: 0 error(s)
 
 ```
