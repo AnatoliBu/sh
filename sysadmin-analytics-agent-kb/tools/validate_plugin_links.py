@@ -9,7 +9,9 @@
 - у каждого скилла есть `SKILL.md` с frontmatter `name` + `description`;
 - имя каталога скилла совпадает с `name` во frontmatter;
 - каждый каталог `plugins/<name>` объявлен в `.claude-plugin/marketplace.json` и наоборот;
-- `plugin.json` существует, парсится и его `name` равен имени каталога.
+- `plugin.json` существует, парсится, его `name` равен имени каталога, а `version` — semver
+  (иначе `claude plugin update`/`tag` не с чем работать; это же ловит `claude plugin
+  validate`, но его в CI нет).
 """
 from __future__ import annotations
 
@@ -100,6 +102,12 @@ def main() -> int:
                 meta = {}
             if meta.get("name") != name:
                 errors.append(f"{rel(manifest)}: name={meta.get('name')!r} != каталог {name!r}")
+            version = str(meta.get("version", ""))
+            if not re.fullmatch(r"\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?", version):
+                errors.append(
+                    f"{rel(manifest)}: version={version or 'отсутствует'!r} не semver "
+                    "(без версии не работают plugin update/tag)"
+                )
         if name not in declared:
             errors.append(f"plugins/{name}: не объявлен в marketplace.json")
         check_links(plugin_dir, errors)
