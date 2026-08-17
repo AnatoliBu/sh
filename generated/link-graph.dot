@@ -28,6 +28,7 @@ digraph docs {
   "references/agentic-qa-boilerplate.md";
   "references/asc-color-decision-list.md";
   "references/assertj-docs.md";
+  "references/claude-code-plugin-format.md";
   "references/claude-mods-ffmpeg-ops.md";
   "references/dcamprof-camera-profiling.md";
   "references/ffmpeg-video-filters.md";
@@ -61,6 +62,7 @@ digraph docs {
   "shared/rules/bullshit-check.md";
   "shared/rules/diagram-usage.md";
   "shared/rules/global-rules.md";
+  "shared/rules/skill-delivery.md";
   "sysadmin/agent.md";
   "sysadmin/skills/dns-debug.md";
   "sysadmin/skills/incident-triage.md";
@@ -220,6 +222,8 @@ digraph docs {
   "references/assertj-docs.md" -> "java-qa/rules/test-code-quality.md";
   "references/assertj-docs.md" -> "references/junit-user-guide.md";
   "references/assertj-docs.md" -> "references/mockito-docs.md";
+  "references/claude-code-plugin-format.md" -> "references/agentic-qa-boilerplate.md";
+  "references/claude-code-plugin-format.md" -> "references/qa-skills-agent-catalog.md";
   "references/claude-mods-ffmpeg-ops.md" -> "video-color/agent.md";
   "references/claude-mods-ffmpeg-ops.md" -> "video-color/rules/color-pipeline-safety.md";
   "references/claude-mods-ffmpeg-ops.md" -> "references/ffmpeg-video-filters.md";
@@ -349,6 +353,7 @@ digraph docs {
   "shared/rules/diagram-usage.md" -> "references/mermaid-docs.md";
   "shared/rules/global-rules.md" -> "references/README.md";
   "shared/rules/global-rules.md" -> "references/README.md";
+  "shared/rules/skill-delivery.md" -> "references/claude-code-plugin-format.md";
   "sysadmin/agent.md" -> "references/google-sre-incident-management.md";
   "sysadmin/agent.md" -> "references/kubernetes-pod-security-standards.md";
   "sysadmin/agent.md" -> "references/netbox.md";
@@ -366,6 +371,8 @@ digraph docs {
   "sysadmin/skills/dns-debug.md" -> "references/netbox.md";
   "sysadmin/skills/dns-debug.md" -> "references/internal-dns-source-of-truth.md";
   "sysadmin/skills/dns-debug.md" -> "references/netbox.md";
+  "sysadmin/skills/incident-triage.md" -> "references/google-sre-incident-management.md";
+  "sysadmin/skills/incident-triage.md" -> "references/google-sre-incident-management.md";
   "sysadmin/skills/k8s-manifest-review.md" -> "references/kubernetes-pod-security-standards.md";
   "sysadmin/skills/k8s-manifest-review.md" -> "references/kubernetes-pod-security-standards.md";
   "sysadmin/skills/terraform-plan-review.md" -> "references/terraform-mcp.md";

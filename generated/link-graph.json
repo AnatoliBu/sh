@@ -27,6 +27,7 @@
     "references/agentic-qa-boilerplate.md",
     "references/asc-color-decision-list.md",
     "references/assertj-docs.md",
+    "references/claude-code-plugin-format.md",
     "references/claude-mods-ffmpeg-ops.md",
     "references/dcamprof-camera-profiling.md",
     "references/ffmpeg-video-filters.md",
@@ -60,6 +61,7 @@
     "shared/rules/bullshit-check.md",
     "shared/rules/diagram-usage.md",
     "shared/rules/global-rules.md",
+    "shared/rules/skill-delivery.md",
     "sysadmin/agent.md",
     "sysadmin/skills/dns-debug.md",
     "sysadmin/skills/incident-triage.md",
@@ -798,6 +800,16 @@
       "label": "Mockito Documentation"
     },
     {
+      "source": "references/claude-code-plugin-format.md",
+      "target": "references/agentic-qa-boilerplate.md",
+      "label": "Agentic QA Boilerplate"
+    },
+    {
+      "source": "references/claude-code-plugin-format.md",
+      "target": "references/qa-skills-agent-catalog.md",
+      "label": "QA Skills Agent Catalog"
+    },
+    {
       "source": "references/claude-mods-ffmpeg-ops.md",
       "target": "video-color/agent.md",
       "label": "Video Color Agent"
@@ -1443,6 +1455,11 @@
       "label": "`../../references/`"
     },
     {
+      "source": "shared/rules/skill-delivery.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
+    {
       "source": "sysadmin/agent.md",
       "target": "references/google-sre-incident-management.md",
       "label": "Google SRE Incident Management Guide"
@@ -1526,6 +1543,16 @@
       "source": "sysadmin/skills/dns-debug.md",
       "target": "references/netbox.md",
       "label": "NetBox"
+    },
+    {
+      "source": "sysadmin/skills/incident-triage.md",
+      "target": "references/google-sre-incident-management.md",
+      "label": "Google SRE Incident Management Guide"
+    },
+    {
+      "source": "sysadmin/skills/incident-triage.md",
+      "target": "references/google-sre-incident-management.md",
+      "label": "Google SRE incident management principles"
     },
     {
       "source": "sysadmin/skills/k8s-manifest-review.md",
