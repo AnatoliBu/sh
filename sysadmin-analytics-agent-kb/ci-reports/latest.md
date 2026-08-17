@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T08:06:21Z`
-Git SHA: `cec2c384e731e6a8b8cefbb795a365dd81c824df`
+Generated at: `2026-08-17T09:47:02Z`
+Git SHA: `b8e951ee02107216ccb1b0743c5829b110c7123c`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,7 +12,7 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
-- **PASS** — Validate plugin packages are in sync with domains
+- **FAIL** — Validate plugin packages are in sync with domains
 - **PASS** — Validate plugin packages are installable
 - **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
@@ -91,11 +91,11 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 77 nodes and 353 edges
+Generated curated graph: 97 nodes and 411 edges
 
 ```
 
-### PASS: Validate plugin packages are in sync with domains
+### FAIL: Validate plugin packages are in sync with domains
 
 Command:
 
@@ -106,7 +106,12 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync passed (4 package(s))
+Plugin sync failed — перегенерируй плагины:
+- plugins/agent-tooling/skills/agent_tooling/references/cli-agent-contract.md — расходится
+- plugins/agent-tooling/skills/agent_tooling/references/blind-ab-evaluation.md — расходится
+- plugins/agent-tooling/skills/agent_tooling/references/contract-first-interfaces.md — расходится
+- plugins/agent-tooling/skills/agent_tooling/references/ab-surface-delivery.md — расходится
+- plugins/agent-tooling/skills/agent_tooling/references/contract-workflow.md — расходится
 
 ```
 
@@ -121,7 +126,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_packages.py
 Output:
 
 ```text
-Plugin validation passed (4 package(s))
+Plugin validation passed (5 package(s))
 
 ```
 
@@ -136,7 +141,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base 'HEAD
 Output:
 
 ```text
-Release validation passed (изменены: java-qa, product-analytics, sysadmin-sre, video-color, версии не пинятся)
+Release validation passed (изменены: agent-tooling, версии не пинятся)
 
 ```
 
@@ -152,9 +157,9 @@ Output:
 
 ```text
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
-Generated Quartz index for 4 domain(s): analytics, java-qa, sysadmin, video-color
+Generated Quartz index for 5 domain(s): agent-tooling, analytics, java-qa, sysadmin, video-color
 
-added 492 packages, and audited 493 packages in 10s
+added 492 packages, and audited 493 packages in 11s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -177,9 +182,45 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 1ms
-Found 76 input files from `content` in 46ms
+Cleaned output directory `public` in 2ms
+Found 96 input files from `content` in 67ms
 Parsing input files using 1 threads
+
+Warning: content/agent-tooling/agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/ab-harness.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/ab-measuring.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/ab-surface-delivery.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/cli-advanced-patterns.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-capability-ir-guide.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-cli-design-rules.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-research-and-standards.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-scale-control.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-source-extraction.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-validation-checklist.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/patterns/contract-workflow.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/rules/agent-surface-safety.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/skills/blind-ab-evaluation.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/skills/cli-agent-contract.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/skills/contract-first-interfaces.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/sources.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/agent-tooling/workflows/tool-improvement-loop.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
 
@@ -237,6 +278,8 @@ Warning: content/references/claude-code-plugin-format.md isn't yet tracked by gi
 
 Warning: content/references/claude-mods-ffmpeg-ops.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/cli-guidelines-clig.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/dcamprof-camera-profiling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/ffmpeg-video-filters.md isn't yet tracked by git, dates will be inaccurate
@@ -262,6 +305,8 @@ Warning: content/references/kubernetes-pod-security-standards.md isn't yet track
 Warning: content/references/mermaid-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/mockito-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/model-context-protocol-spec.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
 
@@ -332,11 +377,11 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 76 Markdown files in 1s
-Filtered out 0 files in 108μs
+Parsed 96 Markdown files in 2s
+Filtered out 0 files in 183μs
 Emitting files
-Emitted 106 files to `public` in 268ms
-Done processing 76 files in 1s
+Emitted 131 files to `public` in 376ms
+Done processing 96 files in 2s
 
 ```
 
@@ -353,7 +398,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 157 file(s)
+Linting: 197 file(s)
 Summary: 0 error(s)
 
 ```
