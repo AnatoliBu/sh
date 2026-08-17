@@ -1,5 +1,23 @@
 {
   "nodes": [
+    "agent-tooling/agent.md",
+    "agent-tooling/patterns/ab-harness.md",
+    "agent-tooling/patterns/ab-measuring.md",
+    "agent-tooling/patterns/ab-surface-delivery.md",
+    "agent-tooling/patterns/cli-advanced-patterns.md",
+    "agent-tooling/patterns/contract-capability-ir-guide.md",
+    "agent-tooling/patterns/contract-cli-design-rules.md",
+    "agent-tooling/patterns/contract-research-and-standards.md",
+    "agent-tooling/patterns/contract-scale-control.md",
+    "agent-tooling/patterns/contract-source-extraction.md",
+    "agent-tooling/patterns/contract-validation-checklist.md",
+    "agent-tooling/patterns/contract-workflow.md",
+    "agent-tooling/rules/agent-surface-safety.md",
+    "agent-tooling/skills/blind-ab-evaluation.md",
+    "agent-tooling/skills/cli-agent-contract.md",
+    "agent-tooling/skills/contract-first-interfaces.md",
+    "agent-tooling/sources.md",
+    "agent-tooling/workflows/tool-improvement-loop.md",
     "analytics/agent.md",
     "analytics/skills/funnel-analysis.md",
     "analytics/skills/metric-reconciliation.md",
@@ -29,6 +47,7 @@
     "references/assertj-docs.md",
     "references/claude-code-plugin-format.md",
     "references/claude-mods-ffmpeg-ops.md",
+    "references/cli-guidelines-clig.md",
     "references/dcamprof-camera-profiling.md",
     "references/ffmpeg-video-filters.md",
     "references/google-sre-incident-management.md",
@@ -42,6 +61,7 @@
     "references/kubernetes-pod-security-standards.md",
     "references/mermaid-docs.md",
     "references/mockito-docs.md",
+    "references/model-context-protocol-spec.md",
     "references/netbox.md",
     "references/opencolorio-docs.md",
     "references/pact-docs.md",
@@ -79,6 +99,276 @@
     "video-color/workflows/end-to-end-color-pipeline.md"
   ],
   "edges": [
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "agent-tooling/skills/contract-first-interfaces.md",
+      "label": "Contract-First Interfaces"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "agent-tooling/skills/cli-agent-contract.md",
+      "label": "CLI Agent Contract"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "agent-tooling/skills/blind-ab-evaluation.md",
+      "label": "Blind A/B Evaluation"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "agent-tooling/workflows/tool-improvement-loop.md",
+      "label": "Tool Improvement Loop"
+    },
+    {
+      "source": "agent-tooling/agent.md",
+      "target": "agent-tooling/rules/agent-surface-safety.md",
+      "label": "Agent Surface Safety"
+    },
+    {
+      "source": "agent-tooling/patterns/ab-surface-delivery.md",
+      "target": "agent-tooling/skills/blind-ab-evaluation.md",
+      "label": "Blind A/B Evaluation"
+    },
+    {
+      "source": "agent-tooling/patterns/ab-surface-delivery.md",
+      "target": "agent-tooling/patterns/ab-measuring.md",
+      "label": "`measuring.md`"
+    },
+    {
+      "source": "agent-tooling/patterns/ab-surface-delivery.md",
+      "target": "agent-tooling/patterns/ab-harness.md",
+      "label": "`harness.md`"
+    },
+    {
+      "source": "agent-tooling/patterns/contract-workflow.md",
+      "target": "agent-tooling/patterns/contract-source-extraction.md",
+      "label": "Source Extraction"
+    },
+    {
+      "source": "agent-tooling/patterns/contract-workflow.md",
+      "target": "agent-tooling/patterns/contract-capability-ir-guide.md",
+      "label": "Capability IR Guide"
+    },
+    {
+      "source": "agent-tooling/patterns/contract-workflow.md",
+      "target": "agent-tooling/patterns/contract-cli-design-rules.md",
+      "label": "CLI Design Rules"
+    },
+    {
+      "source": "agent-tooling/patterns/contract-workflow.md",
+      "target": "agent-tooling/patterns/contract-scale-control.md",
+      "label": "Scale Control"
+    },
+    {
+      "source": "agent-tooling/patterns/contract-workflow.md",
+      "target": "agent-tooling/patterns/contract-validation-checklist.md",
+      "label": "Validation Checklist"
+    },
+    {
+      "source": "agent-tooling/rules/agent-surface-safety.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/rules/agent-surface-safety.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "agent-tooling/patterns/ab-surface-delivery.md",
+      "label": "Surface Delivery"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "agent-tooling/patterns/ab-harness.md",
+      "label": "A/B Harness"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "agent-tooling/patterns/ab-measuring.md",
+      "label": "Measuring"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "agent-tooling/skills/cli-agent-contract.md",
+      "label": "CLI Agent Contract"
+    },
+    {
+      "source": "agent-tooling/skills/blind-ab-evaluation.md",
+      "target": "agent-tooling/skills/contract-first-interfaces.md",
+      "label": "Contract-First Interfaces"
+    },
+    {
+      "source": "agent-tooling/skills/cli-agent-contract.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/skills/cli-agent-contract.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/skills/cli-agent-contract.md",
+      "target": "agent-tooling/patterns/cli-advanced-patterns.md",
+      "label": "CLI Advanced Patterns"
+    },
+    {
+      "source": "agent-tooling/skills/cli-agent-contract.md",
+      "target": "agent-tooling/skills/blind-ab-evaluation.md",
+      "label": "Blind A/B Evaluation"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-source-extraction.md",
+      "label": "Source Extraction"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-capability-ir-guide.md",
+      "label": "Capability IR Guide"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-cli-design-rules.md",
+      "label": "CLI Design Rules"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-scale-control.md",
+      "label": "Scale Control"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-validation-checklist.md",
+      "label": "Validation Checklist"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-workflow.md",
+      "label": "Contract Workflow"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-source-extraction.md",
+      "label": "Source Extraction"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-capability-ir-guide.md",
+      "label": "Capability IR Guide"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-cli-design-rules.md",
+      "label": "CLI Design Rules"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-scale-control.md",
+      "label": "Scale Control"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-validation-checklist.md",
+      "label": "Validation Checklist"
+    },
+    {
+      "source": "agent-tooling/skills/contract-first-interfaces.md",
+      "target": "agent-tooling/patterns/contract-research-and-standards.md",
+      "label": "Research and Standards"
+    },
+    {
+      "source": "agent-tooling/sources.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/sources.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/sources.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
+    {
+      "source": "agent-tooling/workflows/tool-improvement-loop.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "agent-tooling/workflows/tool-improvement-loop.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "agent-tooling/workflows/tool-improvement-loop.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
     {
       "source": "analytics/agent.md",
       "target": "references/internal-metric-catalog.md",
@@ -830,6 +1120,16 @@
       "label": "browser-use/video-use Agent Skill"
     },
     {
+      "source": "references/cli-guidelines-clig.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
+    },
+    {
+      "source": "references/cli-guidelines-clig.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
+    },
+    {
       "source": "references/dcamprof-camera-profiling.md",
       "target": "video-color/skills/camera-profiling.md",
       "label": "Camera Profiling"
@@ -1078,6 +1378,16 @@
       "source": "references/mockito-docs.md",
       "target": "references/assertj-docs.md",
       "label": "AssertJ Documentation"
+    },
+    {
+      "source": "references/model-context-protocol-spec.md",
+      "target": "references/cli-guidelines-clig.md",
+      "label": "Command Line Interface Guidelines (clig.dev)"
+    },
+    {
+      "source": "references/model-context-protocol-spec.md",
+      "target": "references/claude-code-plugin-format.md",
+      "label": "Claude Code Plugin and Marketplace Format"
     },
     {
       "source": "references/netbox.md",
