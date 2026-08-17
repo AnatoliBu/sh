@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T07:52:00Z`
-Git SHA: `366c90685ce1664851f3b0419e5990c82c175eb9`
+Generated at: `2026-08-17T08:06:21Z`
+Git SHA: `cec2c384e731e6a8b8cefbb795a365dd81c824df`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -13,7 +13,8 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **PASS** — Validate plugin packages are in sync with domains
-- **PASS** — Validate plugin links resolve
+- **PASS** — Validate plugin packages are installable
+- **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
 - **PASS** — Markdown lint
 
@@ -90,7 +91,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 75 nodes and 348 edges
+Generated curated graph: 77 nodes and 353 edges
 
 ```
 
@@ -105,22 +106,37 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync passed (2 package(s))
+Plugin sync passed (4 package(s))
 
 ```
 
-### PASS: Validate plugin links resolve
+### PASS: Validate plugin packages are installable
 
 Command:
 
 ```bash
-python sysadmin-analytics-agent-kb/tools/validate_plugin_links.py
+python sysadmin-analytics-agent-kb/tools/validate_plugin_packages.py
 ```
 
 Output:
 
 ```text
-Plugin validation passed (2 package(s))
+Plugin validation passed (4 package(s))
+
+```
+
+### PASS: Validate plugin release reaches installed copies
+
+Command:
+
+```bash
+python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base 'HEAD^'
+```
+
+Output:
+
+```text
+Release validation passed (изменены: java-qa, product-analytics, sysadmin-sre, video-color, версии не пинятся)
 
 ```
 
@@ -138,7 +154,7 @@ Output:
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 Generated Quartz index for 4 domain(s): analytics, java-qa, sysadmin, video-color
 
-added 492 packages, and audited 493 packages in 11s
+added 492 packages, and audited 493 packages in 10s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -161,8 +177,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 2ms
-Found 74 input files from `content` in 43ms
+Cleaned output directory `public` in 1ms
+Found 76 input files from `content` in 46ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -216,6 +232,8 @@ Warning: content/references/agentic-qa-boilerplate.md isn't yet tracked by git, 
 Warning: content/references/asc-color-decision-list.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/assertj-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/claude-code-plugin-format.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/claude-mods-ffmpeg-ops.md isn't yet tracked by git, dates will be inaccurate
 
@@ -283,6 +301,8 @@ Warning: content/shared/rules/diagram-usage.md isn't yet tracked by git, dates w
 
 Warning: content/shared/rules/global-rules.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/shared/rules/skill-delivery.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/sysadmin/agent.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/sysadmin/skills/dns-debug.md isn't yet tracked by git, dates will be inaccurate
@@ -312,11 +332,11 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 74 Markdown files in 1s
-Filtered out 0 files in 147μs
+Parsed 76 Markdown files in 1s
+Filtered out 0 files in 108μs
 Emitting files
-Emitted 104 files to `public` in 261ms
-Done processing 74 files in 1s
+Emitted 106 files to `public` in 268ms
+Done processing 76 files in 1s
 
 ```
 
@@ -333,7 +353,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 137 file(s)
+Linting: 157 file(s)
 Summary: 0 error(s)
 
 ```
