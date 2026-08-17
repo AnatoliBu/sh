@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T09:47:02Z`
-Git SHA: `b8e951ee02107216ccb1b0743c5829b110c7123c`
+Generated at: `2026-08-17T09:49:22Z`
+Git SHA: `28a91f970dc86d75477378297005d8db128a073a`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,7 +12,7 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
-- **FAIL** — Validate plugin packages are in sync with domains
+- **PASS** — Validate plugin packages are in sync with domains
 - **PASS** — Validate plugin packages are installable
 - **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
@@ -95,7 +95,7 @@ Generated curated graph: 97 nodes and 411 edges
 
 ```
 
-### FAIL: Validate plugin packages are in sync with domains
+### PASS: Validate plugin packages are in sync with domains
 
 Command:
 
@@ -106,12 +106,7 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync failed — перегенерируй плагины:
-- plugins/agent-tooling/skills/agent_tooling/references/cli-agent-contract.md — расходится
-- plugins/agent-tooling/skills/agent_tooling/references/blind-ab-evaluation.md — расходится
-- plugins/agent-tooling/skills/agent_tooling/references/contract-first-interfaces.md — расходится
-- plugins/agent-tooling/skills/agent_tooling/references/ab-surface-delivery.md — расходится
-- plugins/agent-tooling/skills/agent_tooling/references/contract-workflow.md — расходится
+Plugin sync passed (5 package(s))
 
 ```
 
@@ -159,7 +154,7 @@ Output:
 Cloning into '/home/runner/work/sh/sh/quartz-work'...
 Generated Quartz index for 5 domain(s): agent-tooling, analytics, java-qa, sysadmin, video-color
 
-added 492 packages, and audited 493 packages in 11s
+added 492 packages, and audited 493 packages in 8s
 
 182 packages are looking for funding
   run `npm fund` for details
@@ -182,8 +177,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 2ms
-Found 96 input files from `content` in 67ms
+Cleaned output directory `public` in 1ms
+Found 96 input files from `content` in 41ms
 Parsing input files using 1 threads
 
 Warning: content/agent-tooling/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -377,10 +372,10 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 96 Markdown files in 2s
-Filtered out 0 files in 183μs
+Parsed 96 Markdown files in 1s
+Filtered out 0 files in 125μs
 Emitting files
-Emitted 131 files to `public` in 376ms
+Emitted 131 files to `public` in 261ms
 Done processing 96 files in 2s
 
 ```
