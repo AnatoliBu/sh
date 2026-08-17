@@ -104,5 +104,5 @@ Measured on the same tasks, same N=30 per arm, threshold registered before the r
 **Always run the placebo arm.** Without it the finding is only "some entry in context changes
 behaviour", which is a different and much weaker claim than "this text does".
 
-**Related:** Blind A/B Evaluation (`skills\blind-ab-evaluation.md`, вне пакета) · `measuring.md` (`patterns\ab-measuring.md`, вне пакета) (metric choice, variance,
-what a win may claim) · `harness.md` (`patterns\ab-harness.md`, вне пакета) (per-arm `config.toml`, runner, JSONL parsing).
+**Related:** [Blind A/B Evaluation](blind-ab-evaluation.md) · [`measuring.md`](ab-measuring.md) (metric choice, variance,
+what a win may claim) · [`harness.md`](ab-harness.md) (per-arm `config.toml`, runner, JSONL parsing).

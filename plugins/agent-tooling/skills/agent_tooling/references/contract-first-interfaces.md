@@ -33,15 +33,15 @@ Treat OpenAPI as an important input format, not as the universal model for every
 
 | # | Step | Governing rule | Detail |
 |---|---|---|---|
-| 1 | Inventory the sources | Classify by native contract format; do not force a source into OpenAPI when that erases streaming, shell state, resources, prompts, or events | ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета) |
-| 2 | Select the source of truth | Six-level ladder; state explicitly when the source is incomplete or inferred | ../patterns/contract-source-extraction.md (`patterns\contract-source-extraction.md`, вне пакета) |
-| 3 | Import into Capability IR | Normalize names around resource and intent, never transport syntax | ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета), ../patterns/contract-capability-ir-guide.md (`patterns\contract-capability-ir-guide.md`, вне пакета) |
-| 4 | Repair and enrich | Ten-point defect list; do not silently invent semantics — mark inferred with confidence and evidence | ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета) |
-| 5 | Classify MCP exposure | Tool / Resource / Prompt; not every readable endpoint is a Tool | ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета) |
-| 6 | Design the CLI surface | `tool <resource> <action>`; JSON for automation, stdout for data, stderr for diagnostics | ../patterns/contract-cli-design-rules.md (`patterns\contract-cli-design-rules.md`, вне пакета) |
-| 7 | Control tool-surface size | Curation, dynamic retrieval, workflow tools, or code mode | ../patterns/contract-scale-control.md (`patterns\contract-scale-control.md`, вне пакета) |
-| 8 | Generate adapters | Thin CLI and MCP renderers over one shared execution adapter | ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета) |
-| 9 | Validate | Static plus behavioral; no conformance claim without execution tests | ../patterns/contract-validation-checklist.md (`patterns\contract-validation-checklist.md`, вне пакета) |
+| 1 | Inventory the sources | Classify by native contract format; do not force a source into OpenAPI when that erases streaming, shell state, resources, prompts, or events | [Contract Workflow](contract-workflow.md) |
+| 2 | Select the source of truth | Six-level ladder; state explicitly when the source is incomplete or inferred | [Source Extraction](contract-source-extraction.md) |
+| 3 | Import into Capability IR | Normalize names around resource and intent, never transport syntax | [Contract Workflow](contract-workflow.md), [Capability IR Guide](contract-capability-ir-guide.md) |
+| 4 | Repair and enrich | Ten-point defect list; do not silently invent semantics — mark inferred with confidence and evidence | [Contract Workflow](contract-workflow.md) |
+| 5 | Classify MCP exposure | Tool / Resource / Prompt; not every readable endpoint is a Tool | [Contract Workflow](contract-workflow.md) |
+| 6 | Design the CLI surface | `tool <resource> <action>`; JSON for automation, stdout for data, stderr for diagnostics | [CLI Design Rules](contract-cli-design-rules.md) |
+| 7 | Control tool-surface size | Curation, dynamic retrieval, workflow tools, or code mode | [Scale Control](contract-scale-control.md) |
+| 8 | Generate adapters | Thin CLI and MCP renderers over one shared execution adapter | [Contract Workflow](contract-workflow.md) |
+| 9 | Validate | Static plus behavioral; no conformance claim without execution tests | [Validation Checklist](contract-validation-checklist.md) |
 
 ## Hard Rules
 
@@ -57,14 +57,14 @@ Treat OpenAPI as an important input format, not as the universal model for every
 
 | File | When to read |
 |---|---|
-| ../patterns/contract-workflow.md (`patterns\contract-workflow.md`, вне пакета) | Doing the work: full nine steps, plus what an architecture or implementation task must return |
-| ../patterns/contract-source-extraction.md (`patterns\contract-source-extraction.md`, вне пакета) | Choosing what to trust: source-of-truth ladder, OpenAPI-first criteria, extraction from an existing CLI, import from an existing MCP server, compact decision table per situation |
+| [Contract Workflow](contract-workflow.md) | Doing the work: full nine steps, plus what an architecture or implementation task must return |
+| [Source Extraction](contract-source-extraction.md) | Choosing what to trust: source-of-truth ladder, OpenAPI-first criteria, extraction from an existing CLI, import from an existing MCP server, compact decision table per situation |
 | the machine-readable capability schema | Writing the artifact: canonical machine-readable capability shape |
-| ../patterns/contract-capability-ir-guide.md (`patterns\contract-capability-ir-guide.md`, вне пакета) | Field semantics: minimum fields, naming per target, behavior claims, risk and confirmation, provenance and confidence levels |
-| ../patterns/contract-cli-design-rules.md (`patterns\contract-cli-design-rules.md`, вне пакета) | Designing commands: inputs, outputs, exit-code categories, safety, pagination, configuration precedence |
-| ../patterns/contract-scale-control.md (`patterns\contract-scale-control.md`, вне пакета) | Catalog too large for static tools; also the full anti-pattern list |
-| ../patterns/contract-validation-checklist.md (`patterns\contract-validation-checklist.md`, вне пакета) | Before claiming done: static and behavioral QA checklist |
+| [Capability IR Guide](contract-capability-ir-guide.md) | Field semantics: minimum fields, naming per target, behavior claims, risk and confirmation, provenance and confidence levels |
+| [CLI Design Rules](contract-cli-design-rules.md) | Designing commands: inputs, outputs, exit-code categories, safety, pagination, configuration precedence |
+| [Scale Control](contract-scale-control.md) | Catalog too large for static tools; also the full anti-pattern list |
+| [Validation Checklist](contract-validation-checklist.md) | Before claiming done: static and behavioral QA checklist |
 | the `x-capability` / `x-cli` / `x-mcp` vocabulary | Enriching a spec in place: `x-capability`, `x-cli`, `x-mcp` vocabulary |
-| ../patterns/contract-research-and-standards.md (`patterns\contract-research-and-standards.md`, вне пакета) | Background: standards and research reading list |
+| [Research and Standards](contract-research-and-standards.md) | Background: standards and research reading list |
 | the worked end-to-end example | End-to-end worked example: enriched OpenAPI → capability → MCP tool → CLI contract |
 | a package self-check script | Validating this package and its JSON files |

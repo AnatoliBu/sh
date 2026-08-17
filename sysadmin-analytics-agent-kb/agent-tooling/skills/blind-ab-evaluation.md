@@ -57,7 +57,7 @@ context at all** — the model gets `exec` plus "deferred tools are listed in `A
 text first appears in the output of a JS filter the agent has to think of writing. Two rounds
 (p = 0.50, then a third abandoned) were spent editing words the model never saw. What *does* arrive
 unprompted is a skill's `description` line (`<skills_instructions>`, first request) — moving the same
-claim there took the metric 17/30 → 30/30, p = 2.3e-05. Details: [../patterns/ab-surface-delivery.md](../patterns/ab-surface-delivery.md).
+claim there took the metric 17/30 → 30/30, p = 2.3e-05. Details: [Surface Delivery](../patterns/ab-surface-delivery.md).
 
 ⚠ **Traps that invalidate a run** (all three cost us a full round):
 
@@ -73,8 +73,8 @@ claim there took the metric 17/30 → 30/30, p = 2.3e-05. Details: [../patterns/
 
 | File | When to read |
 |---|---|
-| [../patterns/ab-harness.md](../patterns/ab-harness.md) | Building the harness from scratch: config.toml per arm, runner script, JSONL event parsing, metric definitions |
-| [../patterns/ab-measuring.md](../patterns/ab-measuring.md) | Choosing tasks, writing ground truth, verdict rules, variance/n, what a "win" may and may not claim |
+| [A/B Harness](../patterns/ab-harness.md) | Building the harness from scratch: config.toml per arm, runner script, JSONL event parsing, metric definitions |
+| [Measuring](../patterns/ab-measuring.md) | Choosing tasks, writing ground truth, verdict rules, variance/n, what a "win" may and may not claim |
 
 **Related:** [CLI Agent Contract](./cli-agent-contract.md) (the contract you are A/B-testing on a CLI) ·
 [Contract-First Interfaces](./contract-first-interfaces.md) (tool-surface design) ·

@@ -151,6 +151,6 @@ X read-op --format json && X write-op --if-match "$(X read --format json | jq -r
 
 | File | When to read |
 |------|-------------|
-| [../patterns/cli-advanced-patterns.md](../patterns/cli-advanced-patterns.md) | YOLO-mode safety (confirm-token, structured dry-run, blast-radius), pagination, batch composition, machine discovery, rate limits, expanded exit codes (0-8), session decomposition, secret redaction, **secret-injection wrappers (§11, the secret-placeholder pattern)**, eventual consistency |
+| [CLI Advanced Patterns](../patterns/cli-advanced-patterns.md) | YOLO-mode safety (confirm-token, structured dry-run, blast-radius), pagination, batch composition, machine discovery, rate limits, expanded exit codes (0-8), session decomposition, secret redaction, **secret-injection wrappers (§11, the secret-placeholder pattern)**, eventual consistency |
 
 **Проверить, что контракт реально помогает:** ретрофит по этой спеке — гипотеза, пока она не прогнана слепым A/B на СЛАБОМ агенте (две поверхности тулов, замороженные задачи, ground truth) → [Blind A/B Evaluation](./blind-ab-evaluation.md).

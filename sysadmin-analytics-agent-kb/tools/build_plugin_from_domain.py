@@ -29,7 +29,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import sys
 from pathlib import Path, PurePosixPath
@@ -90,6 +89,26 @@ def rewrite_card_links(text: str, cards: set[str], depth: str) -> str:
 ANY_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\((\.[^)]*\.md)\)")
 
 
+def posix_normalize(path: str) -> str:
+    """Свернуть `.`/`..` в posix-пути без участия платформы.
+
+    `os.path.normpath` на Windows отдаёт обратные слеши, из-за чего сборка на Windows и в
+    Linux-CI давала разный результат — маппинг ссылок совпадал только на одной из платформ.
+    """
+    parts: list[str] = []
+    for part in path.split("/"):
+        if part in ("", "."):
+            continue
+        if part == "..":
+            if parts and parts[-1] != "..":
+                parts.pop()
+            else:
+                parts.append("..")
+            continue
+        parts.append(part)
+    return "/".join(parts)
+
+
 def rewrite_domain_links(text: str, src_rel: str, docs: dict[str, str], domain_dir: Path) -> str:
     """Переписать ссылки между файлами домена на их места в пакете.
 
@@ -106,7 +125,7 @@ def rewrite_domain_links(text: str, src_rel: str, docs: dict[str, str], domain_d
         if "#" in target:
             target, anchor = target.split("#", 1)
             anchor = "#" + anchor
-        resolved = PurePosixPath(os.path.normpath((src_dir / target).as_posix())).as_posix()
+        resolved = posix_normalize((src_dir / target).as_posix())
         if resolved in docs:
             return f"[{label}]({docs[resolved]}{anchor})"
         if (domain_dir / resolved).exists():

@@ -20,7 +20,7 @@ Do not force a source into OpenAPI when doing so would erase important semantics
 
 ## 2. Select the source of truth
 
-Ladder and per-source extraction procedures: ../patterns/contract-source-extraction.md (`patterns\contract-source-extraction.md`, вне пакета).
+Ladder and per-source extraction procedures: [Source Extraction](contract-source-extraction.md).
 
 State explicitly when the available source is incomplete or inferred.
 
@@ -43,7 +43,7 @@ post_repos_owner_repo_issues
 patch_api_v1_namespaces_namespace_deployments_name
 ```
 
-Keep the original transport identifier in `transport` and `provenance`. Naming conventions per target: ../patterns/contract-capability-ir-guide.md (`patterns\contract-capability-ir-guide.md`, вне пакета).
+Keep the original transport identifier in `transport` and `provenance`. Naming conventions per target: [Capability IR Guide](contract-capability-ir-guide.md).
 
 ## 4. Repair and enrich
 
@@ -101,11 +101,11 @@ Use:
 - non-interactive mode
 - `--dry-run` or equivalent for risky operations when feasible
 
-Full rules, exit-code categories and configuration precedence: ../patterns/contract-cli-design-rules.md (`patterns\contract-cli-design-rules.md`, вне пакета).
+Full rules, exit-code categories and configuration precedence: [CLI Design Rules](contract-cli-design-rules.md).
 
 ## 7. Control tool-surface size
 
-Strategies (curated tools, dynamic retrieval, workflow tools, code mode) and their trade-offs: ../patterns/contract-scale-control.md (`patterns\contract-scale-control.md`, вне пакета).
+Strategies (curated tools, dynamic retrieval, workflow tools, code mode) and their trade-offs: [Scale Control](contract-scale-control.md).
 
 Do not hide destructive behavior inside a broad workflow without explicit metadata and confirmation policy.
 
@@ -153,7 +153,7 @@ Perform both static and dynamic checks.
 - read-only actions do not mutate state
 - CLI and MCP produce equivalent normalized results
 
-Use ../patterns/contract-validation-checklist.md (`patterns\contract-validation-checklist.md`, вне пакета).
+Use [Validation Checklist](contract-validation-checklist.md).
 
 ## Output Expectations
 
