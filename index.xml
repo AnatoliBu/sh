@@ -6,65 +6,65 @@
       <description>Last 10 notes on Agent KB</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>agent</title>
+    <link>https://anatolibu.github.io/sh/video-color/agent</link>
+    <guid>https://anatolibu.github.io/sh/video-color/agent</guid>
+    <description><![CDATA[ Agent: Video Color and Finishing Purpose Plan and execute reproducible, CLI-first video color correction, camera normalization, shot matching, mask-assisted grading, profiling, stabilization, and technical QC for a desktop coding agent. ]]></description>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
+  </item><item>
     <title>color-pipeline-safety</title>
     <link>https://anatolibu.github.io/sh/video-color/rules/color-pipeline-safety</link>
     <guid>https://anatolibu.github.io/sh/video-color/rules/color-pipeline-safety</guid>
     <description><![CDATA[ Rule: Color Pipeline Safety Reference links Authority references: ACES 2 Color Management OpenColorIO Documentation FFmpeg Video Filters ASC Color Decision List claude-mods FFmpeg Operations Rules Never guess a source transform silently If primaries, transfer function, matrix/range, log encoding, or... ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>camera-profiling</title>
     <link>https://anatolibu.github.io/sh/video-color/skills/camera-profiling</link>
     <guid>https://anatolibu.github.io/sh/video-color/skills/camera-profiling</guid>
     <description><![CDATA[ Skill: Camera Profiling Purpose Create or evaluate a defensible camera color transform/profile for a repeatable camera recording mode. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>color-correction-shot-matching</title>
     <link>https://anatolibu.github.io/sh/video-color/skills/color-correction-shot-matching</link>
     <guid>https://anatolibu.github.io/sh/video-color/skills/color-correction-shot-matching</guid>
     <description><![CDATA[ Skill: Color Correction and Shot Matching Purpose Correct exposure, white balance, levels, contrast, curves, and saturation while preserving shot continuity and a reproducible color-managed pipeline. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>mask-assisted-grading</title>
     <link>https://anatolibu.github.io/sh/video-color/skills/mask-assisted-grading</link>
     <guid>https://anatolibu.github.io/sh/video-color/skills/mask-assisted-grading</guid>
     <description><![CDATA[ Skill: Mask-Assisted Grading Purpose Use spatial masks only when a global correction cannot preserve the desired foreground, background, skin, sky, product, or local lighting relationship. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>sources</title>
     <link>https://anatolibu.github.io/sh/video-color/sources</link>
     <guid>https://anatolibu.github.io/sh/video-color/sources</guid>
     <description><![CDATA[ Video Color Sources This domain intentionally separates authority from implementation leads. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>tooling</title>
     <link>https://anatolibu.github.io/sh/video-color/tooling</link>
     <guid>https://anatolibu.github.io/sh/video-color/tooling</guid>
     <description><![CDATA[ Video Color Tooling Recommended stack LayerToolRoleDefaultProbeffprobecodec, pixel format, tags, duration, stream metadatarequiredRenderffmpegcorrection, LUTs, masks, scopes, stabilization, encoderequiredColor managementOpenColorIOexplicit source/working/output transformsrequired for managed workflo... ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>end-to-end-color-pipeline</title>
     <link>https://anatolibu.github.io/sh/video-color/workflows/end-to-end-color-pipeline</link>
     <guid>https://anatolibu.github.io/sh/video-color/workflows/end-to-end-color-pipeline</guid>
     <description><![CDATA[ Workflow: End-to-End Video Color Pipeline Reference links Authority references: ACES 2 Color Management ACES IDT Capture Guide OpenColorIO Documentation FFmpeg Video Filters ASC Color Decision List video-use Agent Skill Vex Video Editing Agent VEAC Video Editing as Code Goal Turn source footage plus... ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
-  </item><item>
-    <title>agent</title>
-    <link>https://anatolibu.github.io/sh/video-color/agent</link>
-    <guid>https://anatolibu.github.io/sh/video-color/agent</guid>
-    <description><![CDATA[ Agent: Video Color and Finishing Purpose Plan and execute reproducible, CLI-first video color correction, camera normalization, shot matching, mask-assisted grading, profiling, stabilization, and technical QC for a desktop coding agent. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>dns-debug</title>
     <link>https://anatolibu.github.io/sh/sysadmin/skills/dns-debug</link>
     <guid>https://anatolibu.github.io/sh/sysadmin/skills/dns-debug</guid>
     <description><![CDATA[ Skill: DNS Debug Purpose Diagnose DNS resolution issues safely and systematically. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item><item>
     <title>incident-triage</title>
     <link>https://anatolibu.github.io/sh/sysadmin/skills/incident-triage</link>
     <guid>https://anatolibu.github.io/sh/sysadmin/skills/incident-triage</guid>
     <description><![CDATA[ Skill: Incident Triage Purpose Classify an incident, separate symptoms from suspected causes, assess impact, and produce a safe initial mitigation plan. ]]></description>
-    <pubDate>Mon, 17 Aug 2026 07:49:13 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2026 07:52:01 GMT</pubDate>
   </item>
     </channel>
   </rss>
