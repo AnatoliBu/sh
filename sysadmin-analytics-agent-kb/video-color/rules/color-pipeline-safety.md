@@ -29,6 +29,27 @@ in one viewer.
 For log or wide-gamut inputs, establish the input transform and working space before
 applying a creative look.
 
+### Tags are not transforms
+
+Writing `-colorspace`/`-color_trc`/`-color_primaries`/`-color_range` relabels the stream;
+it does not move a single pixel. Running `colorspace`/`zscale` moves pixels but leaves the
+output untagged unless the flags are also set. Doing one without the other is the most
+common way a "corrected" render looks wrong in the next tool. Do both, then verify with
+`ffprobe`.
+
+### Declare the range, never infer it from appearance
+
+`tv` (limited) and `pc` (full) are one field apart and look plausible either way on a
+single monitor. Getting it wrong lifts blacks to grey or crushes them, and it survives
+every later correction. Read `color_range` at probe time, state it in the plan, and set it
+on output.
+
+### Grade above delivery precision
+
+An 8-bit chain plus curves, exposure, and saturation produces banding in skies, walls, and
+gradients. Promote to 10-bit or float for the grade, and dither on the way down to an
+8-bit delivery. Do not treat 4:2:0 as a working format.
+
 ### Separate technical and creative operations
 
 Persist these independently:
@@ -48,6 +69,21 @@ encoding
 
 A technically centered histogram can still contain bad skin, wrong WB, clipped channels,
 or discontinuity. Use metrics to find problems, then inspect rendered frames/scopes.
+
+### Look before measuring
+
+Pull frames on both sides of every cut and along the whole timeline, and look at them
+before computing anything. Metrics answer the question you encoded; they cannot tell you
+that you encoded the wrong one. Name the reference objects of the scene — a neutral
+surface, skin, a known-colored product, a shadow that should not move — and check those,
+not a whole-frame statistic.
+
+### Do not compare takes pixel by pixel
+
+Two takes of the same setup are not registered images: objects get moved between takes,
+the camera shifts, someone re-parks a hand. Per-pixel difference or per-pixel deltaE then
+reports "a lighting change" where the truth is "the mug moved". Compare distributions
+(percentiles per channel) and matched reference regions instead.
 
 ### Bound automatic corrections
 
@@ -83,6 +119,8 @@ and color tags expected by the delivery target.
 Stop automatic execution and surface uncertainty when:
 
 - camera encoding is materially ambiguous;
+- the source is HDR (PQ/HLG/BT.2020) and the delivery dynamic range was never stated;
+- source and delivery ranges (`tv`/`pc`) disagree and no explicit conversion was requested;
 - mixed illuminants make a global WB correction unsafe;
 - clipping would increase materially;
 - a mask flickers or loses the subject;

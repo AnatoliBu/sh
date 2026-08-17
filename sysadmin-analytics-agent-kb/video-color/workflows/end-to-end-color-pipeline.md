@@ -37,6 +37,9 @@ render without relying on GUI automation.
 3. NORMALIZE
    known log/wide-gamut -> explicit OCIO/ACES input transform
    simple known Rec.709 -> preserve/display-referred path as appropriate
+   HDR (PQ/HLG/BT.2020) -> settle the delivery range first, then stay HDR
+                           or tone map explicitly; never drift into SDR silently
+   range (tv/pc)        -> carry it through the graph and onto the output tags
 
 4. SEGMENT
    detect cuts / define shots
@@ -135,6 +138,10 @@ analyze shot
 
 The final render reuses the winner. It does not ask the model to choose again.
 
+Render the no-op candidate through the same decode, scale, precision, and encode as the
+others. Compared against the untouched source file it is not a no-op at all — the transcode
+alone moves the image, and that difference otherwise gets attributed to the grade.
+
 ## White-balance policy
 
 Priority:
@@ -173,6 +180,8 @@ Before final render:
 - clipping did not materially worsen without intent;
 - masks pass temporal/edge review;
 - output transform and tags match delivery;
+- rendered pixels and written tags agree (primaries, transfer, matrix, range);
+- grading precision exceeded delivery precision, with dither on the 8-bit step;
 - deterministic recipe can rebuild the render.
 
 ## Third-party skill adoption

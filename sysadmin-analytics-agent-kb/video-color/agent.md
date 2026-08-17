@@ -99,6 +99,11 @@ PySceneDetect
 Add DCamProf only for camera-profile generation. Add segmentation/tracking only when a
 global grade cannot satisfy the shot.
 
+Verify the stack before planning against it. OCIO CLI tools and a `zscale`-enabled FFmpeg
+build are frequently absent on a working machine; an unavailable binary means either
+installing it or replanning on what exists, never describing a managed pipeline that was
+never executed.
+
 ## Decision policy
 
 Prefer the smallest technically correct pipeline:
@@ -109,6 +114,12 @@ known Rec.709 source + simple correction
 
 known log/wide-gamut or multi-camera source
   -> OCIO/ACES normalization + FFmpeg/OCIO correction
+
+HDR source (PQ/HLG/BT.2020), SDR delivery
+  -> settle delivery range, then explicit tone map before any creative grade
+
+consumer camera left on auto exposure/AWB
+  -> segment long takes and correct the drift, not the take average
 
 unknown camera state
   -> stop pretending metadata is known; inspect tags, camera docs, test transforms,

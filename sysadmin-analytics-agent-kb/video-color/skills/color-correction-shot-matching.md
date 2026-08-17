@@ -74,6 +74,19 @@ neutral-region evidence
 skin-region evidence when relevant
 ```
 
+A few percentiles per channel beat one mean: two shots routinely agree in the highlights
+and diverge in the midtones, which is exactly where a mixed illuminant shows up.
+
+### 3b. Treat a long take as several shots
+
+A shot is not a constant when the camera runs auto exposure and auto white balance. On
+measured phone footage a single nine-minute take drifted by ~0.04 in the R/G ratio and
+~11% in mean luma from start to end — larger than most of the corrections being fitted.
+
+Segment long takes (≈30 s is a workable default), fit a profile per segment, and let the
+correction follow the drift instead of averaging it away. If the source can be reshot,
+locking exposure and WB in camera is cheaper than any of this.
+
 ### 4. Pick a reference strategy
 
 Choose one:
@@ -133,6 +146,11 @@ Keep real lighting changes when they are intentional.
 ### 8. Render a proxy and inspect
 
 Render low-cost stills or a proxy sequence with identical color transforms.
+
+Look at the frames before reading any number back. Scores rank the candidates that were
+generated; they cannot report that the whole family was wrong. Lay the stills side by side
+across cuts and along the timeline first, then use the metrics to explain what the eye
+already flagged.
 
 Review:
 
@@ -203,3 +221,6 @@ deterministic grade-plan path
 - Baking source normalization and creative look into an undocumented LUT.
 - Large saturation/contrast changes before checking clipping and skin.
 - Re-running perception on every final render instead of persisting decisions.
+- One tone profile for a multi-minute auto-exposure take.
+- Per-pixel comparison between two takes, where moved props read as a lighting change.
+- Reporting a metric delta as the finding without ever looking at the two frames.
