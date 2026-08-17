@@ -12,6 +12,11 @@
       "name": "java-qa",
       "source": "./plugins/java-qa",
       "description": "Java QA automation methodology skill + subagent: test design, contract testing (Pact/SCC), Testcontainers, schema evolution, test-pyramid & CI-lane decisions."
+    },
+    {
+      "name": "video-color",
+      "source": "./plugins/video-color",
+      "description": "Video color methodology skill: source trust classification, normalization, shot matching, mask secondaries, camera profiling (ACES IDT), HDR→SDR tone mapping, range/precision gates, persistent grade plan."
     }
   ]
 }

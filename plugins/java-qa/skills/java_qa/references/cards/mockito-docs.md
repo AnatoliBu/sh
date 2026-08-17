@@ -15,10 +15,12 @@ source_url: https://site.mockito.org/
 **Tier A · official-docs · https://site.mockito.org/** — моки/спаи/верификация. Authority по API, НЕ разрешение мокать всё.
 
 ## Use for
+
 - Изоляция unit'а от коллабораторов, которые медленные/нестабильные/вне границы.
 - Проверка взаимодействия, когда само взаимодействие и есть поведение (отправлено событие, вызван порт).
 
 ## Key decisions & gotchas
+
 - **Strict stubs (по умолчанию в `MockitoExtension`):** неиспользованный стаб → `UnnecessaryStubbingException`. Это хорошо — ловит мёртвые стабы. `LENIENT` — только осознанно (codebase местами злоупотребляет — см. наш `@MockitoSettings(strictness=LENIENT)`).
 - **Мокать роли, не данные:** мок для сервиса/порта, не для DTO/value-объекта (их строить настоящими).
 - **`@Mock`/`@InjectMocks` + `MockitoExtension`** — не `mock()` руками в каждом тесте.
@@ -29,6 +31,7 @@ source_url: https://site.mockito.org/
 - **Не `verify` каждый внутренний вызов** — тест станет зеркалом реализации, хрупким.
 
 ## Minimal pattern
+
 ```java
 @ExtendWith(MockitoExtension.class)
 class HoldServiceTest {
@@ -41,14 +44,17 @@ class HoldServiceTest {
 ```
 
 ## Version-sensitive
+
 - Mockito 5.x: inline-mock-maker по умолчанию (static/final без отдельного артефакта); подняты требования JDK; ByteBuddy/Objenesis версии чувствительны (см. dependencyManagement в parent).
 - `MockitoExtension` (JUnit5) — `mockito-junit-jupiter`.
 
 ## Anti-patterns
+
 - Мок там, где можно настоящий объект (особенно value/DTO).
 - LENIENT по умолчанию вместо точечного.
 - `verify` всех внутренних вызовов; много моков на простое поведение.
 - Мок типа, который ты не владеешь, без contract-теста (мок ≠ реальное поведение провайдера).
 
 ## Do not use for
+
 Сериализация/контракт/реальная БД (→ web slice / Pact / Testcontainers). Не «разрешение» мокать каждую зависимость.

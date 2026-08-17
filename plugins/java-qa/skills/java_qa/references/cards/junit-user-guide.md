@@ -15,10 +15,12 @@ source_url: https://junit.org/junit5/docs/current/user-guide/
 **Tier A · official-docs · https://junit.org/junit5/docs/current/user-guide/** — платформа + Jupiter: lifecycle, параметризация, extensions, теги, параллелизм.
 
 ## Use for
+
 - Unit/component-тесты Java; база для интеграционных (вместе с Spring/Testcontainers extensions).
 - Параметризованные кейсы (таблица входов→ожиданий), сгруппированные сценарии.
 
 ## Key decisions & gotchas
+
 - **Lifecycle:** `@BeforeEach`/`@AfterEach` (на тест), `@BeforeAll`/`@AfterAll` (static, на класс). `@TestInstance(PER_CLASS)` снимает static-требование, но шарит состояние — осторожно.
 - **Параметризация:** `@ParameterizedTest` + `@CsvSource`/`@MethodSource`/`@EnumSource` — одна логика, много входов. Лучше, чем копипаст тестов.
 - **`@Nested`** — группировка по контексту (given-состояние); читаемая структура.
@@ -29,6 +31,7 @@ source_url: https://junit.org/junit5/docs/current/user-guide/
 - **Не путать с ассертами Hamcrest/AssertJ** — Jupiter assertions базовые; для читаемости предпочесть AssertJ.
 
 ## Minimal pattern
+
 ```java
 @ParameterizedTest
 @CsvSource({ "100, ELIGIBLE", "0, REJECTED" })
@@ -38,14 +41,17 @@ void discount(int balance, String expected) {
 ```
 
 ## Version-sensitive
+
 - JUnit 5 (Jupiter) — отдельные артефакты platform/jupiter/vintage; BOM `junit-bom` фиксирует версии.
 - Параллелизм и ряд extension-API эволюционируют по minor — сверять версию перед version-specific фичами.
 - `vintage`-engine нужен только для запуска старых JUnit4 тестов.
 
 ## Anti-patterns
+
 - Копипаст почти-одинаковых тестов вместо `@ParameterizedTest`.
 - Static-состояние между тестами без изоляции (ломает параллелизм/порядок).
 - Имя теста об одном, ассерт о другом.
 
 ## Do not use for
+
 Сериализация/контракт/реальная БД (→ web slice / contract / Testcontainers). JUnit — каркас, не оракул сам по себе.

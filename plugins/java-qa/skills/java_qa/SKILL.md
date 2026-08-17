@@ -25,7 +25,12 @@ description: Java QA automation methodology — test design, test-suite architec
 `references/cards/` — authority-страницы по ядру (use-for / gotchas / minimal pattern / version-sensitive / anti-patterns):
 `pact-docs` · `testcontainers-java-docs` · `rest-assured-docs` · `wiremock-java-docs` · `junit-user-guide` · `mockito-docs` · `practical-test-pyramid` · `spring-framework-testing` · `spring-boot-testing`.
 
-> Часть доков ссылается на неядровые карточки (selenium, assertj, gradle, istqb, playwright, qa-skills-catalog, agentic-qa-boilerplate) — они **не установлены** (выбрано «ядро»). Источник: репо `AnatoliBu/sh` → `sysadmin-analytics-agent-kb/references/` — дотянуть оттуда при необходимости.
+Неядровые карточки, на которые ссылаются доки (`selenium-webdriver-docs` · `assertj-docs` ·
+`gradle-java-testing` · `istqb-testing-foundation` · `playwright-best-practices` ·
+`qa-skills-agent-catalog` · `agentic-qa-boilerplate`), допакованы генератором из
+`sysadmin-analytics-agent-kb/references/` — они лежат копией источника, а не авторской
+выжимкой, и помечены маркером происхождения. Ссылки в пакете рабочие; проверяется
+`tools/validate_plugin_links.py`.
 
 ## Связки
 

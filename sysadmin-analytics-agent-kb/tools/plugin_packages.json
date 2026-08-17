@@ -1,0 +1,21 @@
+{
+  "java-qa": {
+    "domain": "java-qa",
+    "skill": "java_qa",
+    "cards": "from-plugin-links",
+    "docs": {}
+  },
+  "video-color": {
+    "domain": "video-color",
+    "skill": "video_color",
+    "cards": "auto",
+    "docs": {
+      "workflows/end-to-end-color-pipeline.md": "pipeline.md",
+      "skills/color-correction-shot-matching.md": "correction-shot-matching.md",
+      "skills/camera-profiling.md": "camera-profiling.md",
+      "skills/mask-assisted-grading.md": "mask-grading.md",
+      "rules/color-pipeline-safety.md": "rules.md",
+      "tooling.md": "tooling.md"
+    }
+  }
+}

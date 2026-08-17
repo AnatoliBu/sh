@@ -75,6 +75,7 @@ Authority references:
 консьюмер к новым полям в **response**. Не «навесить симметрично везде».
 
 **Jackson-механика — точно, без иллюзий:**
+
 - `@JsonIgnoreProperties(ignoreUnknown=true)` **НЕ рекурсивен**: аннотация на верхнем DTO не
   покрывает вложенные типы (поля-объекты, элементы списков). Нужна политика на каждом nested-DTO,
   либо mix-in, либо **scoped `ObjectMapper`/`ObjectReader` на границе конкретного external-client/
@@ -88,6 +89,7 @@ Authority references:
   поле — там Jackson упадёт сам.
 
 **fail-fast надо реализовать — он не появляется сам.** Для «required отсутствует»:
+
 - `@JsonProperty(required=true)` + `FAIL_ON_MISSING_CREATOR_PROPERTIES` / `FAIL_ON_NULL_CREATOR_PROPERTIES`
   работают **только для creator-свойств** (конструктор / `@JsonCreator` / record-компоненты), НЕ для
   mutable field/setter DTO — Jackson не валидирует `required` на сеттерах. Значит обязательные поля

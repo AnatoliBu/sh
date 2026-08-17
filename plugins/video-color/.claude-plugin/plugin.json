@@ -1,0 +1,11 @@
+{
+  "name": "video-color",
+  "description": "CLI-first video color methodology — probe/trust classification, normalization, shot matching, mask-assisted secondaries, camera profiling (ACES IDT), HDR→SDR tone mapping, range/precision gates, persistent grade plan.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["video", "color-grading", "shot-matching", "ffmpeg", "aces", "ocio", "hdr", "tone-mapping", "color-management"]
+}

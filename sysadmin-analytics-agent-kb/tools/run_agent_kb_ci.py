@@ -18,8 +18,10 @@ CHECKS = [
     {"name": "Validate frontmatter", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_frontmatter.py"]},
     {"name": "Validate agent artifact references", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py"]},
     {"name": "Build curated link graph", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/build_link_graph.py"]},
+    {"name": "Validate plugin packages are in sync with domains", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py", "--check"]},
+    {"name": "Validate plugin links resolve", "cmd": ["python", "sysadmin-analytics-agent-kb/tools/validate_plugin_links.py"]},
     {"name": "Build Quartz site", "cmd": ["bash", "sysadmin-analytics-agent-kb/tools/build_quartz_site.sh"]},
-    {"name": "Markdown lint", "cmd": ["npx", "--yes", "markdownlint-cli2@0.18.1", "sysadmin-analytics-agent-kb/**/*.md"]},
+    {"name": "Markdown lint", "cmd": ["npx", "--yes", "markdownlint-cli2@0.18.1", "sysadmin-analytics-agent-kb/**/*.md", "plugins/**/*.md"]},
 ]
 
 
