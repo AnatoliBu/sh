@@ -1,0 +1,11 @@
+{
+  "name": "agent-tooling",
+  "description": "Methodology for building tools agents can actually use: contract-first CLI/MCP design, the agent-facing CLI contract (envelope, typed exit codes, dry-run, concurrency), and blind two-arm measurement on a weak model to prove a change helps.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["agent-tooling", "cli-design", "mcp", "openapi", "capability-ir", "ab-testing", "developer-experience", "llm-tools"]
+}

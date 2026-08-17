@@ -1,0 +1,53 @@
+---
+artifact_type: index
+status: foundation
+domain: agent-tooling
+---
+
+# Tool-Surface Scale Control and Anti-Patterns
+
+How to keep a large capability catalog usable, and what to avoid.
+
+## Control tool-surface size
+
+Choose one or more strategies:
+
+### Curated tools
+
+Expose only the highest-value operations and workflows. Appropriate when the domain is stable and common intents are known.
+
+### Dynamic retrieval
+
+Store all capabilities in a registry, then expose only the few most relevant to the current request. Index:
+
+- names and aliases
+- descriptions
+- intents and examples
+- provider/domain/resource/action taxonomy
+- permissions and risk
+
+### Workflow tools
+
+Combine a sequence of low-level operations into one intentional action when the workflow has a stable business meaning.
+
+### Code mode
+
+Expose search, documentation, and controlled code execution over a generated SDK when the API is too large for static tool definitions.
+
+Do not hide destructive behavior inside a broad workflow without explicit metadata and confirmation policy.
+
+## Anti-Patterns
+
+Avoid:
+
+- one endpoint equals one public command forever
+- OpenAPI as the only representation for shell, events, prompts, and resources
+- generated adapters that duplicate transport logic
+- command names derived mechanically from URLs
+- schemas without examples or behavioral annotations
+- exposing hundreds of tools simultaneously without retrieval or curation
+- destructive tools with vague names
+- hidden multi-step side effects
+- parsing human-readable CLI output when JSON output exists
+- using `--help` text as the only runtime contract
+- claiming conformance without execution tests

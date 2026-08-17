@@ -2,12 +2,13 @@
 from pathlib import Path
 import re
 import sys
+from kb_domains import agent_roots
 
 ROOT = Path(__file__).resolve().parents[1]
 FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 LINK_RE = re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 SECTION_RE = re.compile(r'^## (Reference links|Authority references)\s*$', re.MULTILINE)
-ROOTS = {'sysadmin', 'analytics', 'java-qa', 'video-color', 'shared'}
+ROOTS = agent_roots()
 TYPES = {'agent', 'skill', 'rule', 'workflow', 'eval'}
 SKIP: set[str] = set()
 

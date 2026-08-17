@@ -39,6 +39,13 @@ sysadmin-analytics-agent-kb/
 │   ├── skills/
 │   ├── rules/
 │   └── workflows/
+├── agent-tooling/
+│   ├── agent.md
+│   ├── sources.md
+│   ├── skills/
+│   ├── rules/
+│   ├── workflows/
+│   └── patterns/
 ├── shared/
 │   └── rules/
 ├── tools/
@@ -134,3 +141,5 @@ On 2026-08-17 the repository added the `video-color` domain for CLI-first video 
 On 2026-08-17 plugin packaging became generated rather than hand-copied: `video-color` was published as the second marketplace plugin, `tools/build_plugin_from_domain.py` builds `plugins/*` from domain packages, and CI gates both the domain→plugin drift and the installability of every package (links, skill frontmatter, marketplace registration). Backfilling `java-qa` under the new gate fixed 11 dead card links in that plugin.
 
 Also on 2026-08-17 delivery became a rule rather than a habit: `shared/rules/skill-delivery.md` states the definition of done for a new skill and the no-`version` policy, `references/claude-code-plugin-format.md` records the format it relies on, and the gates now fail on an unpackaged domain. That last gate immediately surfaced two: `sysadmin` and `analytics` shipped as the `sysadmin-sre` and `product-analytics` plugins, bringing the marketplace to four. Fixing `sysadmin/skills/incident-triage.md` (missing frontmatter, links to the retired nested `references/sysadmin/` path) also let the last per-file exclusion be removed from the three domain validators.
+
+On 2026-08-17 the fifth domain, `agent-tooling`, was consolidated from three separate local skills (contract-first CLI/MCP design, the agent CLI contract, blind A/B measurement) — one domain, one plugin, `patterns/` for the long-form companions. Domain lists are no longer hand-maintained: `tools/kb_domains.py` derives them from the presence of `agent.md`, the same convention the Quartz index already used, so a new domain cannot silently escape validation. `validate_structure.py` also fails on broken relative links inside the live knowledge base now; the first run of that check fixed two in `references/README.md`. Thirteen more remain in the pre-domain top-level `agents/`, `rules/`, and `skills/` directories, which every validator still skips — a real debt, listed here rather than hidden.

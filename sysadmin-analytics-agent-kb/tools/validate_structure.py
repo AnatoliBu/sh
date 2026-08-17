@@ -2,11 +2,12 @@
 from pathlib import Path
 import re
 import sys
+from kb_domains import agent_roots
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r'(?<!!)\[[^\]]+\]\(([^)]+)\)')
 FM_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
-AGENT_ROOTS = {'sysadmin', 'analytics', 'java-qa', 'video-color', 'shared'}
+AGENT_ROOTS = agent_roots()
 SKIP_ROOTS = {'research', 'site', 'generated', 'public', 'agents', 'rules', 'skills'}
 SKIP_PREFIXES = ('references/sysadmin/', 'references/analytics/', 'references/tooling/')
 
@@ -50,6 +51,14 @@ def main() -> int:
             continue
         text = p.read_text(encoding='utf-8')
         data = fm(text)
+        # ссылки внутри живой части KB обязаны разрешаться: битая относительная ссылка
+        # переживает годы, пока кто-нибудь не откроет именно её
+        for link in LINK_RE.findall(text):
+            dst = local_target(p, link)
+            if dst is None or dst.suffix != '.md':
+                continue
+            if not dst.exists():
+                errors.append(f'{r}: broken relative link: {link}')
         if is_agent_artifact(p, data):
             links = LINK_RE.findall(text)
             flat_ref = False

@@ -1,0 +1,44 @@
+---
+artifact_type: index
+status: foundation
+domain: agent-tooling
+---
+
+# Research and Standards Reading List
+
+Use current versions of the following sources when implementing or revising the architecture.
+
+## Core specifications
+
+- OpenAPI Specification: https://spec.openapis.org/oas/latest.html
+- JSON Schema: https://json-schema.org/specification
+- Model Context Protocol specification: https://modelcontextprotocol.io/specification
+- AsyncAPI specification and concepts: https://www.asyncapi.com/docs
+- GraphQL specification: https://spec.graphql.org/
+- Protocol Buffers: https://protobuf.dev/
+- gRPC: https://grpc.io/docs/
+- Smithy: https://smithy.io/2.0/
+
+## API and interface design
+
+- Google API Improvement Proposals: https://google.aip.dev/
+- AIP-121, resource-oriented design: https://google.aip.dev/121
+- CLI Guidelines: https://clig.dev/
+- CLI Spec proposal: https://clispec.dev/
+
+## OpenAPI-to-MCP and generation ecosystems
+
+- FastMCP OpenAPI integration: https://gofastmcp.com/integrations/openapi
+- Speakeasy MCP and SDK generation: https://www.speakeasy.com/
+- Stainless MCP generation and code mode: https://www.stainless.com/products/mcp/
+
+## Research directions
+
+Search current versions and follow-up work for:
+
+- AutoMCP: automatic generation and repair of MCP servers from OpenAPI
+- RAG-MCP: retrieval-based tool selection for large MCP catalogs
+- typed-function or harness approaches that generate HTTP/OpenAPI and MCP from one implementation
+- black-box CLI grammar extraction from help text, man pages, completions, and behavioral probing
+
+Research papers and preprints can change significantly between versions. Verify the latest revision before relying on reported metrics.

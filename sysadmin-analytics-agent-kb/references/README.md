@@ -48,8 +48,8 @@ From a skill file, link back to references like this:
 ```markdown
 Authority references:
 
-- [Google SRE Incident Management Guide](../../references/google-sre-incident-management.md)
-- [Kubernetes Pod Security Standards](../../references/kubernetes-pod-security-standards.md)
+- [Google SRE Incident Management Guide](./google-sre-incident-management.md)
+- [Kubernetes Pod Security Standards](./kubernetes-pod-security-standards.md)
 ```
 
 ## Reference tiers

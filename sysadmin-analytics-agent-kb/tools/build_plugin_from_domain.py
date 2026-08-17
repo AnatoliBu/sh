@@ -29,9 +29,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[2]
 KB = ROOT / "sysadmin-analytics-agent-kb"
@@ -84,6 +85,35 @@ def rewrite_card_links(text: str, cards: set[str], depth: str) -> str:
         return f"{label} (`{card}`, вне пакета)"
 
     return CARD_LINK_RE.sub(repl, text)
+
+
+ANY_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\((\.[^)]*\.md)\)")
+
+
+def rewrite_domain_links(text: str, src_rel: str, docs: dict[str, str], domain_dir: Path) -> str:
+    """Переписать ссылки между файлами домена на их места в пакете.
+
+    В домене файлы разложены по `skills/`, `rules/`, `patterns/` и ссылаются друг на друга
+    относительными путями. В пакете они лежат плоско в `references/`, поэтому такая ссылка
+    должна стать именем целевого файла. Ссылка на файл домена, который в пакет не попал,
+    разворачивается в текст: мёртвых ссылок в пакете быть не должно.
+    """
+    src_dir = PurePosixPath(src_rel).parent
+
+    def repl(m: re.Match) -> str:
+        label, target = m.group(1), m.group(2)
+        anchor = ""
+        if "#" in target:
+            target, anchor = target.split("#", 1)
+            anchor = "#" + anchor
+        resolved = PurePosixPath(os.path.normpath((src_dir / target).as_posix())).as_posix()
+        if resolved in docs:
+            return f"[{label}]({docs[resolved]}{anchor})"
+        if (domain_dir / resolved).exists():
+            return f"{label} (`{PurePosixPath(resolved).name}`, вне пакета)"
+        return m.group(0)  # не файл домена — этим занимаются другие правила
+
+    return ANY_LINK_RE.sub(repl, text)
 
 
 def rewrite_sibling_links(text: str, cards: set[str]) -> str:
@@ -170,6 +200,7 @@ def build_package(name: str, spec: dict) -> dict[str, str]:
         src = domain_dir / src_rel
         text = normalize(read(src))
         text = rewrite_card_links(text, card_set, depth="cards/")
+        text = rewrite_domain_links(text, src_rel, docs, domain_dir)
         out[dst.relative_to(ROOT).as_posix()] = stamp(text, src)
 
     for card in cards:

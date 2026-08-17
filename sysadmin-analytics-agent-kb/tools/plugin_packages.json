@@ -1,4 +1,27 @@
 {
+  "agent-tooling": {
+    "domain": "agent-tooling",
+    "skill": "agent_tooling",
+    "cards": "auto",
+    "docs": {
+      "skills/cli-agent-contract.md": "cli-agent-contract.md",
+      "skills/blind-ab-evaluation.md": "blind-ab-evaluation.md",
+      "skills/contract-first-interfaces.md": "contract-first-interfaces.md",
+      "rules/agent-surface-safety.md": "rules.md",
+      "workflows/tool-improvement-loop.md": "tool-improvement-loop.md",
+      "patterns/cli-advanced-patterns.md": "cli-advanced-patterns.md",
+      "patterns/ab-harness.md": "ab-harness.md",
+      "patterns/ab-measuring.md": "ab-measuring.md",
+      "patterns/ab-surface-delivery.md": "ab-surface-delivery.md",
+      "patterns/contract-workflow.md": "contract-workflow.md",
+      "patterns/contract-source-extraction.md": "contract-source-extraction.md",
+      "patterns/contract-capability-ir-guide.md": "contract-capability-ir-guide.md",
+      "patterns/contract-cli-design-rules.md": "contract-cli-design-rules.md",
+      "patterns/contract-scale-control.md": "contract-scale-control.md",
+      "patterns/contract-validation-checklist.md": "contract-validation-checklist.md",
+      "patterns/contract-research-and-standards.md": "contract-research-and-standards.md"
+    }
+  },
   "java-qa": {
     "domain": "java-qa",
     "skill": "java_qa",

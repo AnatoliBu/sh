@@ -1,0 +1,112 @@
+---
+artifact_type: index
+status: foundation
+domain: agent-tooling
+---
+
+# Does the surface you are editing reach the model at all?
+
+The first question of any agent-facing A/B, and the one that is almost never asked, because every
+part of the chain looks fine from its own end: the server sends the text, the client receives it,
+and the model never sees it. Only the request body settles it.
+
+## Why this became a rule (the project, BUG-027, 2026-07)
+
+A weak agent with working log tools skipped them in ~12 of 30 blind runs and answered "в этом
+окружении нет доступа к логам стенда" — a false absence stated as fact, one step earlier than a wrong
+answer. Two fixes were tried on the tool surface:
+
+1. tool **descriptions** taught the words the task arrives in → measured, 18/30 → 19/30, one-sided
+   Fisher **p = 0.50**, reverted;
+2. MCP `initialize` → **`instructions`**, on the premise that a client puts them in the system
+   prompt, i.e. earlier than descriptions.
+
+Before spending 30 more runs on (2), the premise was checked by recording the request. It was false
+for that client, and (1)'s failure was explained at the same time: **neither surface was in the
+model's context.**
+
+## The measurement
+
+Put a unique marker in the text (`ZQF-MARKER-7731`), run the client through a recording proxy in
+front of the REAL endpoint, then grep the first captured request.
+
+```bash
+python <your-tool-repo>/scripts/record_model_requests.py --port 8901 --dump-dir /tmp/cap &
+# CODEX_HOME/config.toml of the probe:
+#   model_provider = "proxy"
+#   [model_providers.proxy]
+#   base_url = "http://127.0.0.1:8901/backend-api/codex"
+#   wire_api = "responses"
+#   requires_openai_auth = true
+CODEX_HOME=~/.codex-probe codex exec --skip-git-repo-check -C <empty dir> < prompts/H.txt
+python - <<'EOF'
+import json; d=json.load(open('/tmp/cap/req-01.json'))
+print('instructions:', len(d.get('instructions') or ''))
+print('tools:', [t['name'] for t in d['input'][0].get('tools', [])])
+EOF
+```
+
+Two rules learned the hard way:
+
+- **Never a stub provider.** A fake endpoint fails the client's model-metadata fetch, and codex then
+  silently falls back to a different tool configuration than the one under test — the capture looks
+  plausible and describes a client nobody is running.
+- **Read `req-01`, not the last request.** The last one carries everything the run accumulated
+  (including tool listings the agent fetched itself) and hides how the turn began.
+- The model's own answer ("I received no instructions") is testimony, not evidence, and so is a
+  `RUST_LOG=trace` line showing the client *received* the text over MCP. Both were true here while
+  the model still saw nothing.
+
+## What was found (codex 0.145.0, `gpt-5.6-luna`, `tool_mode: code_mode_only`)
+
+| in the first request to the model | present? |
+|---|---|
+| MCP tool descriptions | no |
+| server `instructions` | no (`instructions: ""`) |
+| any MCP tool name | no — 0 mentions |
+| tools at all | `exec`, `wait`, `request_user_input` |
+
+MCP tools are **deferred**: the `exec` description says only that "deferred nested tools … are listed
+in `ALL_TOOLS`. To find one, filter `ALL_TOOLS` by `name` and `description`." A successful run is one
+where the agent writes that filter itself:
+
+```js
+const hits = ALL_TOOLS.filter(x => /log|search|elastic|kibana|the-stand|database/i.test(x.name+" "+x.description));
+```
+
+and our descriptions — with the server `instructions` glued onto each matched tool — appear only in
+the OUTPUT of that call. So no wording can affect the decision that happens before it. Client knobs
+(`--disable code_mode`, `features.tool_search_always_defer_mcp_tools=false`,
+`features.code_mode.direct_only_tool_namespaces=[...]`) do not change this: the mode comes from the
+model's metadata.
+
+Other clients differ — Claude Code puts the same `instructions` text verbatim in the system prompt
+before the first turn. **Delivery is a property of the client, so it is a property of your lab**, and
+a lab whose subject cannot see the surface can only ever measure noise on it.
+
+## What does arrive unprompted: a skill's `description`
+
+A `SKILL.md` under `$CODEX_HOME/skills/<name>/` shows up in the first request:
+
+```
+<skills_instructions>
+- lp-logs: <the description line, verbatim> (file: …/skills/lp-logs/SKILL.md)
+</skills_instructions>
+```
+
+Only the **`description`** line travels; the body is read later, by an agent that already decided to
+look. So a claim that must arrive before the agent concludes anything belongs in `description`.
+
+Measured on the same tasks, same N=30 per arm, threshold registered before the runs:
+
+| arm | reached a tool | detector task |
+|---|---|---|
+| base | 17/30 | 0/6 |
+| skill claiming where the logs live | **30/30**, p = 2.3e-05 | **6/6** |
+| placebo skill, same size, no claim | 20/30, p = 0.30 | 0/6 |
+
+**Always run the placebo arm.** Without it the finding is only "some entry in context changes
+behaviour", which is a different and much weaker claim than "this text does".
+
+**Related:** [Blind A/B Evaluation](../skills/blind-ab-evaluation.md) · [`measuring.md`](./ab-measuring.md) (metric choice, variance,
+what a win may claim) · [`harness.md`](./ab-harness.md) (per-arm `config.toml`, runner, JSONL parsing).

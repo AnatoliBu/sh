@@ -1,0 +1,156 @@
+---
+artifact_type: skill
+status: foundation
+domain: agent-tooling
+---
+
+# Agentic CLI contract
+
+Spec for retrofitting an existing Python CLI so Claude subagents can call it as one-shot, parse output programmatically, and chain reliably.
+
+## Reference links
+
+Authority references:
+
+- [Command Line Interface Guidelines (clig.dev)](../../references/cli-guidelines-clig.md)
+- [Model Context Protocol Specification](../../references/model-context-protocol-spec.md)
+
+**Reference implementations:**
+
+- **`a retrofitted CLI in your own repo`** — retrofit on top of human-pretty CLI. Mimic the argparse subparser layout, `--format` dispatcher, and exit-code helpers. Use this when adding agent-mode to an existing tool with `pretty` output users depend on.
+- **`a born-agentic CLI in your own repo`** — born-agentic CLI: JSON envelope on stdout by default, no `pretty` mode (only `--pretty` indent toggle), graph-first read shape, patch-mode for text fields, structured argparse errors with `did_you_mean`/`renamed_to`. Use this when greenfielding a new CLI that LLMs will call almost exclusively.
+
+Do not invent new patterns — pick the closer reference and follow it.
+
+## Before you start (retrofit triage)
+
+Most existing CLIs are **partially** agentized already. Before writing code:
+
+1. `grep -c '\-\-format\|\-\-dry-run' scripts/X.py` — if >0, audit which commands have it.
+2. List commands missing the flags. Work scope = that list, not the whole file.
+3. If the file is already fully agentized — stop, report back, don't churn.
+
+## Core contract (MANDATORY)
+
+1. **`--format {pretty,summary,json}`** — default `pretty` = byte-identical to pre-change output (backward compat). `text` is an accepted legacy alias for `pretty` — do **not** rename an existing flag just to match the canonical name.
+   - `summary`: single line `ok <noun> key1=v1 key2=v2` or `err <code>: <reason>`. Terse, `awk '{print $1}'` → `ok|err`.
+   - `json`: structured object, pipe-able to `jq`. Stdout = **one** top-level object per invocation (no NDJSON interleaved with logs).
+2. **Exit codes (baseline)**:
+   - `0` — success, including **idempotent toggle** where target already in desired state (toggle-ops are safe to repeat).
+   - `2` — not-found (HTTP 404, entity missing), precondition-fail that requires caller intervention (different from idempotent no-op).
+   - `3` — generic error, HTTP 5xx, auth (401/403), HTTP 4xx other than 404, unexpected.
+   - **Domain-rich extension allowed** — CLIs MAY use codes `4+` when retry-vs-bail semantics genuinely differ (e.g. `5=conflict/if-match mismatch → refetch hash & retry`, `6=tampered-state → repair required`). Mandatory: document the full matrix in `--help` epilog and in the project skill file. Do not collapse semantically distinct failures into `3`.
+3. **`--dry-run`** for write-ops — print what would happen, exit 0, perform no HTTP/DB write. Honours `--format`.
+
+## Extended contract (apply when relevant, skip if overkill)
+
+4. **`--fields f1,f2`** — selective output for `json`/`summary`. Add when commands return >5 top-level fields; apply to read commands (`get`, `list`) first.
+5. **`--tree`** — JSON schema tree: keys + types + array counts + optional markers (`?`). Critical for agent navigation of unfamiliar API responses — agent sees structure before querying data. Implementation: `json_tree()` in shared lib (`your_api_common.py`), recursive merge of array element schemas, prefers non-empty samples. ~60 lines. Output example:
+
+    ```
+    menuItems[509]:
+      id: str
+      label: str
+      modifierGroups?[6]:
+        id: str
+        modifiers[8]:
+          modifierId: str
+          selected: bool
+    ```
+
+    **Agent workflow:** `--tree` first → understand structure → targeted `jq`/python extraction. Never dump raw large JSON into context ([research](https://arxiv.org/html/2510.15955v1): 12x token bloat, -8..38% accuracy).
+    **Implementation rules (mandatory):**
+    - Output is **text-based indented tree**, NOT JSON with meta-keys (`__array__`/`__sample__`). Same format across sibling CLIs (every CLI in the family)
+    - Arrays: `key[count]:` header + schema of first element indented below. Empty arrays: `key[0]`
+    - Scalars: `key: type` (`str`, `int`, `float`, `bool`, `null`). Optional: `key?: type`
+    - Max depth 8, `...` beyond
+    - Canonical implementation: `json_tree()` in your shared lib. Copy or import — do not reinvent
+6. **Output-size guard** — if payload > ~200 lines or > ~50 KB: write to tmp file, print `ok <noun> output=<path> lines=N bytes=M`. Add for commands that routinely return large dumps.
+7. **Input hardening** — validate IDs (int/uuid/alnum), reject path traversal (`..`), strip control chars. Apply where user input reaches FS or SQL.
+8. **Non-interactive autodetect** — `not sys.stdout.isatty()` or `NO_COLOR` → no colors/spinners/prompts. `--format` != `pretty` implies non-interactive.
+    - **Auto-json when piped:** if `--format` not explicitly passed AND `not sys.stdout.isatty()` → default to `json`. Agents pipe output; they must get parseable JSON without remembering `--format json` every time. Reference: `_default_format()` in a reference CLI.
+    - **No ASCII art/Rich tables for agents:** `_table()` output must be plain aligned text (header + dashes + rows). No `rich.table`, no box-drawing chars (`│`, `┌`, `─`). Rich is for interactive humans only — agents can't parse it, and it wastes tokens.
+    - **Full identifiers always:** never truncate UUIDs, IDs, hashes in output (`[:12]`, `[:8]` etc.). Agents need full values to use in subsequent commands. Truncated UUID = broken pipeline = fallback to curl/SSH.
+    - **Error envelope in non-TTY:** top-level exception handler must also respect auto-json. Check `_default_format()` in addition to `--format` argv presence. Otherwise piped ClickException leaks human text into JSON stream.
+9. **Actionable stderr hints** — on error, stderr includes next step: `hint: pass --confirm to proceed`, `hint: run 'X show -P 3000' to inspect`. Emit uniformly on every error path, not only when "next commands" are present.
+10. **Optimistic concurrency** (stateful write-ops on shared resources) — read returns `hash` field; mutations accept `--if-match <hash>`; mismatch → dedicated exit (e.g. `5=conflict`) with `conflicts: [{field, expected, actual}]` in the envelope. Agent retry = re-read → get fresh hash → retry.
+11. **Patch-mode for large text fields** (description, body, content) — when a write-op replaces a multi-KB field, add `--<field>-edit-old --<field>-edit-new` with **unique-substring** Edit-tool semantics: find one match of `old`, replace with `new`. Empty `new` = delete. Multi-line — `--*-edit-old-file/--*-edit-new-file`. Dedicated exit `EDIT_AMBIGUOUS` (>1 match) and `EDIT_NOT_FOUND` (0 matches). Concrete win: 5KB → 50 tokens, 3 calls (read/modify/write) → 1, no risk of agent reformatting markdown on round-trip. Reference: `<cli> update-issue --description-edit-old "<old>" --description-edit-new "<new>"`.
+    - **Self-describing failures** (mandatory companion to patch-mode): when `EDIT_NOT_FOUND` fires, return `error.details.current_preview` (first ~200 chars of the actual current body) + `body_length` + `format_hint` (the storage format the field uses — e.g. `"markdown"` if the system stores Markdown source even when the UI renders something else) + `searched_for` (echo of `old`, clipped). When `EDIT_AMBIGUOUS` fires, return `match_count` + `searched_for` + `format_hint`. Without this, agents waste a `--raw` round-trip just to discover the storage format mismatch (e.g. wrote `old` in wiki form but field is stored as Markdown). With it, retry succeeds in one call.
+12. **Renamed-command graceful path** — when renaming a command/flag, **prefer** `error.details.renamed_to` / `did_you_mean` in a structured `UNKNOWN_COMMAND` / `UNKNOWN_FLAG` (exit 2) error so agents auto-correct on retry without human-in-loop. Reference shape: `error.details.renamed_to: "<new-name>"`. Keep an alias-shim only if humans/scripts outside your control still call the old name and you can't migrate them; in that case, accept the alias **and** print a one-line deprecation warning to stderr. Default for agent-only CLIs: structured error, no shim.
+13. **Non-interactive credential guard** — never **implicitly** prompt or **implicitly** read stdin for credentials. No `input()` / `getpass.getpass()`. No `sys.stdin.isatty()` guards — it lies on Windows under non-pty pipes (codex/PowerShell). Hard rule: if creds are missing from args/env after parsing, exit `AUTH_NO_CREDENTIALS` (group with the auth exit code) with `details.missing: ["username","password"]` and an actionable hint pointing at the canonical config location. Reading from stdin is allowed **only** behind an explicit `--password-stdin`-style flag the caller passed deliberately.
+14. **Reference JSON envelope** (recommended shape when you have multiple commands):
+
+    ```json
+    {"ok": bool, "exit_code": int, "id": "...", "path": "...", "hash": "...",
+     "data": {...}, "warnings": [{"code","message"}], "errors": [...],
+     "conflicts": [...], "next_commands": [{"cmd","reason"}]}
+    ```
+
+    Top-level fields stable across commands; `data` is command-specific. Agents parse by key, not positional.
+
+## Hard constraints
+
+- **Minimal diff** — do not rename existing flags, refactor unrelated code, or rewrite output of commands not touched. Backward compat is non-negotiable.
+- **Stdout discipline** — `json` and `summary` → stdout only. Logs, info, progress → stderr. Mixing breaks `jq`.
+- **No commit / no push** unless user explicitly asks.
+
+## Side-effect: update the skill file
+
+When enhancing a CLI, also update its skill (`~/.claude/skills/<name>/skill.md`):
+
+- Add `--format` / `--dry-run` / `--fields` / exit-code contract to the TOP-5 commands section.
+- Add 1–2 one-shot examples showing agentic usage.
+- Keep root skill file ≤~80 lines (global rule). Push verbose tables to `references/`.
+
+## Composability (verify, don't assume)
+
+Every retrofit must pass these one-liners on real data, not just `--help`:
+
+```bash
+# jq pipeline: pure JSON on stdout, logs on stderr
+X cmd --format json 2>/dev/null | jq -e '.ok' >/dev/null && echo jq-ok
+X cmd --format json 1>/dev/null        # must print nothing (no log leak)
+X cmd bad-input --format json 2>&1 1>/dev/null   # stderr empty in json mode
+
+# awk/grep on summary one-liner
+X cmd --format summary | awk '{print $1}'         # → ok|err
+X cmd --format summary | grep -q '^ok '           # exit 0 on success
+
+# xargs chaining through json
+X list --format json | jq -r '.data.items[].id' | xargs -I{} X get {} --format summary
+
+# exit-code chaining
+X read-op --format json && X write-op --if-match "$(X read --format json | jq -r .hash)"
+```
+
+## Before reporting done (checklist)
+
+- [ ] `--help` output clean, new flags documented; exit-code matrix in epilog if domain-rich codes are used.
+- [ ] `pretty` output preserved for ≥3 touched commands (eyeball or saved pre-change snapshot — `scripts/*.py` are gitignored in your-tests-repo, no `git diff` available).
+- [ ] `summary` one-liner grep-able, parseable by `awk '{print $1}'` → `ok|err`.
+- [ ] `json` validates with `jq .` on ≥2 commands AND `1>/dev/null` produces zero output (stdout discipline).
+- [ ] Exit codes verified: success=0, idempotent-toggle=0, not-found=2, error=3, domain-specific codes (if any) behave as documented.
+- [ ] `--dry-run` tested on one write-op — no HTTP request / no DB write / no file mutation.
+- [ ] `xargs`-style chain (list-ids → per-id op) works end-to-end.
+- [ ] Skill file updated (path: `~/.claude/skills/<name>/skill.md` — Edit it from the main session if worktree blocks Edit/Write).
+- [ ] No commit / no push (unless user explicitly asks).
+
+## Prompting template (spawning a subagent to agentify CLI X)
+
+> Agentify `scripts/X.py` + `~/.claude/skills/<name>/skill.md` per skill `agentic_cli`. Reference: `<retrofit-reference>.py`. Report: diff stat, commands touched with new exit semantics, any ambiguity (e.g. "already in state → 0 or 2?"), skipped commands + reason, `--help` + one `--format summary` example per modified command.
+
+## Common mistakes (do not)
+
+- Change `pretty` output formatting "while you're at it" — breaks callers.
+- Collapse `err` and `noop` to the same exit code — agents need to distinguish retry vs bail.
+- Emit JSON on stdout + log lines on stdout — mix breaks `jq`. Logs → stderr.
+- Add `--format` to a command but forget to route its error path through the same formatter — stderr contract drifts.
+- Gate `--dry-run` behind a config flag — must be CLI-argument-level, always available.
+
+## References
+
+| File | When to read |
+|------|-------------|
+| [../patterns/cli-advanced-patterns.md](../patterns/cli-advanced-patterns.md) | YOLO-mode safety (confirm-token, structured dry-run, blast-radius), pagination, batch composition, machine discovery, rate limits, expanded exit codes (0-8), session decomposition, secret redaction, **secret-injection wrappers (§11, the secret-placeholder pattern)**, eventual consistency |
+
+**Проверить, что контракт реально помогает:** ретрофит по этой спеке — гипотеза, пока она не прогнана слепым A/B на СЛАБОМ агенте (две поверхности тулов, замороженные задачи, ground truth) → [Blind A/B Evaluation](./blind-ab-evaluation.md).

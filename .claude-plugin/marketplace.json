@@ -9,6 +9,11 @@
   },
   "plugins": [
     {
+      "name": "agent-tooling",
+      "source": "./plugins/agent-tooling",
+      "description": "Agent-facing tooling methodology skill: contract-first CLI/MCP design from existing specs, the agent CLI contract (format modes, typed exit codes, dry-run, optimistic concurrency, patch-mode), tool-surface sizing, and blind two-arm measurement on a weak model."
+    },
+    {
       "name": "java-qa",
       "source": "./plugins/java-qa",
       "description": "Java QA automation methodology skill + subagent: test design, contract testing (Pact/SCC), Testcontainers, schema evolution, test-pyramid & CI-lane decisions."

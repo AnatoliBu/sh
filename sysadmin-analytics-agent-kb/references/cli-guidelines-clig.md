@@ -1,0 +1,91 @@
+---
+artifact_type: reference
+authority_tier: Tier B
+status: foundation
+source_type: community-standard
+topics:
+  - cli
+  - ux
+  - exit-codes
+  - automation
+domains:
+  - agent-tooling
+owner: Command Line Interface Guidelines authors (Aanand Prasad, Ben Firshman, Carl Tashian, Eva Parish)
+last_checked: 2026-08-17
+source_url: https://clig.dev/
+---
+
+# Reference: Command Line Interface Guidelines (clig.dev)
+
+## Authority tier
+
+Tier B — widely adopted community standard, not a normative specification. Where it and a
+platform contract disagree, the platform contract wins.
+
+## Status
+
+foundation
+
+## Owner / maintainer
+
+Authors of clig.dev.
+
+## URL
+
+https://clig.dev/
+
+## Last checked
+
+2026-08-17
+
+## Scope
+
+Authoritative-by-consensus for CLI surface design: what goes to stdout vs stderr, machine
+output modes, exit-code conventions, confirmation of dangerous actions, dry-run, when
+interactivity is allowed, and how errors and help should read.
+
+## Why trusted
+
+The de-facto reference modern CLIs are measured against; its rules are stated
+prescriptively and match what agents and shell pipelines actually need. It predates
+agent-specific concerns, which is exactly why it is a good baseline: nothing in it was
+invented to justify an LLM feature.
+
+## Caveats
+
+Written for human users first. Agent-specific needs — a stable envelope, typed
+domain-rich exit codes, optimistic concurrency, output-size guards, never truncating
+identifiers — are extensions on top, not statements from this source. It also predates MCP.
+
+## Extracted rules
+
+- "Send output to `stdout`"; "send messaging to `stderr`" — machine-readable data on
+  stdout, logs and diagnostics on stderr, so a pipeline stays parseable.
+- "Display output as formatted JSON if `--json` is passed."
+- "If human-readable output breaks machine-readable output, use `--plain` … for integration
+  with tools like `grep` or `awk`."
+- "Return zero exit code on success, non-zero on failure."
+- "Confirm before doing anything dangerous" — risk graded mild/moderate/severe, with the
+  severe case requiring the user to type the resource name.
+- "`-n`, `--dry-run`: Dry run. Do not run the command, but describe the changes that would
+  occur if the command were run."
+- "Only use prompts or interactive elements if `stdin` is an interactive terminal (a TTY)";
+  "if `--no-input` is passed, don't prompt or do anything interactive."
+- "Catch errors and rewrite them for humans"; extensive help on `-h`/`--help`, concise help
+  by default.
+
+## Do not use this source for
+
+Deciding an agent-facing envelope shape, exit-code taxonomies richer than success/failure,
+tool-surface sizing for an LLM, or anything about MCP.
+
+## Related references
+
+- [Model Context Protocol Specification](./model-context-protocol-spec.md)
+- [Claude Code Plugin and Marketplace Format](./claude-code-plugin-format.md)
+
+## Notes
+
+TTY detection is where this source and agent practice diverge in emphasis: the guide uses it
+to decide when to be pretty for humans, agent work uses it to decide when to default to
+JSON for machines. Both follow from the same rule.

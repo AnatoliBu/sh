@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 import sys
+from kb_domains import strict_roots
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_REQUIRED = {'artifact_type', 'status'}
@@ -17,7 +18,7 @@ REFERENCE_REQUIRED = {
     'source_url',
 }
 AGENT_REQUIRED = {'artifact_type', 'status', 'domain'}
-STRICT_ROOTS = {'sysadmin', 'analytics', 'java-qa', 'video-color', 'shared', 'references'}
+STRICT_ROOTS = strict_roots()
 EXCLUDED_PARTS = {'research', 'site', 'generated', 'public', 'tooling'}
 TEMPORARY_EXCLUDED: set[str] = set()
 FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
