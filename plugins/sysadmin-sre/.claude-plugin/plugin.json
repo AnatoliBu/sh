@@ -1,0 +1,11 @@
+{
+  "name": "sysadmin-sre",
+  "description": "Read-only-first sysadmin/SRE/network methodology — incident triage, Kubernetes manifest review, Terraform plan review, DNS and TLS debugging, evidence and blast-radius gates before any mutation.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["sysadmin", "sre", "incident-response", "kubernetes", "terraform", "dns", "tls", "networking"]
+}

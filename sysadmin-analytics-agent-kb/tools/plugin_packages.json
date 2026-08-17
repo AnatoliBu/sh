@@ -5,6 +5,28 @@
     "cards": "from-plugin-links",
     "docs": {}
   },
+  "product-analytics": {
+    "domain": "analytics",
+    "skill": "product_analytics",
+    "cards": "auto",
+    "docs": {
+      "skills/metric-reconciliation.md": "metric-reconciliation.md",
+      "skills/funnel-analysis.md": "funnel-analysis.md",
+      "skills/sql-review.md": "sql-review.md"
+    }
+  },
+  "sysadmin-sre": {
+    "domain": "sysadmin",
+    "skill": "sysadmin_sre",
+    "cards": "auto",
+    "docs": {
+      "skills/incident-triage.md": "incident-triage.md",
+      "skills/k8s-manifest-review.md": "k8s-manifest-review.md",
+      "skills/terraform-plan-review.md": "terraform-plan-review.md",
+      "skills/dns-debug.md": "dns-debug.md",
+      "skills/tls-cert-debug.md": "tls-cert-debug.md"
+    }
+  },
   "video-color": {
     "domain": "video-color",
     "skill": "video_color",

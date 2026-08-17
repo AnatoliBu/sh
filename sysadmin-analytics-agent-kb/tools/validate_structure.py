@@ -59,7 +59,7 @@ def main() -> int:
                 dst = local_target(p, link)
                 if dst and dst.parent == ROOT / 'references' and dst.suffix == '.md' and dst.exists():
                     flat_ref = True
-            if not flat_ref and r != 'sysadmin/skills/incident-triage.md':
+            if not flat_ref:
                 errors.append(f'{r}: missing flat references/*.md link')
     if errors:
         print('Structure validation failed:', file=sys.stderr)

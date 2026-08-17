@@ -1,0 +1,11 @@
+{
+  "name": "product-analytics",
+  "description": "Data/product analytics methodology — metric reconciliation, funnel analysis, SQL review, definitions-before-queries and grain/time discipline, publish gate, analysis-report format.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["analytics", "product-analytics", "sql-review", "metrics", "funnel", "semantic-layer", "bi"]
+}

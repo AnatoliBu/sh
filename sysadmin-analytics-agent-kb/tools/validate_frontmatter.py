@@ -19,7 +19,7 @@ REFERENCE_REQUIRED = {
 AGENT_REQUIRED = {'artifact_type', 'status', 'domain'}
 STRICT_ROOTS = {'sysadmin', 'analytics', 'java-qa', 'video-color', 'shared', 'references'}
 EXCLUDED_PARTS = {'research', 'site', 'generated', 'public', 'tooling'}
-TEMPORARY_EXCLUDED = {'sysadmin/skills/incident-triage.md'}
+TEMPORARY_EXCLUDED: set[str] = set()
 FRONTMATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
 KEY_RE = re.compile(r'^([A-Za-z0-9_-]+):\s*(.*)$')
 

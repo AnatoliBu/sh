@@ -1,6 +1,5 @@
 {
   "name": "java-qa",
-  "version": "1.0.0",
   "description": "Java QA automation methodology — skill (test design, contract testing, Testcontainers, schema evolution, test-pyramid/CI decisions) + java-qa-automation subagent.",
   "author": {
     "name": "AnatoliBu"

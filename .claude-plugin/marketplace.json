@@ -14,6 +14,16 @@
       "description": "Java QA automation methodology skill + subagent: test design, contract testing (Pact/SCC), Testcontainers, schema evolution, test-pyramid & CI-lane decisions."
     },
     {
+      "name": "product-analytics",
+      "source": "./plugins/product-analytics",
+      "description": "Product/data analytics methodology skill: metric reconciliation, funnel analysis, SQL review, definitions-before-queries, grain and time discipline, publish gate."
+    },
+    {
+      "name": "sysadmin-sre",
+      "source": "./plugins/sysadmin-sre",
+      "description": "Sysadmin/SRE methodology skill: incident triage, Kubernetes manifest and Terraform plan review, DNS and TLS debugging, read-only default with evidence and blast-radius gates."
+    },
+    {
       "name": "video-color",
       "source": "./plugins/video-color",
       "description": "Video color methodology skill: source trust classification, normalization, shot matching, mask secondaries, camera profiling (ACES IDT), HDR→SDR tone mapping, range/precision gates, persistent grade plan."

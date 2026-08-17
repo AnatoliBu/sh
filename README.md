@@ -66,6 +66,12 @@ research (research/, references/*.md cards)
   -> installed on a machine: /plugin marketplace add AnatoliBu/sh + /plugin install <name>@sh-tools
 ```
 
+The binding rules live in
+[`shared/rules/skill-delivery.md`](sysadmin-analytics-agent-kb/shared/rules/skill-delivery.md)
+(definition of done for a new skill, ownership of generated vs authored files, versioning
+policy, what to do when the domain changes). The format they are built on is documented in
+[`references/claude-code-plugin-format.md`](sysadmin-analytics-agent-kb/references/claude-code-plugin-format.md).
+
 Rules of the packaging step:
 
 - **The domain is the source of truth; the plugin is derived.** Files under
@@ -79,12 +85,18 @@ Rules of the packaging step:
 - **Nothing machine-specific or private goes into a plugin.** Local paths, employer
   internals, and personal stack notes stay out of the public package; keep them in a local
   or project-scoped skill next to the installed one.
+- **No `version` in `plugin.json`.** The client skips an update when the resolved version
+  matches the installed one, and a manifest `version` pins the package — pushing new commits
+  without bumping that string leaves every existing user on the old copy. Omitting it makes
+  the commit SHA the version, so a push to `main` is the release. `claude plugin validate`
+  warns about the missing field; that warning is accepted deliberately.
 
 ```bash
 python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py                     # build
 python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --plugin video-color # one
 python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check              # CI gate
-python sysadmin-analytics-agent-kb/tools/validate_plugin_links.py                        # CI gate
+python sysadmin-analytics-agent-kb/tools/validate_plugin_packages.py                     # CI gate
+python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base HEAD^         # CI gate
 ```
 
 Packaging config lives in `sysadmin-analytics-agent-kb/tools/plugin_packages.json`:
@@ -104,7 +116,10 @@ It runs `sysadmin-analytics-agent-kb/tools/run_agent_kb_ci.py`, which validates:
 - agent artifact references;
 - curated link graph;
 - plugin packages in sync with their domains;
-- plugin links, skill frontmatter, and marketplace registration;
+- plugin packages are installable: links resolve inside the package, skill frontmatter is
+  trigger-worthy, layout matches the official format, every domain is packaged, every
+  package is registered;
+- a changed package can actually reach installed copies;
 - Quartz site build;
 - markdown lint over the knowledge base **and** `plugins/`.
 
@@ -117,3 +132,5 @@ On 2026-06-07 the repository was extended from the original `references / sysadm
 On 2026-08-17 the repository added the `video-color` domain for CLI-first video color management, correction, shot matching, camera profiling, mask-assisted grading, and agent workflow research.
 
 On 2026-08-17 plugin packaging became generated rather than hand-copied: `video-color` was published as the second marketplace plugin, `tools/build_plugin_from_domain.py` builds `plugins/*` from domain packages, and CI gates both the domain→plugin drift and the installability of every package (links, skill frontmatter, marketplace registration). Backfilling `java-qa` under the new gate fixed 11 dead card links in that plugin.
+
+Also on 2026-08-17 delivery became a rule rather than a habit: `shared/rules/skill-delivery.md` states the definition of done for a new skill and the no-`version` policy, `references/claude-code-plugin-format.md` records the format it relies on, and the gates now fail on an unpackaged domain. That last gate immediately surfaced two: `sysadmin` and `analytics` shipped as the `sysadmin-sre` and `product-analytics` plugins, bringing the marketplace to four. Fixing `sysadmin/skills/incident-triage.md` (missing frontmatter, links to the retired nested `references/sysadmin/` path) also let the last per-file exclusion be removed from the three domain validators.
