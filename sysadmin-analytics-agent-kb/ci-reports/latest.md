@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-16T20:07:49Z`
-Git SHA: `392dd505c3ef5e7214e5eadc76dc6c69ae2ea2d5`
+Generated at: `2026-08-17T03:50:12Z`
+Git SHA: `f931bb70155a1066e77635dc145b51b35112b314`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -129,8 +129,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 3ms
-Found 74 input files from `content` in 43ms
+Cleaned output directory `public` in 1ms
+Found 74 input files from `content` in 45ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -281,10 +281,10 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 74 Markdown files in 1s
-Filtered out 0 files in 159μs
+Filtered out 0 files in 112μs
 Emitting files
-Emitted 104 files to `public` in 253ms
-Done processing 74 files in 2s
+Emitted 104 files to `public` in 248ms
+Done processing 74 files in 1s
 
 ```
 
@@ -301,7 +301,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md
-Linting: 93 file(s)
+Linting: 94 file(s)
 Summary: 0 error(s)
 
 ```
