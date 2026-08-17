@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T07:49:12Z`
-Git SHA: `3449c1297973859e2886398268deea3cef2773dc`
+Generated at: `2026-08-17T07:52:00Z`
+Git SHA: `366c90685ce1664851f3b0419e5990c82c175eb9`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -161,8 +161,8 @@ npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to revi
 
  Quartz v4.5.2  
 
-Cleaned output directory `public` in 1ms
-Found 74 input files from `content` in 49ms
+Cleaned output directory `public` in 2ms
+Found 74 input files from `content` in 43ms
 Parsing input files using 1 threads
 
 Warning: content/analytics/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -313,9 +313,9 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 74 Markdown files in 1s
-Filtered out 0 files in 128μs
+Filtered out 0 files in 147μs
 Emitting files
-Emitted 104 files to `public` in 253ms
+Emitted 104 files to `public` in 261ms
 Done processing 74 files in 1s
 
 ```
