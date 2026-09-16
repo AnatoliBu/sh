@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-09-16T12:41:50Z`
-Git SHA: `ee74246630bdb451c0074cce569b9807cd3cd6dc`
+Generated at: `2026-09-16T14:48:20Z`
+Git SHA: `30b239fd92d1e5474c78e573ab8e90c1699873c0`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -379,10 +379,10 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 133 Markdown files in 1s
-Filtered out 0 files in 128μs
+Filtered out 0 files in 123μs
 Emitting files
-Emitted 172 files to `public` in 295ms
-Done processing 133 files in 2s
+Emitted 172 files to `public` in 291ms
+Done processing 133 files in 1s
 
 ```
 
@@ -399,7 +399,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 249 file(s)
+Linting: 251 file(s)
 Summary: 0 error(s)
 
 ```
