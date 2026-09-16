@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-08-17T09:49:22Z`
-Git SHA: `28a91f970dc86d75477378297005d8db128a073a`
+Generated at: `2026-09-16T12:04:36Z`
+Git SHA: `e462e5621fef2e93c4159f02f14b1e6e1d83aba7`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -91,7 +91,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 97 nodes and 411 edges
+Generated curated graph: 113 nodes and 468 edges
 
 ```
 
@@ -106,7 +106,7 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync passed (5 package(s))
+Plugin sync passed (6 package(s))
 
 ```
 
@@ -121,7 +121,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_packages.py
 Output:
 
 ```text
-Plugin validation passed (5 package(s))
+Plugin validation passed (6 package(s))
 
 ```
 
@@ -136,7 +136,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base 'HEAD
 Output:
 
 ```text
-Release validation passed (изменены: agent-tooling, версии не пинятся)
+Release validation passed (изменены: browser-automation, версии не пинятся)
 
 ```
 
@@ -151,37 +151,7 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-Cloning into '/home/runner/work/sh/sh/quartz-work'...
-Generated Quartz index for 5 domain(s): agent-tooling, analytics, java-qa, sysadmin, video-color
-
-added 492 packages, and audited 493 packages in 8s
-
-182 packages are looking for funding
-  run `npm fund` for details
-
-7 vulnerabilities (1 low, 6 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
-npm warn allow-scripts   @parcel/watcher@2.5.6 (install: node scripts/build-from-source.js)
-npm warn allow-scripts   esbuild@0.27.7 (postinstall: node install.js)
-npm warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
-npm warn allow-scripts
-npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
-
- Quartz v4.5.2  
-
-Cleaned output directory `public` in 1ms
-Found 96 input files from `content` in 41ms
-Parsing input files using 1 threads
-
-Warning: content/agent-tooling/agent.md isn't yet tracked by git, dates will be inaccurate
+g/agent.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/agent-tooling/patterns/ab-harness.md isn't yet tracked by git, dates will be inaccurate
 
@@ -227,6 +197,20 @@ Warning: content/analytics/skills/sql-review.md isn't yet tracked by git, dates 
 
 Warning: content/analytics/sources.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/browser-automation/agent.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/rules/browser-automation-safety.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/skills/browser-automation-architecture.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/skills/browser-flow-reliability.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/skills/human-handoff-auth.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/sources.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/browser-automation/workflows/build-browser-automation.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/index.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/java-qa/agent.md isn't yet tracked by git, dates will be inaccurate
@@ -269,6 +253,14 @@ Warning: content/references/asc-color-decision-list.md isn't yet tracked by git,
 
 Warning: content/references/assertj-docs.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/browser-use-repo.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/browserbase-live-view-contexts.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/browserbase-stagehand.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/browserless-hybrid-automation.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/claude-code-plugin-format.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/claude-mods-ffmpeg-ops.md isn't yet tracked by git, dates will be inaccurate
@@ -307,9 +299,15 @@ Warning: content/references/netbox.md isn't yet tracked by git, dates will be in
 
 Warning: content/references/opencolorio-docs.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/owasp-session-management.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/pact-docs.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/pci-dss.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/playwright-best-practices.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/playwright-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/practical-test-pyramid.md isn't yet tracked by git, dates will be inaccurate
 
@@ -320,6 +318,10 @@ Warning: content/references/rest-assured-docs.md isn't yet tracked by git, dates
 Warning: content/references/selenium-webdriver-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/spring-framework-testing.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/steel-agent-skills.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/steel-browser-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/terraform-mcp.md isn't yet tracked by git, dates will be inaccurate
 
@@ -372,11 +374,11 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 96 Markdown files in 1s
-Filtered out 0 files in 125μs
+Parsed 112 Markdown files in 2s
+Filtered out 0 files in 192μs
 Emitting files
-Emitted 131 files to `public` in 261ms
-Done processing 96 files in 2s
+Emitted 151 files to `public` in 378ms
+Done processing 112 files in 2s
 
 ```
 
@@ -393,7 +395,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 197 file(s)
+Linting: 228 file(s)
 Summary: 0 error(s)
 
 ```
