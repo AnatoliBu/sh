@@ -23,6 +23,13 @@
     "analytics/skills/metric-reconciliation.md",
     "analytics/skills/sql-review.md",
     "analytics/sources.md",
+    "browser-automation/agent.md",
+    "browser-automation/rules/browser-automation-safety.md",
+    "browser-automation/skills/browser-automation-architecture.md",
+    "browser-automation/skills/browser-flow-reliability.md",
+    "browser-automation/skills/human-handoff-auth.md",
+    "browser-automation/sources.md",
+    "browser-automation/workflows/build-browser-automation.md",
     "ci-reports/latest.md",
     "java-qa/agent.md",
     "java-qa/rules/automation-decision-quality-gates.md",
@@ -45,6 +52,10 @@
     "references/agentic-qa-boilerplate.md",
     "references/asc-color-decision-list.md",
     "references/assertj-docs.md",
+    "references/browser-use-repo.md",
+    "references/browserbase-live-view-contexts.md",
+    "references/browserbase-stagehand.md",
+    "references/browserless-hybrid-automation.md",
     "references/claude-code-plugin-format.md",
     "references/claude-mods-ffmpeg-ops.md",
     "references/cli-guidelines-clig.md",
@@ -64,13 +75,18 @@
     "references/model-context-protocol-spec.md",
     "references/netbox.md",
     "references/opencolorio-docs.md",
+    "references/owasp-session-management.md",
     "references/pact-docs.md",
+    "references/pci-dss.md",
     "references/playwright-best-practices.md",
+    "references/playwright-docs.md",
     "references/practical-test-pyramid.md",
     "references/qa-skills-agent-catalog.md",
     "references/rest-assured-docs.md",
     "references/selenium-webdriver-docs.md",
     "references/spring-framework-testing.md",
+    "references/steel-agent-skills.md",
+    "references/steel-browser-docs.md",
     "references/terraform-mcp.md",
     "references/testcontainers-java-docs.md",
     "references/veac-video-editing-as-code.md",
@@ -463,6 +479,201 @@
       "source": "analytics/skills/sql-review.md",
       "target": "references/internal-event-taxonomy.md",
       "label": "Event taxonomy"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "browser-automation/skills/browser-automation-architecture.md",
+      "label": "Browser Automation Architecture"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "browser-automation/skills/browser-flow-reliability.md",
+      "label": "Browser Flow Reliability"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "browser-automation/skills/human-handoff-auth.md",
+      "label": "Human Handoff, Authentication, and Payment Steps"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "browser-automation/rules/browser-automation-safety.md",
+      "label": "Browser Automation Safety"
+    },
+    {
+      "source": "browser-automation/agent.md",
+      "target": "browser-automation/workflows/build-browser-automation.md",
+      "label": "Build and Harden a Browser Flow"
+    },
+    {
+      "source": "browser-automation/rules/browser-automation-safety.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "browser-automation/rules/browser-automation-safety.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
+      "source": "browser-automation/rules/browser-automation-safety.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/steel-browser-docs.md",
+      "label": "Steel Browser Documentation"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/browser-use-repo.md",
+      "label": "Browser Use"
+    },
+    {
+      "source": "browser-automation/skills/browser-automation-architecture.md",
+      "target": "references/browserbase-stagehand.md",
+      "label": "Stagehand"
+    },
+    {
+      "source": "browser-automation/skills/browser-flow-reliability.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "browser-automation/skills/browser-flow-reliability.md",
+      "target": "references/steel-agent-skills.md",
+      "label": "Steel Agent Skills"
+    },
+    {
+      "source": "browser-automation/skills/browser-flow-reliability.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/skills/human-handoff-auth.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "browser-automation/skills/human-handoff-auth.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/skills/human-handoff-auth.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "browser-automation/skills/human-handoff-auth.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/steel-browser-docs.md",
+      "label": "Steel Browser Documentation"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/steel-agent-skills.md",
+      "label": "Steel Agent Skills"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/browser-use-repo.md",
+      "label": "Browser Use"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/browserbase-stagehand.md",
+      "label": "Stagehand"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "browser-automation/sources.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
+      "source": "browser-automation/workflows/build-browser-automation.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "browser-automation/workflows/build-browser-automation.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "browser-automation/workflows/build-browser-automation.md",
+      "target": "references/steel-agent-skills.md",
+      "label": "Steel Agent Skills"
+    },
+    {
+      "source": "browser-automation/workflows/build-browser-automation.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
     },
     {
       "source": "java-qa/agent.md",
@@ -1090,6 +1301,46 @@
       "label": "Mockito Documentation"
     },
     {
+      "source": "references/browser-use-repo.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/browser-use-repo.md",
+      "target": "references/steel-browser-docs.md",
+      "label": "Steel Browser Documentation"
+    },
+    {
+      "source": "references/browserbase-live-view-contexts.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/browserbase-live-view-contexts.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "references/browserbase-stagehand.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/browserbase-stagehand.md",
+      "target": "references/browserbase-live-view-contexts.md",
+      "label": "Browserbase Live View and Session Contexts"
+    },
+    {
+      "source": "references/browserless-hybrid-automation.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/browserless-hybrid-automation.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
       "source": "references/claude-code-plugin-format.md",
       "target": "references/agentic-qa-boilerplate.md",
       "label": "Agentic QA Boilerplate"
@@ -1425,6 +1676,16 @@
       "label": "FFmpeg Video Filters"
     },
     {
+      "source": "references/owasp-session-management.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
+      "source": "references/owasp-session-management.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
       "source": "references/pact-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -1448,6 +1709,16 @@
       "source": "references/pact-docs.md",
       "target": "references/wiremock-java-docs.md",
       "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/pci-dss.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "references/pci-dss.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
     },
     {
       "source": "references/playwright-best-practices.md",
@@ -1478,6 +1749,16 @@
       "source": "references/playwright-best-practices.md",
       "target": "references/junit-user-guide.md",
       "label": "JUnit User Guide"
+    },
+    {
+      "source": "references/playwright-docs.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "references/playwright-docs.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
     },
     {
       "source": "references/practical-test-pyramid.md",
@@ -1618,6 +1899,26 @@
       "source": "references/spring-framework-testing.md",
       "target": "references/testcontainers-java-docs.md",
       "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "references/steel-agent-skills.md",
+      "target": "references/steel-browser-docs.md",
+      "label": "Steel Browser Documentation"
+    },
+    {
+      "source": "references/steel-agent-skills.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/steel-browser-docs.md",
+      "target": "references/steel-agent-skills.md",
+      "label": "Steel Agent Skills"
+    },
+    {
+      "source": "references/steel-browser-docs.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management Cheat Sheet"
     },
     {
       "source": "references/terraform-mcp.md",
