@@ -52,15 +52,29 @@
     "references/agentic-qa-boilerplate.md",
     "references/asc-color-decision-list.md",
     "references/assertj-docs.md",
+    "references/browser-use-authentication.md",
+    "references/browser-use-harness-2026.md",
+    "references/browser-use-human-2fa.md",
     "references/browser-use-repo.md",
+    "references/browserbase-agent-identity-2026.md",
+    "references/browserbase-antibot-identity-2026.md",
+    "references/browserbase-code-mode-2026.md",
     "references/browserbase-live-view-contexts.md",
     "references/browserbase-stagehand.md",
+    "references/browsergym.md",
+    "references/browserless-bap.md",
+    "references/browserless-captcha-handling.md",
     "references/browserless-hybrid-automation.md",
+    "references/chrome-devtools-agents.md",
+    "references/chrome-webmcp-security.md",
+    "references/chrome-webmcp.md",
     "references/claude-code-plugin-format.md",
     "references/claude-mods-ffmpeg-ops.md",
     "references/cli-guidelines-clig.md",
     "references/dcamprof-camera-profiling.md",
+    "references/emvco-3ds-2-3-1.md",
     "references/ffmpeg-video-filters.md",
+    "references/gemini-computer-use.md",
     "references/google-sre-incident-management.md",
     "references/gradle-java-testing.md",
     "references/internal-certificate-management.md",
@@ -75,9 +89,11 @@
     "references/model-context-protocol-spec.md",
     "references/netbox.md",
     "references/opencolorio-docs.md",
+    "references/owasp-ai-agent-security.md",
     "references/owasp-session-management.md",
     "references/pact-docs.md",
     "references/pci-dss.md",
+    "references/playwright-agent-runtime-2026.md",
     "references/playwright-best-practices.md",
     "references/playwright-docs.md",
     "references/practical-test-pyramid.md",
@@ -85,6 +101,8 @@
     "references/rest-assured-docs.md",
     "references/selenium-webdriver-docs.md",
     "references/spring-framework-testing.md",
+    "references/stagehand-agent-modes.md",
+    "references/stagehand-v4-2026.md",
     "references/steel-agent-skills.md",
     "references/steel-browser-docs.md",
     "references/terraform-mcp.md",
@@ -92,6 +110,9 @@
     "references/veac-video-editing-as-code.md",
     "references/vex-video-editing-agent.md",
     "references/video-use-agent-skill.md",
+    "references/w3c-webauthn-level-3.md",
+    "references/w3c-webdriver-bidi.md",
+    "references/webarena-verified.md",
     "references/wiremock-java-docs.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
@@ -1301,6 +1322,31 @@
       "label": "Mockito Documentation"
     },
     {
+      "source": "references/browser-use-authentication.md",
+      "target": "references/browser-use-human-2fa.md",
+      "label": "Browser Use 2FA and Human Handoff"
+    },
+    {
+      "source": "references/browser-use-authentication.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management"
+    },
+    {
+      "source": "references/browser-use-harness-2026.md",
+      "target": "references/browser-use-authentication.md",
+      "label": "Browser Use Authentication Profiles"
+    },
+    {
+      "source": "references/browser-use-human-2fa.md",
+      "target": "references/browser-use-authentication.md",
+      "label": "Browser Use Authentication Profiles"
+    },
+    {
+      "source": "references/browser-use-human-2fa.md",
+      "target": "references/w3c-webauthn-level-3.md",
+      "label": "WebAuthn Level 3"
+    },
+    {
       "source": "references/browser-use-repo.md",
       "target": "references/playwright-docs.md",
       "label": "Playwright Documentation"
@@ -1309,6 +1355,31 @@
       "source": "references/browser-use-repo.md",
       "target": "references/steel-browser-docs.md",
       "label": "Steel Browser Documentation"
+    },
+    {
+      "source": "references/browserbase-agent-identity-2026.md",
+      "target": "references/browserbase-antibot-identity-2026.md",
+      "label": "Browserbase CAPTCHA and Identity Trend"
+    },
+    {
+      "source": "references/browserbase-antibot-identity-2026.md",
+      "target": "references/browserbase-agent-identity-2026.md",
+      "label": "Browserbase Agent Identity 2026"
+    },
+    {
+      "source": "references/browserbase-antibot-identity-2026.md",
+      "target": "references/browserless-captcha-handling.md",
+      "label": "Browserless CAPTCHA Handling"
+    },
+    {
+      "source": "references/browserbase-code-mode-2026.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Agent Tooling sources"
+    },
+    {
+      "source": "references/browserbase-code-mode-2026.md",
+      "target": "references/playwright-agent-runtime-2026.md",
+      "label": "Playwright Agent Runtime 2026"
     },
     {
       "source": "references/browserbase-live-view-contexts.md",
@@ -1331,6 +1402,31 @@
       "label": "Browserbase Live View and Session Contexts"
     },
     {
+      "source": "references/browsergym.md",
+      "target": "references/webarena-verified.md",
+      "label": "WebArena-Verified"
+    },
+    {
+      "source": "references/browserless-bap.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "references/browserless-bap.md",
+      "target": "references/browserless-captcha-handling.md",
+      "label": "Browserless CAPTCHA Handling"
+    },
+    {
+      "source": "references/browserless-captcha-handling.md",
+      "target": "references/browserless-hybrid-automation.md",
+      "label": "Browserless Hybrid Automation"
+    },
+    {
+      "source": "references/browserless-captcha-handling.md",
+      "target": "references/browserless-bap.md",
+      "label": "Browserless BAP"
+    },
+    {
       "source": "references/browserless-hybrid-automation.md",
       "target": "references/playwright-docs.md",
       "label": "Playwright Documentation"
@@ -1339,6 +1435,36 @@
       "source": "references/browserless-hybrid-automation.md",
       "target": "references/owasp-session-management.md",
       "label": "OWASP Session Management Cheat Sheet"
+    },
+    {
+      "source": "references/chrome-devtools-agents.md",
+      "target": "references/playwright-agent-runtime-2026.md",
+      "label": "Playwright Agent Runtime 2026"
+    },
+    {
+      "source": "references/chrome-devtools-agents.md",
+      "target": "references/owasp-ai-agent-security.md",
+      "label": "OWASP AI Agent Security"
+    },
+    {
+      "source": "references/chrome-webmcp-security.md",
+      "target": "references/chrome-webmcp.md",
+      "label": "Chrome WebMCP"
+    },
+    {
+      "source": "references/chrome-webmcp-security.md",
+      "target": "references/owasp-ai-agent-security.md",
+      "label": "OWASP AI Agent Security"
+    },
+    {
+      "source": "references/chrome-webmcp.md",
+      "target": "references/chrome-webmcp-security.md",
+      "label": "WebMCP Tool Security"
+    },
+    {
+      "source": "references/chrome-webmcp.md",
+      "target": "references/model-context-protocol-spec.md",
+      "label": "Model Context Protocol Specification"
     },
     {
       "source": "references/claude-code-plugin-format.md",
@@ -1391,6 +1517,11 @@
       "label": "ACES IDT Capture Guide"
     },
     {
+      "source": "references/emvco-3ds-2-3-1.md",
+      "target": "references/pci-dss.md",
+      "label": "PCI DSS"
+    },
+    {
       "source": "references/ffmpeg-video-filters.md",
       "target": "video-color/agent.md",
       "label": "Video Color Agent"
@@ -1424,6 +1555,16 @@
       "source": "references/ffmpeg-video-filters.md",
       "target": "references/asc-color-decision-list.md",
       "label": "ASC Color Decision List"
+    },
+    {
+      "source": "references/gemini-computer-use.md",
+      "target": "references/owasp-ai-agent-security.md",
+      "label": "OWASP AI Agent Security"
+    },
+    {
+      "source": "references/gemini-computer-use.md",
+      "target": "references/stagehand-agent-modes.md",
+      "label": "Stagehand Agent Modes"
     },
     {
       "source": "references/google-sre-incident-management.md",
@@ -1676,6 +1817,16 @@
       "label": "FFmpeg Video Filters"
     },
     {
+      "source": "references/owasp-ai-agent-security.md",
+      "target": "references/chrome-webmcp-security.md",
+      "label": "WebMCP Tool Security"
+    },
+    {
+      "source": "references/owasp-ai-agent-security.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management"
+    },
+    {
       "source": "references/owasp-session-management.md",
       "target": "references/pci-dss.md",
       "label": "PCI DSS"
@@ -1719,6 +1870,16 @@
       "source": "references/pci-dss.md",
       "target": "references/playwright-docs.md",
       "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/playwright-agent-runtime-2026.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/playwright-agent-runtime-2026.md",
+      "target": "references/w3c-webauthn-level-3.md",
+      "label": "WebAuthn Level 3"
     },
     {
       "source": "references/playwright-best-practices.md",
@@ -1901,6 +2062,31 @@
       "label": "Testcontainers for Java Documentation"
     },
     {
+      "source": "references/stagehand-agent-modes.md",
+      "target": "references/browserbase-stagehand.md",
+      "label": "Stagehand"
+    },
+    {
+      "source": "references/stagehand-agent-modes.md",
+      "target": "references/stagehand-v4-2026.md",
+      "label": "Stagehand v4 2026"
+    },
+    {
+      "source": "references/stagehand-agent-modes.md",
+      "target": "references/gemini-computer-use.md",
+      "label": "Gemini Computer Use"
+    },
+    {
+      "source": "references/stagehand-v4-2026.md",
+      "target": "references/browserbase-stagehand.md",
+      "label": "Stagehand"
+    },
+    {
+      "source": "references/stagehand-v4-2026.md",
+      "target": "references/stagehand-agent-modes.md",
+      "label": "Stagehand Agent Modes"
+    },
+    {
       "source": "references/steel-agent-skills.md",
       "target": "references/steel-browser-docs.md",
       "label": "Steel Browser Documentation"
@@ -2024,6 +2210,26 @@
       "source": "references/video-use-agent-skill.md",
       "target": "references/veac-video-editing-as-code.md",
       "label": "VEAC Video Editing as Code"
+    },
+    {
+      "source": "references/w3c-webauthn-level-3.md",
+      "target": "references/playwright-agent-runtime-2026.md",
+      "label": "Playwright Agent Runtime 2026"
+    },
+    {
+      "source": "references/w3c-webauthn-level-3.md",
+      "target": "references/owasp-session-management.md",
+      "label": "OWASP Session Management"
+    },
+    {
+      "source": "references/w3c-webdriver-bidi.md",
+      "target": "references/playwright-docs.md",
+      "label": "Playwright Documentation"
+    },
+    {
+      "source": "references/webarena-verified.md",
+      "target": "references/browsergym.md",
+      "label": "BrowserGym"
     },
     {
       "source": "references/wiremock-java-docs.md",
