@@ -1,0 +1,107 @@
+---
+artifact_type: skill
+status: foundation
+domain: browser-automation
+---
+
+# Skill: Human Handoff, Authentication, and Payment Steps
+
+## Purpose
+
+Let an authorized user take control for login, MFA, consent, CAPTCHA, or 3DS while preserving the
+same browser session and minimizing credential/payment exposure.
+
+## Reference links
+
+Authority references:
+
+- [Browserbase Live View and Session Contexts](../../references/browserbase-live-view-contexts.md)
+- [Browserless Hybrid Automation](../../references/browserless-hybrid-automation.md)
+- [OWASP Session Management Cheat Sheet](../../references/owasp-session-management.md)
+- [PCI DSS](../../references/pci-dss.md)
+
+## Handoff state machine
+
+Model control ownership explicitly:
+
+```text
+AUTOMATION
+  -> HANDOFF_REQUESTED
+  -> HUMAN_CONTROL
+  -> HANDOFF_COMPLETE
+  -> AUTOMATION
+```
+
+A handoff token/viewer URL must be short-lived, scoped to one browser session, and contain no
+provider API key.
+
+## Login
+
+Preferred pattern:
+
+1. automation navigates to the correct sign-in surface;
+2. control is handed to the user;
+3. user enters credentials/MFA directly into the remote browser;
+4. automation waits for a non-secret authenticated post-condition;
+5. control returns to automation;
+6. session state is either destroyed at terminal completion or retained only under an explicit
+   persistence policy.
+
+Do not ask the user to send a password or TOTP seed to the bot/backend.
+
+## CAPTCHA
+
+Treat a CAPTCHA as a workflow event, not a target to "beat":
+
+- use provider-supported automated handling only where the workflow is authorized and permitted;
+- if the challenge requires the user, hand over the same session;
+- if the site disallows the automation, stop rather than adding evasive fingerprint hacks;
+- cap attempts and record the transition reason.
+
+## Payment entry
+
+Minimize card-data exposure.
+
+Preferred order:
+
+```text
+hosted/tokenized merchant/payment-provider UI
+-> isolated secret injection boundary
+-> raw application handling only if unavoidable and reviewed
+```
+
+If automation injects payment details:
+
+- secrets come from a dedicated vault, never source code or normal DB rows;
+- do not expose PAN/CVV in user UI, prompts, logs, screenshots, traces, or recordings;
+- disable/redact observability that could capture sensitive fields;
+- assert merchant/account/amount immediately before final submit;
+- require an explicit policy gate for irreversible payment;
+- hand 3DS/cardholder authentication to the authorized user when required.
+
+## Session persistence
+
+Persist browser state only when repeated access requires it and the user has consented.
+
+Store a reference to secured state, not raw cookies in application logs. Define TTL/revocation and a
+"forget this account" path.
+
+## Terminal cleanup
+
+At success, cancellation, timeout, or fatal error:
+
+```text
+close/revoke live view
+clear in-memory secrets
+stop browser session
+discard ephemeral profile
+persist only sanitized business result + audit metadata
+```
+
+## Anti-patterns
+
+- bot receives email/password/OTP in chat;
+- shared permanent live-view URL;
+- session recordings enabled through password/card entry;
+- raw `storageState` checked into Git or placed in debug artifacts;
+- automatic retry after an ambiguous payment result.

@@ -22,6 +22,18 @@
       "patterns/contract-research-and-standards.md": "contract-research-and-standards.md"
     }
   },
+  "browser-automation": {
+    "domain": "browser-automation",
+    "skill": "browser_automation",
+    "cards": "auto",
+    "docs": {
+      "skills/browser-automation-architecture.md": "architecture.md",
+      "skills/browser-flow-reliability.md": "reliability.md",
+      "skills/human-handoff-auth.md": "human-handoff-auth.md",
+      "rules/browser-automation-safety.md": "rules.md",
+      "workflows/build-browser-automation.md": "workflow.md"
+    }
+  },
   "java-qa": {
     "domain": "java-qa",
     "skill": "java_qa",

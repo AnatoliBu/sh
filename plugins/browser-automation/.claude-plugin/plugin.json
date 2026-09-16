@@ -1,0 +1,11 @@
+{
+  "name": "browser-automation",
+  "description": "Production browser automation methodology: deterministic Playwright first, bounded Stagehand/browser-use where useful, managed cloud-browser selection, human handoff for login/MFA/3DS, reliability state machines, and security gates for authenticated/payment workflows.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": ["browser-automation", "playwright", "browserbase", "browserless", "steel", "stagehand", "browser-use", "human-handoff", "2fa", "payments"]
+}
