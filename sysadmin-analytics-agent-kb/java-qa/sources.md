@@ -22,6 +22,16 @@ This file ranks source-of-truth references for Java QA automation agents.
 - [Pact Documentation](../references/pact-docs.md)
 - [ISTQB Testing Foundation Materials](../references/istqb-testing-foundation.md)
 
+## Tier B — peer-reviewed REST API test-generation research
+
+- [Testing RESTful APIs: A Survey](../references/testing-restful-apis-survey-2023.md) — ACM TOSEM survey of 92 scientific articles; use as the taxonomy/index for the field.
+- [Automatic Generation of Test Cases for REST APIs: A Specification-Based Approach](../references/openapi-test-generation-edoc-2018.md) — specification-based generation directly from OpenAPI.
+- [QuickREST](../references/quickrest-icst-2020.md) — property-based test generation from OpenAPI documents.
+- [RESTTESTGEN](../references/resttestgen-icst-2020.md) — nominal and error black-box test generation from Swagger/OpenAPI plus automated oracles.
+- [RESTler](../references/restler-icse-2019.md) — stateful sequence generation by inferring producer-consumer dependencies from API specifications.
+- [RESTest](../references/restest-icsoc-2020.md) — constraint-based generation for inter-parameter dependencies missing from plain OAS.
+- [EvoMaster](../references/evomaster-tosem-2019.md) — adjacent search-based/white-box automated REST test generation; useful for sequence/search strategy, not a pure OAS-only method.
+
 ## Tier B — strategy and agent-workflow sources
 
 - [Practical Test Pyramid](../references/practical-test-pyramid.md)
