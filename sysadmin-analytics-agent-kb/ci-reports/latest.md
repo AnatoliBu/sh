@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-09-16T14:48:20Z`
-Git SHA: `30b239fd92d1e5474c78e573ab8e90c1699873c0`
+Generated at: `2026-10-07T08:44:44Z`
+Git SHA: `16aad8fb59001cd13f830e9e4f7c9b497304c476`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -91,7 +91,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 134 nodes and 505 edges
+Generated curated graph: 141 nodes and 563 edges
 
 ```
 
@@ -151,21 +151,7 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-urate
-
-Warning: content/analytics/skills/metric-reconciliation.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/analytics/skills/sql-review.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/analytics/sources.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/browser-automation/agent.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/browser-automation/rules/browser-automation-safety.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/browser-automation/skills/browser-automation-architecture.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/browser-automation/skills/browser-flow-reliability.md isn't yet tracked by git, dates will be inaccurate
+y git, dates will be inaccurate
 
 Warning: content/browser-automation/skills/human-handoff-auth.md isn't yet tracked by git, dates will be inaccurate
 
@@ -257,6 +243,8 @@ Warning: content/references/dcamprof-camera-profiling.md isn't yet tracked by gi
 
 Warning: content/references/emvco-3ds-2-3-1.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/evomaster-tosem-2019.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/ffmpeg-video-filters.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/gemini-computer-use.md isn't yet tracked by git, dates will be inaccurate
@@ -287,6 +275,8 @@ Warning: content/references/model-context-protocol-spec.md isn't yet tracked by 
 
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/openapi-test-generation-edoc-2018.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/opencolorio-docs.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/owasp-ai-agent-security.md isn't yet tracked by git, dates will be inaccurate
@@ -307,7 +297,15 @@ Warning: content/references/practical-test-pyramid.md isn't yet tracked by git, 
 
 Warning: content/references/qa-skills-agent-catalog.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/quickrest-icst-2020.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/rest-assured-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/restest-icsoc-2020.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/restler-icse-2019.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/resttestgen-icst-2020.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/selenium-webdriver-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -324,6 +322,8 @@ Warning: content/references/steel-browser-docs.md isn't yet tracked by git, date
 Warning: content/references/terraform-mcp.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/testcontainers-java-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/testing-restful-apis-survey-2023.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/veac-video-editing-as-code.md isn't yet tracked by git, dates will be inaccurate
 
@@ -378,11 +378,11 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 133 Markdown files in 1s
-Filtered out 0 files in 123μs
+Parsed 140 Markdown files in 2s
+Filtered out 0 files in 164μs
 Emitting files
-Emitted 172 files to `public` in 291ms
-Done processing 133 files in 1s
+Emitted 179 files to `public` in 416ms
+Done processing 140 files in 2s
 
 ```
 
@@ -399,7 +399,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 251 file(s)
+Linting: 258 file(s)
 Summary: 0 error(s)
 
 ```
