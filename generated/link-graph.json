@@ -73,6 +73,7 @@
     "references/cli-guidelines-clig.md",
     "references/dcamprof-camera-profiling.md",
     "references/emvco-3ds-2-3-1.md",
+    "references/evomaster-tosem-2019.md",
     "references/ffmpeg-video-filters.md",
     "references/gemini-computer-use.md",
     "references/google-sre-incident-management.md",
@@ -88,6 +89,7 @@
     "references/mockito-docs.md",
     "references/model-context-protocol-spec.md",
     "references/netbox.md",
+    "references/openapi-test-generation-edoc-2018.md",
     "references/opencolorio-docs.md",
     "references/owasp-ai-agent-security.md",
     "references/owasp-session-management.md",
@@ -98,7 +100,11 @@
     "references/playwright-docs.md",
     "references/practical-test-pyramid.md",
     "references/qa-skills-agent-catalog.md",
+    "references/quickrest-icst-2020.md",
     "references/rest-assured-docs.md",
+    "references/restest-icsoc-2020.md",
+    "references/restler-icse-2019.md",
+    "references/resttestgen-icst-2020.md",
     "references/selenium-webdriver-docs.md",
     "references/spring-framework-testing.md",
     "references/stagehand-agent-modes.md",
@@ -107,6 +113,7 @@
     "references/steel-browser-docs.md",
     "references/terraform-mcp.md",
     "references/testcontainers-java-docs.md",
+    "references/testing-restful-apis-survey-2023.md",
     "references/veac-video-editing-as-code.md",
     "references/vex-video-editing-agent.md",
     "references/video-use-agent-skill.md",
@@ -1113,6 +1120,41 @@
     },
     {
       "source": "java-qa/sources.md",
+      "target": "references/testing-restful-apis-survey-2023.md",
+      "label": "Testing RESTful APIs: A Survey"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/openapi-test-generation-edoc-2018.md",
+      "label": "Automatic Generation of Test Cases for REST APIs: A Specification-Based Approach"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/quickrest-icst-2020.md",
+      "label": "QuickREST"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/restest-icsoc-2020.md",
+      "label": "RESTest"
+    },
+    {
+      "source": "java-qa/sources.md",
+      "target": "references/evomaster-tosem-2019.md",
+      "label": "EvoMaster"
+    },
+    {
+      "source": "java-qa/sources.md",
       "target": "references/practical-test-pyramid.md",
       "label": "Practical Test Pyramid"
     },
@@ -1522,6 +1564,36 @@
       "label": "PCI DSS"
     },
     {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
+    },
+    {
+      "source": "references/evomaster-tosem-2019.md",
+      "target": "references/testing-restful-apis-survey-2023.md",
+      "label": "Testing RESTful APIs: A Survey"
+    },
+    {
       "source": "references/ffmpeg-video-filters.md",
       "target": "video-color/agent.md",
       "label": "Video Color Agent"
@@ -1787,6 +1859,41 @@
       "label": "Sysadmin Agent"
     },
     {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "references/quickrest-icst-2020.md",
+      "label": "QuickREST"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "references/openapi-test-generation-edoc-2018.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
+    },
+    {
       "source": "references/opencolorio-docs.md",
       "target": "video-color/agent.md",
       "label": "Video Color Agent"
@@ -1997,6 +2104,41 @@
       "label": "WireMock Java Documentation"
     },
     {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "references/openapi-test-generation-edoc-2018.md",
+      "label": "Specification-based generation (EDOC 2018)"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "references/quickrest-icst-2020.md",
+      "target": "references/restest-icsoc-2020.md",
+      "label": "RESTest"
+    },
+    {
       "source": "references/rest-assured-docs.md",
       "target": "java-qa/agent.md",
       "label": "Java QA Agent"
@@ -2015,6 +2157,111 @@
       "source": "references/rest-assured-docs.md",
       "target": "references/wiremock-java-docs.md",
       "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "references/quickrest-icst-2020.md",
+      "label": "QuickREST"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "references/restest-icsoc-2020.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "references/restest-icsoc-2020.md",
+      "label": "RESTest"
+    },
+    {
+      "source": "references/restler-icse-2019.md",
+      "target": "references/evomaster-tosem-2019.md",
+      "label": "EvoMaster"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "references/quickrest-icst-2020.md",
+      "label": "QuickREST"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "references/restest-icsoc-2020.md",
+      "label": "RESTest"
+    },
+    {
+      "source": "references/resttestgen-icst-2020.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
     },
     {
       "source": "references/selenium-webdriver-docs.md",
@@ -2140,6 +2387,56 @@
       "source": "references/testcontainers-java-docs.md",
       "target": "references/wiremock-java-docs.md",
       "label": "WireMock Java Documentation"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "java-qa/agent.md",
+      "label": "Java QA Agent"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "java-qa/skills/api-and-contract-testing.md",
+      "label": "API and Contract Testing"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "java-qa/skills/qa-automation-decision-flow.md",
+      "label": "QA Automation Decision Flow"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "java-qa/skills/test-suite-architecture.md",
+      "label": "Test Suite Architecture"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/openapi-test-generation-edoc-2018.md",
+      "label": "Specification-based generation (EDOC 2018)"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/quickrest-icst-2020.md",
+      "label": "QuickREST"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/resttestgen-icst-2020.md",
+      "label": "RESTTESTGEN"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/restler-icse-2019.md",
+      "label": "RESTler"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/restest-icsoc-2020.md",
+      "label": "RESTest"
+    },
+    {
+      "source": "references/testing-restful-apis-survey-2023.md",
+      "target": "references/evomaster-tosem-2019.md",
+      "label": "EvoMaster"
     },
     {
       "source": "references/veac-video-editing-as-code.md",
