@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-10-18T12:04:42Z`
-Git SHA: `b9d08f2a95bc9ac79391e78a47da167e743c7302`
+Generated at: `2026-10-18T12:08:06Z`
+Git SHA: `096be6fbe16671c1d189f264eef805d04a149c5e`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -10,13 +10,13 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate domain package structure
 - **PASS** — Validate wiki links
 - **PASS** — Validate frontmatter
-- **FAIL** — Validate agent artifact references
+- **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
 - **PASS** — Validate plugin packages are in sync with domains
 - **PASS** — Validate plugin packages are installable
 - **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
-- **FAIL** — Markdown lint
+- **PASS** — Markdown lint
 
 ## Details
 
@@ -65,7 +65,7 @@ Frontmatter validation passed
 
 ```
 
-### FAIL: Validate agent artifact references
+### PASS: Validate agent artifact references
 
 Command:
 
@@ -76,8 +76,7 @@ python sysadmin-analytics-agent-kb/tools/validate_agent_artifact_references.py
 Output:
 
 ```text
-Agent artifact reference validation failed:
-- reverse-engineering/skills/cli-recon.md: missing reference section
+Agent artifact reference validation passed
 
 ```
 
@@ -92,7 +91,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 146 nodes and 571 edges
+Generated curated graph: 146 nodes and 573 edges
 
 ```
 
@@ -380,14 +379,14 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 145 Markdown files in 2s
-Filtered out 0 files in 177μs
+Filtered out 0 files in 141μs
 Emitting files
-Emitted 187 files to `public` in 448ms
-Done processing 145 files in 3s
+Emitted 187 files to `public` in 370ms
+Done processing 145 files in 2s
 
 ```
 
-### FAIL: Markdown lint
+### PASS: Markdown lint
 
 Command:
 
@@ -401,38 +400,6 @@ Output:
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
 Linting: 267 file(s)
-Summary: 32 error(s)
-plugins/leanrea/skills/leanrea/references/cli-recon.md:7 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Rules"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:8 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Work on a copy (`cp -c` on A..."]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:17 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## First move: one call each, paste and run"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:19 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```sh"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:21 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:25 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```sh"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:27 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:32 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Router"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:33 MD058/blanks-around-tables Tables should be surrounded by blank lines [Context: "| Target (detect) | Fastest pa..."]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:35:527 MD038/no-space-in-code Spaces inside code span elements [Context: "...de the channels, so also run `"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:35:590 MD038/no-space-in-code Spaces inside code span elements [Context: "`. Fuses: `"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:35:246 MD056/table-column-count Table column count [Expected: 2; Actual: 17; Too many cells, extra data will be missing]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:41:183 MD038/no-space-in-code Spaces inside code span elements [Context: "...| rg -m1 -A200 'Go buildinf' `"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:54 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Speed patterns"]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:55 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Strings and imports first. O..."]
-plugins/leanrea/skills/leanrea/references/cli-recon.md:62 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Install (only on request)"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:11 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Rules"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:12 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Work on a copy (`cp -c` on A..."]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:21 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## First move: one call each, paste and run"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:23 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```sh"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:25 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:29 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```sh"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:31 MD031/blanks-around-fences Fenced code blocks should be surrounded by blank lines [Context: "```"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:36 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Router"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:37 MD058/blanks-around-tables Tables should be surrounded by blank lines [Context: "| Target (detect) | Fastest pa..."]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:39:527 MD038/no-space-in-code Spaces inside code span elements [Context: "...de the channels, so also run `"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:39:590 MD038/no-space-in-code Spaces inside code span elements [Context: "`. Fuses: `"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:39:246 MD056/table-column-count Table column count [Expected: 2; Actual: 17; Too many cells, extra data will be missing]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:45:183 MD038/no-space-in-code Spaces inside code span elements [Context: "...| rg -m1 -A200 'Go buildinf' `"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:58 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Speed patterns"]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:59 MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- Strings and imports first. O..."]
-sysadmin-analytics-agent-kb/reverse-engineering/skills/cli-recon.md:66 MD022/blanks-around-headings Headings should be surrounded by blank lines [Expected: 1; Actual: 0; Below] [Context: "## Install (only on request)"]
+Summary: 0 error(s)
 
 ```
