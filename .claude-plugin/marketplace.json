@@ -24,6 +24,11 @@
       "description": "Java QA automation methodology skill + subagent: test design, contract testing (Pact/SCC), Testcontainers, schema evolution, test-pyramid & CI-lane decisions."
     },
     {
+      "name": "leanrea",
+      "source": "./plugins/leanrea",
+      "description": "CLI-first, evidence-led reverse engineering of authorized Electron, JS, native binaries, APK/Flutter, Go/Rust/.NET, WASM, data files and firmware. Adapted from AICodeKing/leanrea."
+    },
+    {
       "name": "product-analytics",
       "source": "./plugins/product-analytics",
       "description": "Product/data analytics methodology skill: metric reconciliation, funnel analysis, SQL review, definitions-before-queries, grain and time discipline, publish gate."

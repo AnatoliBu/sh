@@ -40,6 +40,15 @@
     "cards": "from-plugin-links",
     "docs": {}
   },
+  "leanrea": {
+    "domain": "reverse-engineering",
+    "skill": "leanrea",
+    "cards": "auto",
+    "docs": {
+      "skills/cli-recon.md": "cli-recon.md",
+      "rules/authorized-analysis.md": "safety.md"
+    }
+  },
   "product-analytics": {
     "domain": "analytics",
     "skill": "product_analytics",

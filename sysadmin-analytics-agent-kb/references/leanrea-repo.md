@@ -1,0 +1,55 @@
+---
+artifact_type: reference
+authority_tier: Tier C
+status: useful-after-audit
+source_type: community-repository
+topics:
+  - reverse-engineering
+  - binary-analysis
+  - electron
+  - cli-tools
+domains:
+  - reverse-engineering
+owner: AICodeKing
+last_checked: 2026-10-18
+source_url: https://github.com/aicodeking/leanrea
+---
+
+# Reference: leanrea upstream skill
+
+## Authority tier
+
+Tier C — community command reference, not primary tool documentation.
+
+## Provenance
+
+[leanrea by AICodeKing](https://github.com/aicodeking/leanrea), revision
+`09ba4aa0217f82cd880f855a60b877f59f39b22b`, retrieved 2026-10-18. Upstream copyright (c) 2026 AICodeKing.
+MIT license; the installable plugin includes the full upstream LICENSE file.
+
+## Scope
+
+CLI-first examination of Electron/asar, JavaScript bundles, Mach-O/ELF/PE,
+Go/Rust/.NET/Flutter, APK, WASM, databases, pcap/HAR, firmware and websites.
+
+## Why useful
+
+It offers concise target-dependent command recipes and recommends inexpensive inventory
+and searching before decompilation. Treat commands as starting points, not verified results.
+
+## Caveats
+
+- The reported benchmark uses one model, one machine, four tasks and three reps per arm;
+  it cannot establish general performance superiority.
+- Upstream first-move snippets used `rm -rf` and `npx -y`; this adaptation changes those
+  defaults, requires authorized targets and separates seen, inferred and unknown evidence.
+- Some tools require macOS, extra packages, explicit permissions or runtime attachment.
+
+## Skills that may consume this reference
+
+- reverse-engineering/skills/cli-recon.md
+
+## Do not use this source for
+
+Independent accuracy claims, permission to inspect third-party systems or an
+assertion that a static finding is observed runtime behavior.

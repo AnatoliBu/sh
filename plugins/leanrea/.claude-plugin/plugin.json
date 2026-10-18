@@ -1,0 +1,19 @@
+{
+  "name": "leanrea",
+  "description": "CLI-first reverse engineering of authorized software: Electron/asar, native Mach-O/ELF/PE, Go/Rust/.NET, Android APK, Flutter, WASM, SQLite, firmware, network captures, and evidence-guided tracing. No extra MCP runtime.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": [
+    "leanrea",
+    "reverse-engineering",
+    "binary-analysis",
+    "electron",
+    "apk",
+    "wasm",
+    "cli"
+  ]
+}

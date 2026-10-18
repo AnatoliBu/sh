@@ -143,3 +143,16 @@ On 2026-08-17 plugin packaging became generated rather than hand-copied: `video-
 Also on 2026-08-17 delivery became a rule rather than a habit: `shared/rules/skill-delivery.md` states the definition of done for a new skill and the no-`version` policy, `references/claude-code-plugin-format.md` records the format it relies on, and the gates now fail on an unpackaged domain. That last gate immediately surfaced two: `sysadmin` and `analytics` shipped as the `sysadmin-sre` and `product-analytics` plugins, bringing the marketplace to four. Fixing `sysadmin/skills/incident-triage.md` (missing frontmatter, links to the retired nested `references/sysadmin/` path) also let the last per-file exclusion be removed from the three domain validators.
 
 On 2026-08-17 the fifth domain, `agent-tooling`, was consolidated from three separate local skills (contract-first CLI/MCP design, the agent CLI contract, blind A/B measurement) — one domain, one plugin, `patterns/` for the long-form companions. Domain lists are no longer hand-maintained: `tools/kb_domains.py` derives them from the presence of `agent.md`, the same convention the Quartz index already used, so a new domain cannot silently escape validation. `validate_structure.py` also fails on broken relative links inside the live knowledge base now; the first run of that check fixed two in `references/README.md`. Thirteen more remain in the pre-domain top-level `agents/`, `rules/`, and `skills/` directories, which every validator still skips — a real debt, listed here rather than hidden.
+
+## leanrea reverse engineering plugin
+
+Install with `/plugin install leanrea@sh-tools` after adding the `AnatoliBu/sh`
+marketplace. The plugin uses local CLI tools rather than an MCP server, and supports
+authorized investigation of Electron apps, JavaScript bundles, native binaries,
+APKs, Go/Rust/.NET, WASM, databases, traffic and firmware.
+
+Adapted from [aicodeking/leanrea](https://github.com/aicodeking/leanrea)
+(MIT; revision `09ba4aa0217f82cd880f855a60b877f59f39b22b`). Source of truth:
+`sysadmin-analytics-agent-kb/reverse-engineering/`; generated plugin references:
+`plugins/leanrea/skills/leanrea/references/`. Run the normal plugin build and
+CI validators after changes. Upstream benchmark claims are preliminary.
