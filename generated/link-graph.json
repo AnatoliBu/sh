@@ -85,6 +85,7 @@
     "references/istqb-testing-foundation.md",
     "references/junit-user-guide.md",
     "references/kubernetes-pod-security-standards.md",
+    "references/leanrea-repo.md",
     "references/mermaid-docs.md",
     "references/mockito-docs.md",
     "references/model-context-protocol-spec.md",
@@ -121,6 +122,10 @@
     "references/w3c-webdriver-bidi.md",
     "references/webarena-verified.md",
     "references/wiremock-java-docs.md",
+    "reverse-engineering/agent.md",
+    "reverse-engineering/rules/authorized-analysis.md",
+    "reverse-engineering/skills/cli-recon.md",
+    "reverse-engineering/sources.md",
     "roadmap.md",
     "shared/rules/bullshit-check.md",
     "shared/rules/diagram-usage.md",
@@ -2547,6 +2552,56 @@
       "source": "references/wiremock-java-docs.md",
       "target": "references/testcontainers-java-docs.md",
       "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "reverse-engineering/agent.md",
+      "target": "references/leanrea-repo.md",
+      "label": "leanrea upstream playbook"
+    },
+    {
+      "source": "reverse-engineering/agent.md",
+      "target": "reverse-engineering/skills/cli-recon.md",
+      "label": "CLI investigation playbook"
+    },
+    {
+      "source": "reverse-engineering/agent.md",
+      "target": "reverse-engineering/rules/authorized-analysis.md",
+      "label": "Authorization and analysis safety"
+    },
+    {
+      "source": "reverse-engineering/rules/authorized-analysis.md",
+      "target": "references/leanrea-repo.md",
+      "label": "leanrea upstream scope and caveats"
+    },
+    {
+      "source": "reverse-engineering/rules/authorized-analysis.md",
+      "target": "reverse-engineering/skills/cli-recon.md",
+      "label": "CLI investigation playbook"
+    },
+    {
+      "source": "reverse-engineering/skills/cli-recon.md",
+      "target": "references/leanrea-repo.md",
+      "label": "leanrea upstream and license"
+    },
+    {
+      "source": "reverse-engineering/skills/cli-recon.md",
+      "target": "reverse-engineering/rules/authorized-analysis.md",
+      "label": "Authorized analysis rules"
+    },
+    {
+      "source": "reverse-engineering/skills/cli-recon.md",
+      "target": "references/leanrea-repo.md",
+      "label": "AICodeKing/leanrea"
+    },
+    {
+      "source": "reverse-engineering/skills/cli-recon.md",
+      "target": "reverse-engineering/rules/authorized-analysis.md",
+      "label": "authorization rules"
+    },
+    {
+      "source": "reverse-engineering/sources.md",
+      "target": "references/leanrea-repo.md",
+      "label": "upstream leanrea repository"
     },
     {
       "source": "shared/rules/bullshit-check.md",

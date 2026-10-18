@@ -86,6 +86,7 @@ digraph docs {
   "references/istqb-testing-foundation.md";
   "references/junit-user-guide.md";
   "references/kubernetes-pod-security-standards.md";
+  "references/leanrea-repo.md";
   "references/mermaid-docs.md";
   "references/mockito-docs.md";
   "references/model-context-protocol-spec.md";
@@ -122,6 +123,10 @@ digraph docs {
   "references/w3c-webdriver-bidi.md";
   "references/webarena-verified.md";
   "references/wiremock-java-docs.md";
+  "reverse-engineering/agent.md";
+  "reverse-engineering/rules/authorized-analysis.md";
+  "reverse-engineering/skills/cli-recon.md";
+  "reverse-engineering/sources.md";
   "roadmap.md";
   "shared/rules/bullshit-check.md";
   "shared/rules/diagram-usage.md";
@@ -623,6 +628,16 @@ digraph docs {
   "references/wiremock-java-docs.md" -> "java-qa/skills/api-and-contract-testing.md";
   "references/wiremock-java-docs.md" -> "references/rest-assured-docs.md";
   "references/wiremock-java-docs.md" -> "references/testcontainers-java-docs.md";
+  "reverse-engineering/agent.md" -> "references/leanrea-repo.md";
+  "reverse-engineering/agent.md" -> "reverse-engineering/skills/cli-recon.md";
+  "reverse-engineering/agent.md" -> "reverse-engineering/rules/authorized-analysis.md";
+  "reverse-engineering/rules/authorized-analysis.md" -> "references/leanrea-repo.md";
+  "reverse-engineering/rules/authorized-analysis.md" -> "reverse-engineering/skills/cli-recon.md";
+  "reverse-engineering/skills/cli-recon.md" -> "references/leanrea-repo.md";
+  "reverse-engineering/skills/cli-recon.md" -> "reverse-engineering/rules/authorized-analysis.md";
+  "reverse-engineering/skills/cli-recon.md" -> "references/leanrea-repo.md";
+  "reverse-engineering/skills/cli-recon.md" -> "reverse-engineering/rules/authorized-analysis.md";
+  "reverse-engineering/sources.md" -> "references/leanrea-repo.md";
   "shared/rules/bullshit-check.md" -> "references/README.md";
   "shared/rules/diagram-usage.md" -> "references/mermaid-docs.md";
   "shared/rules/global-rules.md" -> "references/README.md";
