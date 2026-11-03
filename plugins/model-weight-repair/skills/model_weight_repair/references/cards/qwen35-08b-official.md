@@ -34,9 +34,6 @@ Primary maintainer of the model and weights.
 
 262,144 is the model's native configured context, not a verified memory budget on an RTX 3070 Laptop; actual allocation and quality depend on runtime and inference settings.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - Qwen3.5-0.8B has 24 language-model layers, 1024 hidden width and native context length 262,144.

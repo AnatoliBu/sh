@@ -34,9 +34,6 @@ Written by the investigators with links to logs, code and released edits.
 
 Results are model-, prompt-, sampler- and token-budget-dependent. The reported MATH-500 improvement is primarily loop removal, not a general increase in mathematical capability. Not a universal weight-editor algorithm.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - The editor was GPT-6 Astra with a constrained Python kernel and at most 50 forward-pass requests, not an unattended fine-tuning service.

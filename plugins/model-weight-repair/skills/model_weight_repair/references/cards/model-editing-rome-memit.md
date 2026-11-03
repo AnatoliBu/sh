@@ -34,9 +34,6 @@ ACL Anthology peer-reviewed paper with an explicit formal model-editing objectiv
 
 Primarily factual-memory editing, not a demonstrated repair of Qwen3.5-0.8B repetition loops; no transfer of performance claims.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - ROME and MEMIT edit model associations using preservation/memorization objectives; EMMET unifies them conceptually.

@@ -34,9 +34,6 @@ Provides MATH-500 500 x 4 run protocol, hashes/scripts and both thinking configu
 
 Community experiment as of 2026-11-03; other datasets not yet independently replicated in this report. Different settings and run-to-run variation matter.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - MATH-500 thinking-on: unedited 7.4%, edited 50.2%, matching the direction of the authors' result.

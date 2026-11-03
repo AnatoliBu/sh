@@ -34,9 +34,6 @@ Includes practice/eval files, raw tool calls, frozen intervention, exact manifes
 
 The authors explicitly do not release the full forward-pass server/harness, some internal evaluation modules, or all intermediate activation dumps; a perfect autonomous end-to-end reproduction requires additional engineering.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - Pin **base checkpoint revision** `2fc06364715b967f1860aea9cf38778875588b17` of `Qwen/Qwen3.5-0.8B`. Do not apply the sparse diff to another revision blindly.

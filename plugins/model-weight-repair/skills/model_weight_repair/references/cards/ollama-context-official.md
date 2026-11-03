@@ -34,9 +34,6 @@ Maintained by the software provider.
 
 A model card's maximum context is not the default or a guarantee it will fit; performance and memory depend on loaded model, cache, runtime version and other GPU processes.
 
-
-- model-weight-repair
-
 ## Extracted rules
 
 - Ollama defaults (as documented on 2026-11-03): under 24 GiB VRAM -> 4K context; 24–48 GiB -> 32K; 48 GiB or more -> 256K.
