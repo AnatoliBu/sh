@@ -156,3 +156,19 @@ Adapted from [aicodeking/leanrea](https://github.com/aicodeking/leanrea)
 `sysadmin-analytics-agent-kb/reverse-engineering/`; generated plugin references:
 `plugins/leanrea/skills/leanrea/references/`. Run the normal plugin build and
 CI validators after changes. Upstream benchmark claims are preliminary.
+
+## Model weight repair plugin (2026-11-03)
+
+The `model-weight-repair` domain collects the published Qwen3.5-0.8B/Astra
+weight-space programming evidence, a pinned reproducibility path and
+counterexamples. It separates solving a **thinking-loop defect** from increasing
+general math ability, and requires comparison against the best unedited settings.
+
+- Source catalog: [model-weight-repair/sources.md](sysadmin-analytics-agent-kb/model-weight-repair/sources.md)
+- Workflows and safety: [domain](sysadmin-analytics-agent-kb/model-weight-repair/)
+- Install: `/plugin marketplace add AnatoliBu/sh`, then
+  `/plugin install model-weight-repair@sh-tools`
+- Rebuild from the domain: `python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --plugin model-weight-repair`
+
+No model weights, third-party copyrighted benchmark dumps, GPU profiles or
+personal infrastructure details are bundled in the plugin.

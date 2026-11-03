@@ -29,6 +29,11 @@
       "description": "CLI-first, evidence-led reverse engineering of authorized Electron, JS, native binaries, APK/Flutter, Go/Rust/.NET, WASM, data files and firmware. Adapted from AICodeKing/leanrea."
     },
     {
+      "name": "model-weight-repair",
+      "source": "./plugins/model-weight-repair",
+      "description": "Evidence-led local LLM weight repair: published Astra/Qwen3.5-0.8B patch, failure diagnosis, causal controls, Ollama/RTX 3070 baseline and safe A/B validation."
+    },
+    {
       "name": "product-analytics",
       "source": "./plugins/product-analytics",
       "description": "Product/data analytics methodology skill: metric reconciliation, funnel analysis, SQL review, definitions-before-queries, grain and time discipline, publish gate."

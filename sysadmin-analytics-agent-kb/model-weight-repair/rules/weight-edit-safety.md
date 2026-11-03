@@ -1,0 +1,39 @@
+---
+artifact_type: rule
+status: foundation
+domain: model-weight-repair
+---
+
+# Rule: Safe and Falsifiable Weight Interventions
+
+## Reference links
+
+- [Published experiment artifacts](../../references/weight-space-programming-exp8-logs.md)
+- [Official Qwen mode behavior](../../references/qwen35-08b-official.md)
+- [Community control comparison](../../references/weight-space-programming-independent.md)
+
+## Hard gates
+
+- Never mutate the only copy of a checkpoint; write candidates to a separate folder.
+- Pin full model revision, files and SHA-256; check exact expected tensor names, shapes,
+  dtypes and original hashes before applying a sparse patch. Abort on a mismatch.
+- Do not execute unknown downloaded model/helper code without inspection. Prefer
+  safetensors; avoid untrusted pickle or `trust_remote_code` unless audited.
+- Do not access personal, employer or production prompts in the public research package.
+  Only use authorized, licensed, de-identified evaluation examples.
+- Do not optimize on the frozen test set. Separate discovery/practice and blind gate.
+- Require a no-edit baseline, best-config baseline, proposed edit, layer/dose ablation
+  and random norm-matched intervention for causal weight-edit claims.
+- Report both edit footprint (addressed elements) and bit-different elements after
+  conversion; report all task regressions, not only the headline benchmark.
+- Freeze runtime/model settings for A/B; evaluate BF16 patch before quantization,
+  then rerun after converting to Ollama/GGUF.
+- Stop and revert if the candidate has no robust net gain, degrades safety/accuracy
+  guardrails, increases CPU offloading, or cannot be reproduced.
+
+## Claims policy
+
+The published Qwen math result primarily removes repeat loops. It does **not**
+establish a general algorithm for improving mathematical intelligence in every LLM.
+A successful hash comparison proves the diff was applied, not that your local setup
+inherited the published benchmark score.

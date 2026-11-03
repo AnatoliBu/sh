@@ -1,0 +1,65 @@
+---
+artifact_type: reference
+authority_tier: Tier B
+status: useful-after-audit
+source_type: primary-research
+topics:
+  - model-editing
+  - weight-space-programming
+domains:
+  - model-weight-repair
+owner: Rikiya Takehi, Jayden Teoh, Alex Zhang, Omar Khattab (MIT CSAIL)
+last_checked: 2026-11-03
+source_url: https://rikiyat.github.io/blog/weight-space-programming/
+---
+
+# Reference: Sparks of Weight-Space Programming (MIT CSAIL, 2026)
+
+## Authority tier
+
+Tier B — firsthand account of experiments; a research blog, not peer-reviewed
+
+## Status
+
+useful-after-audit
+
+## Owner / maintainer
+
+Rikiya Takehi, Jayden Teoh, Alex Zhang, Omar Khattab (MIT CSAIL).
+
+## URL
+
+https://rikiyat.github.io/blog/weight-space-programming/
+
+## Last checked
+
+2026-11-03
+
+## Scope
+
+Experiment 8 protocol, failure diagnosis, reported scores, mechanistic hypothesis and negative Gemma result.
+
+## Why trusted
+
+Written by the investigators with links to logs, code and released edits.
+
+## Caveats
+
+Results are model-, prompt-, sampler- and token-budget-dependent. The reported MATH-500 improvement is primarily loop removal, not a general increase in mathematical capability. Not a universal weight-editor algorithm.
+
+## Skills that may consume this reference
+
+- model-weight-repair
+
+## Extracted rules
+
+- The editor was GPT-6 Astra with a constrained Python kernel and at most 50 forward-pass requests, not an unattended fine-tuning service.
+- Evaluated Qwen3.5-0.8B in **thinking-on** mode at up to 32,768 new tokens with temperature 0.6, top-p 0.95, top-k 20 and presence penalty 1.5.
+- With 50 passes: MATH-500 7.9% -> 48.1%; GSM8K 13.8% -> 67.1%; IFEval 21.0% -> 62.3%; MATH-500 truncation 93.0% -> 33.1%.
+- Intervention targets 64 columns of `mlp.down_proj.weight` in each of layers 15 and 19 (131,072 addressed entries).
+- The authors also tested Gemma 3 270M, which rarely looped; similarly small interventions did not establish a meaningful math gain.
+- Baseline, edit and controls must be tested with the same evaluation protocol. Distinguish terminating a correct chain from discovering new reasoning ability.
+
+## Do not use this source for
+
+Proving every small model can be improved, claiming the experiment was gradient training, or promising a gain on an Ollama/GGUF build.

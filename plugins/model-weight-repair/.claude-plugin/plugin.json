@@ -1,0 +1,18 @@
+{
+  "name": "model-weight-repair",
+  "description": "Evidence-led investigation and reversible repair of local LLM weights: Qwen3.5-0.8B Astra edit, causal tracing, sparse patch replay, Ollama baselines and held-out evaluation.",
+  "author": {
+    "name": "AnatoliBu"
+  },
+  "homepage": "https://github.com/AnatoliBu/sh",
+  "repository": "https://github.com/AnatoliBu/sh",
+  "license": "MIT",
+  "keywords": [
+    "qwen3.5",
+    "weight-space-programming",
+    "model-editing",
+    "ollama",
+    "activation-analysis",
+    "llm-evals"
+  ]
+}

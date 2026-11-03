@@ -83,5 +83,15 @@
       "rules/color-pipeline-safety.md": "rules.md",
       "tooling.md": "tooling.md"
     }
+  },
+  "model-weight-repair": {
+    "domain": "model-weight-repair",
+    "skill": "model_weight_repair",
+    "cards": "auto",
+    "docs": {
+      "skills/weight-repair.md": "weight-repair.md",
+      "rules/weight-edit-safety.md": "safety.md",
+      "workflows/diagnose-and-patch.md": "workflow.md"
+    }
   }
 }

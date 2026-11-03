@@ -1,0 +1,65 @@
+---
+artifact_type: skill
+status: foundation
+domain: model-weight-repair
+---
+
+# Skill: Evidence-Led Local LLM Weight Repair
+
+## Reference links
+
+- [Published Astra intervention](../../references/weight-space-programming-2026.md)
+- [Exact patch and hashes](../../references/weight-space-programming-exp8-logs.md)
+- [Qwen warning and mode contract](../../references/qwen35-08b-official.md)
+- [Independent comparator](../../references/weight-space-programming-independent.md)
+- [Ollama VRAM/context contract](../../references/ollama-context-official.md)
+- [Alternative editing methods](../../references/model-editing-rome-memit.md)
+
+## Decision tree
+
+| Failure | First intervention | When weights become justified |
+|---|---|---|
+| Infinite thinking/repetition | Thinking mode, sampler, max output, stop/repetition handling | Recurs on controlled prompts; activations isolate a repeat-writing pathway |
+| Mathematical answer wrong but completes | Use a calculator/tool, change prompts, evaluate stronger model / fine-tune | Evidence identifies a specific local circuit causing failures |
+| Low tokens/s or CPU spill | Ollama runtime, context and GPU offload | **Never** edit weights to fix an inference-engine bottleneck |
+| Poor instruction following | Chat template, mode, sampler, structured evaluation | Measured stable error with localized intervention and no guardrail loss |
+| Regression after GGUF quantization | Compare BF16 vs GGUF and quantizer settings | No, unless failure also exists in full-precision checkpoint |
+
+## Reproducible baseline
+
+1. Fingerprint original model revision / safetensors, tokenizer, chat template,
+   runner, CUDA/backend, quantization and every generation parameter.
+2. Define at least two arms: baseline at problematic settings and **best plausible
+   unedited configuration** (e.g., non-thinking), plus candidate edited.
+3. Separate practice tasks (used to diagnose/tune) from frozen blind evaluation.
+   Include math correctness, instruction-following, code tasks when relevant.
+4. Record per-task: exact prompt, seed, answer, validity/correctness, token limit hit,
+   generated tokens, latency, GPU/CPU split, context, memory peaks and failure class.
+5. For stochastic output repeat seeds and report uncertainty; avoid post-hoc cherry-picks.
+
+## Candidate design
+
+1. Diagnose dominant failure before touching weights. Inspect bad vs good traces.
+2. Prefer a reversible, small intervention with a documented mechanistic hypothesis.
+3. If using the published Astra patch, apply it **only** to the pinned original BF16
+   revision using the upstream script; verify both edited tensor hashes. Never
+   blindly transplant columns/layers to different checkpoints.
+4. For a new repair, collect matched productive/failed contexts; inspect attribution
+   and candidate writers; isolate one/two layers; test scale/dose, layer ablations,
+   and a norm-matched random edit. A prompt from an LLM is not a causal proof.
+5. Reject if blind evaluation fails, another task regresses materially or the
+   intervention cannot be reverted exactly.
+
+## Hardware boundary
+
+For an 8 GB RTX 3070 Laptop, start evaluation with the smallest practical output
+budget and 16–32K context; measure `ollama ps` before increasing to 64K/128K.
+Native 262,144 context is **not a verified fit**. Keep model precision and runner
+identical for each pair of comparisons. Porting from HF BF16 to GGUF/Ollama requires
+separate validation and may alter the behavior.
+
+## Deliverable
+
+A short experiment card with hypothesis, pinned artifacts, baseline/config comparator,
+intervention and exact affected tensor region, deterministic commands, data table
+(performance + guardrails), evidence/uncertainty, and keep/revert decision.
