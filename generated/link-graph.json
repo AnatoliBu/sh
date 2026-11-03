@@ -44,6 +44,11 @@
     "java-qa/sources.md",
     "java-qa/workflows/automation-review.md",
     "java-qa/workflows/qa-automation-architecture-decision.md",
+    "model-weight-repair/agent.md",
+    "model-weight-repair/rules/weight-edit-safety.md",
+    "model-weight-repair/skills/weight-repair.md",
+    "model-weight-repair/sources.md",
+    "model-weight-repair/workflows/diagnose-and-patch.md",
     "notes/next-actions.md",
     "references/README.md",
     "references/TEMPLATE.md",
@@ -89,7 +94,9 @@
     "references/mermaid-docs.md",
     "references/mockito-docs.md",
     "references/model-context-protocol-spec.md",
+    "references/model-editing-rome-memit.md",
     "references/netbox.md",
+    "references/ollama-context-official.md",
     "references/openapi-test-generation-edoc-2018.md",
     "references/opencolorio-docs.md",
     "references/owasp-ai-agent-security.md",
@@ -102,6 +109,7 @@
     "references/practical-test-pyramid.md",
     "references/qa-skills-agent-catalog.md",
     "references/quickrest-icst-2020.md",
+    "references/qwen35-08b-official.md",
     "references/rest-assured-docs.md",
     "references/restest-icsoc-2020.md",
     "references/restler-icse-2019.md",
@@ -121,6 +129,9 @@
     "references/w3c-webauthn-level-3.md",
     "references/w3c-webdriver-bidi.md",
     "references/webarena-verified.md",
+    "references/weight-space-programming-2026.md",
+    "references/weight-space-programming-exp8-logs.md",
+    "references/weight-space-programming-independent.md",
     "references/wiremock-java-docs.md",
     "reverse-engineering/agent.md",
     "reverse-engineering/rules/authorized-analysis.md",
@@ -1237,6 +1248,131 @@
       "source": "java-qa/workflows/qa-automation-architecture-decision.md",
       "target": "references/testcontainers-java-docs.md",
       "label": "Testcontainers for Java Documentation"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "references/weight-space-programming-exp8-logs.md",
+      "label": "Experiment 8 logs"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "references/qwen35-08b-official.md",
+      "label": "Official Qwen3.5-0.8B card"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "references/weight-space-programming-independent.md",
+      "label": "Independent replication"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "model-weight-repair/skills/weight-repair.md",
+      "label": "Weight Repair"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "model-weight-repair/rules/weight-edit-safety.md",
+      "label": "Safe Interventions"
+    },
+    {
+      "source": "model-weight-repair/agent.md",
+      "target": "model-weight-repair/workflows/diagnose-and-patch.md",
+      "label": "Diagnose and Patch"
+    },
+    {
+      "source": "model-weight-repair/rules/weight-edit-safety.md",
+      "target": "references/weight-space-programming-exp8-logs.md",
+      "label": "Published experiment artifacts"
+    },
+    {
+      "source": "model-weight-repair/rules/weight-edit-safety.md",
+      "target": "references/qwen35-08b-official.md",
+      "label": "Official Qwen mode behavior"
+    },
+    {
+      "source": "model-weight-repair/rules/weight-edit-safety.md",
+      "target": "references/weight-space-programming-independent.md",
+      "label": "Community control comparison"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/weight-space-programming-2026.md",
+      "label": "Published Astra intervention"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/weight-space-programming-exp8-logs.md",
+      "label": "Exact patch and hashes"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/qwen35-08b-official.md",
+      "label": "Qwen warning and mode contract"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/weight-space-programming-independent.md",
+      "label": "Independent comparator"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/ollama-context-official.md",
+      "label": "Ollama VRAM/context contract"
+    },
+    {
+      "source": "model-weight-repair/skills/weight-repair.md",
+      "target": "references/model-editing-rome-memit.md",
+      "label": "Alternative editing methods"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/weight-space-programming-2026.md",
+      "label": "MIT CSAIL blog / Experiment 8"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/weight-space-programming-exp8-logs.md",
+      "label": "Released experiment logs, code, diff and hashes"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/qwen35-08b-official.md",
+      "label": "Qwen official model card"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/weight-space-programming-independent.md",
+      "label": "Independent community replication"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/ollama-context-official.md",
+      "label": "Official Ollama context docs"
+    },
+    {
+      "source": "model-weight-repair/sources.md",
+      "target": "references/model-editing-rome-memit.md",
+      "label": "ROME/MEMIT/EMMET paper"
+    },
+    {
+      "source": "model-weight-repair/workflows/diagnose-and-patch.md",
+      "target": "references/weight-space-programming-exp8-logs.md",
+      "label": "Experiment 8 execution and edit diff"
+    },
+    {
+      "source": "model-weight-repair/workflows/diagnose-and-patch.md",
+      "target": "references/weight-space-programming-2026.md",
+      "label": "Original publication"
+    },
+    {
+      "source": "model-weight-repair/workflows/diagnose-and-patch.md",
+      "target": "references/ollama-context-official.md",
+      "label": "Official Ollama memory requirements"
+    },
+    {
+      "source": "model-weight-repair/workflows/diagnose-and-patch.md",
+      "target": "references/weight-space-programming-independent.md",
+      "label": "Independent thinking-mode comparison"
     },
     {
       "source": "references/README.md",
