@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-11-03T08:48:31Z`
-Git SHA: `ce9f19f8e058ed115887318471c4b297140083ce`
+Generated at: `2026-11-03T09:01:46Z`
+Git SHA: `283b82f571663c1f2fbea89b955e5dc91e15c299`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -91,7 +91,7 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 157 nodes and 598 edges
+Generated curated graph: 166 nodes and 623 edges
 
 ```
 
@@ -151,17 +151,7 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-ing: content/java-qa/workflows/qa-automation-architecture-decision.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/model-weight-repair/agent.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/model-weight-repair/rules/weight-edit-safety.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/model-weight-repair/skills/weight-repair.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/model-weight-repair/sources.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/model-weight-repair/workflows/diagnose-and-patch.md isn't yet tracked by git, dates will be inaccurate
+te
 
 Warning: content/references/README.md isn't yet tracked by git, dates will be inaccurate
 
@@ -229,6 +219,8 @@ Warning: content/references/google-sre-incident-management.md isn't yet tracked 
 
 Warning: content/references/gradle-java-testing.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/huggingface-eval-reproducibility.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/internal-certificate-management.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/internal-dns-source-of-truth.md isn't yet tracked by git, dates will be inaccurate
@@ -245,7 +237,11 @@ Warning: content/references/kubernetes-pod-security-standards.md isn't yet track
 
 Warning: content/references/leanrea-repo.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/llm-evaluation-error-bars-2024.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/mermaid-docs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/mlflow-experiment-tracking.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/mockito-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -254,6 +250,8 @@ Warning: content/references/model-context-protocol-spec.md isn't yet tracked by 
 Warning: content/references/model-editing-rome-memit.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/nvidia-quantization-accuracy.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/ollama-context-official.md isn't yet tracked by git, dates will be inaccurate
 
@@ -277,6 +275,8 @@ Warning: content/references/playwright-docs.md isn't yet tracked by git, dates w
 
 Warning: content/references/practical-test-pyramid.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/pytorch-reproducibility.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/qa-skills-agent-catalog.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/quickrest-icst-2020.md isn't yet tracked by git, dates will be inaccurate
@@ -290,6 +290,8 @@ Warning: content/references/restest-icsoc-2020.md isn't yet tracked by git, date
 Warning: content/references/restler-icse-2019.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/resttestgen-icst-2020.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/scipy-paired-permutation.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/selenium-webdriver-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -376,11 +378,11 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 156 Markdown files in 2s
-Filtered out 0 files in 211μs
+Parsed 165 Markdown files in 2s
+Filtered out 0 files in 209μs
 Emitting files
-Emitted 202 files to `public` in 535ms
-Done processing 156 files in 3s
+Emitted 212 files to `public` in 470ms
+Done processing 165 files in 3s
 
 ```
 
@@ -397,7 +399,7 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 288 file(s)
+Linting: 306 file(s)
 Summary: 0 error(s)
 
 ```
