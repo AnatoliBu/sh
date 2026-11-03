@@ -91,7 +91,10 @@
     "docs": {
       "skills/weight-repair.md": "weight-repair.md",
       "rules/weight-edit-safety.md": "safety.md",
-      "workflows/diagnose-and-patch.md": "workflow.md"
+      "workflows/diagnose-and-patch.md": "workflow.md",
+      "patterns/paired-llm-ab.md": "paired-llm-ab.md",
+      "patterns/model-artifact-pipeline.md": "model-artifact-pipeline.md",
+      "patterns/experiment-contract.md": "experiment-contract.md"
     }
   }
 }

@@ -6,7 +6,7 @@ description: >
   «скопируй/проверь weight-space programming», «проверить GGUF после патча»,
   «Ollama RTX 3070 model editing». Evidence-led diagnosis and reversible
   neural-network weight edits, published GPT-6 Astra Qwen repair, controlled
-  before/after benchmarks, causal ablations, safeguards and rollback.
+  paired A/B evaluation, statistical confidence, ML artifact lineage, quantization gates, causal ablations and rollback.
 ---
 
 # Model Weight Repair
@@ -21,6 +21,9 @@ that a generic LLM can reliably fix all networks.
 |---|---|
 | [references/weight-repair.md](references/weight-repair.md) | Failure triage, comparator, metrics and candidate design |
 | [references/workflow.md](references/workflow.md) | End-to-end baseline -> diagnosis -> patch -> quantized local validation |
+| [references/paired-llm-ab.md](references/paired-llm-ab.md) | Matched-arm A/B, thinking-mode counterfactual, cluster bootstrap, power and guards |
+| [references/model-artifact-pipeline.md](references/model-artifact-pipeline.md) | ML lineage, BF16 -> GGUF/quantization gates, hardware/runtime verification |
+| [references/experiment-contract.md](references/experiment-contract.md) | Trial manifest and per-response JSONL fields |
 | [references/safety.md](references/safety.md) | SHA/shape gates, held-out split, causal controls, privacy, rollback |
 | [references/cards/weight-space-programming-exp8-logs.md](references/cards/weight-space-programming-exp8-logs.md) | Pinned Qwen revision, published edit files, exact hashes and counts |
 | [references/cards/weight-space-programming-2026.md](references/cards/weight-space-programming-2026.md) | Study protocol and interpretation limits |
@@ -52,6 +55,10 @@ reproducible defect + causal evidence -> pinned, reversible sparse edit
    with `ollama ps`; 256K advertised context is **not** a fit guarantee.
 6. Re-test after GGUF/quantization and report correctness, loops, truncated
    outputs, memory, tokens/s, regression and uncertainty. Reject weak wins.
+
+Before opening the blind holdout, specify task sampling, primary effect,
+MDE, comparison arms, clustered uncertainty procedure and guardrail limits.
+Track run metadata and immutable hashes for BF16 and quantized variants.
 
 The published edit primarily addresses a reasoning **loop**, not general
 mathematical capability. Make that distinction explicit in every report.

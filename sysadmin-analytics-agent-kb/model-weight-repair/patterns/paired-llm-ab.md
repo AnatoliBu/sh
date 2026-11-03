@@ -1,0 +1,103 @@
+---
+artifact_type: workflow
+status: foundation
+domain: model-weight-repair
+---
+
+# Workflow: Paired A/B Evaluation of Weight Edits
+
+## Reference links
+
+- [LLM statistical inference and power](../../references/llm-evaluation-error-bars-2024.md)
+- [SciPy paired permutations](../../references/scipy-paired-permutation.md)
+- [Hugging Face reproducibility pitfalls](../../references/huggingface-eval-reproducibility.md)
+- [Independent Qwen control](../../references/weight-space-programming-independent.md)
+
+## 1. Define what is being estimated
+
+An **offline paired A/B test** is not randomized online traffic. The experimental
+unit is a held-out task/question, and the estimand is the mean change in correctness
+on the defined task population. Weight-edit causal claims additionally require
+ablation and placebo edits.
+
+Primary metric: difference in per-question correctness, candidate minus baseline,
+in percentage points. Predeclare a minimum useful difference (MDE) and the
+sample size/budget **before** inspecting confirmatory holdout results.
+
+Separate, explicitly named guardrails: instruction following, code correctness
+(if the model is used as an agent), malformed outputs, truncation/loop rate,
+token count, latency, tokens/s and peak RAM/VRAM. A gain in a non-primary
+metric does not excuse a failed guardrail.
+
+## 2. Use counterfactual arms, not a straw-man baseline
+
+For Qwen3.5-0.8B, a minimal factorial matrix:
+
+| Arm | Weights | Thinking | What it isolates |
+|---|---|---|---|
+| A | Original BF16 | On | Published failure mode |
+| B | Original BF16 | Off | Cheap configuration alternative |
+| C | Edited BF16 | On | Published edit under like settings |
+| D | Edited BF16 | Off | Interaction between mode and edit |
+
+If edited thinking-on merely matches unedited thinking-off, the claimed gain
+is largely an output-mode/loop fix rather than new math capability.
+
+Add ablations where feasible: layer 15 only, layer 19 only, both, graded edit
+strengths and norm-matched random edit. Check an A/A repeat before trusting
+tiny deltas. Keep numerical format constant across A/B/C/D.
+
+Compare **original GGUF vs edited GGUF** separately after quantization, in the
+same runner and quantization tier. Comparing Ollama GGUF to HF BF16 directly
+confounds weights, format, tokenizer and inference engine.
+
+## 3. Task sampling, splitting and pairing
+
+- Freeze a development set to discover defects and tune the patch; an untouched
+  confirmatory holdout is read once after selecting a candidate.
+- Deduplicate near-equivalent questions before splitting, group by shared
+  source/template where necessary; document license and contamination risk.
+- Stratify by math difficulty, output length, context length, language, coding/
+  tool use and expected importance of that subgroup. Report subgroup denominators.
+- Give each item a stable `case_id`. Run **all arms on the same cases**.
+- Use prespecified independent sampling seeds (e.g. three per question where
+  affordable); track `case_id + sample_id + seed`. Same seed is a helpful
+  variance control, not guaranteed identical RNG streams after weight editing.
+- Run order: alternate/randomize arms in blocks, avoiding concurrent GPU jobs.
+  Warm up before performance measurement; measure thermal throttling and
+  spillover on laptop hardware.
+
+## 4. Statistical decision
+
+For one 0/1 answer per case, count discordant pairs:
+`rescues = #(A wrong, C correct)`,
+`regressions = #(A correct, C wrong)`.
+A McNemar/exact discordance test is one possible confirmatory binary test.
+
+For multiple samples per question: calculate each question's mean correctness
+per arm, then its paired delta. Resample **question IDs**, with all samples
+attached, for a 95% *paired cluster bootstrap* interval of the mean delta.
+Alternatively use a cluster-aware paired permutation; do not resample individual
+responses as if independent. Distinguish case-level and sampling variability.
+
+Report: N distinct questions, total responses per arm, point estimate, 95% CI,
+discordances, seed sensitivity, and all guardrails. State method and bootstrap
+seed. Do not infer significance from non-overlapping separate arm CIs.
+
+A/B comparisons explored repeatedly need protection against selection bias.
+Prespecify the confirmatory primary comparison and holdout. For many tested
+metrics/candidates use Holm or a documented multiplicity strategy; if peeking
+sequentially, use a precommitted sequential-testing rule. Otherwise classify
+findings as exploratory. Do not claim `p > 0.05` proves equivalence.
+
+## 5. Keep / revert gate
+
+Keep only if the primary paired delta meets the predeclared practical
+threshold and confidence criterion, guardrails meet their non-inferiority/
+absolute thresholds, no subgroup suffers an unacceptable regression, and
+the result survives format conversion and local runtime validation.
+
+If sample size/power is insufficient, verdict = **inconclusive**, not success.
+If the best unedited settings are as good or better, prefer them and reject
+weight-edit complexity. Store a table of all outcomes, including negative
+results, with the final patch/hash and rollback recipe.

@@ -1,0 +1,84 @@
+---
+artifact_type: workflow
+status: foundation
+domain: model-weight-repair
+---
+
+# Workflow: LLM Experiment Record Contract
+
+## Reference links
+
+- [LLM uncertainty and paired design](../../references/llm-evaluation-error-bars-2024.md)
+- [MLflow artifact lineage](../../references/mlflow-experiment-tracking.md)
+- [Hugging Face evaluation variability](../../references/huggingface-eval-reproducibility.md)
+
+## Trial manifest (example; replace placeholders)
+
+```json
+{
+  "experiment_id": "qwen-loop-repair-001",
+  "hypothesis": "sparse edit reduces repeated thinking",
+  "base_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "base_model": "Qwen/Qwen3.5-0.8B",
+  "source_weight_sha256": "<compute-and-verify>",
+  "patch_sha256": "<compute-and-verify>",
+  "dataset_sha256": "<compute-and-verify>",
+  "dataset_splits": ["dev", "blind_holdout"],
+  "primary_metric": "paired_correctness_delta_pp",
+  "min_practical_delta_pp": "<predeclare>",
+  "confidence_method": "question_cluster_bootstrap_95",
+  "bootstrap_seed": 2026,
+  "guardrails": {
+    "cut_at_limit_share": "<threshold>",
+    "code_accuracy_delta_pp": "<threshold>",
+    "p95_latency_ms": "<threshold>"
+  },
+  "arms": [
+    "base_thinking",
+    "base_non_thinking",
+    "edited_thinking",
+    "edited_non_thinking"
+  ],
+  "hardware": {
+    "gpu": "RTX 3070 Laptop 8 GB",
+    "cuda_driver": "<record>",
+    "runner_version": "<record>",
+    "num_ctx": "<record>"
+  },
+  "frozen_before_holdout": true
+}
+```
+
+Values in angle brackets are **placeholders** and must not be submitted as
+real provenance or test results.
+
+## Per-generation JSONL (one record per arm x case x sample)
+
+```json
+{"case_id":"math-001","sample_id":0,"seed":42,"arm":"base_thinking","correct":false,"truncated":true,"generated_tokens":1024,"elapsed_ms":3000,"raw_output_sha256":"<hash>"}
+{"case_id":"math-001","sample_id":0,"seed":42,"arm":"edited_thinking","correct":true,"truncated":false,"generated_tokens":350,"elapsed_ms":1200,"raw_output_sha256":"<hash>"}
+```
+
+Numbers above are **illustrative**, not observations.
+
+Record `case_id` even when generation errors. Track `error_type`,
+`parse_failure`, missing answers and `truncated` separately; do not
+drop failed runs from the denominator silently. If an arm lacks a matched
+case/sample, report the missingness and a declared conservative policy;
+do not silently calculate metrics on a favorable subset.
+
+## Aggregate report
+
+At minimum: distinct question N, total generations, task distribution,
+per-arm means, paired deltas in percentage points, question-cluster
+bootstrap 95% CI, rescues/regressions, variance across seeds, and the
+predeclared MDE and guardrail verdicts. Archive versioned manifest,
+per-generation JSONL, grader implementation/version and all source hashes.
+
+## Decision rule
+
+`keep` requires robust practical gain over best unedited arm,
+guardrails satisfied, artifact provenance complete and no unacceptable
+post-quantization regression. `revert` on failed gates.
+`inconclusive` when held-out sample size or variance prevents a supported
+decision. Never turn exploratory results into a confirmatory claim.

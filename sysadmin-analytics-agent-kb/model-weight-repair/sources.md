@@ -15,6 +15,19 @@ Primary, with a trust boundary:
 5. [Official Ollama context docs](../references/ollama-context-official.md) — allocated context and GPU offloading.
 6. [ROME/MEMIT/EMMET paper](../references/model-editing-rome-memit.md) — related model-editing family, not the same mechanism.
 
+7. [Statistical error bars for LLM evaluations](../references/llm-evaluation-error-bars-2024.md) — paired differences, power and uncertainty.
+8. [SciPy paired permutation tests](../references/scipy-paired-permutation.md) — correct matched-pair null hypothesis.
+9. [Hugging Face eval reproducibility guide](../references/huggingface-eval-reproducibility.md) — template, backend and sampling pitfalls.
+10. [MLflow tracking](../references/mlflow-experiment-tracking.md) — run lineage, artifacts and registry.
+11. [PyTorch reproducibility](../references/pytorch-reproducibility.md) — RNG and hardware limits.
+12. [NVIDIA quantization accuracy](../references/nvidia-quantization-accuracy.md) — rounding/clipping consequences.
+
+## Operational methodologies
+
+- [Paired A/B experiments](./patterns/paired-llm-ab.md) — factorial controls, clustered intervals, MDE and holdout.
+- [Artifact ML pipeline](./patterns/model-artifact-pipeline.md) — checkpoints, provenance, BF16/GGUF and gates.
+- [Run/result contract](./patterns/experiment-contract.md) — minimal manifest, JSONL schema and decision record.
+
 ## Evidence hierarchy
 
 Pinned weight bytes and reproduced tests > released log/manifests > investigator write-up >

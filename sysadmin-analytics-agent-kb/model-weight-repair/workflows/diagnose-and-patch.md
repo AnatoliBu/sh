@@ -13,6 +13,16 @@ domain: model-weight-repair
 - [Official Ollama memory requirements](../../references/ollama-context-official.md)
 - [Independent thinking-mode comparison](../../references/weight-space-programming-independent.md)
 
+## Experiment quality and artifact provenance
+
+For the full statistically paired trial protocol, use
+[Paired A/B Evaluation](../patterns/paired-llm-ab.md). For source checkpoint,
+patch, BF16 -> GGUF and Ollama provenance gates, use
+[Artifact Pipeline](../patterns/model-artifact-pipeline.md).
+Fill the [Experiment Record Contract](../patterns/experiment-contract.md)
+before opening the blind holdout. These are required for claims about
+robust improvements and deployability, not optional decoration.
+
 ## Phase 0 — target and instrumentation
 
 Define task and failure signature before choosing a technique. Capture hardware
