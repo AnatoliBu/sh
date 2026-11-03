@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-11-03T08:46:56Z`
-Git SHA: `605f34421cbb7fc5db8303acafbe55bb2a9b988f`
+Generated at: `2026-11-03T08:48:31Z`
+Git SHA: `ce9f19f8e058ed115887318471c4b297140083ce`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,11 +12,11 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
-- **FAIL** — Validate plugin packages are in sync with domains
+- **PASS** — Validate plugin packages are in sync with domains
 - **PASS** — Validate plugin packages are installable
 - **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
-- **FAIL** — Markdown lint
+- **PASS** — Markdown lint
 
 ## Details
 
@@ -95,7 +95,7 @@ Generated curated graph: 157 nodes and 598 edges
 
 ```
 
-### FAIL: Validate plugin packages are in sync with domains
+### PASS: Validate plugin packages are in sync with domains
 
 Command:
 
@@ -106,13 +106,7 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync failed — перегенерируй плагины:
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/model-editing-rome-memit.md — расходится
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/ollama-context-official.md — расходится
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/qwen35-08b-official.md — расходится
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-2026.md — расходится
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-exp8-logs.md — расходится
-- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-independent.md — расходится
+Plugin sync passed (8 package(s))
 
 ```
 
@@ -383,14 +377,14 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 156 Markdown files in 2s
-Filtered out 0 files in 149μs
+Filtered out 0 files in 211μs
 Emitting files
-Emitted 202 files to `public` in 431ms
-Done processing 156 files in 2s
+Emitted 202 files to `public` in 535ms
+Done processing 156 files in 3s
 
 ```
 
-### FAIL: Markdown lint
+### PASS: Markdown lint
 
 Command:
 
@@ -404,12 +398,6 @@ Output:
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
 Linting: 288 file(s)
-Summary: 6 error(s)
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/model-editing-rome-memit.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/ollama-context-official.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/qwen35-08b-official.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-2026.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-exp8-logs.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
-plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-independent.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+Summary: 0 error(s)
 
 ```
