@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-10-18T12:08:06Z`
-Git SHA: `096be6fbe16671c1d189f264eef805d04a149c5e`
+Generated at: `2026-11-03T08:08:53Z`
+Git SHA: `1b8553007b19f66008ce4b67da2fbdb0e3d730fa`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -136,7 +136,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base 'HEAD
 Output:
 
 ```text
-Release validation passed (изменены: leanrea, версии не пинятся)
+Release validation passed (пакеты не менялись относительно HEAD^)
 
 ```
 
@@ -379,10 +379,10 @@ Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be 
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
 Parsed 145 Markdown files in 2s
-Filtered out 0 files in 141μs
+Filtered out 0 files in 213μs
 Emitting files
-Emitted 187 files to `public` in 370ms
-Done processing 145 files in 2s
+Emitted 187 files to `public` in 421ms
+Done processing 145 files in 3s
 
 ```
 
