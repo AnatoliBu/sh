@@ -1,7 +1,7 @@
 # Agent KB CI Report
 
-Generated at: `2026-11-03T08:08:53Z`
-Git SHA: `1b8553007b19f66008ce4b67da2fbdb0e3d730fa`
+Generated at: `2026-11-03T08:46:56Z`
+Git SHA: `605f34421cbb7fc5db8303acafbe55bb2a9b988f`
 Quartz engine: `AnatoliBu/quartz`
 Quartz branch: `agent-kb-v5`
 
@@ -12,11 +12,11 @@ Quartz branch: `agent-kb-v5`
 - **PASS** — Validate frontmatter
 - **PASS** — Validate agent artifact references
 - **PASS** — Build curated link graph
-- **PASS** — Validate plugin packages are in sync with domains
+- **FAIL** — Validate plugin packages are in sync with domains
 - **PASS** — Validate plugin packages are installable
 - **PASS** — Validate plugin release reaches installed copies
 - **PASS** — Build Quartz site
-- **PASS** — Markdown lint
+- **FAIL** — Markdown lint
 
 ## Details
 
@@ -91,11 +91,11 @@ python sysadmin-analytics-agent-kb/tools/build_link_graph.py
 Output:
 
 ```text
-Generated curated graph: 146 nodes and 573 edges
+Generated curated graph: 157 nodes and 598 edges
 
 ```
 
-### PASS: Validate plugin packages are in sync with domains
+### FAIL: Validate plugin packages are in sync with domains
 
 Command:
 
@@ -106,7 +106,13 @@ python sysadmin-analytics-agent-kb/tools/build_plugin_from_domain.py --check
 Output:
 
 ```text
-Plugin sync passed (7 package(s))
+Plugin sync failed — перегенерируй плагины:
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/model-editing-rome-memit.md — расходится
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/ollama-context-official.md — расходится
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/qwen35-08b-official.md — расходится
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-2026.md — расходится
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-exp8-logs.md — расходится
+- plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-independent.md — расходится
 
 ```
 
@@ -121,7 +127,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_packages.py
 Output:
 
 ```text
-Plugin validation passed (7 package(s))
+Plugin validation passed (8 package(s))
 
 ```
 
@@ -136,7 +142,7 @@ python sysadmin-analytics-agent-kb/tools/validate_plugin_release.py --base 'HEAD
 Output:
 
 ```text
-Release validation passed (пакеты не менялись относительно HEAD^)
+Release validation passed (изменены: model-weight-repair, версии не пинятся)
 
 ```
 
@@ -151,31 +157,17 @@ bash sysadmin-analytics-agent-kb/tools/build_quartz_site.sh
 Output:
 
 ```text
-ll be inaccurate
+ing: content/java-qa/workflows/qa-automation-architecture-decision.md isn't yet tracked by git, dates will be inaccurate
 
-Warning: content/java-qa/rules/automation-decision-quality-gates.md isn't yet tracked by git, dates will be inaccurate
+Warning: content/model-weight-repair/agent.md isn't yet tracked by git, dates will be inaccurate
 
-Warning: content/java-qa/rules/flaky-test-control.md isn't yet tracked by git, dates will be inaccurate
+Warning: content/model-weight-repair/rules/weight-edit-safety.md isn't yet tracked by git, dates will be inaccurate
 
-Warning: content/java-qa/rules/test-code-quality.md isn't yet tracked by git, dates will be inaccurate
+Warning: content/model-weight-repair/skills/weight-repair.md isn't yet tracked by git, dates will be inaccurate
 
-Warning: content/java-qa/skills/agentic-qa-tooling-design.md isn't yet tracked by git, dates will be inaccurate
+Warning: content/model-weight-repair/sources.md isn't yet tracked by git, dates will be inaccurate
 
-Warning: content/java-qa/skills/api-and-contract-testing.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/skills/junit-java-test-design.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/skills/qa-automation-decision-flow.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/skills/test-suite-architecture.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/skills/ui-automation-selenium.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/sources.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/workflows/automation-review.md isn't yet tracked by git, dates will be inaccurate
-
-Warning: content/java-qa/workflows/qa-automation-architecture-decision.md isn't yet tracked by git, dates will be inaccurate
+Warning: content/model-weight-repair/workflows/diagnose-and-patch.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/README.md isn't yet tracked by git, dates will be inaccurate
 
@@ -265,7 +257,11 @@ Warning: content/references/mockito-docs.md isn't yet tracked by git, dates will
 
 Warning: content/references/model-context-protocol-spec.md isn't yet tracked by git, dates will be inaccurate
 
+Warning: content/references/model-editing-rome-memit.md isn't yet tracked by git, dates will be inaccurate
+
 Warning: content/references/netbox.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/ollama-context-official.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/openapi-test-generation-edoc-2018.md isn't yet tracked by git, dates will be inaccurate
 
@@ -290,6 +286,8 @@ Warning: content/references/practical-test-pyramid.md isn't yet tracked by git, 
 Warning: content/references/qa-skills-agent-catalog.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/quickrest-icst-2020.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/qwen35-08b-official.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/rest-assured-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -328,6 +326,12 @@ Warning: content/references/w3c-webauthn-level-3.md isn't yet tracked by git, da
 Warning: content/references/w3c-webdriver-bidi.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/webarena-verified.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/weight-space-programming-2026.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/weight-space-programming-exp8-logs.md isn't yet tracked by git, dates will be inaccurate
+
+Warning: content/references/weight-space-programming-independent.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/references/wiremock-java-docs.md isn't yet tracked by git, dates will be inaccurate
 
@@ -378,15 +382,15 @@ Warning: content/video-color/sources.md isn't yet tracked by git, dates will be 
 Warning: content/video-color/tooling.md isn't yet tracked by git, dates will be inaccurate
 
 Warning: content/video-color/workflows/end-to-end-color-pipeline.md isn't yet tracked by git, dates will be inaccurate
-Parsed 145 Markdown files in 2s
-Filtered out 0 files in 213μs
+Parsed 156 Markdown files in 2s
+Filtered out 0 files in 149μs
 Emitting files
-Emitted 187 files to `public` in 421ms
-Done processing 145 files in 3s
+Emitted 202 files to `public` in 431ms
+Done processing 156 files in 2s
 
 ```
 
-### PASS: Markdown lint
+### FAIL: Markdown lint
 
 Command:
 
@@ -399,7 +403,13 @@ Output:
 ```text
 markdownlint-cli2 v0.18.1 (markdownlint v0.38.0)
 Finding: sysadmin-analytics-agent-kb/**/*.md plugins/**/*.md
-Linting: 267 file(s)
-Summary: 0 error(s)
+Linting: 288 file(s)
+Summary: 6 error(s)
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/model-editing-rome-memit.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/ollama-context-official.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/qwen35-08b-official.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-2026.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-exp8-logs.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
+plugins/model-weight-repair/skills/model_weight_repair/references/cards/weight-space-programming-independent.md:37 MD012/no-multiple-blanks Multiple consecutive blank lines [Expected: 1; Actual: 2]
 
 ```
